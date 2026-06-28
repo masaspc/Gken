@@ -51,7 +51,8 @@
 
           <section class="lesson-section">
             <h3>本文解説</h3>
-            <p>近いデータをまとめる方法を、中心点と距離の関係で理解する。</p><p>確認問題では、教師なし学習。クラスタリング（k-means）や次元削減（PCA）が代表。正解ラベルを使う教師あり学習、報酬で学ぶ強化学習と区別する。</p><p>別の出題では、k-meansは教師なしクラスタリング。各点を最寄りの重心に割り当て、重心更新を繰り返す。kNNは教師あり分類で別物。</p>
+            <p>近いデータをまとめる方法を、中心点と<strong class="term">距離</strong>の関係で理解する。</p><p>確認問題では、教師なし学習。<strong class="term">クラスタリング</strong>（<strong class="term">k-means</strong>）や次元削減（PCA）が代表。正解ラベルを使う教師あり学習、報酬で学ぶ強化学習と区別する。</p><p>別の出題では、<strong class="term">k-means</strong>は教師なし<strong class="term">クラスタリング</strong>。各点を最寄りの重心に割り当て、重心更新を繰り返す。kNNは教師あり分類で別物。</p>
+            <aside class="callout callout--exam"><strong>試験で頻出</strong><p><strong class="term">クラスタリング</strong>は、定義だけでなく「どの場面で使うか」「似た用語と何が違うか」をセットで確認します。</p></aside>
           </section>
 
           <section class="lesson-section lesson-table-section" aria-labelledby="visualTitle">
@@ -73,6 +74,7 @@
             <div class="quiz-actions">
               <button class="primary-button" type="button" id="gradeLessonQuiz">採点する</button>
               <button class="ghost-button" type="button" id="completeLesson">このページを完了</button>
+              <a class="ghost-button lesson-next-link" id="lessonNextLink" href="../../chapters/ml-overview/reinforcement-learning.html">次のページへ</a>
             </div>
             <p class="quiz-result" id="lessonQuizResult" aria-live="polite"></p>
             <p class="progress-state">進捗: <strong id="lessonProgressState">未完了</strong></p>

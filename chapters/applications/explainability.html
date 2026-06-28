@@ -51,7 +51,8 @@
 
           <section class="lesson-section">
             <h3>本文解説</h3>
-            <p>モデルがなぜそう判断したかを説明する必要性を学ぶ。</p><p>確認問題では、XAI（Explainable AI）。LIME、SHAP、Grad-CAMなどで判断根拠を可視化・説明する。ブラックボックス問題への対応として重要。</p><p>別の出題では、決定木は解釈性（説明性）が高いのが長所で、なぜその判断かを木で追える。一方、深く育てると過学習しやすいのが短所で、剪定やアンサンブル（ランダムフォレスト・勾配ブースティング）で補う。XAIの文脈でも“説明しやすいモデル”として登場する。</p>
+            <p>モデルがなぜそう判断したかを説明する必要性を学ぶ。</p><p>確認問題では、XAI（Explainable AI）。LIME、SHAP、Grad-CAMなどで判断根拠を<strong class="term">可視化</strong>・説明する。ブラックボックス問題への対応として重要。</p><p>別の出題では、決定木は<strong class="term">解釈性</strong>（説明性）が高いのが長所で、なぜその判断かを木で追える。一方、深く育てると過学習しやすいのが短所で、剪定やアンサンブル（ランダムフォレスト・勾配ブースティング）で補う。XAIの文脈でも“説明しやすいモデル”として登場する。</p>
+            <aside class="callout callout--exam"><strong>試験で頻出</strong><p><strong class="term">解釈性</strong>は、定義だけでなく「どの場面で使うか」「似た用語と何が違うか」をセットで確認します。</p></aside>
           </section>
 
           <section class="lesson-section lesson-table-section" aria-labelledby="visualTitle">
@@ -73,6 +74,7 @@
             <div class="quiz-actions">
               <button class="primary-button" type="button" id="gradeLessonQuiz">採点する</button>
               <button class="ghost-button" type="button" id="completeLesson">このページを完了</button>
+              <a class="ghost-button lesson-next-link" id="lessonNextLink" href="../../chapters/applications/model-compression.html">次のページへ</a>
             </div>
             <p class="quiz-result" id="lessonQuizResult" aria-live="polite"></p>
             <p class="progress-state">進捗: <strong id="lessonProgressState">未完了</strong></p>

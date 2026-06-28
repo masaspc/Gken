@@ -51,7 +51,8 @@
 
           <section class="lesson-section">
             <h3>本文解説</h3>
-            <p>データを分類するだけでなく、新しいデータを生成するモデルを比較する。</p><p>確認問題では、【正解の理由】GANは、偽データを作る生成器と本物/偽物を見分ける識別器を敵対的に学習させ、互いを高め合って高品質な生成を実現する。【各選択肢】②オートエンコーダは再構成中心、③CNNは認識、④kNNは分類。【関連】学習が不安定で多様性を失う「モード崩壊」が課題。VAEや拡散モデルと並ぶ生成モデル。</p><p>別の出題では、【正解の理由】拡散モデル（Diffusion Model）は、データに少しずつノイズを加える過程を逆向きにたどり、ノイズから画像を生成する。Stable Diffusionは潜在空間で行う潜在拡散。【各選択肢】②RNN・③SVM・④決定木は生成画像の主流ではない。【関連】評価にFID（低いほど良い）。GAN・VAEと並ぶ生成手法。</p>
+            <p>データを分類するだけでなく、新しいデータを生成するモデルを比較する。</p><p>確認問題では、【正解の理由】<strong class="term">GAN</strong>は、偽データを作る生成器と本物/偽物を見分ける識別器を敵対的に学習させ、互いを高め合って高品質な生成を実現する。【各選択肢】②オートエンコーダは再構成中心、③CNNは認識、④kNNは分類。【関連】学習が不安定で多様性を失う「モード崩壊」が課題。VAEや拡散モデルと並ぶ<strong class="term">生成モデル</strong>。</p><p>別の出題では、【正解の理由】拡散モデル（Diffusion Model）は、データに少しずつノイズを加える過程を逆向きにたどり、ノイズから画像を生成する。Stable Diffusionは潜在空間で行う潜在拡散。【各選択肢】②RNN・③SVM・④決定木は生成画像の主流ではない。【関連】評価にFID（低いほど良い）。<strong class="term">GAN</strong>・<strong class="term">VAE</strong>と並ぶ生成手法。</p>
+            <aside class="callout callout--exam"><strong>試験で頻出</strong><p><strong class="term">生成モデル</strong>は、定義だけでなく「どの場面で使うか」「似た用語と何が違うか」をセットで確認します。</p></aside>
           </section>
 
           <section class="lesson-section lesson-table-section" aria-labelledby="visualTitle">
@@ -73,6 +74,7 @@
             <div class="quiz-actions">
               <button class="primary-button" type="button" id="gradeLessonQuiz">採点する</button>
               <button class="ghost-button" type="button" id="completeLesson">このページを完了</button>
+              <a class="ghost-button lesson-next-link" id="lessonNextLink" href="../../chapters/applications/transfer-learning.html">次のページへ</a>
             </div>
             <p class="quiz-result" id="lessonQuizResult" aria-live="polite"></p>
             <p class="progress-state">進捗: <strong id="lessonProgressState">未完了</strong></p>

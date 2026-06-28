@@ -51,7 +51,8 @@
 
           <section class="lesson-section">
             <h3>本文解説</h3>
-            <p>局所的な特徴を抽出するCNNの基本を、フィルタの動きとして捉える。</p><p>確認問題では、CNNは畳み込み層で局所特徴を捉え、プーリング層で位置ずれに頑健にしつつ次元を縮小する。画像系タスクの標準。</p><p>別の出題では、【正解の理由】畳み込みでは同じフィルタ（重み）を画像全体で共有し、各ニューロンは局所領域のみと結合するため、全結合に比べパラメータが激減する。【各選択肢】②はドロップアウト、③はソフトマックス、④は誤差逆伝播の説明で理由として不適。【関連】重み共有は平行移動に強い特徴抽出にもつながる。</p>
+            <p>局所的な特徴を抽出するCNNの基本を、<strong class="term">フィルタ</strong>の動きとして捉える。</p><p>確認問題では、CNNは<strong class="term">畳み込み層</strong>で局所特徴を捉え、プーリング層で位置ずれに頑健にしつつ次元を縮小する。画像系タスクの標準。</p><p>別の出題では、【正解の理由】畳み込みでは同じ<strong class="term">フィルタ</strong>（重み）を画像全体で共有し、各ニューロンは局所領域のみと結合するため、全結合に比べパラメータが激減する。【各選択肢】②はドロップアウト、③はソフトマックス、④は誤差逆伝播の説明で理由として不適。【関連】重み共有は平行移動に強い特徴抽出にもつながる。</p>
+            <aside class="callout callout--exam"><strong>試験で頻出</strong><p><strong class="term">畳み込み層</strong>は、定義だけでなく「どの場面で使うか」「似た用語と何が違うか」をセットで確認します。</p></aside>
           </section>
 
           <section class="lesson-section lesson-table-section" aria-labelledby="visualTitle">
@@ -73,6 +74,7 @@
             <div class="quiz-actions">
               <button class="primary-button" type="button" id="gradeLessonQuiz">採点する</button>
               <button class="ghost-button" type="button" id="completeLesson">このページを完了</button>
+              <a class="ghost-button lesson-next-link" id="lessonNextLink" href="../../chapters/dl-elements/pooling.html">次のページへ</a>
             </div>
             <p class="quiz-result" id="lessonQuizResult" aria-live="polite"></p>
             <p class="progress-state">進捗: <strong id="lessonProgressState">未完了</strong></p>

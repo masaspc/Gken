@@ -51,7 +51,8 @@
 
           <section class="lesson-section">
             <h3>本文解説</h3>
-            <p>時系列や文章のような順序を持つデータを扱う発想を学ぶ。</p><p>確認問題では、【正解の理由】RNNは隠れ状態を次時刻へ循環させ、文章や音声など順序のあるデータの依存関係を学習する。【各選択肢】②CNNは画像、③オートエンコーダは圧縮、④SVMは分類。【関連】長い系列では勾配消失で長期依存が苦手→LSTM・GRUで改善。並列化に弱い点はTransformerが克服。</p><p>別の出題では、RNNは前の時刻の出力を次に渡す再帰構造を持つ。ただし長期依存で勾配消失しやすく、それを改善したのがLSTMやGRU。</p>
+            <p>時系列や文章のような順序を持つデータを扱う発想を学ぶ。</p><p>確認問題では、【正解の理由】<strong class="term">RNN</strong>は隠れ状態を次時刻へ循環させ、文章や音声など順序のあるデータの依存関係を学習する。【各選択肢】②CNNは画像、③オートエンコーダは圧縮、④SVMは分類。【関連】長い系列では勾配消失で長期依存が苦手→<strong class="term">LSTM</strong>・GRUで改善。並列化に弱い点はTransformerが克服。</p><p>別の出題では、<strong class="term">RNN</strong>は前の時刻の出力を次に渡す再帰構造を持つ。ただし長期依存で勾配消失しやすく、それを改善したのが<strong class="term">LSTM</strong>やGRU。</p>
+            <aside class="callout callout--exam"><strong>試験で頻出</strong><p><strong class="term">RNN</strong>は、定義だけでなく「どの場面で使うか」「似た用語と何が違うか」をセットで確認します。</p></aside>
           </section>
 
           <section class="lesson-section visual-lesson static-visual-section" aria-labelledby="visualTitle">
@@ -71,6 +72,7 @@
             <div class="quiz-actions">
               <button class="primary-button" type="button" id="gradeLessonQuiz">採点する</button>
               <button class="ghost-button" type="button" id="completeLesson">このページを完了</button>
+              <a class="ghost-button lesson-next-link" id="lessonNextLink" href="../../chapters/dl-elements/attention.html">次のページへ</a>
             </div>
             <p class="quiz-result" id="lessonQuizResult" aria-live="polite"></p>
             <p class="progress-state">進捗: <strong id="lessonProgressState">未完了</strong></p>

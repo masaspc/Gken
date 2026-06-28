@@ -51,7 +51,8 @@
 
           <section class="lesson-section">
             <h3>本文解説</h3>
-            <p>訓練データを変形して汎化性能を高める考え方を学ぶ。</p><p>確認問題では、データ拡張。学習データの多様性を人工的に増やす。画像だけでなくテキスト・音声でも用いられる。</p><p>別の出題では、【正解の理由】データ拡張は元データに反転・回転・拡大縮小・色変換などを施して多様なサンプルを生成し、汎化性能を高める。【各選択肢】②転移学習は学習済みモデルの再利用、③ドロップアウトはニューロン無効化、④正則化は罰則項。【関連】画像で特に有効。意味を壊す変形（数字の上下反転等）は避ける。</p>
+            <p>訓練データを変形して汎化性能を高める考え方を学ぶ。</p><p>確認問題では、<strong class="term">データ拡張</strong>。学習データの多様性を人工的に増やす。画像だけでなくテキスト・音声でも用いられる。</p><p>別の出題では、【正解の理由】<strong class="term">データ拡張</strong>は元データに<strong class="term">反転</strong>・回転・拡大縮小・色変換などを施して多様なサンプルを生成し、汎化性能を高める。【各選択肢】②転移学習は学習済みモデルの再利用、③ドロップアウトはニューロン無効化、④正則化は罰則項。【関連】画像で特に有効。意味を壊す変形（数字の上下反転等）は避ける。</p>
+            <aside class="callout callout--exam"><strong>試験で頻出</strong><p><strong class="term">データ拡張</strong>は、定義だけでなく「どの場面で使うか」「似た用語と何が違うか」をセットで確認します。</p></aside>
           </section>
 
           <section class="lesson-section lesson-table-section" aria-labelledby="visualTitle">
@@ -73,6 +74,7 @@
             <div class="quiz-actions">
               <button class="primary-button" type="button" id="gradeLessonQuiz">採点する</button>
               <button class="ghost-button" type="button" id="completeLesson">このページを完了</button>
+              <a class="ghost-button lesson-next-link" id="lessonNextLink" href="../../chapters/dl-elements/foundation-models.html">次のページへ</a>
             </div>
             <p class="quiz-result" id="lessonQuizResult" aria-live="polite"></p>
             <p class="progress-state">進捗: <strong id="lessonProgressState">未完了</strong></p>

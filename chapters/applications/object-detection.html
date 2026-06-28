@@ -51,7 +51,8 @@
 
           <section class="lesson-section">
             <h3>本文解説</h3>
-            <p>画像のどこに何があるかを予測するタスクを学ぶ。</p><p>確認問題では、物体検出。代表手法にR-CNN系、YOLO、SSD。1枚に複数物体の位置とラベルを推定する。YOLOは高速な一段検出で知られる。</p><p>別の出題では、IoU＝重なり面積／和集合面積。これがしきい値（例0.5）以上を正解とみなし、複数クラスで平均したmAPが検出全体の代表指標。検出タスクの評価セットとして頻出。</p>
+            <p>画像のどこに何があるかを予測するタスクを学ぶ。</p><p>確認問題では、<strong class="term">物体検出</strong>。代表手法にR-CNN系、YOLO、SSD。1枚に複数物体の位置とラベルを推定する。YOLOは高速な一段検出で知られる。</p><p>別の出題では、<strong class="term">IoU</strong>＝重なり面積／和集合面積。これがしきい値（例0.5）以上を正解とみなし、複数クラスで平均したmAPが検出全体の代表指標。検出タスクの評価セットとして頻出。</p>
+            <aside class="callout callout--exam"><strong>試験で頻出</strong><p><strong class="term">物体検出</strong>は、定義だけでなく「どの場面で使うか」「似た用語と何が違うか」をセットで確認します。</p></aside>
           </section>
 
           <section class="lesson-section lesson-table-section" aria-labelledby="visualTitle">
@@ -73,6 +74,7 @@
             <div class="quiz-actions">
               <button class="primary-button" type="button" id="gradeLessonQuiz">採点する</button>
               <button class="ghost-button" type="button" id="completeLesson">このページを完了</button>
+              <a class="ghost-button lesson-next-link" id="lessonNextLink" href="../../chapters/applications/natural-language-processing.html">次のページへ</a>
             </div>
             <p class="quiz-result" id="lessonQuizResult" aria-live="polite"></p>
             <p class="progress-state">進捗: <strong id="lessonProgressState">未完了</strong></p>

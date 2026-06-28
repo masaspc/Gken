@@ -51,7 +51,8 @@
 
           <section class="lesson-section">
             <h3>本文解説</h3>
-            <p>代表値と散らばりを同時に見て、データの形を読む。</p><p>確認問題では、【計算】平均＝(4＋8)/2＝6。分散＝((4−6)²＋(8−6)²)/2＝(4＋4)/2＝4。標準偏差＝√4＝2。【ポイント】分散は偏差の二乗平均、標準偏差はその平方根で元の単位に戻る。ばらつきの大きさを表す。標準化（zスコア）に用いる。</p><p>別の出題では、標準化（standardization）は平均0・標準偏差1に揃える。0〜1の範囲に収める正規化（min-max）と区別される。スケールの異なる特徴量を揃えると、距離ベースの手法（k-means・kNN・SVM）や勾配法の学習が安定する。</p>
+            <p>代表値と散らばりを同時に見て、データの形を読む。</p><p>確認問題では、【計算】<strong class="term">平均</strong>＝(4＋8)/2＝6。<strong class="term">分散</strong>＝((4−6)²＋(8−6)²)/2＝(4＋4)/2＝4。標準偏差＝√4＝2。【ポイント】分散は偏差の二乗平均、標準偏差はその平方根で元の単位に戻る。ばらつきの大きさを表す。標準化（zスコア）に用いる。</p><p>別の出題では、標準化（standardization）は<strong class="term">平均</strong>0・<strong class="term">標準偏差</strong>1に揃える。0〜1の範囲に収める正規化（min-max）と区別される。スケールの異なる特徴量を揃えると、距離ベースの手法（k-means・kNN・SVM）や勾配法の学習が安定する。</p>
+            <aside class="callout callout--exam"><strong>試験で頻出</strong><p><strong class="term">平均</strong>は、定義だけでなく「どの場面で使うか」「似た用語と何が違うか」をセットで確認します。</p></aside>
           </section>
 
           <section class="lesson-section visual-lesson" aria-labelledby="visualTitle">
@@ -74,6 +75,7 @@
             <div class="quiz-actions">
               <button class="primary-button" type="button" id="gradeLessonQuiz">採点する</button>
               <button class="ghost-button" type="button" id="completeLesson">このページを完了</button>
+              <a class="ghost-button lesson-next-link" id="lessonNextLink" href="../../chapters/math-stats/correlation.html">次のページへ</a>
             </div>
             <p class="quiz-result" id="lessonQuizResult" aria-live="polite"></p>
             <p class="progress-state">進捗: <strong id="lessonProgressState">未完了</strong></p>

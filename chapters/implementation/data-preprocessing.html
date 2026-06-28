@@ -51,7 +51,8 @@
 
           <section class="lesson-section">
             <h3>本文解説</h3>
-            <p>学習前にデータを整える処理の意味を学ぶ。</p><p>確認問題では、現場ではデータの収集・前処理がプロジェクト工数の大半を占めるとよく言われる。欠損・表記揺れ・外れ値・ラベルの誤りなどの整備が精度を左右する。華やかなモデリングより地道なデータ整備が成否を分ける、という実装の現実が問われる。</p><p>別の出題では、【正解の理由】差分プライバシーは、出力に数学的に制御したノイズを加え、特定個人の有無が結果にほぼ影響しないことを保証する。【各選択肢】②電子署名は改ざん検知、③ハッシュ化は一方向変換、④正規化は前処理で目的が異なる。【関連】連合学習と組み合わせてプライバシーを強化できる。</p>
+            <p>学習前にデータを整える処理の意味を学ぶ。</p><p>確認問題では、現場ではデータの収集・<strong class="term">前処理</strong>がプロジェクト工数の大半を占めるとよく言われる。欠損・表記揺れ・<strong class="term">外れ値</strong>・ラベルの誤りなどの整備が精度を左右する。華やかなモデリングより地道なデータ整備が成否を分ける、という実装の現実が問われる。</p><p>別の出題では、【正解の理由】差分プライバシーは、出力に数学的に制御したノイズを加え、特定個人の有無が結果にほぼ影響しないことを保証する。【各選択肢】②電子署名は改ざん検知、③ハッシュ化は一方向変換、④<strong class="term">正規化</strong>は<strong class="term">前処理</strong>で目的が異なる。【関連】連合学習と組み合わせてプライバシーを強化できる。</p>
+            <aside class="callout callout--exam"><strong>試験で頻出</strong><p><strong class="term">前処理</strong>は、定義だけでなく「どの場面で使うか」「似た用語と何が違うか」をセットで確認します。</p></aside>
           </section>
 
           <section class="lesson-section lesson-table-section" aria-labelledby="visualTitle">
@@ -73,6 +74,7 @@
             <div class="quiz-actions">
               <button class="primary-button" type="button" id="gradeLessonQuiz">採点する</button>
               <button class="ghost-button" type="button" id="completeLesson">このページを完了</button>
+              <a class="ghost-button lesson-next-link" id="lessonNextLink" href="../../chapters/implementation/annotation.html">次のページへ</a>
             </div>
             <p class="quiz-result" id="lessonQuizResult" aria-live="polite"></p>
             <p class="progress-state">進捗: <strong id="lessonProgressState">未完了</strong></p>

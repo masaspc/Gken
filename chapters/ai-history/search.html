@@ -51,7 +51,8 @@
 
           <section class="lesson-section">
             <h3>本文解説</h3>
-            <p>問題空間をどの順序で調べるかという探索の基本を、ルート選択として理解する。</p><p>確認問題では、深さ優先探索（DFS）。メモリ消費が少ない一方、最短経路は保証されず無限に深い枝で迷う恐れがある。対して幅優先探索（BFS）は浅い層から調べ最短解を見つけやすいがメモリを多く使う。両者のトレードオフ（省メモリ vs 最短保証）が問われる。</p><p>別の出題では、A*アルゴリズム。実コストg(n)と推定コストh(n)の和f(n)=g+hが小さい節点を優先する。h(n)が過大評価しない（許容的）なら最短経路を保証する。ヒューリスティック（経験的な見積もり）で探索を効率化する代表例。</p>
+            <p>問題空間をどの順序で調べるかという探索の基本を、ルート選択として理解する。</p><p>確認問題では、<strong class="term">深さ優先探索</strong>（DFS）。メモリ消費が少ない一方、最短経路は保証されず無限に深い枝で迷う恐れがある。対して<strong class="term">幅優先探索</strong>（BFS）は浅い層から調べ最短解を見つけやすいがメモリを多く使う。両者のトレードオフ（省メモリ vs 最短保証）が問われる。</p><p>別の出題では、A*アルゴリズム。実コストg(n)と推定コストh(n)の和f(n)=g+hが小さい節点を優先する。h(n)が過大評価しない（許容的）なら最短経路を保証する。<strong class="term">ヒューリスティック</strong>（経験的な見積もり）で探索を効率化する代表例。</p>
+            <aside class="callout callout--exam"><strong>試験で頻出</strong><p><strong class="term">探索木</strong>は、定義だけでなく「どの場面で使うか」「似た用語と何が違うか」をセットで確認します。</p></aside>
           </section>
 
           <section class="lesson-section visual-lesson static-visual-section" aria-labelledby="visualTitle">
@@ -71,6 +72,7 @@
             <div class="quiz-actions">
               <button class="primary-button" type="button" id="gradeLessonQuiz">採点する</button>
               <button class="ghost-button" type="button" id="completeLesson">このページを完了</button>
+              <a class="ghost-button lesson-next-link" id="lessonNextLink" href="../../chapters/ai-history/reasoning.html">次のページへ</a>
             </div>
             <p class="quiz-result" id="lessonQuizResult" aria-live="polite"></p>
             <p class="progress-state">進捗: <strong id="lessonProgressState">未完了</strong></p>

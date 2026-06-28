@@ -51,7 +51,8 @@
 
           <section class="lesson-section">
             <h3>本文解説</h3>
-            <p>テキストを数値として扱い、意味や文脈を処理する流れを理解する。</p><p>確認問題では、形態素解析。分かち書きのない日本語を意味の最小単位（形態素）に分割し品詞を付与する。MeCabなどが代表ツール。</p><p>別の出題では、BLEU。機械翻訳の出力と人手の参照訳のn-gram一致率を基に採点する代表的指標。簡便だが意味の正しさを完全には測れない限界もある。言語モデル内在評価のperplexityとは目的が異なる。</p>
+            <p>テキストを数値として扱い、意味や文脈を処理する流れを理解する。</p><p>確認問題では、<strong class="term">形態素解析</strong>。分かち書きのない日本語を意味の最小単位（形態素）に分割し品詞を付与する。MeCabなどが代表ツール。</p><p>別の出題では、BLEU。機械<strong class="term">翻訳</strong>の出力と人手の参照訳のn-gram一致率を基に採点する代表的指標。簡便だが意味の正しさを完全には測れない限界もある。<strong class="term">言語モデル</strong>内在評価のperplexityとは目的が異なる。</p>
+            <aside class="callout callout--exam"><strong>試験で頻出</strong><p><strong class="term">形態素解析</strong>は、定義だけでなく「どの場面で使うか」「似た用語と何が違うか」をセットで確認します。</p></aside>
           </section>
 
           <section class="lesson-section visual-lesson static-visual-section" aria-labelledby="visualTitle">
@@ -71,6 +72,7 @@
             <div class="quiz-actions">
               <button class="primary-button" type="button" id="gradeLessonQuiz">採点する</button>
               <button class="ghost-button" type="button" id="completeLesson">このページを完了</button>
+              <a class="ghost-button lesson-next-link" id="lessonNextLink" href="../../chapters/applications/speech-processing.html">次のページへ</a>
             </div>
             <p class="quiz-result" id="lessonQuizResult" aria-live="polite"></p>
             <p class="progress-state">進捗: <strong id="lessonProgressState">未完了</strong></p>

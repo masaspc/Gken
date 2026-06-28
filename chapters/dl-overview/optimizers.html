@@ -51,7 +51,8 @@
 
           <section class="lesson-section">
             <h3>本文解説</h3>
-            <p>代表的なoptimizerの違いを、更新の安定性と速度の観点で比較する。</p><p>確認問題では、RMSProp。直近の勾配を重視する移動平均で学習率を調整し、AdaGradの過度な減衰を防ぐ。モーメンタムと組み合わせるとAdamに近づく。最適化手法の改良の流れ（SGD→Momentum/AdaGrad→RMSProp→Adam）を順に理解するとよい。</p><p>別の出題では、AdaGrad。頻繁に更新される次元の学習率を自動的に下げ、まれにしか出ない特徴を学習しやすくする。ただし学習率が下がり続けて止まる弱点があり、それを改善したのがRMSProp、さらに統合したのがAdam。</p>
+            <p>代表的なoptimizerの違いを、更新の安定性と速度の観点で比較する。</p><p>確認問題では、RMSProp。直近の勾配を重視する移動平均で学習率を調整し、AdaGradの過度な減衰を防ぐ。モーメンタムと組み合わせるとAdamに近づく。最適化手法の改良の流れ（<strong class="term">SGD</strong>→<strong class="term">Momentum</strong>/AdaGrad→RMSProp→Adam）を順に理解するとよい。</p><p>別の出題では、AdaGrad。頻繁に更新される次元の学習率を自動的に下げ、まれにしか出ない特徴を学習しやすくする。ただし学習率が下がり続けて止まる弱点があり、それを改善したのがRMSProp、さらに統合したのが<strong class="term">Adam</strong>。</p>
+            <aside class="callout callout--exam"><strong>試験で頻出</strong><p><strong class="term">SGD</strong>は、定義だけでなく「どの場面で使うか」「似た用語と何が違うか」をセットで確認します。</p></aside>
           </section>
 
           <section class="lesson-section lesson-table-section" aria-labelledby="visualTitle">
@@ -73,6 +74,7 @@
             <div class="quiz-actions">
               <button class="primary-button" type="button" id="gradeLessonQuiz">採点する</button>
               <button class="ghost-button" type="button" id="completeLesson">このページを完了</button>
+              <a class="ghost-button lesson-next-link" id="lessonNextLink" href="../../chapters/dl-overview/regularization.html">次のページへ</a>
             </div>
             <p class="quiz-result" id="lessonQuizResult" aria-live="polite"></p>
             <p class="progress-state">進捗: <strong id="lessonProgressState">未完了</strong></p>

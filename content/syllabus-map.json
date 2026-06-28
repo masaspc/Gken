@@ -15,6 +15,7 @@
         ],
         "focus": "AIという言葉は一枚岩ではない。定義の幅を把握し、問題設定に応じた説明ができるようにする。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "comparison-table",
           "title": "人工知能の定義: 見方の違い",
@@ -53,6 +54,7 @@
         ],
         "focus": "人間のように理解するAIと、特定タスクを解くAIを区別し、G検定で問われる立場の違いを押さえる。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "comparison-table",
           "title": "強いAIと弱いAIの区別",
@@ -96,6 +98,7 @@
         ],
         "focus": "記号だけを操作しても意味を理解したことになるのか、というAIの根本論点を学ぶ。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "flow",
           "title": "記号接地問題: 意味が成立するまで",
@@ -134,6 +137,7 @@
         ],
         "focus": "現実世界では考慮すべき条件が膨大になる。何を無視し、何を考えるかという難しさを理解する。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "flow",
           "title": "フレーム問題: 考慮範囲の絞り込み",
@@ -172,6 +176,7 @@
         ],
         "focus": "外から観察される振る舞いによって知能を判定する考え方と、その限界を学ぶ。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "comparison-table",
           "title": "チューリングテスト: 評価するもの・しないもの",
@@ -210,6 +215,7 @@
         ],
         "focus": "初期の対話システムから、現在の言語モデルへつながる発想の違いを整理する。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "flow",
           "title": "ELIZA型対話の処理",
@@ -255,6 +261,7 @@
         ],
         "focus": "AIの発展は期待と限界の反復で進んできた。ブームごとの中心技術と失速要因を比較する。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "flow",
           "title": "AIブームの変遷",
@@ -293,6 +300,7 @@
         ],
         "focus": "問題空間をどの順序で調べるかという探索の基本を、ルート選択として理解する。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "flow",
           "title": "探索: 解候補を調べる順序",
@@ -331,6 +339,7 @@
         ],
         "focus": "既知の情報から結論を導く方法を整理し、機械学習との違いも見えるようにする。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "comparison-table",
           "title": "推論方法の比較",
@@ -369,6 +378,7 @@
         ],
         "focus": "AIに知識を扱わせるための表現方法を比較し、メリットと限界を押さえる。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "comparison-table",
           "title": "知識表現の使い分け",
@@ -407,6 +417,7 @@
         ],
         "focus": "専門家の知識をルールとして実装する発想と、保守の難しさを学ぶ。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "flow",
           "title": "エキスパートシステムの構成",
@@ -445,6 +456,7 @@
         ],
         "focus": "知識を手で書くのではなく、データからパターンを学ぶ転換を理解する。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "regression",
           "title": "機械学習の台頭",
@@ -462,6 +474,7 @@
         ],
         "focus": "多層ネットワークが再び注目された理由を、計算資源・データ・手法の観点で整理する。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "comparison-table",
           "title": "深層学習が伸びた要因",
@@ -507,6 +520,7 @@
         ],
         "focus": "正解付きデータから入力と出力の対応を学ぶ仕組みを理解する。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "relation-table",
           "title": "教師あり学習: データの役割",
@@ -545,6 +559,7 @@
         ],
         "focus": "連続値を予測する課題を、回帰直線と残差で直感的に学ぶ。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "regression",
           "title": "回帰",
@@ -562,6 +577,7 @@
         ],
         "focus": "カテゴリを予測する課題で、境界の動かし方が誤分類に与える影響を見る。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "classification",
           "title": "分類",
@@ -579,6 +595,7 @@
         ],
         "focus": "正解ラベルなしでデータの構造を探す考え方を学ぶ。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "comparison-table",
           "title": "教師なし学習の代表用途",
@@ -617,6 +634,7 @@
         ],
         "focus": "近いデータをまとめる方法を、中心点と距離の関係で理解する。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "relation-table",
           "title": "クラスタリング: k-meansの考え方",
@@ -655,6 +673,7 @@
         ],
         "focus": "行動と報酬の関係から方策を改善する考え方を学ぶ。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "flow",
           "title": "強化学習のループ",
@@ -693,6 +712,7 @@
         ],
         "focus": "学習に使ったデータだけで性能を見る危うさを理解する。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "comparison-table",
           "title": "データ分割の役割",
@@ -731,6 +751,7 @@
         ],
         "focus": "複雑なモデルが訓練データに寄りすぎる様子を可視化する。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "regression",
           "title": "過学習と汎化",
@@ -748,6 +769,7 @@
         ],
         "focus": "分類性能を複数の指標で読み分ける。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "classification",
           "title": "評価指標",
@@ -765,6 +787,7 @@
         ],
         "focus": "予測の当たり外れを4区分で整理し、指標の意味につなげる。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "relation-table",
           "title": "混同行列の4区分",
@@ -815,6 +838,7 @@
         ],
         "focus": "層とユニットのつながりを見ながら、ニューラルネットワークの計算の流れを学ぶ。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "network",
           "title": "ニューラルネットワーク",
@@ -845,6 +869,7 @@
         ],
         "focus": "単純な分類器としてのパーセプトロンを、境界線で理解する。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "classification",
           "title": "パーセプトロン",
@@ -862,6 +887,7 @@
         ],
         "focus": "活性化関数が非線形な表現を可能にする理由を整理する。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "comparison-table",
           "title": "活性化関数の比較",
@@ -900,6 +926,7 @@
         ],
         "focus": "予測の悪さを数値化し、学習の方向づけに使う考え方を学ぶ。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "regression",
           "title": "損失関数",
@@ -917,6 +944,7 @@
         ],
         "focus": "出力側の誤差を前の層へ伝え、重みを更新する流れを追う。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "flow",
           "title": "誤差逆伝播法の流れ",
@@ -955,6 +983,7 @@
         ],
         "focus": "学習率を変えると最適化が安定するかどうかを観察する。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "regression",
           "title": "勾配降下法",
@@ -972,6 +1001,7 @@
         ],
         "focus": "代表的なoptimizerの違いを、更新の安定性と速度の観点で比較する。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "comparison-table",
           "title": "最適化手法の比較",
@@ -1010,6 +1040,7 @@
         ],
         "focus": "過学習を抑えるための工夫を比較し、どの場面で効くかを考える。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "comparison-table",
           "title": "正則化手法の使い分け",
@@ -1048,6 +1079,7 @@
         ],
         "focus": "層の入力分布を整えることで学習を安定させる考え方を学ぶ。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "distribution",
           "title": "バッチ正規化",
@@ -1072,6 +1104,7 @@
         ],
         "focus": "すべての入力と出力を結ぶ層の役割とパラメータ数を理解する。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "network",
           "title": "全結合層",
@@ -1102,6 +1135,7 @@
         ],
         "focus": "局所的な特徴を抽出するCNNの基本を、フィルタの動きとして捉える。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "relation-table",
           "title": "畳み込み層の部品",
@@ -1140,6 +1174,7 @@
         ],
         "focus": "特徴マップを圧縮し、位置ずれに強くする働きを学ぶ。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "comparison-table",
           "title": "プーリングの種類",
@@ -1178,6 +1213,7 @@
         ],
         "focus": "値のスケールを整えることが学習安定性に与える影響を理解する。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "distribution",
           "title": "正規化層",
@@ -1195,6 +1231,7 @@
         ],
         "focus": "深いネットワークで情報を飛び越して伝える利点を学ぶ。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "flow",
           "title": "スキップ結合の情報経路",
@@ -1233,6 +1270,7 @@
         ],
         "focus": "時系列や文章のような順序を持つデータを扱う発想を学ぶ。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "flow",
           "title": "RNNの時系列処理",
@@ -1272,6 +1310,7 @@
         ],
         "focus": "入力要素間の関連度を重みとして扱う仕組みをヒートマップで理解する。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "attention",
           "title": "Attention: 文中の依存関係",
@@ -1323,6 +1362,7 @@
         ],
         "focus": "現在の言語モデルの中核であるTransformerの部品を整理する。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "attention",
           "title": "Transformer: Self-Attentionの入力例",
@@ -1374,6 +1414,7 @@
         ],
         "focus": "入力を圧縮し復元することで表現を学ぶ仕組みを理解する。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "flow",
           "title": "オートエンコーダの学習",
@@ -1412,6 +1453,7 @@
         ],
         "focus": "訓練データを変形して汎化性能を高める考え方を学ぶ。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "comparison-table",
           "title": "データ拡張の例",
@@ -1450,6 +1492,7 @@
         ],
         "focus": "生成AI時代の重要項目として、基盤モデルの学習と利用の流れを押さえる。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "flow",
           "title": "基盤モデルの利用まで",
@@ -1495,6 +1538,7 @@
         ],
         "focus": "画像タスクの種類を区別し、どの出力が必要かを整理する。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "comparison-table",
           "title": "画像タスクの違い",
@@ -1533,6 +1577,7 @@
         ],
         "focus": "画像のどこに何があるかを予測するタスクを学ぶ。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "relation-table",
           "title": "物体検出の評価要素",
@@ -1571,6 +1616,7 @@
         ],
         "focus": "テキストを数値として扱い、意味や文脈を処理する流れを理解する。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "flow",
           "title": "自然言語処理の基本パイプライン",
@@ -1609,6 +1655,7 @@
         ],
         "focus": "音声を時間変化する信号として扱う考え方を学ぶ。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "distribution",
           "title": "音声処理",
@@ -1626,6 +1673,7 @@
         ],
         "focus": "深層学習と強化学習を組み合わせると何ができるかを学ぶ。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "flow",
           "title": "深層強化学習の学習サイクル",
@@ -1664,6 +1712,7 @@
         ],
         "focus": "データを分類するだけでなく、新しいデータを生成するモデルを比較する。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "comparison-table",
           "title": "生成モデルの比較",
@@ -1702,6 +1751,7 @@
         ],
         "focus": "既存モデルを新しいタスクに適応する実務上の利点を学ぶ。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "flow",
           "title": "転移学習の進め方",
@@ -1740,6 +1790,7 @@
         ],
         "focus": "複数種類のデータを組み合わせて扱うAIの設計を理解する。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "relation-table",
           "title": "マルチモーダルAIの組み合わせ",
@@ -1778,6 +1829,7 @@
         ],
         "focus": "モデルがなぜそう判断したかを説明する必要性を学ぶ。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "comparison-table",
           "title": "説明可能AIの観点",
@@ -1816,6 +1868,7 @@
         ],
         "focus": "大きなモデルを実運用に載せるための軽量化手法を比較する。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "comparison-table",
           "title": "モデル軽量化手法",
@@ -1861,6 +1914,7 @@
         ],
         "focus": "AI導入を技術だけでなく、目的・評価・運用の流れとして理解する。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "flow",
           "title": "AIプロジェクトの進め方",
@@ -1899,6 +1953,7 @@
         ],
         "focus": "AIで何を改善するのかを測れる形に落とし込む。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "relation-table",
           "title": "目的設定とKPI",
@@ -1937,6 +1992,7 @@
         ],
         "focus": "データ量だけでなく、質・偏り・利用条件を見る。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "distribution",
           "title": "データ収集",
@@ -1954,6 +2010,7 @@
         ],
         "focus": "学習前にデータを整える処理の意味を学ぶ。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "comparison-table",
           "title": "前処理の目的",
@@ -1992,6 +2049,7 @@
         ],
         "focus": "教師あり学習の品質を左右するラベル付けを理解する。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "relation-table",
           "title": "アノテーション品質の管理",
@@ -2030,6 +2088,7 @@
         ],
         "focus": "運用後にモデル性能が変化する理由と監視の必要性を学ぶ。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "flow",
           "title": "運用監視の流れ",
@@ -2068,6 +2127,7 @@
         ],
         "focus": "人がどこで判断に関与するべきかを設計する。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "flow",
           "title": "Human-in-the-loopの判断設計",
@@ -2106,6 +2166,7 @@
         ],
         "focus": "AI導入時の失敗や事故を、事前に見積もり対策する。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "relation-table",
           "title": "AIリスク管理の対応表",
@@ -2151,6 +2212,7 @@
         ],
         "focus": "代表値と散らばりを同時に見て、データの形を読む。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "distribution",
           "title": "平均と分散",
@@ -2168,6 +2230,7 @@
         ],
         "focus": "2つの変数の関係を散布図で読み、因果との違いを押さえる。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "regression",
           "title": "相関",
@@ -2185,6 +2248,7 @@
         ],
         "focus": "不確実な出来事を数値で扱う基礎を学ぶ。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "comparison-table",
           "title": "確率の基本概念",
@@ -2223,6 +2287,7 @@
         ],
         "focus": "新しい証拠で判断を更新する流れを理解する。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "flow",
           "title": "ベイズ更新の考え方",
@@ -2261,6 +2326,7 @@
         ],
         "focus": "データをベクトルや行列として扱う意味を図でつかむ。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "relation-table",
           "title": "線形代数の直感",
@@ -2299,6 +2365,7 @@
         ],
         "focus": "近い・似ているを数値化する方法を比較する。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "comparison-table",
           "title": "距離と類似度",
@@ -2337,6 +2404,7 @@
         ],
         "focus": "混同行列から評価指標が計算される関係を学ぶ。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "classification",
           "title": "評価指標の数理",
@@ -2354,6 +2422,7 @@
         ],
         "focus": "標本の取り方が分析結果に与える影響を理解する。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "distribution",
           "title": "サンプリングと偏り",
@@ -2378,6 +2447,7 @@
         ],
         "focus": "AIで個人に関するデータを扱うときの基本確認事項を整理する。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "flow",
           "title": "個人情報を扱う確認順",
@@ -2416,6 +2486,7 @@
         ],
         "focus": "学習・生成・利用の各段階で著作権の論点が変わることを学ぶ。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "relation-table",
           "title": "著作権: 段階ごとの論点",
@@ -2454,6 +2525,7 @@
         ],
         "focus": "AI関連発明で、技術的思想や権利化の観点を整理する。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "flow",
           "title": "AI関連発明の権利化",
@@ -2492,6 +2564,7 @@
         ],
         "focus": "データやノウハウの保護に関する論点を学ぶ。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "relation-table",
           "title": "不正競争防止法: データ保護の観点",
@@ -2530,6 +2603,7 @@
         ],
         "focus": "AIやデータ利用が競争環境へ与える影響を考える。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "relation-table",
           "title": "独占禁止法とAI利用",
@@ -2568,6 +2642,7 @@
         ],
         "focus": "AI開発では結果保証が難しいため、契約で何を決めるかを学ぶ。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "flow",
           "title": "AI開発委託契約で決める順序",
@@ -2606,6 +2681,7 @@
         ],
         "focus": "AIサービスを使う側・提供する側の確認ポイントを整理する。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "relation-table",
           "title": "AIサービス提供契約の確認点",
@@ -2644,6 +2720,7 @@
         ],
         "focus": "法律分野を暗記ではなく、確認手順として使えるようにする。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "flow",
           "title": "AI法務チェックの順序",
@@ -2689,6 +2766,7 @@
         ],
         "focus": "AI倫理を個人の善意ではなく、原則と運用ルールとして理解する。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "flow",
           "title": "AIガイドラインを運用に落とす流れ",
@@ -2727,6 +2805,7 @@
         ],
         "focus": "個人情報だけでなく、私生活上の利益を守る視点を学ぶ。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "relation-table",
           "title": "プライバシー保護の観点",
@@ -2765,6 +2844,7 @@
         ],
         "focus": "データやモデルが特定集団に不利な結果を出すリスクを学ぶ。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "relation-table",
           "title": "公平性リスクの見方",
@@ -2803,6 +2883,7 @@
         ],
         "focus": "AIシステムが誤作動や攻撃に耐えるための観点を整理する。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "comparison-table",
           "title": "安全性とセキュリティの観点",
@@ -2841,6 +2922,7 @@
         ],
         "focus": "便利なAIが不正利用される場面と対策を学ぶ。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "relation-table",
           "title": "AI悪用と対策",
@@ -2879,6 +2961,7 @@
         ],
         "focus": "AIの判断や制約を利用者にどう伝えるかを考える。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "flow",
           "title": "透明性を確保する説明順",
@@ -2917,6 +3000,7 @@
         ],
         "focus": "生成AIが情報環境や意思決定へ与える影響を学ぶ。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "relation-table",
           "title": "民主主義と情報環境の論点",
@@ -2955,6 +3039,7 @@
         ],
         "focus": "大規模AIの学習・推論に必要な資源と環境配慮を理解する。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "relation-table",
           "title": "AIの環境負荷",
@@ -2993,6 +3078,7 @@
         ],
         "focus": "AI導入が仕事や学習に与える影響を整理する。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "flow",
           "title": "AI導入とリスキリング",
@@ -3031,6 +3117,7 @@
         ],
         "focus": "組織としてAIを安全に使い続けるための仕組みを学ぶ。",
         "explanation": [],
+        "callouts": [],
         "visual": {
           "type": "flow",
           "title": "AIガバナンスの継続サイクル",

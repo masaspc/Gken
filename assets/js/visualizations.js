@@ -76,6 +76,16 @@
     container.append(item);
   }
 
+  function legendSvg(items, x = 590, y = 36) {
+    return `<g aria-label="凡例">${items.map((item, index) => {
+      const top = y + index * 22;
+      const shape = item.shape === "line"
+        ? `<line x1="${x}" y1="${top + 7}" x2="${x + 18}" y2="${top + 7}" stroke="${item.color}" stroke-width="4"/>`
+        : `<rect x="${x}" y="${top}" width="14" height="14" rx="3" fill="${item.color}" stroke="${item.stroke || "var(--line)"}"/>`;
+      return `${shape}<text x="${x + 24}" y="${top + 12}" font-size="12" fill="currentColor">${escapeSvg(item.label)}</text>`;
+    }).join("")}</g>`;
+  }
+
   function resetOutput(out) {
     if (out.metrics) out.metrics.innerHTML = "";
     if (out.svg) {
@@ -115,22 +125,28 @@
       bins[index] += 1;
     });
     const max = Math.max(...bins, 1);
+    const sdLeft = left + Math.max(0, (cfg.mean - cfg.sd) / 100) * (right - left);
+    const sdRight = left + Math.min(1, (cfg.mean + cfg.sd) / 100) * (right - left);
+    ctx.fillStyle = css("--viz-start-soft", "#fff4d6");
+    ctx.fillRect(sdLeft, top, Math.max(0, sdRight - sdLeft), bottom - top);
     bins.forEach((count, index) => {
       const x = left + 12 + index * ((right - left - 24) / bins.length);
       const w = ((right - left - 24) / bins.length) - 4;
       const h = (count / max) * (bottom - top - 38);
-      ctx.fillStyle = css("--accent", "#0f766e");
+      ctx.fillStyle = css("--viz-step", "#0f766e");
       ctx.fillRect(x, bottom - h, w, h);
     });
     const meanX = left + (cfg.mean / 100) * (right - left);
-    ctx.strokeStyle = css("--coral", "#c0564a");
+    ctx.strokeStyle = css("--viz-key", "#c0564a");
     ctx.lineWidth = 3;
     ctx.beginPath();
     ctx.moveTo(meanX, top);
     ctx.lineTo(meanX, bottom);
     ctx.stroke();
-    ctx.fillStyle = css("--coral", "#c0564a");
+    ctx.fillStyle = css("--viz-key", "#c0564a");
     ctx.fillText("平均", meanX + 6, top + 18);
+    ctx.fillStyle = css("--muted", "#5b6965");
+    ctx.fillText("平均±1SD", sdLeft + 8, bottom - 12);
     metric(out.metrics, "平均", cfg.mean.toFixed(1));
     metric(out.metrics, "標準偏差", cfg.sd.toFixed(1));
     metric(out.metrics, "分散", (cfg.sd ** 2).toFixed(1));
@@ -173,22 +189,29 @@
       const px = left + p.x / 100 * (right - left);
       const py = bottom - Math.max(0, Math.min(100, p.y)) / 100 * (bottom - top);
       const predY = bottom - Math.max(0, Math.min(100, pred)) / 100 * (bottom - top);
-      ctx.strokeStyle = "rgba(192, 86, 74, 0.35)";
+      ctx.strokeStyle = css("--viz-key", "#c0564a");
+      ctx.globalAlpha = 0.28;
       ctx.beginPath();
       ctx.moveTo(px, py);
       ctx.lineTo(px, predY);
       ctx.stroke();
-      ctx.fillStyle = css("--ink", "#26344f");
+      ctx.globalAlpha = 1;
+      ctx.fillStyle = css("--viz-accent2", "#3b82c4");
       ctx.beginPath();
       ctx.arc(px, py, 4, 0, Math.PI * 2);
       ctx.fill();
     });
-    ctx.strokeStyle = css("--accent", "#0f766e");
+    ctx.strokeStyle = css("--viz-key", "#c0564a");
     ctx.lineWidth = 4;
     ctx.beginPath();
     ctx.moveTo(left, bottom - Math.max(0, Math.min(100, cfg.bias)) / 100 * (bottom - top));
     ctx.lineTo(right, bottom - Math.max(0, Math.min(100, cfg.bias + cfg.slope * 100)) / 100 * (bottom - top));
     ctx.stroke();
+    ctx.fillStyle = css("--muted", "#5b6965");
+    ctx.font = "13px sans-serif";
+    ctx.fillText("点: 実測値", 640, 88);
+    ctx.fillText("線: 予測直線", 640, 108);
+    ctx.fillText("縦線: 残差", 640, 128);
     const mse = sse / points.length;
     const r2 = 1 - sse / Math.max(sst, 1);
     metric(out.metrics, "MSE", mse.toFixed(2));
@@ -230,19 +253,40 @@
       if (!actual && predicted) fp += 1;
       if (!actual && !predicted) tn += 1;
       if (actual && !predicted) fn += 1;
-      ctx.fillStyle = actual ? css("--accent", "#0f766e") : css("--gold", "#b7791f");
-      ctx.globalAlpha = predicted === actual ? 0.9 : 0.35;
+      const kind = actual && predicted ? "TP" : !actual && predicted ? "FP" : actual ? "FN" : "TN";
+      const colors = {
+        TP: css("--viz-step", "#0f766e"),
+        FP: css("--viz-key", "#c0564a"),
+        FN: css("--viz-start", "#b7791f"),
+        TN: css("--viz-accent2", "#3b82c4")
+      };
+      ctx.fillStyle = colors[kind];
+      ctx.globalAlpha = 0.88;
       ctx.beginPath();
-      ctx.arc(left + x / 100 * (right - left), bottom - y / 100 * (bottom - top), 5, 0, Math.PI * 2);
+      const px = left + x / 100 * (right - left);
+      const py = bottom - y / 100 * (bottom - top);
+      if (kind === "FP" || kind === "FN") {
+        ctx.rect(px - 4.5, py - 4.5, 9, 9);
+      } else {
+        ctx.arc(px, py, 5, 0, Math.PI * 2);
+      }
       ctx.fill();
       ctx.globalAlpha = 1;
     });
-    ctx.strokeStyle = css("--coral", "#c0564a");
+    ctx.strokeStyle = css("--viz-key", "#c0564a");
     ctx.lineWidth = 4;
     ctx.beginPath();
     ctx.moveTo(left, bottom - Math.max(0, Math.min(100, modelBoundary(0))) / 100 * (bottom - top));
     ctx.lineTo(right, bottom - Math.max(0, Math.min(100, modelBoundary(100))) / 100 * (bottom - top));
     ctx.stroke();
+    ctx.fillStyle = css("--muted", "#5b6965");
+    ctx.font = "12px sans-serif";
+    [["TP 正しく陽性", "--viz-step", 620, 88], ["FP 誤検出", "--viz-key", 620, 110], ["FN 見逃し", "--viz-start", 620, 132], ["TN 正しく陰性", "--viz-accent2", 620, 154]].forEach(([label, token, x, y]) => {
+      ctx.fillStyle = css(token, "#0f766e");
+      ctx.fillRect(x, y - 10, 14, 14);
+      ctx.fillStyle = css("--muted", "#5b6965");
+      ctx.fillText(label, x + 20, y + 2);
+    });
     const precision = tp / Math.max(tp + fp, 1);
     const recall = tp / Math.max(tp + fn, 1);
     const f1 = 2 * precision * recall / Math.max(precision + recall, 0.0001);
@@ -269,6 +313,7 @@
     let nodes = "";
     layers.forEach((layer, i) => {
       const x = xs[i];
+      const fill = i === 0 ? "var(--viz-start)" : i === layers.length - 1 ? "var(--viz-key)" : "var(--viz-step)";
       const gap = 300 / Math.max(layer.units - 1, 1);
       const startY = 105 + (maxUnits - layer.units) * (300 / Math.max(maxUnits - 1, 1)) / 2;
       for (let u = 0; u < layer.units; u += 1) {
@@ -283,10 +328,10 @@
             edges += `<line x1="${x}" y1="${y}" x2="${nx}" y2="${ny}" stroke="var(--line)" stroke-opacity="0.55"/>`;
           }
         }
-        nodes += `<circle cx="${x}" cy="${y}" r="15" fill="var(--accent)"/><text x="${x}" y="${y + 36}" text-anchor="middle" font-size="12" fill="currentColor">${escapeSvg(layer.name)}</text>`;
+        nodes += `<circle cx="${x}" cy="${y}" r="15" fill="${fill}" stroke="var(--surface)" stroke-width="2"/><text x="${x}" y="${y + 36}" text-anchor="middle" font-size="12" fill="currentColor">${escapeSvg(layer.name)}</text>`;
       }
     });
-    out.svg.innerHTML = `<svg viewBox="0 0 900 470" role="img" aria-label="ニューラルネットワーク構造図"><rect x="1" y="1" width="898" height="468" rx="8" fill="transparent" stroke="var(--line)"/><text x="40" y="46" font-size="22" fill="currentColor">${escapeSvg(spec.title || "層構造")}</text>${edges}${nodes}</svg>`;
+    out.svg.innerHTML = `<svg viewBox="0 0 900 470" role="img" aria-label="ニューラルネットワーク構造図"><rect x="1" y="1" width="898" height="468" rx="8" fill="transparent" stroke="var(--line)"/><text x="40" y="46" font-size="22" fill="currentColor">${escapeSvg(spec.title || "層構造")}</text>${legendSvg([{ label: "入力層", color: "var(--viz-start)" }, { label: "隠れ層・処理", color: "var(--viz-step)" }, { label: "出力層", color: "var(--viz-key)" }])}${edges}${nodes}</svg>`;
     metric(out.metrics, "層", layers.map((l) => `${l.name}:${l.units}`).join(" / "));
     metric(out.metrics, "凡例", "線は重み接続、丸はユニット");
   };
@@ -325,14 +370,21 @@
     out.canvas.style.display = "none";
     out.svg.classList.add("is-active");
     const steps = spec.steps || [];
+    const emphasis = Number.isInteger(spec.emphasis) ? spec.emphasis : steps.length - 1;
     const boxes = steps.map((step, index) => {
-      const x = 95 + index * (710 / Math.max(steps.length - 1, 1));
-      const line = index < steps.length - 1 ? `<line x1="${x + 58}" y1="215" x2="${95 + (index + 1) * (710 / Math.max(steps.length - 1, 1)) - 58}" y2="215" stroke="var(--line)" stroke-width="3"/>` : "";
-      const label = flowTspans(step.label || step, x, 198, 7, 2);
-      const note = flowTspans(step.note || `Step ${index + 1}`, x, 232, 9, 2);
-      return `${line}<rect x="${x - 58}" y="168" width="116" height="94" rx="8" fill="var(--surface-strong)" stroke="var(--line)"/><text text-anchor="middle" font-size="13" fill="currentColor">${label}</text><text text-anchor="middle" font-size="11" fill="currentColor">${note}</text>`;
+      const x = 100 + index * (700 / Math.max(steps.length - 1, 1));
+      const nextX = 100 + (index + 1) * (700 / Math.max(steps.length - 1, 1));
+      const line = index < steps.length - 1 ? `<line x1="${x + 66}" y1="215" x2="${nextX - 72}" y2="215" stroke="var(--line)" stroke-width="3" marker-end="url(#flowArrow)"/>` : "";
+      const isStart = index === 0;
+      const isEnd = index === steps.length - 1;
+      const isEmphasis = index === emphasis;
+      const fill = isStart ? "var(--viz-start-soft)" : isEnd || isEmphasis ? "var(--viz-key-soft)" : "var(--viz-step-soft)";
+      const stroke = isStart ? "var(--viz-start)" : isEnd || isEmphasis ? "var(--viz-key)" : "var(--viz-step)";
+      const label = flowTspans(step.label || step, x, 196, 8, 2);
+      const note = flowTspans(step.note || (isStart ? "起点" : isEnd ? "結論" : `Step ${index + 1}`), x, 233, 10, 2);
+      return `${line}<rect x="${x - 66}" y="162" width="132" height="108" rx="8" fill="${fill}" stroke="${stroke}" stroke-width="${isEmphasis ? 3 : 2}"/><circle cx="${x - 45}" cy="181" r="13" fill="${stroke}"/><text x="${x - 45}" y="186" text-anchor="middle" font-size="12" fill="#fff">${index + 1}</text><text text-anchor="middle" font-size="14" font-weight="700" fill="currentColor">${label}</text><text text-anchor="middle" font-size="11" fill="currentColor">${note}</text>`;
     }).join("");
-    out.svg.innerHTML = `<svg viewBox="0 0 900 430" role="img" aria-label="判断フロー"><rect x="1" y="1" width="898" height="428" rx="8" fill="transparent" stroke="var(--line)"/><text x="40" y="50" font-size="22" fill="currentColor">${escapeSvg(spec.title || "判断フロー")}</text><text x="40" y="80" font-size="13" fill="currentColor">左から右へ、確認順に読む</text>${boxes}</svg>`;
+    out.svg.innerHTML = `<svg viewBox="0 0 900 430" role="img" aria-label="判断フロー"><defs><marker id="flowArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="var(--line)"/></marker></defs><rect x="1" y="1" width="898" height="428" rx="8" fill="transparent" stroke="var(--line)"/><text x="40" y="50" font-size="22" fill="currentColor">${escapeSvg(spec.title || "判断フロー")}</text><text x="40" y="80" font-size="13" fill="currentColor">番号と矢印に沿って、起点から結論まで読む</text>${legendSvg([{ label: "起点", color: "var(--viz-start-soft)", stroke: "var(--viz-start)" }, { label: "処理・確認", color: "var(--viz-step-soft)", stroke: "var(--viz-step)" }, { label: "強調・結論", color: "var(--viz-key-soft)", stroke: "var(--viz-key)" }], 608, 48)}${boxes}</svg>`;
     metric(out.metrics, "ステップ数", steps.length);
     metric(out.metrics, "表現", "順序・判断手順");
   };

@@ -51,7 +51,8 @@
 
           <section class="lesson-section">
             <h3>本文解説</h3>
-            <p>層の入力分布を整えることで学習を安定させる考え方を学ぶ。</p><p>確認問題では、【正解の理由】バッチ正規化（Batch Normalization）は各層の入力をミニバッチ単位で正規化し、内部の分布変動を抑えて学習率を上げやすく収束を速める。【各選択肢】②ドロップアウトは過学習抑制、③L2は重み罰則、④勾配クリッピングは勾配爆発対策。【関連】副次的に過学習を抑える効果もある。</p><p>別の出題では、ランダムフォレストはブートストラップ（バギング）＋特徴量のランダム選択で木に多様性を持たせ、平均/多数決で分散を下げる。木同士の相関を減らすことが汎化性能の鍵。</p>
+            <p>層の入力分布を整えることで学習を安定させる考え方を学ぶ。</p><p>確認問題では、【正解の理由】<strong class="term">バッチ正規化</strong>（Batch Normalization）は各層の入力をミニバッチ単位で正規化し、内部の分布変動を抑えて学習率を上げやすく収束を速める。【各選択肢】②ドロップアウトは過学習抑制、③L2は重み罰則、④勾配クリッピングは勾配爆発対策。【関連】副次的に過学習を抑える効果もある。</p><p>別の出題では、ランダムフォレストはブートストラップ（バギング）＋特徴量のランダム選択で木に多様性を持たせ、<strong class="term">平均</strong>/多数決で<strong class="term">分散</strong>を下げる。木同士の相関を減らすことが汎化性能の鍵。</p>
+            <aside class="callout callout--exam"><strong>試験で頻出</strong><p><strong class="term">バッチ正規化</strong>は、定義だけでなく「どの場面で使うか」「似た用語と何が違うか」をセットで確認します。</p></aside>
           </section>
 
           <section class="lesson-section visual-lesson" aria-labelledby="visualTitle">
@@ -74,6 +75,7 @@
             <div class="quiz-actions">
               <button class="primary-button" type="button" id="gradeLessonQuiz">採点する</button>
               <button class="ghost-button" type="button" id="completeLesson">このページを完了</button>
+              <a class="ghost-button lesson-next-link" id="lessonNextLink" href="../../chapters/dl-elements/fully-connected.html">次のページへ</a>
             </div>
             <p class="quiz-result" id="lessonQuizResult" aria-live="polite"></p>
             <p class="progress-state">進捗: <strong id="lessonProgressState">未完了</strong></p>

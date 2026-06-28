@@ -51,7 +51,8 @@
 
           <section class="lesson-section">
             <h3>本文解説</h3>
-            <p>活性化関数が非線形な表現を可能にする理由を整理する。</p><p>確認問題では、活性化が線形だと多層を重ねても結局1つの線形変換に潰れるため、非線形性が不可欠。ReLU等で非線形性を入れることで複雑な関数を近似できる。深層化の意味を支える基本原理。</p><p>別の出題では、【正解の理由】ReLUは正領域で勾配が1のため勾配消失が起きにくく計算も軽い。【各選択肢】②シグモイドは飽和して勾配消失を招きやすい、③ステップ関数は微分が0で逆伝播不可、④恒等関数は非線形性を持たない。【関連】負側が常に0で学習が止まる「死んだReLU」対策にLeaky ReLU等。重み初期化はHeが相性良い。</p>
+            <p>活性化関数が非線形な表現を可能にする理由を整理する。</p><p>確認問題では、活性化が線形だと多層を重ねても結局1つの線形変換に潰れるため、<strong class="term">非線形性</strong>が不可欠。<strong class="term">ReLU</strong>等で非線形性を入れることで複雑な関数を近似できる。深層化の意味を支える基本原理。</p><p>別の出題では、【正解の理由】<strong class="term">ReLU</strong>は正領域で勾配が1のため勾配消失が起きにくく計算も軽い。【各選択肢】②シグモイドは飽和して勾配消失を招きやすい、③ステップ関数は微分が0で逆伝播不可、④恒等関数は<strong class="term">非線形性</strong>を持たない。【関連】負側が常に0で学習が止まる「死んだReLU」対策にLeaky ReLU等。重み初期化はHeが相性良い。</p>
+            <aside class="callout callout--exam"><strong>試験で頻出</strong><p><strong class="term">ReLU</strong>は、定義だけでなく「どの場面で使うか」「似た用語と何が違うか」をセットで確認します。</p></aside>
           </section>
 
           <section class="lesson-section lesson-table-section" aria-labelledby="visualTitle">
@@ -73,6 +74,7 @@
             <div class="quiz-actions">
               <button class="primary-button" type="button" id="gradeLessonQuiz">採点する</button>
               <button class="ghost-button" type="button" id="completeLesson">このページを完了</button>
+              <a class="ghost-button lesson-next-link" id="lessonNextLink" href="../../chapters/dl-overview/loss-functions.html">次のページへ</a>
             </div>
             <p class="quiz-result" id="lessonQuizResult" aria-live="polite"></p>
             <p class="progress-state">進捗: <strong id="lessonProgressState">未完了</strong></p>

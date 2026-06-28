@@ -51,7 +51,8 @@
 
           <section class="lesson-section">
             <h3>本文解説</h3>
-            <p>分類性能を複数の指標で読み分ける。</p><p>確認問題では、不均衡データでは、多数派ばかり予測しても正解率が高く見えるため実力を反映しない。適合率・再現率・F値・AUCなどを併用する。</p><p>別の出題では、再現率（Recall）＝TP/(TP+FN)。実際の陽性をどれだけ拾えたか。適合率は予測陽性のうち本当に陽性だった割合。両者の調和平均がF値。</p>
+            <p>分類性能を複数の指標で読み分ける。</p><p>確認問題では、不均衡データでは、多数派ばかり予測しても<strong class="term">正解率</strong>が高く見えるため実力を反映しない。<strong class="term">適合率</strong>・再現率・F値・AUCなどを併用する。</p><p>別の出題では、<strong class="term">再現率</strong>（Recall）＝TP/(TP+FN)。実際の陽性をどれだけ拾えたか。<strong class="term">適合率</strong>は予測陽性のうち本当に陽性だった割合。両者の調和平均がF値。</p>
+            <aside class="callout callout--exam"><strong>試験で頻出</strong><p><strong class="term">正解率</strong>は、定義だけでなく「どの場面で使うか」「似た用語と何が違うか」をセットで確認します。</p></aside>
           </section>
 
           <section class="lesson-section visual-lesson" aria-labelledby="visualTitle">
@@ -74,6 +75,7 @@
             <div class="quiz-actions">
               <button class="primary-button" type="button" id="gradeLessonQuiz">採点する</button>
               <button class="ghost-button" type="button" id="completeLesson">このページを完了</button>
+              <a class="ghost-button lesson-next-link" id="lessonNextLink" href="../../chapters/ml-overview/confusion-matrix.html">次のページへ</a>
             </div>
             <p class="quiz-result" id="lessonQuizResult" aria-live="polite"></p>
             <p class="progress-state">進捗: <strong id="lessonProgressState">未完了</strong></p>

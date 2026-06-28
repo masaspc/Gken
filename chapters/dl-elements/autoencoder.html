@@ -51,7 +51,8 @@
 
           <section class="lesson-section">
             <h3>本文解説</h3>
-            <p>入力を圧縮し復元することで表現を学ぶ仕組みを理解する。</p><p>確認問題では、【正解の理由】オートエンコーダはエンコーダで圧縮（潜在表現）し、デコーダで復元する自己教師あり的な構造。復元誤差が大きい入力を異常とみなせる。【各選択肢】②③④は別目的。【関連】確率分布を学ぶ発展形がVAEで、潜在空間からの生成が可能。</p><p>別の出題では、【正解の理由】Transformerは自己注意で系列内の依存を一括計算でき、逐次処理のRNNより並列化に強く、長距離依存も捉えやすい。【各選択肢】②LSTM・③GRUは逐次のRNN系、④オートエンコーダは圧縮。【関連】エンコーダ型がBERT、デコーダ型がGPTの系譜。位置情報は位置エンコーディングで補う。</p>
+            <p>入力を圧縮し復元することで表現を学ぶ仕組みを理解する。</p><p>確認問題では、【正解の理由】<strong class="term">オート<strong class="term">エンコーダ</strong></strong>はエンコーダで圧縮（潜在表現）し、デコーダで復元する自己教師あり的な構造。復元誤差が大きい入力を異常とみなせる。【各選択肢】②③④は別目的。【関連】確率分布を学ぶ発展形がVAEで、潜在空間からの生成が可能。</p><p>別の出題では、【正解の理由】Transformerは自己注意で系列内の依存を一括計算でき、逐次処理のRNNより並列化に強く、長距離依存も捉えやすい。【各選択肢】②LSTM・③GRUは逐次のRNN系、④<strong class="term">オート<strong class="term">エンコーダ</strong></strong>は圧縮。【関連】エンコーダ型がBERT、デコーダ型がGPTの系譜。位置情報は位置エンコーディングで補う。</p>
+            <aside class="callout callout--exam"><strong>試験で頻出</strong><p><strong class="term">オート<strong class="term">エンコーダ</strong></strong>は、定義だけでなく「どの場面で使うか」「似た用語と何が違うか」をセットで確認します。</p></aside>
           </section>
 
           <section class="lesson-section visual-lesson static-visual-section" aria-labelledby="visualTitle">
@@ -71,6 +72,7 @@
             <div class="quiz-actions">
               <button class="primary-button" type="button" id="gradeLessonQuiz">採点する</button>
               <button class="ghost-button" type="button" id="completeLesson">このページを完了</button>
+              <a class="ghost-button lesson-next-link" id="lessonNextLink" href="../../chapters/dl-elements/data-augmentation.html">次のページへ</a>
             </div>
             <p class="quiz-result" id="lessonQuizResult" aria-live="polite"></p>
             <p class="progress-state">進捗: <strong id="lessonProgressState">未完了</strong></p>

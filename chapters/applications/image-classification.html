@@ -51,7 +51,8 @@
 
           <section class="lesson-section">
             <h3>本文解説</h3>
-            <p>画像タスクの種類を区別し、どの出力が必要かを整理する。</p><p>確認問題では、物体検出。代表手法にR-CNN系、YOLO、SSD。1枚に複数物体の位置とラベルを推定する。YOLOは高速な一段検出で知られる。</p><p>別の出題では、インスタンスセグメンテーション。「人A」「人B」を別個体として画素単位で分ける。代表手法はMask R-CNN。</p>
+            <p>画像タスクの種類を区別し、どの出力が必要かを整理する。</p><p>確認問題では、<strong class="term">物体検出</strong>。代表手法にR-<strong class="term">CNN</strong>系、YOLO、SSD。1枚に複数物体の位置とラベルを推定する。YOLOは高速な一段検出で知られる。</p><p>別の出題では、インスタンス<strong class="term">セグメンテーション</strong>。「人A」「人B」を別個体として画素単位で分ける。代表手法はMask R-<strong class="term">CNN</strong>。</p>
+            <aside class="callout callout--exam"><strong>試験で頻出</strong><p><strong class="term">画像分類</strong>は、定義だけでなく「どの場面で使うか」「似た用語と何が違うか」をセットで確認します。</p></aside>
           </section>
 
           <section class="lesson-section lesson-table-section" aria-labelledby="visualTitle">
@@ -73,6 +74,7 @@
             <div class="quiz-actions">
               <button class="primary-button" type="button" id="gradeLessonQuiz">採点する</button>
               <button class="ghost-button" type="button" id="completeLesson">このページを完了</button>
+              <a class="ghost-button lesson-next-link" id="lessonNextLink" href="../../chapters/applications/object-detection.html">次のページへ</a>
             </div>
             <p class="quiz-result" id="lessonQuizResult" aria-live="polite"></p>
             <p class="progress-state">進捗: <strong id="lessonProgressState">未完了</strong></p>

@@ -179,6 +179,7 @@ function lesson(slug, title, terms, focus, visualType, steps) {
     terms,
     focus: authored.focus || focus,
     explanation: authored.explanation || [],
+    callouts: authored.callouts || [],
     visual: visualFor(slug, title, visualType, authored.visual)
   };
 }
@@ -334,7 +335,8 @@ function lessonPage(chapter, item, index) {
 
           <section class="lesson-section">
             <h3>本文解説</h3>
-            ${explanation.map((paragraph) => `<p>${esc(paragraph)}</p>`).join("")}
+            ${explanation.map((paragraph) => `<p>${inlineText(paragraph, item.terms)}</p>`).join("")}
+            ${calloutFor(item)}
           </section>
 
 ${visualSection}
@@ -347,6 +349,7 @@ ${visualSection}
             <div class="quiz-actions">
               <button class="primary-button" type="button" id="gradeLessonQuiz">採点する</button>
               <button class="ghost-button" type="button" id="completeLesson">このページを完了</button>
+              ${next ? `<a class="ghost-button lesson-next-link" id="lessonNextLink" href="../../chapters/${next.chapter.slug}/${next.lesson.slug}.html">次のページへ</a>` : `<a class="ghost-button lesson-next-link" id="lessonNextLink" href="./index.html">章のトップへ</a>`}
             </div>
             <p class="quiz-result" id="lessonQuizResult" aria-live="polite"></p>
             <p class="progress-state">進捗: <strong id="lessonProgressState">未完了</strong></p>
@@ -426,6 +429,54 @@ function htmlTable(visual) {
                 <tbody>${rows.map((row) => `<tr>${columns.map((column, index) => `<td>${esc(Array.isArray(row) ? row[index] : row[column] || "")}</td>`).join("")}</tr>`).join("")}</tbody>
               </table>
             </div>`;
+}
+
+function calloutFor(item) {
+  const authored = Array.isArray(item.callouts) ? item.callouts : [];
+  const callouts = authored.length ? authored : [{
+    type: "exam",
+    label: "試験で頻出",
+    text: `${item.terms[0]}は、定義だけでなく「どの場面で使うか」「似た用語と何が違うか」をセットで確認します。`
+  }];
+  return callouts.slice(0, 2).map((callout) => {
+    const type = callout.type || "point";
+    const label = callout.label || (type === "exam" ? "試験で頻出" : "ポイント");
+    return `<aside class="callout callout--${esc(type)}"><strong>${esc(label)}</strong><p>${inlineText(callout.text || "", item.terms)}</p></aside>`;
+  }).join("");
+}
+
+function inlineText(value, terms = []) {
+  let html = esc(value).replace(/\*\*([^*]+)\*\*/g, "<mark class=\"hl\">$1</mark>");
+  const used = new Set();
+  terms.filter(Boolean).slice(0, 4).forEach((term) => {
+    if (used.size >= 2) return;
+    const escaped = esc(term);
+    if (!escaped || used.has(escaped)) return;
+    const next = replaceFirstText(html, escaped, `<strong class="term">${escaped}</strong>`);
+    if (next !== html) {
+      html = next;
+      used.add(escaped);
+    }
+  });
+  return html;
+}
+
+function replaceFirstText(html, needle, replacement) {
+  const parts = String(html).split(/(<[^>]+>)/g);
+  const target = escapeRegExp(needle);
+  for (let i = 0; i < parts.length; i += 1) {
+    if (parts[i].startsWith("<")) continue;
+    const next = parts[i].replace(new RegExp(target), replacement);
+    if (next !== parts[i]) {
+      parts[i] = next;
+      return parts.join("");
+    }
+  }
+  return html;
+}
+
+function escapeRegExp(value) {
+  return String(value).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
 function quizFor(item, chapter) {

@@ -51,7 +51,8 @@
 
           <section class="lesson-section">
             <h3>本文解説</h3>
-            <p>音声を時間変化する信号として扱う考え方を学ぶ。</p><p>確認問題では、【正解の理由】音声認識は音声波形を文字列に変換する処理で、特徴量にメル周波数ケプストラム係数（MFCC）等を用い、HMM→深層学習（RNN/Transformer）へ発展した。【各選択肢】②音声合成は逆方向（文字→音声）、③話者識別は誰が話したか、④感情分析はテキストの感情判定。</p><p>別の出題では、WaveNet。DeepMindが開発した音声波形の生成モデルで、高品質な音声合成（TTS）を実現した。</p>
+            <p>音声を時間変化する信号として扱う考え方を学ぶ。</p><p>確認問題では、【正解の理由】<strong class="term">音声認識</strong>は音声波形を文字列に変換する処理で、特徴量にメル周波数ケプストラム係数（MFCC）等を用い、HMM→深層学習（RNN/Transformer）へ発展した。【各選択肢】②<strong class="term">音声合成</strong>は逆方向（文字→音声）、③話者識別は誰が話したか、④感情分析はテキストの感情判定。</p><p>別の出題では、WaveNet。DeepMindが開発した音声<strong class="term">波形</strong>の生成モデルで、高品質な<strong class="term">音声合成</strong>（TTS）を実現した。</p>
+            <aside class="callout callout--exam"><strong>試験で頻出</strong><p><strong class="term">音声認識</strong>は、定義だけでなく「どの場面で使うか」「似た用語と何が違うか」をセットで確認します。</p></aside>
           </section>
 
           <section class="lesson-section visual-lesson" aria-labelledby="visualTitle">
@@ -74,6 +75,7 @@
             <div class="quiz-actions">
               <button class="primary-button" type="button" id="gradeLessonQuiz">採点する</button>
               <button class="ghost-button" type="button" id="completeLesson">このページを完了</button>
+              <a class="ghost-button lesson-next-link" id="lessonNextLink" href="../../chapters/applications/deep-rl.html">次のページへ</a>
             </div>
             <p class="quiz-result" id="lessonQuizResult" aria-live="polite"></p>
             <p class="progress-state">進捗: <strong id="lessonProgressState">未完了</strong></p>

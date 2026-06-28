@@ -51,7 +51,8 @@
 
           <section class="lesson-section">
             <h3>本文解説</h3>
-            <p>混同行列から評価指標が計算される関係を学ぶ。</p><p>確認問題では、【計算】正解率＝(TP+TN)/全体＝(45+35)/(45+5+15+35)＝80/100＝0.80（80%）。【ポイント】全体のうち正しく判定できた割合。クラスが不均衡だと正解率だけでは不十分なので、適合率・再現率・F値も併せて確認する。</p><p>別の出題では、再現率（Recall）＝TP/(TP+FN)。実際の陽性をどれだけ拾えたか。適合率は予測陽性のうち本当に陽性だった割合。両者の調和平均がF値。</p>
+            <p>混同行列から評価指標が計算される関係を学ぶ。</p><p>確認問題では、【計算】<strong class="term">正解率</strong>＝(TP+TN)/全体＝(45+35)/(45+5+15+35)＝80/100＝0.80（80%）。【ポイント】全体のうち正しく判定できた割合。クラスが不均衡だと正解率だけでは不十分なので、<strong class="term">適合率</strong>・再現率・F値も併せて確認する。</p><p>別の出題では、<strong class="term">再現率</strong>（Recall）＝TP/(TP+FN)。実際の陽性をどれだけ拾えたか。<strong class="term">適合率</strong>は予測陽性のうち本当に陽性だった割合。両者の調和平均がF値。</p>
+            <aside class="callout callout--exam"><strong>試験で頻出</strong><p><strong class="term">正解率</strong>は、定義だけでなく「どの場面で使うか」「似た用語と何が違うか」をセットで確認します。</p></aside>
           </section>
 
           <section class="lesson-section visual-lesson" aria-labelledby="visualTitle">
@@ -74,6 +75,7 @@
             <div class="quiz-actions">
               <button class="primary-button" type="button" id="gradeLessonQuiz">採点する</button>
               <button class="ghost-button" type="button" id="completeLesson">このページを完了</button>
+              <a class="ghost-button lesson-next-link" id="lessonNextLink" href="../../chapters/math-stats/sampling.html">次のページへ</a>
             </div>
             <p class="quiz-result" id="lessonQuizResult" aria-live="polite"></p>
             <p class="progress-state">進捗: <strong id="lessonProgressState">未完了</strong></p>

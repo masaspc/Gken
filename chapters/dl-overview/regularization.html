@@ -51,7 +51,8 @@
 
           <section class="lesson-section">
             <h3>本文解説</h3>
-            <p>過学習を抑えるための工夫を比較し、どの場面で効くかを考える。</p><p>確認問題では、代表的な正則化はL1/L2（重み減衰）・ドロップアウト・早期終了・データ拡張など。いずれもモデルの自由度を実質的に制限し汎化を高める。手段を整理して覚えると応用が利く。</p><p>別の出題では、L1正則化（ラッソ）は重みを0にしやすくスパースな（特徴選択された）モデルを得やすい。L2（リッジ）は重みを全体的に小さくする。</p>
+            <p>過学習を抑えるための工夫を比較し、どの場面で効くかを考える。</p><p>確認問題では、代表的な<strong class="term">正則化</strong>は<strong class="term">L1</strong>/L2（重み減衰）・ドロップアウト・早期終了・データ拡張など。いずれもモデルの自由度を実質的に制限し汎化を高める。手段を整理して覚えると応用が利く。</p><p>別の出題では、<strong class="term">L1</strong><strong class="term">正則化</strong>（ラッソ）は重みを0にしやすくスパースな（特徴選択された）モデルを得やすい。L2（リッジ）は重みを全体的に小さくする。</p>
+            <aside class="callout callout--exam"><strong>試験で頻出</strong><p><strong class="term">正則化</strong>は、定義だけでなく「どの場面で使うか」「似た用語と何が違うか」をセットで確認します。</p></aside>
           </section>
 
           <section class="lesson-section lesson-table-section" aria-labelledby="visualTitle">
@@ -73,6 +74,7 @@
             <div class="quiz-actions">
               <button class="primary-button" type="button" id="gradeLessonQuiz">採点する</button>
               <button class="ghost-button" type="button" id="completeLesson">このページを完了</button>
+              <a class="ghost-button lesson-next-link" id="lessonNextLink" href="../../chapters/dl-overview/batch-normalization.html">次のページへ</a>
             </div>
             <p class="quiz-result" id="lessonQuizResult" aria-live="polite"></p>
             <p class="progress-state">進捗: <strong id="lessonProgressState">未完了</strong></p>

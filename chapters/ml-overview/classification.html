@@ -51,7 +51,8 @@
 
           <section class="lesson-section">
             <h3>本文解説</h3>
-            <p>カテゴリを予測する課題で、境界の動かし方が誤分類に与える影響を見る。</p><p>確認問題では、【正解の理由】ロジスティック回帰は線形結合をシグモイドに通して確率を出し、しきい値で2クラスに分類する。名前は回帰だが用途は分類。【各選択肢】②線形回帰は連続値の予測、③PCAは次元削減、④k-meansはクラスタリング。【覚え方】「ロジスティック回帰＝分類」「線形回帰＝数値予測」を混同しない。</p><p>別の出題では、迷惑メール判定は分類（スパム/非スパムの離散クラス）。気温・価格・株価のように連続値を予測するのは回帰。</p>
+            <p>カテゴリを予測する課題で、境界の動かし方が誤<strong class="term">分類</strong>に与える影響を見る。</p><p>確認問題では、【正解の理由】ロジスティック回帰は線形結合をシグモイドに通して確率を出し、しきい値で2<strong class="term">クラス</strong>に<strong class="term">分類</strong>する。名前は回帰だが用途は分類。【各選択肢】②線形回帰は連続値の予測、③PCAは次元削減、④k-meansはクラスタリング。【覚え方】「ロジスティック回帰＝分類」「線形回帰＝数値予測」を混同しない。</p><p>別の出題では、迷惑メール判定は<strong class="term">分類</strong>（スパム/非スパムの離散<strong class="term">クラス</strong>）。気温・価格・株価のように連続値を予測するのは回帰。</p>
+            <aside class="callout callout--exam"><strong>試験で頻出</strong><p><strong class="term">分類</strong>は、定義だけでなく「どの場面で使うか」「似た用語と何が違うか」をセットで確認します。</p></aside>
           </section>
 
           <section class="lesson-section visual-lesson" aria-labelledby="visualTitle">
@@ -74,6 +75,7 @@
             <div class="quiz-actions">
               <button class="primary-button" type="button" id="gradeLessonQuiz">採点する</button>
               <button class="ghost-button" type="button" id="completeLesson">このページを完了</button>
+              <a class="ghost-button lesson-next-link" id="lessonNextLink" href="../../chapters/ml-overview/unsupervised-learning.html">次のページへ</a>
             </div>
             <p class="quiz-result" id="lessonQuizResult" aria-live="polite"></p>
             <p class="progress-state">進捗: <strong id="lessonProgressState">未完了</strong></p>

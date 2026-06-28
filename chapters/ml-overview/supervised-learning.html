@@ -51,7 +51,8 @@
 
           <section class="lesson-section">
             <h3>本文解説</h3>
-            <p>正解付きデータから入力と出力の対応を学ぶ仕組みを理解する。</p><p>確認問題では、正解ラベルを使わずデータの構造を見つけるクラスタリングが教師なし。スパム分類・回帰・ラベル付き画像分類はいずれも正解（教師信号）を使う教師あり学習。学習の種類（教師あり/なし/強化/自己教師）の切り分けは頻出。</p><p>別の出題では、自己教師あり学習（Self-Supervised Learning）。マスク予測など、データから擬似的な正解を作って学ぶ。大規模言語モデルや基盤モデルの事前学習を支える。</p>
+            <p>正解付きデータから入力と出力の対応を学ぶ仕組みを理解する。</p><p>確認問題では、正解<strong class="term">ラベル</strong>を使わずデータの構造を見つけるクラスタリングが教師なし。スパム分類・回帰・ラベル付き画像分類はいずれも正解（教師信号）を使う<strong class="term">教師あり学習</strong>。学習の種類（教師あり/なし/強化/自己教師）の切り分けは頻出。</p><p>別の出題では、自己<strong class="term">教師あり学習</strong>（Self-Supervised Learning）。マスク<strong class="term">予測</strong>など、データから擬似的な正解を作って学ぶ。大規模言語モデルや基盤モデルの事前学習を支える。</p>
+            <aside class="callout callout--exam"><strong>試験で頻出</strong><p><strong class="term">教師あり学習</strong>は、定義だけでなく「どの場面で使うか」「似た用語と何が違うか」をセットで確認します。</p></aside>
           </section>
 
           <section class="lesson-section lesson-table-section" aria-labelledby="visualTitle">
@@ -73,6 +74,7 @@
             <div class="quiz-actions">
               <button class="primary-button" type="button" id="gradeLessonQuiz">採点する</button>
               <button class="ghost-button" type="button" id="completeLesson">このページを完了</button>
+              <a class="ghost-button lesson-next-link" id="lessonNextLink" href="../../chapters/ml-overview/regression.html">次のページへ</a>
             </div>
             <p class="quiz-result" id="lessonQuizResult" aria-live="polite"></p>
             <p class="progress-state">進捗: <strong id="lessonProgressState">未完了</strong></p>

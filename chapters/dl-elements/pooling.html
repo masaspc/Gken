@@ -51,7 +51,8 @@
 
           <section class="lesson-section">
             <h3>本文解説</h3>
-            <p>特徴マップを圧縮し、位置ずれに強くする働きを学ぶ。</p><p>確認問題では、CNNは畳み込み層で局所特徴を捉え、プーリング層で位置ずれに頑健にしつつ次元を縮小する。画像系タスクの標準。</p><p>別の出題では、【正解の理由】CNNは畳み込み層で局所特徴（エッジ等）を抽出し、プーリング層で縮小して移動不変性を持たせる画像向けの構造。【各選択肢】②RNNは系列、③GANは生成、④オートエンコーダは圧縮・再構成。【関連】畳み込みは「局所結合＋重み共有」でパラメータを削減できる点が利点。</p>
+            <p>特徴マップを圧縮し、<strong class="term">位置ずれ</strong>に強くする働きを学ぶ。</p><p>確認問題では、CNNは畳み込み層で局所特徴を捉え、<strong class="term">プーリング</strong>層で<strong class="term">位置ずれ</strong>に頑健にしつつ次元を縮小する。画像系タスクの標準。</p><p>別の出題では、【正解の理由】CNNは畳み込み層で局所特徴（エッジ等）を抽出し、<strong class="term">プーリング</strong>層で縮小して移動不変性を持たせる画像向けの構造。【各選択肢】②RNNは系列、③GANは生成、④オートエンコーダは圧縮・再構成。【関連】畳み込みは「局所結合＋重み共有」でパラメータを削減できる点が利点。</p>
+            <aside class="callout callout--exam"><strong>試験で頻出</strong><p><strong class="term">プーリング</strong>は、定義だけでなく「どの場面で使うか」「似た用語と何が違うか」をセットで確認します。</p></aside>
           </section>
 
           <section class="lesson-section lesson-table-section" aria-labelledby="visualTitle">
@@ -73,6 +74,7 @@
             <div class="quiz-actions">
               <button class="primary-button" type="button" id="gradeLessonQuiz">採点する</button>
               <button class="ghost-button" type="button" id="completeLesson">このページを完了</button>
+              <a class="ghost-button lesson-next-link" id="lessonNextLink" href="../../chapters/dl-elements/normalization-layer.html">次のページへ</a>
             </div>
             <p class="quiz-result" id="lessonQuizResult" aria-live="polite"></p>
             <p class="progress-state">進捗: <strong id="lessonProgressState">未完了</strong></p>

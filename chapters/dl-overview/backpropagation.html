@@ -51,7 +51,8 @@
 
           <section class="lesson-section">
             <h3>本文解説</h3>
-            <p>出力側の誤差を前の層へ伝え、重みを更新する流れを追う。</p><p>確認問題では、誤差逆伝播法（バックプロパゲーション）。連鎖律で各重みの勾配を効率的に求め、勾配降下法で更新する。ニューラルネット学習の基盤。</p><p>別の出題では、【正解の理由】誤差逆伝播法（バックプロパゲーション）は連鎖律で出力層から入力層へ勾配を伝え、各層の重みを勾配降下で更新する。【各選択肢】②PCAは次元削減、③は探索、④は最適化の別手法。【関連】層が深いと勾配消失が起き、ReLUやバッチ正規化で緩和する。多層NN学習の中核。</p>
+            <p>出力側の誤差を前の層へ伝え、重みを更新する流れを追う。</p><p>確認問題では、<strong class="term">誤差逆伝播法</strong>（バックプロパゲーション）。連鎖律で各重みの<strong class="term">勾配</strong>を効率的に求め、勾配降下法で更新する。ニューラルネット学習の基盤。</p><p>別の出題では、【正解の理由】<strong class="term">誤差逆伝播法</strong>（バックプロパゲーション）は連鎖律で出力層から入力層へ<strong class="term">勾配</strong>を伝え、各層の重みを勾配降下で更新する。【各選択肢】②PCAは次元削減、③は探索、④は最適化の別手法。【関連】層が深いと勾配消失が起き、ReLUやバッチ正規化で緩和する。多層NN学習の中核。</p>
+            <aside class="callout callout--exam"><strong>試験で頻出</strong><p><strong class="term">誤差逆伝播法</strong>は、定義だけでなく「どの場面で使うか」「似た用語と何が違うか」をセットで確認します。</p></aside>
           </section>
 
           <section class="lesson-section visual-lesson static-visual-section" aria-labelledby="visualTitle">
@@ -71,6 +72,7 @@
             <div class="quiz-actions">
               <button class="primary-button" type="button" id="gradeLessonQuiz">採点する</button>
               <button class="ghost-button" type="button" id="completeLesson">このページを完了</button>
+              <a class="ghost-button lesson-next-link" id="lessonNextLink" href="../../chapters/dl-overview/gradient-descent.html">次のページへ</a>
             </div>
             <p class="quiz-result" id="lessonQuizResult" aria-live="polite"></p>
             <p class="progress-state">進捗: <strong id="lessonProgressState">未完了</strong></p>

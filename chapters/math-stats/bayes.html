@@ -51,7 +51,8 @@
 
           <section class="lesson-section">
             <h3>本文解説</h3>
-            <p>新しい証拠で判断を更新する流れを理解する。</p><p>確認問題では、ベイズの定理は事前確率を観測（尤度）で更新して事後確率を得る枠組み。P(原因|結果)∝P(結果|原因)×P(原因)。ナイーブベイズやベイズ最適化、スパムフィルタなどの土台で、『情報を得て信念を更新する』考え方として頻出。</p><p>別の出題では、ナイーブベイズ。特徴量同士が独立という“素朴な”仮定を置くことで計算を単純化する確率的分類器。仮定は厳密には成り立たなくても、スパム判定など実務で高い性能を示すことが多い。ベイズの定理（事前確率→事後確率）が基礎。</p>
+            <p>新しい証拠で判断を更新する流れを理解する。</p><p>確認問題では、<strong class="term">ベイズ</strong>の定理は<strong class="term">事前確率</strong>を観測（尤度）で更新して事後確率を得る枠組み。P(原因|結果)∝P(結果|原因)×P(原因)。ナイーブベイズやベイズ最適化、スパムフィルタなどの土台で、『情報を得て信念を更新する』考え方として頻出。</p><p>別の出題では、ナイーブ<strong class="term">ベイズ</strong>。特徴量同士が独立という“素朴な”仮定を置くことで計算を単純化する確率的分類器。仮定は厳密には成り立たなくても、スパム判定など実務で高い性能を示すことが多い。ベイズの定理（<strong class="term">事前確率</strong>→事後確率）が基礎。</p>
+            <aside class="callout callout--exam"><strong>試験で頻出</strong><p><strong class="term">ベイズ</strong>は、定義だけでなく「どの場面で使うか」「似た用語と何が違うか」をセットで確認します。</p></aside>
           </section>
 
           <section class="lesson-section visual-lesson static-visual-section" aria-labelledby="visualTitle">
@@ -71,6 +72,7 @@
             <div class="quiz-actions">
               <button class="primary-button" type="button" id="gradeLessonQuiz">採点する</button>
               <button class="ghost-button" type="button" id="completeLesson">このページを完了</button>
+              <a class="ghost-button lesson-next-link" id="lessonNextLink" href="../../chapters/math-stats/linear-algebra.html">次のページへ</a>
             </div>
             <p class="quiz-result" id="lessonQuizResult" aria-live="polite"></p>
             <p class="progress-state">進捗: <strong id="lessonProgressState">未完了</strong></p>

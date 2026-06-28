@@ -51,7 +51,8 @@
 
           <section class="lesson-section">
             <h3>本文解説</h3>
-            <p>不確実な出来事を数値で扱う基礎を学ぶ。</p><p>確認問題では、条件付き確率 P(B|A)。ベイズの定理やナイーブベイズの基礎。AとBが独立なら P(B|A)=P(B) となる。確率の基本概念で、機械学習の確率モデルを理解する土台。</p><p>別の出題では、各回は独立なので確率を掛ける：0.5×0.5＝0.25。独立事象は同時確率＝各確率の積。なお『少なくとも1回表』なら1−(0.5×0.5)＝0.75となる。</p>
+            <p>不確実な出来事を数値で扱う基礎を学ぶ。</p><p>確認問題では、条件付き<strong class="term">確率</strong> P(B|A)。ベイズの定理やナイーブベイズの基礎。AとBが<strong class="term">独立</strong>なら P(B|A)=P(B) となる。確率の基本概念で、機械学習の確率モデルを理解する土台。</p><p>別の出題では、各回は独立なので<strong class="term">確率</strong>を掛ける：0.5×0.5＝0.25。独立<strong class="term">事象</strong>は同時確率＝各確率の積。なお『少なくとも1回表』なら1−(0.5×0.5)＝0.75となる。</p>
+            <aside class="callout callout--exam"><strong>試験で頻出</strong><p><strong class="term">確率</strong>は、定義だけでなく「どの場面で使うか」「似た用語と何が違うか」をセットで確認します。</p></aside>
           </section>
 
           <section class="lesson-section lesson-table-section" aria-labelledby="visualTitle">
@@ -73,6 +74,7 @@
             <div class="quiz-actions">
               <button class="primary-button" type="button" id="gradeLessonQuiz">採点する</button>
               <button class="ghost-button" type="button" id="completeLesson">このページを完了</button>
+              <a class="ghost-button lesson-next-link" id="lessonNextLink" href="../../chapters/math-stats/bayes.html">次のページへ</a>
             </div>
             <p class="quiz-result" id="lessonQuizResult" aria-live="polite"></p>
             <p class="progress-state">進捗: <strong id="lessonProgressState">未完了</strong></p>

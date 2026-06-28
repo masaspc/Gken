@@ -136,6 +136,7 @@
       });
       const percent = Math.round((score / lesson.quiz.length) * 100);
       quizResult.textContent = `${score}/${lesson.quiz.length}問正解、${percent}%です。各問題の下に解説を表示しました。`;
+      document.getElementById("lessonNextLink")?.classList.add("is-ready");
     });
   }
 
@@ -157,6 +158,7 @@
       next[lesson.slug] = true;
       saveProgress(next);
       stateLabel.textContent = "完了済み";
+      document.getElementById("lessonNextLink")?.classList.add("is-ready");
     });
   }
 

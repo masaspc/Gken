@@ -51,7 +51,8 @@
 
           <section class="lesson-section">
             <h3>本文解説</h3>
-            <p>入力要素間の関連度を重みとして扱う仕組みをヒートマップで理解する。</p><p>確認問題では、Attention（注意機構）。系列内の関連性に応じて重みを割り当てる。自己注意（Self-Attention）はTransformerの中核。</p><p>別の出題では、Attention。固定長ベクトルに全入力を押し込むseq2seqの情報ボトルネックを解消し、出力ごとに入力の重要箇所へ重みを置く。これを推し進め再帰を排したのがTransformer。NLP性能向上の決定的アイデア。</p>
+            <p>入力要素間の関連度を重みとして扱う仕組みをヒートマップで理解する。</p><p>確認問題では、<strong class="term">Attention</strong>（注意機構）。系列内の関連性に応じて重みを割り当てる。自己注意（Self-Attention）はTransformerの中核。</p><p>別の出題では、<strong class="term">Attention</strong>。固定長ベクトルに全入力を押し込むseq2seqの情報ボトルネックを解消し、出力ごとに入力の重要箇所へ重みを置く。これを推し進め再帰を排したのがTransformer。NLP性能向上の決定的アイデア。</p>
+            <aside class="callout callout--exam"><strong>試験で頻出</strong><p><strong class="term">Attention</strong>は、定義だけでなく「どの場面で使うか」「似た用語と何が違うか」をセットで確認します。</p></aside>
           </section>
 
           <section class="lesson-section visual-lesson" aria-labelledby="visualTitle">
@@ -74,6 +75,7 @@
             <div class="quiz-actions">
               <button class="primary-button" type="button" id="gradeLessonQuiz">採点する</button>
               <button class="ghost-button" type="button" id="completeLesson">このページを完了</button>
+              <a class="ghost-button lesson-next-link" id="lessonNextLink" href="../../chapters/dl-elements/transformer.html">次のページへ</a>
             </div>
             <p class="quiz-result" id="lessonQuizResult" aria-live="polite"></p>
             <p class="progress-state">進捗: <strong id="lessonProgressState">未完了</strong></p>

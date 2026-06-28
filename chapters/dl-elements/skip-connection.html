@@ -51,7 +51,8 @@
 
           <section class="lesson-section">
             <h3>本文解説</h3>
-            <p>深いネットワークで情報を飛び越して伝える利点を学ぶ。</p><p>確認問題では、DenseNet。各層が前のすべての層の出力を受け取る密結合により、勾配消失を抑えパラメータ効率を高めた。残差接続（スキップ結合）で深層化を可能にしたResNetの発展形として位置づけられる。</p><p>別の出題では、残差接続は入力をそのまま足す経路を作り、勾配が深い層まで直接流れるため勾配消失を抑える。学習すべきは『残差（差分）』だけになり最適化も容易になる。100層超のネット実現の鍵。</p>
+            <p>深いネットワークで情報を飛び越して伝える利点を学ぶ。</p><p>確認問題では、DenseNet。各層が前のすべての層の出力を受け取る密結合により、勾配消失を抑えパラメータ効率を高めた。残差接続（<strong class="term">スキップ結合</strong>）で深層化を可能にした<strong class="term">ResNet</strong>の発展形として位置づけられる。</p><p>別の出題では、残差接続は入力をそのまま足す経路を作り、勾配が深い層まで直接流れるため<strong class="term">勾配消失</strong>を抑える。学習すべきは『残差（差分）』だけになり最適化も容易になる。100層超のネット実現の鍵。</p>
+            <aside class="callout callout--exam"><strong>試験で頻出</strong><p><strong class="term">スキップ結合</strong>は、定義だけでなく「どの場面で使うか」「似た用語と何が違うか」をセットで確認します。</p></aside>
           </section>
 
           <section class="lesson-section visual-lesson static-visual-section" aria-labelledby="visualTitle">
@@ -71,6 +72,7 @@
             <div class="quiz-actions">
               <button class="primary-button" type="button" id="gradeLessonQuiz">採点する</button>
               <button class="ghost-button" type="button" id="completeLesson">このページを完了</button>
+              <a class="ghost-button lesson-next-link" id="lessonNextLink" href="../../chapters/dl-elements/rnn.html">次のページへ</a>
             </div>
             <p class="quiz-result" id="lessonQuizResult" aria-live="polite"></p>
             <p class="progress-state">進捗: <strong id="lessonProgressState">未完了</strong></p>

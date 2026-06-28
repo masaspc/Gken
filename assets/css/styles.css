@@ -12,6 +12,15 @@
   --gold: #b7791f;
   --coral: #c0564a;
   --ink: #26344f;
+  --viz-start: #b7791f;
+  --viz-step: #0f766e;
+  --viz-key: #c0564a;
+  --viz-accent2: #3b82c4;
+  --viz-muted: #eef3f1;
+  --viz-start-soft: #fff4d6;
+  --viz-step-soft: #d9f3ef;
+  --viz-key-soft: #fae1dd;
+  --viz-accent2-soft: #dcecff;
   --shadow: 0 18px 50px rgba(22, 36, 31, 0.1);
   --content-max: 1480px;
   --lesson-max: 1520px;
@@ -32,6 +41,15 @@
   --gold: #f6c453;
   --coral: #f28b82;
   --ink: #b6c7f2;
+  --viz-start: #f6c453;
+  --viz-step: #5eead4;
+  --viz-key: #f28b82;
+  --viz-accent2: #93c5fd;
+  --viz-muted: #202b27;
+  --viz-start-soft: #3d3218;
+  --viz-step-soft: #163b37;
+  --viz-key-soft: #432321;
+  --viz-accent2-soft: #1f2f4d;
   --shadow: 0 18px 50px rgba(0, 0, 0, 0.32);
 }
 
@@ -640,6 +658,16 @@ main {
   margin-top: 1rem;
 }
 
+.lesson-next-link {
+  margin-left: auto;
+}
+
+.lesson-next-link.is-ready {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
 .quiz-result {
   min-height: 2rem;
   margin: 0.9rem 0 0;
@@ -772,6 +800,48 @@ main {
   max-width: var(--readable);
 }
 
+.term {
+  color: var(--accent-strong);
+  font-weight: 800;
+}
+
+mark.hl {
+  padding: 0 0.18em;
+  border-radius: 3px;
+  background: var(--accent-soft);
+  color: var(--text);
+}
+
+.callout {
+  max-width: var(--readable);
+  margin: 1rem 0 0;
+  padding: 0.9rem 1rem;
+  background: var(--viz-step-soft);
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--accent);
+  border-radius: 8px;
+}
+
+.callout strong {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: var(--accent-strong);
+}
+
+.callout p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.callout--exam {
+  background: var(--viz-start-soft);
+  border-left-color: var(--gold);
+}
+
+.callout--exam strong {
+  color: var(--gold);
+}
+
 .lesson-side {
   position: sticky;
   top: 5rem;
@@ -842,8 +912,23 @@ main {
   font-size: 0.92rem;
 }
 
+.lesson-table th:first-child,
+.lesson-table td:first-child {
+  background: var(--viz-step-soft);
+  color: var(--accent-strong);
+  font-weight: 800;
+}
+
 .lesson-table tr:nth-child(even) td {
   background: color-mix(in srgb, var(--surface-strong) 55%, var(--surface));
+}
+
+.lesson-table tr:nth-child(even) td:first-child {
+  background: var(--viz-step-soft);
+}
+
+.lesson-table tbody tr:hover td {
+  background: var(--viz-start-soft);
 }
 
 .lesson-table tr:last-child td {
@@ -1425,5 +1510,9 @@ main {
 
   .lesson-table {
     min-width: 680px;
+  }
+
+  .lesson-next-link {
+    margin-left: 0;
   }
 }
