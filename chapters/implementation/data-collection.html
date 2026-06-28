@@ -40,14 +40,6 @@
           <p>データ量だけでなく、質・偏り・利用条件を見る。</p>
           <div class="tag-list"><span class="tag">データ収集</span><span class="tag">サンプリング</span><span class="tag">偏り</span><span class="tag">同意</span></div>
 
-          <div class="lesson-status" id="lessonStatus" role="status" hidden>
-            <span class="lesson-status-icon" aria-hidden="true">✓</span>
-            <div class="lesson-status-text">
-              <strong>このレッスンは完了しました</strong>
-              <span>お疲れさまでした。次のページへ進めます。</span>
-            </div>
-          </div>
-
           <section class="lesson-section">
             <h3>学習目標</h3>
             <ul class="plain-list">
@@ -82,6 +74,13 @@
             <div class="quiz-actions">
               <button class="primary-button" type="button" id="gradeLessonQuiz">採点する</button>
               <a class="ghost-button lesson-next-link" id="lessonNextLink" href="../../chapters/implementation/data-preprocessing.html">次のページへ</a>
+            </div>
+            <div class="lesson-status" id="lessonStatus" role="status" hidden>
+              <span class="lesson-status-icon" aria-hidden="true">✓</span>
+              <div class="lesson-status-text">
+                <strong>このレッスンは完了しました</strong>
+                <span>お疲れさまでした。上の「次のページへ」から進めます。</span>
+              </div>
             </div>
             <p class="quiz-result" id="lessonQuizResult" aria-live="polite"></p>
             <p class="progress-state">進捗: <strong id="lessonProgressState">未完了</strong></p>

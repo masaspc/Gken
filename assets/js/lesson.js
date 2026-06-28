@@ -151,16 +151,9 @@
 
   function markComplete() {
     const next = progress();
-    const already = Boolean(next[lesson.slug]);
     next[lesson.slug] = true;
     saveProgress(next);
     renderCompletion(true);
-    if (!already) {
-      const banner = document.getElementById("lessonStatus");
-      if (banner && typeof banner.scrollIntoView === "function") {
-        banner.scrollIntoView({ behavior: "smooth", block: "center" });
-      }
-    }
   }
 
   function stripTags(value) {
