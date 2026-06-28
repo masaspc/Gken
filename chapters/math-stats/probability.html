@@ -40,6 +40,14 @@
           <p>不確実な出来事を数値で扱う基礎を学ぶ。</p>
           <div class="tag-list"><span class="tag">確率</span><span class="tag">条件付き確率</span><span class="tag">事象</span><span class="tag">独立</span></div>
 
+          <div class="lesson-status" id="lessonStatus" role="status" hidden>
+            <span class="lesson-status-icon" aria-hidden="true">✓</span>
+            <div class="lesson-status-text">
+              <strong>このレッスンは完了しました</strong>
+              <span>お疲れさまでした。次のページへ進めます。</span>
+            </div>
+          </div>
+
           <section class="lesson-section">
             <h3>学習目標</h3>
             <ul class="plain-list">
@@ -72,7 +80,7 @@
             </div>
             <div class="quiz-actions">
               <button class="primary-button" type="button" id="gradeLessonQuiz">採点する</button>
-              <button class="ghost-button" type="button" id="completeLesson">このページを完了</button>
+              <button class="ghost-button complete-button" type="button" id="completeLesson" aria-pressed="false">このページを完了にする</button>
               <a class="ghost-button lesson-next-link" id="lessonNextLink" href="../../chapters/math-stats/bayes.html">次のページへ</a>
             </div>
             <p class="quiz-result" id="lessonQuizResult" aria-live="polite"></p>

@@ -151,14 +151,33 @@
   function setupProgress() {
     const button = document.getElementById("completeLesson");
     const stateLabel = document.getElementById("lessonProgressState");
-    const current = progress();
-    if (current[lesson.slug]) stateLabel.textContent = "完了済み";
+    const banner = document.getElementById("lessonStatus");
+    const nextLink = document.getElementById("lessonNextLink");
+
+    function render(done) {
+      document.body.classList.toggle("lesson-done", done);
+      if (banner) banner.hidden = !done;
+      if (nextLink) nextLink.classList.toggle("is-ready", done);
+      if (stateLabel) stateLabel.textContent = done ? "完了済み" : "未完了";
+      if (button) {
+        button.classList.toggle("is-done", done);
+        button.setAttribute("aria-pressed", done ? "true" : "false");
+        button.textContent = done ? "✓ 完了済み（取り消す）" : "このページを完了にする";
+      }
+    }
+
+    render(Boolean(progress()[lesson.slug]));
+
     button?.addEventListener("click", () => {
       const next = progress();
-      next[lesson.slug] = true;
+      const done = !next[lesson.slug];
+      if (done) next[lesson.slug] = true;
+      else delete next[lesson.slug];
       saveProgress(next);
-      stateLabel.textContent = "完了済み";
-      document.getElementById("lessonNextLink")?.classList.add("is-ready");
+      render(done);
+      if (done && banner && typeof banner.scrollIntoView === "function") {
+        banner.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
     });
   }
 

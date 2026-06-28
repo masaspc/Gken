@@ -668,6 +668,57 @@ main {
   color: #fff;
 }
 
+.lesson-status {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin: 1.1rem 0 0;
+  padding: 0.9rem 1.1rem;
+  border: 1px solid color-mix(in srgb, #2e7d55 45%, var(--line));
+  border-left: 5px solid #2e7d55;
+  border-radius: 10px;
+  background: color-mix(in srgb, #2e7d55 12%, var(--surface));
+}
+
+.lesson-status[hidden] {
+  display: none;
+}
+
+.lesson-status-icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: 2.1rem;
+  height: 2.1rem;
+  border-radius: 999px;
+  background: #2e7d55;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 900;
+}
+
+.lesson-status-text {
+  display: grid;
+  gap: 0.1rem;
+}
+
+.lesson-status-text strong {
+  color: color-mix(in srgb, #2e7d55 75%, var(--text));
+  font-size: 1.02rem;
+}
+
+.lesson-status-text span {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.complete-button.is-done {
+  border-color: #2e7d55;
+  background: color-mix(in srgb, #2e7d55 16%, var(--surface));
+  color: color-mix(in srgb, #2e7d55 78%, var(--text));
+  font-weight: 800;
+}
+
 .quiz-result {
   min-height: 2rem;
   margin: 0.9rem 0 0;
