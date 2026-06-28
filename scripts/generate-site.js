@@ -523,6 +523,23 @@ function escapeRegExp(value) {
   return String(value).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
+function shuffleQuizOptions(quiz) {
+  quiz.forEach((q) => {
+    if (!Array.isArray(q.options) || q.options.length < 2) return;
+    const answer = q.answer;
+    for (let i = q.options.length - 1; i > 0; i -= 1) {
+      const j = Math.floor(Math.random() * (i + 1));
+      const tmp = q.options[i];
+      q.options[i] = q.options[j];
+      q.options[j] = tmp;
+    }
+    q.c = q.options;
+    q.a = q.options.indexOf(answer);
+    q.answer = answer;
+  });
+  return quiz;
+}
+
 function quizFor(item, chapter) {
   const curated = lessonQuizzes[item.slug];
   if (curated && ((curated.quizIds && curated.quizIds.length) || (curated.extra && curated.extra.length))) {
@@ -560,11 +577,11 @@ function quizFor(item, chapter) {
         explanation: ex.explanation
       });
     });
-    if (out.length) return out;
+    if (out.length) return shuffleQuizOptions(out);
   }
   const matches = matchingQuestions(item, chapter).slice(0, 3);
   if (matches.length) {
-    return matches.map((q, index) => ({
+    return shuffleQuizOptions(matches.map((q, index) => ({
       id: `${item.slug}-practice-${index}`,
       qid: q.id,
       cat: q.cat,
@@ -576,9 +593,9 @@ function quizFor(item, chapter) {
       options: q.c,
       answer: q.c[q.a],
       explanation: q.e
-    }));
+    })));
   }
-  return [{
+  return shuffleQuizOptions([{
     id: `${item.slug}-fallback`,
     prompt: `${item.title}について、最も適切な説明はどれですか。`,
     options: [
@@ -589,7 +606,7 @@ function quizFor(item, chapter) {
     ],
     answer: item.focus,
     explanation: item.focus
-  }];
+  }]);
 }
 
 function matchingQuestions(item, chapter) {
