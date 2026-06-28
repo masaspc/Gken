@@ -51,22 +51,21 @@
             <p>近いデータをまとめる方法を、中心点と距離の関係で理解する。</p><p>確認問題では、教師なし学習。クラスタリング（k-means）や次元削減（PCA）が代表。正解ラベルを使う教師あり学習、報酬で学ぶ強化学習と区別する。</p><p>別の出題では、k-meansは教師なしクラスタリング。各点を最寄りの重心に割り当て、重心更新を繰り返す。kNNは教師あり分類で別物。</p>
           </section>
 
-          <section class="lesson-section visual-lesson" aria-labelledby="visualTitle">
-            <h3 id="visualTitle">インタラクティブ図表</h3>
-            <div class="visual-workbench lesson-workbench">
-              <div class="control-panel" id="lessonControls"></div>
-              <div class="visual-output">
-                <canvas id="lessonCanvas" width="900" height="500" role="img" aria-label="クラスタリングのインタラクティブ図表"></canvas>
-                <div id="lessonSvg" class="svg-visual" aria-label="クラスタリングの構造図"></div>
-                <div class="visual-metrics lesson-metrics" id="lessonMetrics" aria-live="polite"></div>
-              </div>
+          <section class="lesson-section lesson-table-section" aria-labelledby="visualTitle">
+            <h3 id="visualTitle">論点の整理</h3>
+            <div class="lesson-table-wrap">
+              <table class="lesson-table">
+                <caption>クラスタリング: k-meansの考え方</caption>
+                <thead><tr><th scope="col">概念</th><th scope="col">意味</th><th scope="col">注意点</th></tr></thead>
+                <tbody><tr><td>クラスタ中心</td><td>各グループを代表する点</td><td>初期値で結果が変わることがある</td></tr><tr><td>距離</td><td>近さを測る基準</td><td>特徴量のスケールに影響される</td></tr><tr><td>クラスタ数k</td><td>いくつのグループに分けるか</td><td>業務目的や評価指標で決める</td></tr></tbody>
+              </table>
             </div>
           </section>
 
           <section class="lesson-section">
             <h3>確認問題</h3>
             <div class="quiz-area lesson-quiz">
-              <article class="quiz-card"><h4>Q1. 正解ラベルのないデータから構造やまとまりを見つける学習はどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="clustering-practice-0" value="教師あり学習"><span>教師あり学習</span></label><label class="quiz-option"><input type="radio" name="clustering-practice-0" value="教師なし学習"><span>教師なし学習</span></label><label class="quiz-option"><input type="radio" name="clustering-practice-0" value="強化学習"><span>強化学習</span></label><label class="quiz-option"><input type="radio" name="clustering-practice-0" value="転移学習"><span>転移学習</span></label></fieldset></article><article class="quiz-card"><h4>Q2. データを互いに近いもの同士のk個のグループに分ける教師なし手法はどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="clustering-practice-1" value="k-means（k平均法）"><span>k-means（k平均法）</span></label><label class="quiz-option"><input type="radio" name="clustering-practice-1" value="kNN（k近傍法）"><span>kNN（k近傍法）</span></label><label class="quiz-option"><input type="radio" name="clustering-practice-1" value="SVM"><span>SVM</span></label><label class="quiz-option"><input type="radio" name="clustering-practice-1" value="ロジスティック回帰"><span>ロジスティック回帰</span></label></fieldset></article><article class="quiz-card"><h4>Q3. k-meansで初期重心の置き方に依存して結果が変わる問題を緩和する、初期化の改良手法はどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="clustering-practice-2" value="k-means++"><span>k-means++</span></label><label class="quiz-option"><input type="radio" name="clustering-practice-2" value="エルボー法"><span>エルボー法</span></label><label class="quiz-option"><input type="radio" name="clustering-practice-2" value="階層的クラスタリング"><span>階層的クラスタリング</span></label><label class="quiz-option"><input type="radio" name="clustering-practice-2" value="主成分分析"><span>主成分分析</span></label></fieldset></article>
+              <article class="quiz-card" data-quiz-id="clustering-practice-0"><h4>Q1. 正解ラベルのないデータから構造やまとまりを見つける学習はどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="clustering-practice-0" value="教師あり学習"><span class="option-marker">A</span><span>教師あり学習</span></label><label class="quiz-option"><input type="radio" name="clustering-practice-0" value="教師なし学習"><span class="option-marker">B</span><span>教師なし学習</span></label><label class="quiz-option"><input type="radio" name="clustering-practice-0" value="強化学習"><span class="option-marker">C</span><span>強化学習</span></label><label class="quiz-option"><input type="radio" name="clustering-practice-0" value="転移学習"><span class="option-marker">D</span><span>転移学習</span></label></fieldset><div class="quiz-feedback" data-feedback-for="clustering-practice-0" aria-live="polite"></div></article><article class="quiz-card" data-quiz-id="clustering-practice-1"><h4>Q2. データを互いに近いもの同士のk個のグループに分ける教師なし手法はどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="clustering-practice-1" value="k-means（k平均法）"><span class="option-marker">A</span><span>k-means（k平均法）</span></label><label class="quiz-option"><input type="radio" name="clustering-practice-1" value="kNN（k近傍法）"><span class="option-marker">B</span><span>kNN（k近傍法）</span></label><label class="quiz-option"><input type="radio" name="clustering-practice-1" value="SVM"><span class="option-marker">C</span><span>SVM</span></label><label class="quiz-option"><input type="radio" name="clustering-practice-1" value="ロジスティック回帰"><span class="option-marker">D</span><span>ロジスティック回帰</span></label></fieldset><div class="quiz-feedback" data-feedback-for="clustering-practice-1" aria-live="polite"></div></article><article class="quiz-card" data-quiz-id="clustering-practice-2"><h4>Q3. k-meansで初期重心の置き方に依存して結果が変わる問題を緩和する、初期化の改良手法はどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="clustering-practice-2" value="k-means++"><span class="option-marker">A</span><span>k-means++</span></label><label class="quiz-option"><input type="radio" name="clustering-practice-2" value="エルボー法"><span class="option-marker">B</span><span>エルボー法</span></label><label class="quiz-option"><input type="radio" name="clustering-practice-2" value="階層的クラスタリング"><span class="option-marker">C</span><span>階層的クラスタリング</span></label><label class="quiz-option"><input type="radio" name="clustering-practice-2" value="主成分分析"><span class="option-marker">D</span><span>主成分分析</span></label></fieldset><div class="quiz-feedback" data-feedback-for="clustering-practice-2" aria-live="polite"></div></article>
             </div>
             <div class="quiz-actions">
               <button class="primary-button" type="button" id="gradeLessonQuiz">採点する</button>

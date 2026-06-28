@@ -51,22 +51,21 @@
             <p>特徴マップを圧縮し、位置ずれに強くする働きを学ぶ。</p><p>確認問題では、CNNは畳み込み層で局所特徴を捉え、プーリング層で位置ずれに頑健にしつつ次元を縮小する。画像系タスクの標準。</p><p>別の出題では、【正解の理由】CNNは畳み込み層で局所特徴（エッジ等）を抽出し、プーリング層で縮小して移動不変性を持たせる画像向けの構造。【各選択肢】②RNNは系列、③GANは生成、④オートエンコーダは圧縮・再構成。【関連】畳み込みは「局所結合＋重み共有」でパラメータを削減できる点が利点。</p>
           </section>
 
-          <section class="lesson-section visual-lesson" aria-labelledby="visualTitle">
-            <h3 id="visualTitle">インタラクティブ図表</h3>
-            <div class="visual-workbench lesson-workbench">
-              <div class="control-panel" id="lessonControls"></div>
-              <div class="visual-output">
-                <canvas id="lessonCanvas" width="900" height="500" role="img" aria-label="プーリング層のインタラクティブ図表"></canvas>
-                <div id="lessonSvg" class="svg-visual" aria-label="プーリング層の構造図"></div>
-                <div class="visual-metrics lesson-metrics" id="lessonMetrics" aria-live="polite"></div>
-              </div>
+          <section class="lesson-section lesson-table-section" aria-labelledby="visualTitle">
+            <h3 id="visualTitle">比較表</h3>
+            <div class="lesson-table-wrap">
+              <table class="lesson-table">
+                <caption>プーリングの種類</caption>
+                <thead><tr><th scope="col">方法</th><th scope="col">処理</th><th scope="col">効果</th></tr></thead>
+                <tbody><tr><td>Max Pooling</td><td>領域内の最大値を残す</td><td>強く反応した特徴を保つ</td></tr><tr><td>Average Pooling</td><td>領域内の平均値を残す</td><td>全体的な傾向を滑らかに残す</td></tr><tr><td>位置ずれ耐性</td><td>細かな位置変化を吸収する</td><td>出力サイズを小さくし計算量も下げる</td></tr></tbody>
+              </table>
             </div>
           </section>
 
           <section class="lesson-section">
             <h3>確認問題</h3>
             <div class="quiz-area lesson-quiz">
-              <article class="quiz-card"><h4>Q1. 画像認識で、フィルタによる畳み込みとプーリングで局所特徴を抽出するネットワークはどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="pooling-practice-0" value="RNN"><span>RNN</span></label><label class="quiz-option"><input type="radio" name="pooling-practice-0" value="CNN（畳み込みニューラルネットワーク）"><span>CNN（畳み込みニューラルネットワーク）</span></label><label class="quiz-option"><input type="radio" name="pooling-practice-0" value="GAN"><span>GAN</span></label><label class="quiz-option"><input type="radio" name="pooling-practice-0" value="LSTM"><span>LSTM</span></label></fieldset></article><article class="quiz-card"><h4>Q2. 画像認識で、局所的な特徴を捉える畳み込み層と、位置ずれに頑健にする縮小処理を組み合わせたネットワークはどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="pooling-practice-1" value="CNN（畳み込みニューラルネットワーク）"><span>CNN（畳み込みニューラルネットワーク）</span></label><label class="quiz-option"><input type="radio" name="pooling-practice-1" value="RNN"><span>RNN</span></label><label class="quiz-option"><input type="radio" name="pooling-practice-1" value="GAN"><span>GAN</span></label><label class="quiz-option"><input type="radio" name="pooling-practice-1" value="オートエンコーダ"><span>オートエンコーダ</span></label></fieldset></article><article class="quiz-card"><h4>Q3. 福島邦彦が考案し、現在の畳み込みニューラルネットワーク（CNN）の源流とされるモデルはどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="pooling-practice-2" value="ネオコグニトロン"><span>ネオコグニトロン</span></label><label class="quiz-option"><input type="radio" name="pooling-practice-2" value="パーセプトロン"><span>パーセプトロン</span></label><label class="quiz-option"><input type="radio" name="pooling-practice-2" value="ボルツマンマシン"><span>ボルツマンマシン</span></label><label class="quiz-option"><input type="radio" name="pooling-practice-2" value="オートエンコーダ"><span>オートエンコーダ</span></label></fieldset></article>
+              <article class="quiz-card" data-quiz-id="pooling-practice-0"><h4>Q1. 画像認識で、フィルタによる畳み込みとプーリングで局所特徴を抽出するネットワークはどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="pooling-practice-0" value="RNN"><span class="option-marker">A</span><span>RNN</span></label><label class="quiz-option"><input type="radio" name="pooling-practice-0" value="CNN（畳み込みニューラルネットワーク）"><span class="option-marker">B</span><span>CNN（畳み込みニューラルネットワーク）</span></label><label class="quiz-option"><input type="radio" name="pooling-practice-0" value="GAN"><span class="option-marker">C</span><span>GAN</span></label><label class="quiz-option"><input type="radio" name="pooling-practice-0" value="LSTM"><span class="option-marker">D</span><span>LSTM</span></label></fieldset><div class="quiz-feedback" data-feedback-for="pooling-practice-0" aria-live="polite"></div></article><article class="quiz-card" data-quiz-id="pooling-practice-1"><h4>Q2. 画像認識で、局所的な特徴を捉える畳み込み層と、位置ずれに頑健にする縮小処理を組み合わせたネットワークはどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="pooling-practice-1" value="CNN（畳み込みニューラルネットワーク）"><span class="option-marker">A</span><span>CNN（畳み込みニューラルネットワーク）</span></label><label class="quiz-option"><input type="radio" name="pooling-practice-1" value="RNN"><span class="option-marker">B</span><span>RNN</span></label><label class="quiz-option"><input type="radio" name="pooling-practice-1" value="GAN"><span class="option-marker">C</span><span>GAN</span></label><label class="quiz-option"><input type="radio" name="pooling-practice-1" value="オートエンコーダ"><span class="option-marker">D</span><span>オートエンコーダ</span></label></fieldset><div class="quiz-feedback" data-feedback-for="pooling-practice-1" aria-live="polite"></div></article><article class="quiz-card" data-quiz-id="pooling-practice-2"><h4>Q3. 福島邦彦が考案し、現在の畳み込みニューラルネットワーク（CNN）の源流とされるモデルはどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="pooling-practice-2" value="ネオコグニトロン"><span class="option-marker">A</span><span>ネオコグニトロン</span></label><label class="quiz-option"><input type="radio" name="pooling-practice-2" value="パーセプトロン"><span class="option-marker">B</span><span>パーセプトロン</span></label><label class="quiz-option"><input type="radio" name="pooling-practice-2" value="ボルツマンマシン"><span class="option-marker">C</span><span>ボルツマンマシン</span></label><label class="quiz-option"><input type="radio" name="pooling-practice-2" value="オートエンコーダ"><span class="option-marker">D</span><span>オートエンコーダ</span></label></fieldset><div class="quiz-feedback" data-feedback-for="pooling-practice-2" aria-live="polite"></div></article>
             </div>
             <div class="quiz-actions">
               <button class="primary-button" type="button" id="gradeLessonQuiz">採点する</button>

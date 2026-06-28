@@ -51,22 +51,21 @@
             <p>データをベクトルや行列として扱う意味を図でつかむ。</p><p>確認問題では、【計算】内積＝1×4＋2×5＋3×6＝4＋10＋18＝32。【ポイント】内積は対応成分の積の和。ニューロンの重み付き和や、ベクトルの類似度（コサイン類似度の分子）の計算に使う基本演算。</p><p>別の出題では、word2vecはCBOWやskip-gramで単語を分散表現（ベクトル）にする。意味の近い語が近いベクトルになり、ベクトル演算で類推もできる。</p>
           </section>
 
-          <section class="lesson-section visual-lesson" aria-labelledby="visualTitle">
-            <h3 id="visualTitle">インタラクティブ図表</h3>
-            <div class="visual-workbench lesson-workbench">
-              <div class="control-panel" id="lessonControls"></div>
-              <div class="visual-output">
-                <canvas id="lessonCanvas" width="900" height="500" role="img" aria-label="線形代数の直感のインタラクティブ図表"></canvas>
-                <div id="lessonSvg" class="svg-visual" aria-label="線形代数の直感の構造図"></div>
-                <div class="visual-metrics lesson-metrics" id="lessonMetrics" aria-live="polite"></div>
-              </div>
+          <section class="lesson-section lesson-table-section" aria-labelledby="visualTitle">
+            <h3 id="visualTitle">論点の整理</h3>
+            <div class="lesson-table-wrap">
+              <table class="lesson-table">
+                <caption>線形代数の直感</caption>
+                <thead><tr><th scope="col">概念</th><th scope="col">AIでの意味</th><th scope="col">例</th></tr></thead>
+                <tbody><tr><td>ベクトル</td><td>特徴量を並べた数値表現</td><td>単語埋め込みや画像特徴</td></tr><tr><td>行列</td><td>複数ベクトルや線形変換を表す</td><td>重み行列で入力を変換</td></tr><tr><td>内積</td><td>向きの近さや重み付き和を計算する</td><td>類似度やニューラル計算</td></tr></tbody>
+              </table>
             </div>
           </section>
 
           <section class="lesson-section">
             <h3>確認問題</h3>
             <div class="quiz-area lesson-quiz">
-              <article class="quiz-card"><h4>Q1. ベクトル a=(1, 2, 3) と b=(4, 5, 6) の内積はいくらか。</h4><fieldset><label class="quiz-option"><input type="radio" name="linear-algebra-practice-0" value="32"><span>32</span></label><label class="quiz-option"><input type="radio" name="linear-algebra-practice-0" value="21"><span>21</span></label><label class="quiz-option"><input type="radio" name="linear-algebra-practice-0" value="90"><span>90</span></label><label class="quiz-option"><input type="radio" name="linear-algebra-practice-0" value="6"><span>6</span></label></fieldset></article><article class="quiz-card"><h4>Q2. 単語を意味的な近さが反映されたベクトルに変換する代表的手法はどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="linear-algebra-practice-1" value="word2vec"><span>word2vec</span></label><label class="quiz-option"><input type="radio" name="linear-algebra-practice-1" value="TF-IDF"><span>TF-IDF</span></label><label class="quiz-option"><input type="radio" name="linear-algebra-practice-1" value="BoW（Bag of Words）"><span>BoW（Bag of Words）</span></label><label class="quiz-option"><input type="radio" name="linear-algebra-practice-1" value="形態素解析"><span>形態素解析</span></label></fieldset></article><article class="quiz-card"><h4>Q3. 『赤・青・緑』のようなカテゴリ変数を、各カテゴリに対応する0/1のベクトルへ変換する手法はどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="linear-algebra-practice-2" value="ワンホットエンコーディング"><span>ワンホットエンコーディング</span></label><label class="quiz-option"><input type="radio" name="linear-algebra-practice-2" value="標準化"><span>標準化</span></label><label class="quiz-option"><input type="radio" name="linear-algebra-practice-2" value="主成分分析"><span>主成分分析</span></label><label class="quiz-option"><input type="radio" name="linear-algebra-practice-2" value="ドロップアウト"><span>ドロップアウト</span></label></fieldset></article>
+              <article class="quiz-card" data-quiz-id="linear-algebra-practice-0"><h4>Q1. ベクトル a=(1, 2, 3) と b=(4, 5, 6) の内積はいくらか。</h4><fieldset><label class="quiz-option"><input type="radio" name="linear-algebra-practice-0" value="32"><span class="option-marker">A</span><span>32</span></label><label class="quiz-option"><input type="radio" name="linear-algebra-practice-0" value="21"><span class="option-marker">B</span><span>21</span></label><label class="quiz-option"><input type="radio" name="linear-algebra-practice-0" value="90"><span class="option-marker">C</span><span>90</span></label><label class="quiz-option"><input type="radio" name="linear-algebra-practice-0" value="6"><span class="option-marker">D</span><span>6</span></label></fieldset><div class="quiz-feedback" data-feedback-for="linear-algebra-practice-0" aria-live="polite"></div></article><article class="quiz-card" data-quiz-id="linear-algebra-practice-1"><h4>Q2. 単語を意味的な近さが反映されたベクトルに変換する代表的手法はどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="linear-algebra-practice-1" value="word2vec"><span class="option-marker">A</span><span>word2vec</span></label><label class="quiz-option"><input type="radio" name="linear-algebra-practice-1" value="TF-IDF"><span class="option-marker">B</span><span>TF-IDF</span></label><label class="quiz-option"><input type="radio" name="linear-algebra-practice-1" value="BoW（Bag of Words）"><span class="option-marker">C</span><span>BoW（Bag of Words）</span></label><label class="quiz-option"><input type="radio" name="linear-algebra-practice-1" value="形態素解析"><span class="option-marker">D</span><span>形態素解析</span></label></fieldset><div class="quiz-feedback" data-feedback-for="linear-algebra-practice-1" aria-live="polite"></div></article><article class="quiz-card" data-quiz-id="linear-algebra-practice-2"><h4>Q3. 『赤・青・緑』のようなカテゴリ変数を、各カテゴリに対応する0/1のベクトルへ変換する手法はどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="linear-algebra-practice-2" value="ワンホットエンコーディング"><span class="option-marker">A</span><span>ワンホットエンコーディング</span></label><label class="quiz-option"><input type="radio" name="linear-algebra-practice-2" value="標準化"><span class="option-marker">B</span><span>標準化</span></label><label class="quiz-option"><input type="radio" name="linear-algebra-practice-2" value="主成分分析"><span class="option-marker">C</span><span>主成分分析</span></label><label class="quiz-option"><input type="radio" name="linear-algebra-practice-2" value="ドロップアウト"><span class="option-marker">D</span><span>ドロップアウト</span></label></fieldset><div class="quiz-feedback" data-feedback-for="linear-algebra-practice-2" aria-live="polite"></div></article>
             </div>
             <div class="quiz-actions">
               <button class="primary-button" type="button" id="gradeLessonQuiz">採点する</button>

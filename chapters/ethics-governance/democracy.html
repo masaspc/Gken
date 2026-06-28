@@ -51,22 +51,21 @@
             <p>生成AIが情報環境や意思決定へ与える影響を学ぶ。</p><p>確認問題では、ディープフェイク。GAN等で人物の顔や声を合成する技術。なりすまし・偽情報・名誉毀損などのリスクがあり、検知技術や規制が議論されている。</p><p>別の出題では、【正解の理由】ディープフェイクは深層生成技術で本物と見分けにくい偽の映像・音声を作る技術で、なりすまし・偽情報・名誉毀損などのリスクがある。【各選択肢】②③④は学習・モデルの技法で悪用技術ではない。【関連】肖像権・著作権・名誉毀損等の法的問題、検知技術や来歴情報の付与（電子透かし等）が対策。</p>
           </section>
 
-          <section class="lesson-section visual-lesson" aria-labelledby="visualTitle">
-            <h3 id="visualTitle">インタラクティブ図表</h3>
-            <div class="visual-workbench lesson-workbench">
-              <div class="control-panel" id="lessonControls"></div>
-              <div class="visual-output">
-                <canvas id="lessonCanvas" width="900" height="500" role="img" aria-label="民主主義と情報環境のインタラクティブ図表"></canvas>
-                <div id="lessonSvg" class="svg-visual" aria-label="民主主義と情報環境の構造図"></div>
-                <div class="visual-metrics lesson-metrics" id="lessonMetrics" aria-live="polite"></div>
-              </div>
+          <section class="lesson-section lesson-table-section" aria-labelledby="visualTitle">
+            <h3 id="visualTitle">論点の整理</h3>
+            <div class="lesson-table-wrap">
+              <table class="lesson-table">
+                <caption>民主主義と情報環境の論点</caption>
+                <thead><tr><th scope="col">論点</th><th scope="col">影響</th><th scope="col">確認ポイント</th></tr></thead>
+                <tbody><tr><td>偽情報</td><td>もっともらしい虚偽が大量に広がる</td><td>出所と検証可能性を見る</td></tr><tr><td>フィルターバブル</td><td>似た情報だけが届き視野が狭まる</td><td>推薦の偏りと多様性を確認</td></tr><tr><td>世論操作</td><td>自動生成やbotで議論が歪む</td><td>透明性とプラットフォーム対策が必要</td></tr></tbody>
+              </table>
             </div>
           </section>
 
           <section class="lesson-section">
             <h3>確認問題</h3>
             <div class="quiz-area lesson-quiz">
-              <article class="quiz-card"><h4>Q1. 実在しない映像や音声を本物のように生成・合成し、悪用が懸念される技術を何というか。</h4><fieldset><label class="quiz-option"><input type="radio" name="democracy-practice-0" value="ディープフェイク"><span>ディープフェイク</span></label><label class="quiz-option"><input type="radio" name="democracy-practice-0" value="データ拡張"><span>データ拡張</span></label><label class="quiz-option"><input type="radio" name="democracy-practice-0" value="アノテーション"><span>アノテーション</span></label><label class="quiz-option"><input type="radio" name="democracy-practice-0" value="ハルシネーション"><span>ハルシネーション</span></label></fieldset></article><article class="quiz-card"><h4>Q2. 実在する人物の顔や声を合成し、本人が言っていない発言をさせるなど悪用が懸念される技術はどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="democracy-practice-1" value="ディープフェイク"><span>ディープフェイク</span></label><label class="quiz-option"><input type="radio" name="democracy-practice-1" value="データ拡張"><span>データ拡張</span></label><label class="quiz-option"><input type="radio" name="democracy-practice-1" value="蒸留"><span>蒸留</span></label><label class="quiz-option"><input type="radio" name="democracy-practice-1" value="正則化"><span>正則化</span></label></fieldset></article><article class="quiz-card"><h4>Q3. 推薦アルゴリズムにより、利用者が自分の好む情報にばかり囲まれてしまう現象を何というか。</h4><fieldset><label class="quiz-option"><input type="radio" name="democracy-practice-2" value="フィルターバブル"><span>フィルターバブル</span></label><label class="quiz-option"><input type="radio" name="democracy-practice-2" value="コールドスタート"><span>コールドスタート</span></label><label class="quiz-option"><input type="radio" name="democracy-practice-2" value="ドリフト"><span>ドリフト</span></label><label class="quiz-option"><input type="radio" name="democracy-practice-2" value="オーバーフィッティング"><span>オーバーフィッティング</span></label></fieldset></article>
+              <article class="quiz-card" data-quiz-id="democracy-practice-0"><h4>Q1. 実在しない映像や音声を本物のように生成・合成し、悪用が懸念される技術を何というか。</h4><fieldset><label class="quiz-option"><input type="radio" name="democracy-practice-0" value="ディープフェイク"><span class="option-marker">A</span><span>ディープフェイク</span></label><label class="quiz-option"><input type="radio" name="democracy-practice-0" value="データ拡張"><span class="option-marker">B</span><span>データ拡張</span></label><label class="quiz-option"><input type="radio" name="democracy-practice-0" value="アノテーション"><span class="option-marker">C</span><span>アノテーション</span></label><label class="quiz-option"><input type="radio" name="democracy-practice-0" value="ハルシネーション"><span class="option-marker">D</span><span>ハルシネーション</span></label></fieldset><div class="quiz-feedback" data-feedback-for="democracy-practice-0" aria-live="polite"></div></article><article class="quiz-card" data-quiz-id="democracy-practice-1"><h4>Q2. 実在する人物の顔や声を合成し、本人が言っていない発言をさせるなど悪用が懸念される技術はどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="democracy-practice-1" value="ディープフェイク"><span class="option-marker">A</span><span>ディープフェイク</span></label><label class="quiz-option"><input type="radio" name="democracy-practice-1" value="データ拡張"><span class="option-marker">B</span><span>データ拡張</span></label><label class="quiz-option"><input type="radio" name="democracy-practice-1" value="蒸留"><span class="option-marker">C</span><span>蒸留</span></label><label class="quiz-option"><input type="radio" name="democracy-practice-1" value="正則化"><span class="option-marker">D</span><span>正則化</span></label></fieldset><div class="quiz-feedback" data-feedback-for="democracy-practice-1" aria-live="polite"></div></article><article class="quiz-card" data-quiz-id="democracy-practice-2"><h4>Q3. 推薦アルゴリズムにより、利用者が自分の好む情報にばかり囲まれてしまう現象を何というか。</h4><fieldset><label class="quiz-option"><input type="radio" name="democracy-practice-2" value="フィルターバブル"><span class="option-marker">A</span><span>フィルターバブル</span></label><label class="quiz-option"><input type="radio" name="democracy-practice-2" value="コールドスタート"><span class="option-marker">B</span><span>コールドスタート</span></label><label class="quiz-option"><input type="radio" name="democracy-practice-2" value="ドリフト"><span class="option-marker">C</span><span>ドリフト</span></label><label class="quiz-option"><input type="radio" name="democracy-practice-2" value="オーバーフィッティング"><span class="option-marker">D</span><span>オーバーフィッティング</span></label></fieldset><div class="quiz-feedback" data-feedback-for="democracy-practice-2" aria-live="polite"></div></article>
             </div>
             <div class="quiz-actions">
               <button class="primary-button" type="button" id="gradeLessonQuiz">採点する</button>

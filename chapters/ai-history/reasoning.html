@@ -51,22 +51,21 @@
             <p>既知の情報から結論を導く方法を整理し、機械学習との違いも見えるようにする。</p><p>確認問題では、エキスパートシステム。MYCIN（感染症診断）やDENDRAL（化合物推定）が代表例。知識をルール化する「知識の時代」が第2次ブーム。</p><p>別の出題では、AlphaGoは、モンテカルロ木探索に加え、深層学習（盤面評価・着手予測）と強化学習（自己対戦）を組み合わせた。</p>
           </section>
 
-          <section class="lesson-section visual-lesson" aria-labelledby="visualTitle">
-            <h3 id="visualTitle">インタラクティブ図表</h3>
-            <div class="visual-workbench lesson-workbench">
-              <div class="control-panel" id="lessonControls"></div>
-              <div class="visual-output">
-                <canvas id="lessonCanvas" width="900" height="500" role="img" aria-label="推論のインタラクティブ図表"></canvas>
-                <div id="lessonSvg" class="svg-visual" aria-label="推論の構造図"></div>
-                <div class="visual-metrics lesson-metrics" id="lessonMetrics" aria-live="polite"></div>
-              </div>
+          <section class="lesson-section lesson-table-section" aria-labelledby="visualTitle">
+            <h3 id="visualTitle">比較表</h3>
+            <div class="lesson-table-wrap">
+              <table class="lesson-table">
+                <caption>推論方法の比較</caption>
+                <thead><tr><th scope="col">種類</th><th scope="col">進み方</th><th scope="col">例</th></tr></thead>
+                <tbody><tr><td>演繹</td><td>一般的な規則から個別の結論を導く</td><td>全ての哺乳類は動物、犬は哺乳類</td></tr><tr><td>帰納</td><td>複数の観察から一般的な傾向を考える</td><td>見た鳥が飛ぶので鳥は飛ぶと推測</td></tr><tr><td>アブダクション</td><td>結果を説明する最もありそうな仮説を選ぶ</td><td>地面が濡れているので雨を疑う</td></tr></tbody>
+              </table>
             </div>
           </section>
 
           <section class="lesson-section">
             <h3>確認問題</h3>
             <div class="quiz-area lesson-quiz">
-              <article class="quiz-card"><h4>Q1. 第2次AIブームを牽引した、専門家の知識をルールとして蓄積し推論する仕組みはどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="reasoning-practice-0" value="ニューラルネットワーク"><span>ニューラルネットワーク</span></label><label class="quiz-option"><input type="radio" name="reasoning-practice-0" value="エキスパートシステム"><span>エキスパートシステム</span></label><label class="quiz-option"><input type="radio" name="reasoning-practice-0" value="強化学習"><span>強化学習</span></label><label class="quiz-option"><input type="radio" name="reasoning-practice-0" value="深層学習"><span>深層学習</span></label></fieldset></article><article class="quiz-card"><h4>Q2. 2016年に囲碁のトッププロを破ったAlphaGoが組み合わせた主要技術の組み合わせとして正しいものはどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="reasoning-practice-1" value="ルールベース推論とSVM"><span>ルールベース推論とSVM</span></label><label class="quiz-option"><input type="radio" name="reasoning-practice-1" value="モンテカルロ木探索・深層学習・強化学習"><span>モンテカルロ木探索・深層学習・強化学習</span></label><label class="quiz-option"><input type="radio" name="reasoning-practice-1" value="エキスパートシステムと遺伝的アルゴリズム"><span>エキスパートシステムと遺伝的アルゴリズム</span></label><label class="quiz-option"><input type="radio" name="reasoning-practice-1" value="決定木とk-means"><span>決定木とk-means</span></label></fieldset></article><article class="quiz-card"><h4>Q3. 第1次AIブームの中心となった、迷路やパズルを解くための技術はどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="reasoning-practice-2" value="探索・推論"><span>探索・推論</span></label><label class="quiz-option"><input type="radio" name="reasoning-practice-2" value="知識表現"><span>知識表現</span></label><label class="quiz-option"><input type="radio" name="reasoning-practice-2" value="ディープラーニング"><span>ディープラーニング</span></label><label class="quiz-option"><input type="radio" name="reasoning-practice-2" value="強化学習"><span>強化学習</span></label></fieldset></article>
+              <article class="quiz-card" data-quiz-id="reasoning-practice-0"><h4>Q1. 第2次AIブームを牽引した、専門家の知識をルールとして蓄積し推論する仕組みはどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="reasoning-practice-0" value="ニューラルネットワーク"><span class="option-marker">A</span><span>ニューラルネットワーク</span></label><label class="quiz-option"><input type="radio" name="reasoning-practice-0" value="エキスパートシステム"><span class="option-marker">B</span><span>エキスパートシステム</span></label><label class="quiz-option"><input type="radio" name="reasoning-practice-0" value="強化学習"><span class="option-marker">C</span><span>強化学習</span></label><label class="quiz-option"><input type="radio" name="reasoning-practice-0" value="深層学習"><span class="option-marker">D</span><span>深層学習</span></label></fieldset><div class="quiz-feedback" data-feedback-for="reasoning-practice-0" aria-live="polite"></div></article><article class="quiz-card" data-quiz-id="reasoning-practice-1"><h4>Q2. 2016年に囲碁のトッププロを破ったAlphaGoが組み合わせた主要技術の組み合わせとして正しいものはどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="reasoning-practice-1" value="ルールベース推論とSVM"><span class="option-marker">A</span><span>ルールベース推論とSVM</span></label><label class="quiz-option"><input type="radio" name="reasoning-practice-1" value="モンテカルロ木探索・深層学習・強化学習"><span class="option-marker">B</span><span>モンテカルロ木探索・深層学習・強化学習</span></label><label class="quiz-option"><input type="radio" name="reasoning-practice-1" value="エキスパートシステムと遺伝的アルゴリズム"><span class="option-marker">C</span><span>エキスパートシステムと遺伝的アルゴリズム</span></label><label class="quiz-option"><input type="radio" name="reasoning-practice-1" value="決定木とk-means"><span class="option-marker">D</span><span>決定木とk-means</span></label></fieldset><div class="quiz-feedback" data-feedback-for="reasoning-practice-1" aria-live="polite"></div></article><article class="quiz-card" data-quiz-id="reasoning-practice-2"><h4>Q3. 第1次AIブームの中心となった、迷路やパズルを解くための技術はどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="reasoning-practice-2" value="探索・推論"><span class="option-marker">A</span><span>探索・推論</span></label><label class="quiz-option"><input type="radio" name="reasoning-practice-2" value="知識表現"><span class="option-marker">B</span><span>知識表現</span></label><label class="quiz-option"><input type="radio" name="reasoning-practice-2" value="ディープラーニング"><span class="option-marker">C</span><span>ディープラーニング</span></label><label class="quiz-option"><input type="radio" name="reasoning-practice-2" value="強化学習"><span class="option-marker">D</span><span>強化学習</span></label></fieldset><div class="quiz-feedback" data-feedback-for="reasoning-practice-2" aria-live="polite"></div></article>
             </div>
             <div class="quiz-actions">
               <button class="primary-button" type="button" id="gradeLessonQuiz">採点する</button>

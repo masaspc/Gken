@@ -51,22 +51,21 @@
             <p>教師あり学習の品質を左右するラベル付けを理解する。</p><p>確認問題では、クラウドソーシング。教師データのラベル付けなどを多人数に分散委託する。品質管理（チェック体制）が重要になる。</p><p>別の出題では、能動学習。モデルが“自信のない”サンプルなどを優先的に選び、限られたアノテーション予算を有効活用する。教師データ作成コストの削減という社会実装上の課題とも結びつく。</p>
           </section>
 
-          <section class="lesson-section visual-lesson" aria-labelledby="visualTitle">
-            <h3 id="visualTitle">インタラクティブ図表</h3>
-            <div class="visual-workbench lesson-workbench">
-              <div class="control-panel" id="lessonControls"></div>
-              <div class="visual-output">
-                <canvas id="lessonCanvas" width="900" height="500" role="img" aria-label="アノテーションのインタラクティブ図表"></canvas>
-                <div id="lessonSvg" class="svg-visual" aria-label="アノテーションの構造図"></div>
-                <div class="visual-metrics lesson-metrics" id="lessonMetrics" aria-live="polite"></div>
-              </div>
+          <section class="lesson-section lesson-table-section" aria-labelledby="visualTitle">
+            <h3 id="visualTitle">論点の整理</h3>
+            <div class="lesson-table-wrap">
+              <table class="lesson-table">
+                <caption>アノテーション品質の管理</caption>
+                <thead><tr><th scope="col">要素</th><th scope="col">役割</th><th scope="col">確認ポイント</th></tr></thead>
+                <tbody><tr><td>ラベル定義</td><td>何を正解とするかを決める</td><td>作業者間で解釈が揺れないか</td></tr><tr><td>一致率</td><td>複数人のラベルが合う程度を見る</td><td>主観タスクでは特に重要</td></tr><tr><td>レビュー</td><td>誤ラベルや曖昧例を見直す</td><td>教師データの品質が性能を左右する</td></tr></tbody>
+              </table>
             </div>
           </section>
 
           <section class="lesson-section">
             <h3>確認問題</h3>
             <div class="quiz-area lesson-quiz">
-              <article class="quiz-card"><h4>Q1. 大量のアノテーション作業を、不特定多数の作業者にインターネット経由で委託する仕組みはどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="annotation-practice-0" value="クラウドソーシング"><span>クラウドソーシング</span></label><label class="quiz-option"><input type="radio" name="annotation-practice-0" value="クラウドコンピューティング"><span>クラウドコンピューティング</span></label><label class="quiz-option"><input type="radio" name="annotation-practice-0" value="エッジコンピューティング"><span>エッジコンピューティング</span></label><label class="quiz-option"><input type="radio" name="annotation-practice-0" value="フェデレーテッドラーニング"><span>フェデレーテッドラーニング</span></label></fieldset></article><article class="quiz-card"><h4>Q2. 学習効果の高いデータを選んで人にラベル付けを依頼し、効率よく性能を上げる手法はどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="annotation-practice-1" value="能動学習（アクティブラーニング）"><span>能動学習（アクティブラーニング）</span></label><label class="quiz-option"><input type="radio" name="annotation-practice-1" value="データ拡張"><span>データ拡張</span></label><label class="quiz-option"><input type="radio" name="annotation-practice-1" value="転移学習"><span>転移学習</span></label><label class="quiz-option"><input type="radio" name="annotation-practice-1" value="蒸留"><span>蒸留</span></label></fieldset></article><article class="quiz-card"><h4>Q3. 教師あり学習のために、データに正解ラベルを付与する作業を何というか。</h4><fieldset><label class="quiz-option"><input type="radio" name="annotation-practice-2" value="アノテーション"><span>アノテーション</span></label><label class="quiz-option"><input type="radio" name="annotation-practice-2" value="正規化"><span>正規化</span></label><label class="quiz-option"><input type="radio" name="annotation-practice-2" value="エンコード"><span>エンコード</span></label><label class="quiz-option"><input type="radio" name="annotation-practice-2" value="クレンジング"><span>クレンジング</span></label></fieldset></article>
+              <article class="quiz-card" data-quiz-id="annotation-practice-0"><h4>Q1. 大量のアノテーション作業を、不特定多数の作業者にインターネット経由で委託する仕組みはどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="annotation-practice-0" value="クラウドソーシング"><span class="option-marker">A</span><span>クラウドソーシング</span></label><label class="quiz-option"><input type="radio" name="annotation-practice-0" value="クラウドコンピューティング"><span class="option-marker">B</span><span>クラウドコンピューティング</span></label><label class="quiz-option"><input type="radio" name="annotation-practice-0" value="エッジコンピューティング"><span class="option-marker">C</span><span>エッジコンピューティング</span></label><label class="quiz-option"><input type="radio" name="annotation-practice-0" value="フェデレーテッドラーニング"><span class="option-marker">D</span><span>フェデレーテッドラーニング</span></label></fieldset><div class="quiz-feedback" data-feedback-for="annotation-practice-0" aria-live="polite"></div></article><article class="quiz-card" data-quiz-id="annotation-practice-1"><h4>Q2. 学習効果の高いデータを選んで人にラベル付けを依頼し、効率よく性能を上げる手法はどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="annotation-practice-1" value="能動学習（アクティブラーニング）"><span class="option-marker">A</span><span>能動学習（アクティブラーニング）</span></label><label class="quiz-option"><input type="radio" name="annotation-practice-1" value="データ拡張"><span class="option-marker">B</span><span>データ拡張</span></label><label class="quiz-option"><input type="radio" name="annotation-practice-1" value="転移学習"><span class="option-marker">C</span><span>転移学習</span></label><label class="quiz-option"><input type="radio" name="annotation-practice-1" value="蒸留"><span class="option-marker">D</span><span>蒸留</span></label></fieldset><div class="quiz-feedback" data-feedback-for="annotation-practice-1" aria-live="polite"></div></article><article class="quiz-card" data-quiz-id="annotation-practice-2"><h4>Q3. 教師あり学習のために、データに正解ラベルを付与する作業を何というか。</h4><fieldset><label class="quiz-option"><input type="radio" name="annotation-practice-2" value="アノテーション"><span class="option-marker">A</span><span>アノテーション</span></label><label class="quiz-option"><input type="radio" name="annotation-practice-2" value="正規化"><span class="option-marker">B</span><span>正規化</span></label><label class="quiz-option"><input type="radio" name="annotation-practice-2" value="エンコード"><span class="option-marker">C</span><span>エンコード</span></label><label class="quiz-option"><input type="radio" name="annotation-practice-2" value="クレンジング"><span class="option-marker">D</span><span>クレンジング</span></label></fieldset><div class="quiz-feedback" data-feedback-for="annotation-practice-2" aria-live="polite"></div></article>
             </div>
             <div class="quiz-actions">
               <button class="primary-button" type="button" id="gradeLessonQuiz">採点する</button>

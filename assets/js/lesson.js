@@ -80,15 +80,12 @@
       field("focus", "Query token index", 0, maxFocus, 1);
       field("temperature", "softmax温度", 0.5, 2.5, 0.1);
     }
-    if (["network", "flow", "comparison-table", "relation-table"].includes(type)) {
-      controls.innerHTML = `<p class="control-note">このテーマは数値を操作せず、構造・対応関係・判断順序を読む図表です。</p>`;
-    }
   }
 
   function renderVisual() {
-    if (!lesson.visual || lesson.visual.type === "none" || !canvas || !svg || !metrics) return;
+    if (!lesson.visual || lesson.visual.type === "none" || !svg || !metrics) return;
     if (!core) {
-      controls.innerHTML = "<p>可視化エンジンを読み込めませんでした。</p>";
+      if (controls) controls.innerHTML = "<p>可視化エンジンを読み込めませんでした。</p>";
       return;
     }
     const out = { canvas, svg, metrics };
@@ -106,20 +103,39 @@
   function setupQuiz() {
     document.getElementById("gradeLessonQuiz")?.addEventListener("click", () => {
       let score = 0;
-      const feedback = [];
       lesson.quiz.forEach((item) => {
+        const card = document.querySelector(`[data-quiz-id="${item.id}"]`);
         const selected = document.querySelector(`input[name="${item.id}"]:checked`);
         const ok = selected && selected.value === item.answer;
         if (ok) score += 1;
-        feedback.push(`${ok ? "正解" : "確認"}: ${stripTags(item.explanation || "")}`);
+
+        card?.querySelectorAll(".quiz-option").forEach((option) => {
+          const input = option.querySelector("input");
+          option.classList.remove("is-correct", "is-wrong");
+          if (!input) return;
+          if (input.value === item.answer) option.classList.add("is-correct");
+          if (selected && input === selected && input.value !== item.answer) option.classList.add("is-wrong");
+          input.disabled = true;
+        });
+
+        const feedback = card?.querySelector(`[data-feedback-for="${item.id}"]`);
+        if (feedback) {
+          const status = ok ? "正解" : selected ? "不正解" : "未回答";
+          feedback.className = `quiz-feedback ${ok ? "is-correct" : "is-wrong"}`;
+          feedback.innerHTML = `<strong>${status}</strong><p>正解: ${escapeHtml(item.answer)}</p><p>${escapeHtml(stripTags(item.explanation || ""))}</p>`;
+        }
       });
       const percent = Math.round((score / lesson.quiz.length) * 100);
-      quizResult.innerHTML = `${score}/${lesson.quiz.length}問正解、${percent}%です。<br>${feedback.join("<br>")}`;
+      quizResult.textContent = `${score}/${lesson.quiz.length}問正解、${percent}%です。各問題の下に解説を表示しました。`;
     });
   }
 
   function stripTags(value) {
     return String(value).replace(/<[^>]*>/g, "");
+  }
+
+  function escapeHtml(value) {
+    return String(value).replace(/[&<>"']/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;", "'": "&#39;" }[char]));
   }
 
   function setupProgress() {

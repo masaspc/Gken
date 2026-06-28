@@ -51,22 +51,21 @@
             <p>複数種類のデータを組み合わせて扱うAIの設計を理解する。</p><p>確認問題では、CLIP。大量の画像・キャプション対から、画像とテキストの関連を学習する。生成AIの条件付けにも応用される。</p><p>別の出題では、画像キャプション生成（Image Captioning）。画像認識と言語生成を組み合わせるマルチモーダルなタスク。</p>
           </section>
 
-          <section class="lesson-section visual-lesson" aria-labelledby="visualTitle">
-            <h3 id="visualTitle">インタラクティブ図表</h3>
-            <div class="visual-workbench lesson-workbench">
-              <div class="control-panel" id="lessonControls"></div>
-              <div class="visual-output">
-                <canvas id="lessonCanvas" width="900" height="500" role="img" aria-label="マルチモーダルのインタラクティブ図表"></canvas>
-                <div id="lessonSvg" class="svg-visual" aria-label="マルチモーダルの構造図"></div>
-                <div class="visual-metrics lesson-metrics" id="lessonMetrics" aria-live="polite"></div>
-              </div>
+          <section class="lesson-section lesson-table-section" aria-labelledby="visualTitle">
+            <h3 id="visualTitle">論点の整理</h3>
+            <div class="lesson-table-wrap">
+              <table class="lesson-table">
+                <caption>マルチモーダルAIの組み合わせ</caption>
+                <thead><tr><th scope="col">組み合わせ</th><th scope="col">できること</th><th scope="col">注意点</th></tr></thead>
+                <tbody><tr><td>画像と言語</td><td>画像説明や視覚質問応答を行う</td><td>視覚情報と文章の対応が必要</td></tr><tr><td>音声と言語</td><td>音声認識や対話応答へつなげる</td><td>雑音や話者差の影響を受ける</td></tr><tr><td>クロスモーダル検索</td><td>片方の形式から別形式の情報を探す</td><td>埋め込み空間の整合が重要</td></tr></tbody>
+              </table>
             </div>
           </section>
 
           <section class="lesson-section">
             <h3>確認問題</h3>
             <div class="quiz-area lesson-quiz">
-              <article class="quiz-card"><h4>Q1. 画像とテキストを共通の空間で対応づけて学習し、ゼロショット画像分類などに使われるマルチモーダルモデルはどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="multimodal-practice-0" value="CLIP"><span>CLIP</span></label><label class="quiz-option"><input type="radio" name="multimodal-practice-0" value="BERT"><span>BERT</span></label><label class="quiz-option"><input type="radio" name="multimodal-practice-0" value="LSTM"><span>LSTM</span></label><label class="quiz-option"><input type="radio" name="multimodal-practice-0" value="SSD"><span>SSD</span></label></fieldset></article><article class="quiz-card"><h4>Q2. 画像の内容を説明する自然言語の文を生成するタスクはどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="multimodal-practice-1" value="画像分類"><span>画像分類</span></label><label class="quiz-option"><input type="radio" name="multimodal-practice-1" value="画像キャプション生成"><span>画像キャプション生成</span></label><label class="quiz-option"><input type="radio" name="multimodal-practice-1" value="物体検出"><span>物体検出</span></label><label class="quiz-option"><input type="radio" name="multimodal-practice-1" value="異常検知"><span>異常検知</span></label></fieldset></article><article class="quiz-card"><h4>Q3. 生成AIが扱える主な出力（モダリティ）の組み合わせとして最も適切なものはどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="multimodal-practice-2" value="テキスト・画像・音声・動画・コードなど多様"><span>テキスト・画像・音声・動画・コードなど多様</span></label><label class="quiz-option"><input type="radio" name="multimodal-practice-2" value="数値計算の結果のみ"><span>数値計算の結果のみ</span></label><label class="quiz-option"><input type="radio" name="multimodal-practice-2" value="表計算のセルのみ"><span>表計算のセルのみ</span></label><label class="quiz-option"><input type="radio" name="multimodal-practice-2" value="音声のみ"><span>音声のみ</span></label></fieldset></article>
+              <article class="quiz-card" data-quiz-id="multimodal-practice-0"><h4>Q1. 画像とテキストを共通の空間で対応づけて学習し、ゼロショット画像分類などに使われるマルチモーダルモデルはどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="multimodal-practice-0" value="CLIP"><span class="option-marker">A</span><span>CLIP</span></label><label class="quiz-option"><input type="radio" name="multimodal-practice-0" value="BERT"><span class="option-marker">B</span><span>BERT</span></label><label class="quiz-option"><input type="radio" name="multimodal-practice-0" value="LSTM"><span class="option-marker">C</span><span>LSTM</span></label><label class="quiz-option"><input type="radio" name="multimodal-practice-0" value="SSD"><span class="option-marker">D</span><span>SSD</span></label></fieldset><div class="quiz-feedback" data-feedback-for="multimodal-practice-0" aria-live="polite"></div></article><article class="quiz-card" data-quiz-id="multimodal-practice-1"><h4>Q2. 画像の内容を説明する自然言語の文を生成するタスクはどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="multimodal-practice-1" value="画像分類"><span class="option-marker">A</span><span>画像分類</span></label><label class="quiz-option"><input type="radio" name="multimodal-practice-1" value="画像キャプション生成"><span class="option-marker">B</span><span>画像キャプション生成</span></label><label class="quiz-option"><input type="radio" name="multimodal-practice-1" value="物体検出"><span class="option-marker">C</span><span>物体検出</span></label><label class="quiz-option"><input type="radio" name="multimodal-practice-1" value="異常検知"><span class="option-marker">D</span><span>異常検知</span></label></fieldset><div class="quiz-feedback" data-feedback-for="multimodal-practice-1" aria-live="polite"></div></article><article class="quiz-card" data-quiz-id="multimodal-practice-2"><h4>Q3. 生成AIが扱える主な出力（モダリティ）の組み合わせとして最も適切なものはどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="multimodal-practice-2" value="テキスト・画像・音声・動画・コードなど多様"><span class="option-marker">A</span><span>テキスト・画像・音声・動画・コードなど多様</span></label><label class="quiz-option"><input type="radio" name="multimodal-practice-2" value="数値計算の結果のみ"><span class="option-marker">B</span><span>数値計算の結果のみ</span></label><label class="quiz-option"><input type="radio" name="multimodal-practice-2" value="表計算のセルのみ"><span class="option-marker">C</span><span>表計算のセルのみ</span></label><label class="quiz-option"><input type="radio" name="multimodal-practice-2" value="音声のみ"><span class="option-marker">D</span><span>音声のみ</span></label></fieldset><div class="quiz-feedback" data-feedback-for="multimodal-practice-2" aria-live="polite"></div></article>
             </div>
             <div class="quiz-actions">
               <button class="primary-button" type="button" id="gradeLessonQuiz">採点する</button>

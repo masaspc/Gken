@@ -303,20 +303,7 @@ function lessonPage(chapter, item, index) {
   const next = flat[currentIndex + 1];
   const quiz = quizFor(item, chapter);
   const explanation = explanationFor(item, quiz);
-  const visualSection = hasVisual(item.visual) ? `          <section class="lesson-section visual-lesson" aria-labelledby="visualTitle">
-            <h3 id="visualTitle">インタラクティブ図表</h3>
-            <div class="visual-workbench lesson-workbench">
-              <div class="control-panel" id="lessonControls"></div>
-              <div class="visual-output">
-                <canvas id="lessonCanvas" width="900" height="500" role="img" aria-label="${esc(item.title)}のインタラクティブ図表"></canvas>
-                <div id="lessonSvg" class="svg-visual" aria-label="${esc(item.title)}の構造図"></div>
-                <div class="visual-metrics lesson-metrics" id="lessonMetrics" aria-live="polite"></div>
-              </div>
-            </div>
-          </section>` : `          <section class="lesson-section">
-            <h3>このページの整理</h3>
-            <p>このテーマは無理に図表化せず、定義・判断条件・確認問題を中心に学習します。</p>
-          </section>`;
+  const visualSection = lessonVisualSection(item);
   const data = {
     slug: `${chapter.slug}/${item.slug}`,
     title: item.title,
@@ -352,7 +339,7 @@ ${visualSection}
           <section class="lesson-section">
             <h3>確認問題</h3>
             <div class="quiz-area lesson-quiz">
-              ${quiz.map((q, qIndex) => `<article class="quiz-card"><h4>Q${qIndex + 1}. ${esc(q.prompt)}</h4><fieldset>${q.options.map((option) => `<label class="quiz-option"><input type="radio" name="${q.id}" value="${esc(option)}"><span>${esc(option)}</span></label>`).join("")}</fieldset></article>`).join("")}
+              ${quiz.map((q, qIndex) => `<article class="quiz-card" data-quiz-id="${esc(q.id)}"><h4>Q${qIndex + 1}. ${esc(q.prompt)}</h4><fieldset>${q.options.map((option, optionIndex) => `<label class="quiz-option"><input type="radio" name="${q.id}" value="${esc(option)}"><span class="option-marker">${String.fromCharCode(65 + optionIndex)}</span><span>${esc(option)}</span></label>`).join("")}</fieldset><div class="quiz-feedback" data-feedback-for="${esc(q.id)}" aria-live="polite"></div></article>`).join("")}
             </div>
             <div class="quiz-actions">
               <button class="primary-button" type="button" id="gradeLessonQuiz">採点する</button>
@@ -383,6 +370,55 @@ ${visualSection}
     extraScript: `  <script src="../../assets/js/visualizations.js" defer></script>
   <script src="../../assets/js/lesson.js" defer></script>`
   });
+}
+
+function lessonVisualSection(item) {
+  const visual = item.visual || { type: "none" };
+  if (!hasVisual(visual)) {
+    return `          <section class="lesson-section">
+            <h3>このページの整理</h3>
+            <p>このテーマは無理に図表化せず、定義・判断条件・確認問題を中心に学習します。</p>
+          </section>`;
+  }
+  if (["comparison-table", "relation-table"].includes(visual.type)) {
+    return `          <section class="lesson-section lesson-table-section" aria-labelledby="visualTitle">
+            <h3 id="visualTitle">${esc(visual.type === "comparison-table" ? "比較表" : "論点の整理")}</h3>
+            ${htmlTable(visual)}
+          </section>`;
+  }
+  if (["flow", "network"].includes(visual.type)) {
+    return `          <section class="lesson-section visual-lesson static-visual-section" aria-labelledby="visualTitle">
+            <h3 id="visualTitle">${esc(visual.type === "flow" ? "処理の流れ" : "層構造")}</h3>
+            <div class="static-figure">
+              <canvas id="lessonCanvas" class="figure-canvas-proxy" width="900" height="500" aria-hidden="true"></canvas>
+              <div id="lessonSvg" class="svg-visual" aria-label="${esc(item.title)}の構造図"></div>
+              <div class="visual-metrics lesson-metrics" id="lessonMetrics" aria-live="polite"></div>
+            </div>
+          </section>`;
+  }
+  return `          <section class="lesson-section visual-lesson" aria-labelledby="visualTitle">
+            <h3 id="visualTitle">操作して理解する</h3>
+            <div class="visual-workbench lesson-workbench">
+              <div class="control-panel" id="lessonControls"></div>
+              <div class="visual-output">
+                <canvas id="lessonCanvas" width="900" height="500" role="img" aria-label="${esc(item.title)}のインタラクティブ図表"></canvas>
+                <div id="lessonSvg" class="svg-visual" aria-label="${esc(item.title)}の構造図"></div>
+                <div class="visual-metrics lesson-metrics" id="lessonMetrics" aria-live="polite"></div>
+              </div>
+            </div>
+          </section>`;
+}
+
+function htmlTable(visual) {
+  const columns = visual.columns || [];
+  const rows = visual.rows || [];
+  return `<div class="lesson-table-wrap">
+              <table class="lesson-table">
+                <caption>${esc(visual.title || "整理表")}</caption>
+                <thead><tr>${columns.map((column) => `<th scope="col">${esc(column)}</th>`).join("")}</tr></thead>
+                <tbody>${rows.map((row) => `<tr>${columns.map((column, index) => `<td>${esc(Array.isArray(row) ? row[index] : row[column] || "")}</td>`).join("")}</tr>`).join("")}</tbody>
+              </table>
+            </div>`;
 }
 
 function quizFor(item, chapter) {

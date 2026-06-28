@@ -51,22 +51,21 @@
             <p>代表的なoptimizerの違いを、更新の安定性と速度の観点で比較する。</p><p>確認問題では、RMSProp。直近の勾配を重視する移動平均で学習率を調整し、AdaGradの過度な減衰を防ぐ。モーメンタムと組み合わせるとAdamに近づく。最適化手法の改良の流れ（SGD→Momentum/AdaGrad→RMSProp→Adam）を順に理解するとよい。</p><p>別の出題では、AdaGrad。頻繁に更新される次元の学習率を自動的に下げ、まれにしか出ない特徴を学習しやすくする。ただし学習率が下がり続けて止まる弱点があり、それを改善したのがRMSProp、さらに統合したのがAdam。</p>
           </section>
 
-          <section class="lesson-section visual-lesson" aria-labelledby="visualTitle">
-            <h3 id="visualTitle">インタラクティブ図表</h3>
-            <div class="visual-workbench lesson-workbench">
-              <div class="control-panel" id="lessonControls"></div>
-              <div class="visual-output">
-                <canvas id="lessonCanvas" width="900" height="500" role="img" aria-label="最適化手法のインタラクティブ図表"></canvas>
-                <div id="lessonSvg" class="svg-visual" aria-label="最適化手法の構造図"></div>
-                <div class="visual-metrics lesson-metrics" id="lessonMetrics" aria-live="polite"></div>
-              </div>
+          <section class="lesson-section lesson-table-section" aria-labelledby="visualTitle">
+            <h3 id="visualTitle">比較表</h3>
+            <div class="lesson-table-wrap">
+              <table class="lesson-table">
+                <caption>最適化手法の比較</caption>
+                <thead><tr><th scope="col">手法</th><th scope="col">更新の特徴</th><th scope="col">押さえる点</th></tr></thead>
+                <tbody><tr><td>SGD</td><td>一部のデータで勾配を見て更新する</td><td>単純だが揺れながら進む</td></tr><tr><td>Momentum</td><td>過去の更新方向を慣性として使う</td><td>谷間での振動を抑えやすい</td></tr><tr><td>Adam</td><td>勾配の平均と分散を使い学習率を調整する</td><td>実務で広く使われる代表例</td></tr></tbody>
+              </table>
             </div>
           </section>
 
           <section class="lesson-section">
             <h3>確認問題</h3>
             <div class="quiz-area lesson-quiz">
-              <article class="quiz-card"><h4>Q1. AdaGradの『学習率が下がり続けて止まる』弱点を、勾配二乗の指数移動平均を使って改善した手法はどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="optimizers-practice-0" value="RMSProp"><span>RMSProp</span></label><label class="quiz-option"><input type="radio" name="optimizers-practice-0" value="SGD"><span>SGD</span></label><label class="quiz-option"><input type="radio" name="optimizers-practice-0" value="ニュートン法"><span>ニュートン法</span></label><label class="quiz-option"><input type="radio" name="optimizers-practice-0" value="主成分分析"><span>主成分分析</span></label></fieldset></article><article class="quiz-card"><h4>Q2. パラメータごとに過去の勾配の二乗和を蓄積し、よく動いた方向の学習率を小さくしていく最適化手法はどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="optimizers-practice-1" value="AdaGrad"><span>AdaGrad</span></label><label class="quiz-option"><input type="radio" name="optimizers-practice-1" value="モーメンタム"><span>モーメンタム</span></label><label class="quiz-option"><input type="radio" name="optimizers-practice-1" value="SGD"><span>SGD</span></label><label class="quiz-option"><input type="radio" name="optimizers-practice-1" value="ドロップアウト"><span>ドロップアウト</span></label></fieldset></article><article class="quiz-card"><h4>Q3. モーメンタムとRMSProp（AdaGrad系）の利点を組み合わせ、広く使われる最適化アルゴリズムはどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="optimizers-practice-2" value="SGD"><span>SGD</span></label><label class="quiz-option"><input type="radio" name="optimizers-practice-2" value="Adam"><span>Adam</span></label><label class="quiz-option"><input type="radio" name="optimizers-practice-2" value="Adagradのみ"><span>Adagradのみ</span></label><label class="quiz-option"><input type="radio" name="optimizers-practice-2" value="Momentumのみ"><span>Momentumのみ</span></label></fieldset></article>
+              <article class="quiz-card" data-quiz-id="optimizers-practice-0"><h4>Q1. AdaGradの『学習率が下がり続けて止まる』弱点を、勾配二乗の指数移動平均を使って改善した手法はどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="optimizers-practice-0" value="RMSProp"><span class="option-marker">A</span><span>RMSProp</span></label><label class="quiz-option"><input type="radio" name="optimizers-practice-0" value="SGD"><span class="option-marker">B</span><span>SGD</span></label><label class="quiz-option"><input type="radio" name="optimizers-practice-0" value="ニュートン法"><span class="option-marker">C</span><span>ニュートン法</span></label><label class="quiz-option"><input type="radio" name="optimizers-practice-0" value="主成分分析"><span class="option-marker">D</span><span>主成分分析</span></label></fieldset><div class="quiz-feedback" data-feedback-for="optimizers-practice-0" aria-live="polite"></div></article><article class="quiz-card" data-quiz-id="optimizers-practice-1"><h4>Q2. パラメータごとに過去の勾配の二乗和を蓄積し、よく動いた方向の学習率を小さくしていく最適化手法はどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="optimizers-practice-1" value="AdaGrad"><span class="option-marker">A</span><span>AdaGrad</span></label><label class="quiz-option"><input type="radio" name="optimizers-practice-1" value="モーメンタム"><span class="option-marker">B</span><span>モーメンタム</span></label><label class="quiz-option"><input type="radio" name="optimizers-practice-1" value="SGD"><span class="option-marker">C</span><span>SGD</span></label><label class="quiz-option"><input type="radio" name="optimizers-practice-1" value="ドロップアウト"><span class="option-marker">D</span><span>ドロップアウト</span></label></fieldset><div class="quiz-feedback" data-feedback-for="optimizers-practice-1" aria-live="polite"></div></article><article class="quiz-card" data-quiz-id="optimizers-practice-2"><h4>Q3. モーメンタムとRMSProp（AdaGrad系）の利点を組み合わせ、広く使われる最適化アルゴリズムはどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="optimizers-practice-2" value="SGD"><span class="option-marker">A</span><span>SGD</span></label><label class="quiz-option"><input type="radio" name="optimizers-practice-2" value="Adam"><span class="option-marker">B</span><span>Adam</span></label><label class="quiz-option"><input type="radio" name="optimizers-practice-2" value="Adagradのみ"><span class="option-marker">C</span><span>Adagradのみ</span></label><label class="quiz-option"><input type="radio" name="optimizers-practice-2" value="Momentumのみ"><span class="option-marker">D</span><span>Momentumのみ</span></label></fieldset><div class="quiz-feedback" data-feedback-for="optimizers-practice-2" aria-live="polite"></div></article>
             </div>
             <div class="quiz-actions">
               <button class="primary-button" type="button" id="gradeLessonQuiz">採点する</button>
