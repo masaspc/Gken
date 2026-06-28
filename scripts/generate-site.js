@@ -179,6 +179,7 @@ function lesson(slug, title, terms, focus, visualType, steps) {
     terms,
     focus: authored.focus || focus,
     explanation: authored.explanation || [],
+    body: authored.body || [],
     callouts: authored.callouts || [],
     visual: visualFor(slug, title, visualType, authored.visual)
   };
@@ -335,8 +336,7 @@ function lessonPage(chapter, item, index) {
 
           <section class="lesson-section">
             <h3>本文解説</h3>
-            ${explanation.map((paragraph) => `<p>${inlineText(paragraph, item.terms)}</p>`).join("")}
-            ${calloutFor(item)}
+            ${lessonBody(item, explanation)}
           </section>
 
 ${visualSection}
@@ -429,6 +429,39 @@ function htmlTable(visual) {
                 <tbody>${rows.map((row) => `<tr>${columns.map((column, index) => `<td>${esc(Array.isArray(row) ? row[index] : row[column] || "")}</td>`).join("")}</tr>`).join("")}</tbody>
               </table>
             </div>`;
+}
+
+function lessonBody(item, explanation) {
+  if (Array.isArray(item.body) && item.body.length) {
+    return item.body.map((block) => bodyBlock(block, item.terms)).join("");
+  }
+  return `${explanation.map((paragraph) => `<p>${inlineText(paragraph, item.terms)}</p>`).join("")}${calloutFor(item)}`;
+}
+
+function bodyBlock(block, terms) {
+  if (!block || typeof block !== "object") return "";
+  if (block.callout) {
+    const label = block.label || calloutLabel(block.callout);
+    return `<aside class="callout callout--${esc(block.callout)}"><strong>${esc(label)}</strong><p>${inlineText(block.text || "", terms)}</p></aside>`;
+  }
+  const title = block.h ? `<h4>${esc(block.h)}</h4>` : "";
+  const paragraphs = Array.isArray(block.p)
+    ? block.p.map((paragraph) => `<p>${inlineText(paragraph, terms)}</p>`).join("")
+    : block.p ? `<p>${inlineText(block.p, terms)}</p>` : "";
+  const list = Array.isArray(block.list)
+    ? `<ul class="body-list">${block.list.map((item) => `<li>${inlineText(item, terms)}</li>`).join("")}</ul>` : "";
+  const table = Array.isArray(block.table)
+    ? `<div class="body-table-wrap"><table class="body-table"><tbody>${block.table.map((row) => `<tr>${row.map((cell) => `<td>${inlineText(cell, terms)}</td>`).join("")}</tr>`).join("")}</tbody></table></div>` : "";
+  return `<section class="body-block">${title}${paragraphs}${list}${table}</section>`;
+}
+
+function calloutLabel(type) {
+  return {
+    exam: "試験で頻出",
+    point: "ポイント",
+    warn: "注意",
+    example: "具体例"
+  }[type] || "ポイント";
 }
 
 function calloutFor(item) {
@@ -911,6 +944,13 @@ function searchIndex() {
   return [...lessonItems, ...termItems, ...questionItems];
 }
 
+function syllabusMap() {
+  return chapters.map((chapter) => ({
+    ...chapter,
+    lessons: chapter.lessons.map(({ body, callouts, explanation, ...lesson }) => lesson)
+  }));
+}
+
 function generate() {
   ensureDir("chapters");
   chapters.forEach((chapter) => {
@@ -927,7 +967,7 @@ function generate() {
   writeFile("search/index.html", searchPage());
   writeFile("practice/index.html", practicePage());
   writeFile("sources/index.html", sourcesPage());
-  writeFile("content/syllabus-map.json", JSON.stringify(chapters, null, 2));
+  writeFile("content/syllabus-map.json", JSON.stringify(syllabusMap(), null, 2));
   writeFile("content/search-index.json", JSON.stringify(searchIndex(), null, 2));
 }
 
