@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="教師あり学習の品質を左右するラベル付けを理解する。">
+  <title>アノテーション | G検定インタラクティブ学習サイト</title>
+  <link rel="stylesheet" href="../../assets/css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">本文へ移動</a>
+  <header class="app-header compact-header">
+    <div class="brand-block">
+      <p class="eyebrow">G検定 Interactive Syllabus</p>
+      <h1>アノテーション</h1>
+      <p class="lead">教師あり学習の品質を左右するラベル付けを理解する。</p>
+    </div>
+    <div class="header-actions">
+      <button class="icon-button" type="button" id="themeToggle" aria-label="ライトテーマとダークテーマを切り替え">◐</button>
+      <a class="text-button" href="../../index.html">トップ</a>
+    </div>
+  </header>
+  <nav class="top-nav" aria-label="主要ナビゲーション">
+    <a href="../../index.html">学習マップ</a>
+    <a href="../../glossary/index.html">用語集</a>
+    <a href="../../review/index.html">横断復習</a>
+    <a href="../../sources/index.html">参照資料</a>
+  </nav>
+  <main id="main">
+    <section class="lesson-shell">
+      <div class="breadcrumb"><a href="../../index.html">トップ</a> / <a href="./index.html">AIの社会実装に向けて</a> / アノテーション</div>
+      <div class="lesson-layout">
+        <article class="lesson-main">
+          <p class="section-kicker">Lesson 05</p>
+          <h2>アノテーション</h2>
+          <p>教師あり学習の品質を左右するラベル付けを理解する。</p>
+          <div class="tag-list"><span class="tag">アノテーション</span><span class="tag">ラベル品質</span><span class="tag">一致率</span><span class="tag">教師データ</span></div>
+
+          <section class="lesson-section">
+            <h3>学習目標</h3>
+            <ul class="plain-list">
+              <li>アノテーションを、試験問題の文脈で説明できる。</li>
+              <li>ラベル品質、一致率、教師データとの関係を区別できる。</li>
+              <li>図表を操作して、概念の変化やトレードオフを読み取れる。</li>
+            </ul>
+          </section>
+
+          <section class="lesson-section">
+            <h3>本文解説</h3>
+            <p>教師あり学習の品質を左右するラベル付けを理解する。</p>
+            <p>G検定では、用語の暗記だけでなく、どの場面でその考え方を使うのかが問われます。このページでは <strong>アノテーション、ラベル品質、一致率、教師データ</strong> を一つの学習単位として扱い、定義、関係、判断の観点をまとめます。</p>
+            <p>まず用語の境界を押さえ、次に図表を操作して結果がどう変わるかを観察してください。操作によって値や形が変わる部分が、そのテーマで理解すべき中心です。</p>
+          </section>
+
+          <section class="lesson-section visual-lesson" aria-labelledby="visualTitle">
+            <h3 id="visualTitle">インタラクティブ図表</h3>
+            <div class="visual-workbench lesson-workbench">
+              <div class="control-panel" id="lessonControls"></div>
+              <div class="visual-output">
+                <canvas id="lessonCanvas" width="900" height="500" role="img" aria-label="アノテーションのインタラクティブ図表"></canvas>
+                <div id="lessonSvg" class="svg-visual" aria-label="アノテーションの構造図"></div>
+                <div class="visual-metrics lesson-metrics" id="lessonMetrics" aria-live="polite"></div>
+              </div>
+            </div>
+          </section>
+
+          <section class="lesson-section">
+            <h3>確認問題</h3>
+            <div class="quiz-area lesson-quiz">
+              <article class="quiz-card"><h4>Q1. アノテーションを学ぶとき、最も重要な見方はどれですか。</h4><fieldset><label class="quiz-option"><input type="radio" name="annotation-q1" value="アノテーションの定義と使う場面を区別する"><span>アノテーションの定義と使う場面を区別する</span></label><label class="quiz-option"><input type="radio" name="annotation-q1" value="用語を英字順に暗記する"><span>用語を英字順に暗記する</span></label><label class="quiz-option"><input type="radio" name="annotation-q1" value="図表を見ずに数値だけを覚える"><span>図表を見ずに数値だけを覚える</span></label><label class="quiz-option"><input type="radio" name="annotation-q1" value="関連語をすべて同じ意味として扱う"><span>関連語をすべて同じ意味として扱う</span></label></fieldset></article><article class="quiz-card"><h4>Q2. ラベル品質と一致率の関係を理解するために有効な学習はどれですか。</h4><fieldset><label class="quiz-option"><input type="radio" name="annotation-q2" value="操作できる図表で変化を見る"><span>操作できる図表で変化を見る</span></label><label class="quiz-option"><input type="radio" name="annotation-q2" value="公式資料を転載する"><span>公式資料を転載する</span></label><label class="quiz-option"><input type="radio" name="annotation-q2" value="ページタイトルだけ読む"><span>ページタイトルだけ読む</span></label><label class="quiz-option"><input type="radio" name="annotation-q2" value="選択肢をランダムに選ぶ"><span>選択肢をランダムに選ぶ</span></label></fieldset></article>
+            </div>
+            <div class="quiz-actions">
+              <button class="primary-button" type="button" id="gradeLessonQuiz">採点する</button>
+              <button class="ghost-button" type="button" id="completeLesson">このページを完了</button>
+            </div>
+            <p class="quiz-result" id="lessonQuizResult" aria-live="polite"></p>
+            <p class="progress-state">進捗: <strong id="lessonProgressState">未完了</strong></p>
+          </section>
+        </article>
+
+        <aside class="lesson-side">
+          <h3>このページの用語</h3>
+          <ol>
+            <li>アノテーション</li><li>ラベル品質</li><li>一致率</li><li>教師データ</li>
+          </ol>
+          <h3>前後の学習</h3>
+          <p><a href="../../chapters/implementation/data-preprocessing.html">前: データ加工</a></p>
+          <p><a href="../../chapters/implementation/model-monitoring.html">次: 運用監視</a></p>
+        </aside>
+      </div>
+    </section>
+    <script type="application/json" id="lessonData">{"slug":"implementation/annotation","title":"アノテーション","terms":["アノテーション","ラベル品質","一致率","教師データ"],"visual":{"type":"bars","axis":"比較と関係"},"quiz":[{"id":"annotation-q1","prompt":"アノテーションを学ぶとき、最も重要な見方はどれですか。","options":["アノテーションの定義と使う場面を区別する","用語を英字順に暗記する","図表を見ずに数値だけを覚える","関連語をすべて同じ意味として扱う"],"answer":"アノテーションの定義と使う場面を区別する"},{"id":"annotation-q2","prompt":"ラベル品質と一致率の関係を理解するために有効な学習はどれですか。","options":["操作できる図表で変化を見る","公式資料を転載する","ページタイトルだけ読む","選択肢をランダムに選ぶ"],"answer":"操作できる図表で変化を見る"}]}</script>
+  </main>
+  <footer class="app-footer">
+    <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>
+  </footer>
+  <script src="../../assets/js/lesson.js" defer></script>
+</body>
+</html>

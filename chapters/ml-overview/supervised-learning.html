@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="正解付きデータから入力と出力の対応を学ぶ仕組みを理解する。">
+  <title>教師あり学習 | G検定インタラクティブ学習サイト</title>
+  <link rel="stylesheet" href="../../assets/css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">本文へ移動</a>
+  <header class="app-header compact-header">
+    <div class="brand-block">
+      <p class="eyebrow">G検定 Interactive Syllabus</p>
+      <h1>教師あり学習</h1>
+      <p class="lead">正解付きデータから入力と出力の対応を学ぶ仕組みを理解する。</p>
+    </div>
+    <div class="header-actions">
+      <button class="icon-button" type="button" id="themeToggle" aria-label="ライトテーマとダークテーマを切り替え">◐</button>
+      <a class="text-button" href="../../index.html">トップ</a>
+    </div>
+  </header>
+  <nav class="top-nav" aria-label="主要ナビゲーション">
+    <a href="../../index.html">学習マップ</a>
+    <a href="../../glossary/index.html">用語集</a>
+    <a href="../../review/index.html">横断復習</a>
+    <a href="../../sources/index.html">参照資料</a>
+  </nav>
+  <main id="main">
+    <section class="lesson-shell">
+      <div class="breadcrumb"><a href="../../index.html">トップ</a> / <a href="./index.html">機械学習の概要</a> / 教師あり学習</div>
+      <div class="lesson-layout">
+        <article class="lesson-main">
+          <p class="section-kicker">Lesson 01</p>
+          <h2>教師あり学習</h2>
+          <p>正解付きデータから入力と出力の対応を学ぶ仕組みを理解する。</p>
+          <div class="tag-list"><span class="tag">教師あり学習</span><span class="tag">ラベル</span><span class="tag">訓練データ</span><span class="tag">予測</span></div>
+
+          <section class="lesson-section">
+            <h3>学習目標</h3>
+            <ul class="plain-list">
+              <li>教師あり学習を、試験問題の文脈で説明できる。</li>
+              <li>ラベル、訓練データ、予測との関係を区別できる。</li>
+              <li>図表を操作して、概念の変化やトレードオフを読み取れる。</li>
+            </ul>
+          </section>
+
+          <section class="lesson-section">
+            <h3>本文解説</h3>
+            <p>正解付きデータから入力と出力の対応を学ぶ仕組みを理解する。</p>
+            <p>G検定では、用語の暗記だけでなく、どの場面でその考え方を使うのかが問われます。このページでは <strong>教師あり学習、ラベル、訓練データ、予測</strong> を一つの学習単位として扱い、定義、関係、判断の観点をまとめます。</p>
+            <p>まず用語の境界を押さえ、次に図表を操作して結果がどう変わるかを観察してください。操作によって値や形が変わる部分が、そのテーマで理解すべき中心です。</p>
+          </section>
+
+          <section class="lesson-section visual-lesson" aria-labelledby="visualTitle">
+            <h3 id="visualTitle">インタラクティブ図表</h3>
+            <div class="visual-workbench lesson-workbench">
+              <div class="control-panel" id="lessonControls"></div>
+              <div class="visual-output">
+                <canvas id="lessonCanvas" width="900" height="500" role="img" aria-label="教師あり学習のインタラクティブ図表"></canvas>
+                <div id="lessonSvg" class="svg-visual" aria-label="教師あり学習の構造図"></div>
+                <div class="visual-metrics lesson-metrics" id="lessonMetrics" aria-live="polite"></div>
+              </div>
+            </div>
+          </section>
+
+          <section class="lesson-section">
+            <h3>確認問題</h3>
+            <div class="quiz-area lesson-quiz">
+              <article class="quiz-card"><h4>Q1. 教師あり学習を学ぶとき、最も重要な見方はどれですか。</h4><fieldset><label class="quiz-option"><input type="radio" name="supervised-learning-q1" value="教師あり学習の定義と使う場面を区別する"><span>教師あり学習の定義と使う場面を区別する</span></label><label class="quiz-option"><input type="radio" name="supervised-learning-q1" value="用語を英字順に暗記する"><span>用語を英字順に暗記する</span></label><label class="quiz-option"><input type="radio" name="supervised-learning-q1" value="図表を見ずに数値だけを覚える"><span>図表を見ずに数値だけを覚える</span></label><label class="quiz-option"><input type="radio" name="supervised-learning-q1" value="関連語をすべて同じ意味として扱う"><span>関連語をすべて同じ意味として扱う</span></label></fieldset></article><article class="quiz-card"><h4>Q2. ラベルと訓練データの関係を理解するために有効な学習はどれですか。</h4><fieldset><label class="quiz-option"><input type="radio" name="supervised-learning-q2" value="操作できる図表で変化を見る"><span>操作できる図表で変化を見る</span></label><label class="quiz-option"><input type="radio" name="supervised-learning-q2" value="公式資料を転載する"><span>公式資料を転載する</span></label><label class="quiz-option"><input type="radio" name="supervised-learning-q2" value="ページタイトルだけ読む"><span>ページタイトルだけ読む</span></label><label class="quiz-option"><input type="radio" name="supervised-learning-q2" value="選択肢をランダムに選ぶ"><span>選択肢をランダムに選ぶ</span></label></fieldset></article>
+            </div>
+            <div class="quiz-actions">
+              <button class="primary-button" type="button" id="gradeLessonQuiz">採点する</button>
+              <button class="ghost-button" type="button" id="completeLesson">このページを完了</button>
+            </div>
+            <p class="quiz-result" id="lessonQuizResult" aria-live="polite"></p>
+            <p class="progress-state">進捗: <strong id="lessonProgressState">未完了</strong></p>
+          </section>
+        </article>
+
+        <aside class="lesson-side">
+          <h3>このページの用語</h3>
+          <ol>
+            <li>教師あり学習</li><li>ラベル</li><li>訓練データ</li><li>予測</li>
+          </ol>
+          <h3>前後の学習</h3>
+          <p><a href="../../chapters/ai-history/deep-learning-rise.html">前: ディープラーニングの発展</a></p>
+          <p><a href="../../chapters/ml-overview/regression.html">次: 回帰</a></p>
+        </aside>
+      </div>
+    </section>
+    <script type="application/json" id="lessonData">{"slug":"ml-overview/supervised-learning","title":"教師あり学習","terms":["教師あり学習","ラベル","訓練データ","予測"],"visual":{"type":"scatter","axis":"比較と関係"},"quiz":[{"id":"supervised-learning-q1","prompt":"教師あり学習を学ぶとき、最も重要な見方はどれですか。","options":["教師あり学習の定義と使う場面を区別する","用語を英字順に暗記する","図表を見ずに数値だけを覚える","関連語をすべて同じ意味として扱う"],"answer":"教師あり学習の定義と使う場面を区別する"},{"id":"supervised-learning-q2","prompt":"ラベルと訓練データの関係を理解するために有効な学習はどれですか。","options":["操作できる図表で変化を見る","公式資料を転載する","ページタイトルだけ読む","選択肢をランダムに選ぶ"],"answer":"操作できる図表で変化を見る"}]}</script>
+  </main>
+  <footer class="app-footer">
+    <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>
+  </footer>
+  <script src="../../assets/js/lesson.js" defer></script>
+</body>
+</html>
