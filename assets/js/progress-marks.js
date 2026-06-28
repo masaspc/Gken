@@ -16,14 +16,21 @@
   // 完了状況
   var done = {};
   try {
-    done = JSON.parse(localStorage.getItem("gken-lesson-progress-v3")) || {};
+    var parsed = JSON.parse(localStorage.getItem("gken-lesson-progress-v3"));
+    if (parsed && typeof parsed === "object" && !Array.isArray(parsed)) done = parsed;
   } catch (error) {
     done = {};
   }
 
   document.querySelectorAll("[data-lesson-slug]").forEach(function (card) {
-    if (done[card.getAttribute("data-lesson-slug")]) {
-      card.classList.add("is-complete");
+    var slug = card.getAttribute("data-lesson-slug");
+    if (done[slug] !== true) return;
+    card.classList.add("is-complete");
+    if (!card.querySelector(".lesson-card-badge")) {
+      var badge = document.createElement("span");
+      badge.className = "lesson-card-badge";
+      badge.textContent = "✓ 完了";
+      card.appendChild(badge);
     }
   });
 

@@ -797,7 +797,6 @@ main {
 }
 
 .lesson-card-badge {
-  display: none;
   position: absolute;
   top: 0.7rem;
   right: 0.7rem;
@@ -812,10 +811,6 @@ main {
 .lesson-card.is-complete {
   border-color: #2e7d55;
   background: color-mix(in srgb, #2e7d55 8%, var(--surface));
-}
-
-.lesson-card.is-complete .lesson-card-badge {
-  display: inline-block;
 }
 
 .chapter-progress {
