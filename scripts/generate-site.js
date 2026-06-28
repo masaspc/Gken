@@ -330,14 +330,6 @@ function lessonPage(chapter, item, index) {
           <p>${esc(item.focus)}</p>
           <div class="tag-list">${item.terms.map((term) => `<span class="tag">${esc(term)}</span>`).join("")}</div>
 
-          <div class="lesson-status" id="lessonStatus" role="status" hidden>
-            <span class="lesson-status-icon" aria-hidden="true">✓</span>
-            <div class="lesson-status-text">
-              <strong>このレッスンは完了しました</strong>
-              <span>お疲れさまでした。次のページへ進めます。</span>
-            </div>
-          </div>
-
           <section class="lesson-section">
             <h3>学習目標</h3>
             <ul class="plain-list">
@@ -362,6 +354,13 @@ ${visualSection}
             <div class="quiz-actions">
               <button class="primary-button" type="button" id="gradeLessonQuiz">採点する</button>
               ${next ? `<a class="ghost-button lesson-next-link" id="lessonNextLink" href="../../chapters/${next.chapter.slug}/${next.lesson.slug}.html">次のページへ</a>` : `<a class="ghost-button lesson-next-link" id="lessonNextLink" href="./index.html">章のトップへ</a>`}
+            </div>
+            <div class="lesson-status" id="lessonStatus" role="status" hidden>
+              <span class="lesson-status-icon" aria-hidden="true">✓</span>
+              <div class="lesson-status-text">
+                <strong>このレッスンは完了しました</strong>
+                <span>お疲れさまでした。上の「次のページへ」から進めます。</span>
+              </div>
             </div>
             <p class="quiz-result" id="lessonQuizResult" aria-live="polite"></p>
             <p class="progress-state">進捗: <strong id="lessonProgressState">未完了</strong></p>
