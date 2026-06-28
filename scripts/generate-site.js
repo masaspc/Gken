@@ -224,6 +224,7 @@ function layout({ depth, title, description, body, extraScript = "" }) {
   </header>
   <nav class="top-nav" aria-label="主要ナビゲーション">
     <a href="${rel(depth, "index.html")}">学習マップ</a>
+    <a href="${rel(depth, "practice/index.html")}">4択演習</a>
     <a href="${rel(depth, "glossary/index.html")}">用語集</a>
     <a href="${rel(depth, "review/index.html")}">横断復習</a>
     <a href="${rel(depth, "sources/index.html")}">参照資料</a>
@@ -391,6 +392,14 @@ function homePage() {
         <article><h3>技術構造</h3><p>ニューラルネットワーク、CNN、Attentionは構造図で関係を見ます。</p></article>
         <article><h3>法律・倫理</h3><p>判断フローとリスクマトリクスで確認手順として学びます。</p></article>
       </div>
+    </section>
+    <section class="layout">
+      <div class="section-heading">
+        <p class="section-kicker">Practice bank</p>
+        <h2>本番形式の4択演習</h2>
+        <p>既存の gtest-quiz.html から抽出した567問を、カテゴリ別に解ける演習ページとして組み込みます。</p>
+      </div>
+      <a class="primary-button" href="./practice/index.html">4択トレーニングを開く</a>
     </section>`;
   return layout({
     depth: 0,
@@ -434,6 +443,48 @@ function reviewPage() {
   return layout({ depth: 1, title: "横断復習", description: "全章の復習導線です。", body });
 }
 
+function practicePage() {
+  const body = `    <section class="layout">
+      <div class="section-heading">
+        <p class="section-kicker">4-choice training</p>
+        <h2>G検定 4択トレーニング</h2>
+        <p>既存の gtest-quiz.html を参考に、567問の4択演習をカテゴリ別に解けるようにしました。解答後すぐに正誤と解説を確認できます。</p>
+      </div>
+
+      <section class="practice-setup" id="practiceSetup">
+        <h3>出題カテゴリ</h3>
+        <div class="chip-row" id="practiceCats"></div>
+        <div class="practice-toolbar">
+          <button class="primary-button" type="button" id="practiceStart">開始する</button>
+          <span id="practiceCount">読み込み中</span>
+        </div>
+      </section>
+
+      <section class="practice-stage" id="practiceStage" hidden>
+        <p class="practice-meta" id="practiceMeta"></p>
+        <h3 class="practice-question" id="practiceQuestion"></h3>
+        <div class="practice-options" id="practiceOptions"></div>
+        <div class="practice-feedback" id="practiceFeedback" aria-live="polite"></div>
+        <div class="practice-toolbar">
+          <button class="primary-button" type="button" id="practiceNext" disabled>次へ</button>
+        </div>
+      </section>
+
+      <section class="practice-result" id="practiceResult" hidden></section>
+      <div class="practice-toolbar">
+        <button class="ghost-button" type="button" id="retryWrong" disabled>間違えた問題だけ再挑戦</button>
+        <button class="ghost-button" type="button" id="practiceRestart">設定に戻る</button>
+      </div>
+    </section>`;
+  return layout({
+    depth: 1,
+    title: "G検定 4択トレーニング",
+    description: "既存の4択演習コンテンツを統合した本番形式の練習ページです。",
+    body,
+    extraScript: `  <script src="../assets/js/practice.js" defer></script>`
+  });
+}
+
 function sourcesPage() {
   const body = `    <section class="layout">
       <div class="section-heading">
@@ -465,6 +516,7 @@ function generate() {
   writeFile("index.html", homePage());
   writeFile("glossary/index.html", glossaryPage());
   writeFile("review/index.html", reviewPage());
+  writeFile("practice/index.html", practicePage());
   writeFile("sources/index.html", sourcesPage());
   writeFile("content/syllabus-map.json", JSON.stringify(chapters, null, 2));
 }

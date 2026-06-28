@@ -50,11 +50,17 @@ HTMLページ数は合計101ページです。
 - `chapters/`: 章トップと学習ページ
 - `glossary/index.html`: 用語集
 - `review/index.html`: 横断復習
+- `practice/index.html`: gtest-quiz.html を参考に統合した4択トレーニング
 - `sources/index.html`: 参照資料
 - `content/syllabus-map.json`: 章・ページ・用語の構造データ
+- `content/gtest-questions.json`: 4択演習の問題データ
+- `content/gtest-glossary.json`: 4択演習側の用語データ
 - `assets/css/styles.css`: サイト共通CSS
 - `assets/js/lesson.js`: 各学習ページの図表、採点、進捗保存
+- `assets/js/practice.js`: 4択演習ページの出題、採点、復習
 - `scripts/generate-site.js`: 静的HTML生成スクリプト
+- `scripts/extract-gtest-data.js`: `gtest-quiz.html` から問題・用語データを抽出するスクリプト
+- `gtest-quiz.html`: 以前作成した4択トレーニングの元コンテンツ
 
 ## インタラクティブ図表
 
@@ -72,8 +78,11 @@ HTMLページ数は合計101ページです。
 ## 生成方法
 
 ```bash
+node scripts/extract-gtest-data.js
 node scripts/generate-site.js
 ```
+
+`extract-gtest-data.js` は、既存の `gtest-quiz.html` から567問の4択問題と208語の用語データを抽出します。
 
 生成後、GitHub Pages は `main` ブランチのルートから静的HTMLとして公開します。
 
