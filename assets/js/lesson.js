@@ -136,8 +136,31 @@
       });
       const percent = Math.round((score / lesson.quiz.length) * 100);
       quizResult.textContent = `${score}/${lesson.quiz.length}問正解、${percent}%です。各問題の下に解説を表示しました。`;
-      document.getElementById("lessonNextLink")?.classList.add("is-ready");
+      markComplete();
     });
+  }
+
+  function renderCompletion(done) {
+    document.body.classList.toggle("lesson-done", done);
+    const banner = document.getElementById("lessonStatus");
+    if (banner) banner.hidden = !done;
+    document.getElementById("lessonNextLink")?.classList.toggle("is-ready", done);
+    const stateLabel = document.getElementById("lessonProgressState");
+    if (stateLabel) stateLabel.textContent = done ? "完了済み" : "未完了";
+  }
+
+  function markComplete() {
+    const next = progress();
+    const already = Boolean(next[lesson.slug]);
+    next[lesson.slug] = true;
+    saveProgress(next);
+    renderCompletion(true);
+    if (!already) {
+      const banner = document.getElementById("lessonStatus");
+      if (banner && typeof banner.scrollIntoView === "function") {
+        banner.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+    }
   }
 
   function stripTags(value) {
@@ -149,36 +172,7 @@
   }
 
   function setupProgress() {
-    const button = document.getElementById("completeLesson");
-    const stateLabel = document.getElementById("lessonProgressState");
-    const banner = document.getElementById("lessonStatus");
-    const nextLink = document.getElementById("lessonNextLink");
-
-    function render(done) {
-      document.body.classList.toggle("lesson-done", done);
-      if (banner) banner.hidden = !done;
-      if (nextLink) nextLink.classList.toggle("is-ready", done);
-      if (stateLabel) stateLabel.textContent = done ? "完了済み" : "未完了";
-      if (button) {
-        button.classList.toggle("is-done", done);
-        button.setAttribute("aria-pressed", done ? "true" : "false");
-        button.textContent = done ? "✓ 完了済み（取り消す）" : "このページを完了にする";
-      }
-    }
-
-    render(Boolean(progress()[lesson.slug]));
-
-    button?.addEventListener("click", () => {
-      const next = progress();
-      const done = !next[lesson.slug];
-      if (done) next[lesson.slug] = true;
-      else delete next[lesson.slug];
-      saveProgress(next);
-      render(done);
-      if (done && banner && typeof banner.scrollIntoView === "function") {
-        banner.scrollIntoView({ behavior: "smooth", block: "center" });
-      }
-    });
+    renderCompletion(Boolean(progress()[lesson.slug]));
   }
 
   function setupTheme() {

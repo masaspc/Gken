@@ -712,13 +712,6 @@ main {
   font-size: 0.9rem;
 }
 
-.complete-button.is-done {
-  border-color: #2e7d55;
-  background: color-mix(in srgb, #2e7d55 16%, var(--surface));
-  color: color-mix(in srgb, #2e7d55 78%, var(--text));
-  font-weight: 800;
-}
-
 .quiz-result {
   min-height: 2rem;
   margin: 0.9rem 0 0;
@@ -794,9 +787,46 @@ main {
   transition: transform 160ms ease, border-color 160ms ease;
 }
 
+.lesson-card {
+  position: relative;
+}
+
 .lesson-card:hover {
   transform: translateY(-1px);
   border-color: var(--accent);
+}
+
+.lesson-card-badge {
+  display: none;
+  position: absolute;
+  top: 0.7rem;
+  right: 0.7rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 999px;
+  background: #2e7d55;
+  color: #fff;
+  font-size: 0.74rem;
+  font-weight: 800;
+}
+
+.lesson-card.is-complete {
+  border-color: #2e7d55;
+  background: color-mix(in srgb, #2e7d55 8%, var(--surface));
+}
+
+.lesson-card.is-complete .lesson-card-badge {
+  display: inline-block;
+}
+
+.chapter-progress {
+  display: inline-block;
+  margin: 0.5rem 0 0;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.chapter-progress.is-complete {
+  color: #2e7d55;
 }
 
 .lesson-card span {
