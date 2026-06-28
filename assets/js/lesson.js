@@ -136,8 +136,31 @@
       });
       const percent = Math.round((score / lesson.quiz.length) * 100);
       quizResult.textContent = `${score}/${lesson.quiz.length}問正解、${percent}%です。各問題の下に解説を表示しました。`;
-      document.getElementById("lessonNextLink")?.classList.add("is-ready");
+      markComplete();
     });
+  }
+
+  function renderCompletion(done) {
+    document.body.classList.toggle("lesson-done", done);
+    const banner = document.getElementById("lessonStatus");
+    if (banner) banner.hidden = !done;
+    document.getElementById("lessonNextLink")?.classList.toggle("is-ready", done);
+    const stateLabel = document.getElementById("lessonProgressState");
+    if (stateLabel) stateLabel.textContent = done ? "完了済み" : "未完了";
+  }
+
+  function markComplete() {
+    const next = progress();
+    const already = Boolean(next[lesson.slug]);
+    next[lesson.slug] = true;
+    saveProgress(next);
+    renderCompletion(true);
+    if (!already) {
+      const banner = document.getElementById("lessonStatus");
+      if (banner && typeof banner.scrollIntoView === "function") {
+        banner.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+    }
   }
 
   function stripTags(value) {
@@ -149,17 +172,7 @@
   }
 
   function setupProgress() {
-    const button = document.getElementById("completeLesson");
-    const stateLabel = document.getElementById("lessonProgressState");
-    const current = progress();
-    if (current[lesson.slug]) stateLabel.textContent = "完了済み";
-    button?.addEventListener("click", () => {
-      const next = progress();
-      next[lesson.slug] = true;
-      saveProgress(next);
-      stateLabel.textContent = "完了済み";
-      document.getElementById("lessonNextLink")?.classList.add("is-ready");
-    });
+    renderCompletion(Boolean(progress()[lesson.slug]));
   }
 
   function setupTheme() {

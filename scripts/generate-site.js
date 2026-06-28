@@ -330,6 +330,14 @@ function lessonPage(chapter, item, index) {
           <p>${esc(item.focus)}</p>
           <div class="tag-list">${item.terms.map((term) => `<span class="tag">${esc(term)}</span>`).join("")}</div>
 
+          <div class="lesson-status" id="lessonStatus" role="status" hidden>
+            <span class="lesson-status-icon" aria-hidden="true">✓</span>
+            <div class="lesson-status-text">
+              <strong>このレッスンは完了しました</strong>
+              <span>お疲れさまでした。次のページへ進めます。</span>
+            </div>
+          </div>
+
           <section class="lesson-section">
             <h3>学習目標</h3>
             <ul class="plain-list">
@@ -353,7 +361,6 @@ ${visualSection}
             </div>
             <div class="quiz-actions">
               <button class="primary-button" type="button" id="gradeLessonQuiz">採点する</button>
-              <button class="ghost-button" type="button" id="completeLesson">このページを完了</button>
               ${next ? `<a class="ghost-button lesson-next-link" id="lessonNextLink" href="../../chapters/${next.chapter.slug}/${next.lesson.slug}.html">次のページへ</a>` : `<a class="ghost-button lesson-next-link" id="lessonNextLink" href="./index.html">章のトップへ</a>`}
             </div>
             <p class="quiz-result" id="lessonQuizResult" aria-live="polite"></p>
@@ -643,12 +650,13 @@ function chapterIndex(chapter) {
         <p class="section-kicker">Chapter</p>
         <h2>${esc(chapter.title)}</h2>
         <p>${esc(chapter.summary)}</p>
+        <p class="chapter-progress" data-chapter-progress="${chapter.slug}" data-chapter-total="${chapter.lessons.length}">0 / ${chapter.lessons.length} 完了</p>
       </div>
       <div class="lesson-grid">
-        ${chapter.lessons.map((item, index) => `<a class="lesson-card" href="./${item.slug}.html"><span>${String(index + 1).padStart(2, "0")}</span><h3>${esc(item.title)}</h3><p>${esc(item.focus)}</p><div class="tag-list">${tagTerms(item.terms).map((term) => `<em>${esc(term)}</em>`).join("")}</div></a>`).join("")}
+        ${chapter.lessons.map((item, index) => `<a class="lesson-card" href="./${item.slug}.html" data-lesson-slug="${chapter.slug}/${item.slug}"><span>${String(index + 1).padStart(2, "0")}</span><h3>${esc(item.title)}</h3><p>${esc(item.focus)}</p><div class="tag-list">${tagTerms(item.terms).map((term) => `<em>${esc(term)}</em>`).join("")}</div><span class="lesson-card-badge">✓ 完了</span></a>`).join("")}
       </div>
     </section>`;
-  return layout({ depth: 2, title: chapter.title, description: chapter.summary, body });
+  return layout({ depth: 2, title: chapter.title, description: chapter.summary, body, extraScript: `  <script src="${rel(2, "assets/js/progress-marks.js")}" defer></script>` });
 }
 
 function visualGoal(type) {
@@ -695,7 +703,7 @@ function homePage() {
         <p>章を選び、用語・内容単位のページへ進んでください。</p>
       </div>
       <div class="module-grid">
-        ${chapters.map((chapter) => `<a class="module-card module-link" href="./chapters/${chapter.slug}/index.html"><h3>${esc(chapter.title)}</h3><p>${esc(chapter.summary)}</p><div class="module-meta"><span>${chapter.lessons.length}ページ</span><span>図表・小テスト</span></div></a>`).join("")}
+        ${chapters.map((chapter) => `<a class="module-card module-link" href="./chapters/${chapter.slug}/index.html"><h3>${esc(chapter.title)}</h3><p>${esc(chapter.summary)}</p><div class="module-meta"><span>${chapter.lessons.length}ページ</span><span class="chapter-progress" data-chapter-progress="${chapter.slug}" data-chapter-total="${chapter.lessons.length}">0 / ${chapter.lessons.length} 完了</span></div></a>`).join("")}
       </div>
     </section>
     <section class="layout">
@@ -735,7 +743,7 @@ function homePage() {
     title: "G検定インタラクティブ学習サイト",
     description: "シラバスの重要用語と内容単位で学べる多ページ静的HTML教材。",
     body,
-    extraScript: `  <script>document.getElementById("themeToggle")?.addEventListener("click",()=>{const n=document.documentElement.dataset.theme==="dark"?"light":"dark";document.documentElement.dataset.theme=n;localStorage.setItem("gken-theme",n)});const s=localStorage.getItem("gken-theme");if(s)document.documentElement.dataset.theme=s;</script>`
+    extraScript: `  <script src="./assets/js/progress-marks.js" defer></script>`
   });
 }
 
