@@ -653,7 +653,7 @@ function chapterIndex(chapter) {
         <p class="chapter-progress" data-chapter-progress="${chapter.slug}" data-chapter-total="${chapter.lessons.length}">0 / ${chapter.lessons.length} 完了</p>
       </div>
       <div class="lesson-grid">
-        ${chapter.lessons.map((item, index) => `<a class="lesson-card" href="./${item.slug}.html" data-lesson-slug="${chapter.slug}/${item.slug}"><span>${String(index + 1).padStart(2, "0")}</span><h3>${esc(item.title)}</h3><p>${esc(item.focus)}</p><div class="tag-list">${tagTerms(item.terms).map((term) => `<em>${esc(term)}</em>`).join("")}</div><span class="lesson-card-badge">✓ 完了</span></a>`).join("")}
+        ${chapter.lessons.map((item, index) => `<a class="lesson-card" href="./${item.slug}.html" data-lesson-slug="${chapter.slug}/${item.slug}"><span>${String(index + 1).padStart(2, "0")}</span><h3>${esc(item.title)}</h3><p>${esc(item.focus)}</p><div class="tag-list">${tagTerms(item.terms).map((term) => `<em>${esc(term)}</em>`).join("")}</div></a>`).join("")}
       </div>
     </section>`;
   return layout({ depth: 2, title: chapter.title, description: chapter.summary, body, extraScript: `  <script src="${rel(2, "assets/js/progress-marks.js")}" defer></script>` });
