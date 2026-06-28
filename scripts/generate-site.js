@@ -10,6 +10,11 @@ const lessonContentPath = path.join(root, "content", "lesson-content.json");
 const lessonContent = fs.existsSync(lessonContentPath)
   ? JSON.parse(fs.readFileSync(lessonContentPath, "utf8"))
   : {};
+const lessonQuizzesPath = path.join(root, "content", "lesson-quizzes.json");
+const lessonQuizzes = fs.existsSync(lessonQuizzesPath)
+  ? JSON.parse(fs.readFileSync(lessonQuizzesPath, "utf8"))
+  : {};
+const questionsById = new Map(practiceQuestions.filter((q) => q.id).map((q) => [q.id, q]));
 
 const chapters = [
   {
@@ -513,6 +518,44 @@ function escapeRegExp(value) {
 }
 
 function quizFor(item, chapter) {
+  const curated = lessonQuizzes[item.slug];
+  if (curated && ((curated.quizIds && curated.quizIds.length) || (curated.extra && curated.extra.length))) {
+    const out = [];
+    (curated.quizIds || []).forEach((qid) => {
+      const q = questionsById.get(qid);
+      if (!q) return;
+      out.push({
+        id: `${item.slug}-q-${out.length}`,
+        qid: q.id,
+        cat: q.cat,
+        q: q.q,
+        c: q.c,
+        a: q.a,
+        e: q.e,
+        prompt: q.q,
+        options: q.c,
+        answer: q.c[q.a],
+        explanation: q.e
+      });
+    });
+    (curated.extra || []).forEach((ex) => {
+      const answerIndex = ex.options.indexOf(ex.answer);
+      out.push({
+        id: `${item.slug}-x-${out.length}`,
+        qid: `${item.slug}-x-${out.length}`,
+        cat: chapter.title,
+        q: ex.prompt,
+        c: ex.options,
+        a: answerIndex,
+        e: ex.explanation,
+        prompt: ex.prompt,
+        options: ex.options,
+        answer: ex.answer,
+        explanation: ex.explanation
+      });
+    });
+    if (out.length) return out;
+  }
   const matches = matchingQuestions(item, chapter).slice(0, 3);
   if (matches.length) {
     return matches.map((q, index) => ({
