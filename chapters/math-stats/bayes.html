@@ -42,15 +42,15 @@
             <ul class="plain-list">
               <li>ベイズを、試験問題の文脈で説明できる。</li>
               <li>事前確率、尤度、事後確率との関係を区別できる。</li>
-              <li>図表を操作して、概念の変化やトレードオフを読み取れる。</li>
+              <li>判断フローから、確認すべき順序と分岐の意味を説明できる。</li>
             </ul>
           </section>
 
           <section class="lesson-section">
             <h3>本文解説</h3>
             <p>新しい証拠で判断を更新する流れを理解する。</p>
-            <p>G検定では、用語の暗記だけでなく、どの場面でその考え方を使うのかが問われます。このページでは <strong>ベイズ、事前確率、尤度、事後確率</strong> を一つの学習単位として扱い、定義、関係、判断の観点をまとめます。</p>
-            <p>まず用語の境界を押さえ、次に図表を操作して結果がどう変わるかを観察してください。操作によって値や形が変わる部分が、そのテーマで理解すべき中心です。</p>
+            <p>ベイズの考え方では、ベイズ、事前確率、尤度、事後確率を別々の暗記事項ではなく、問題文の条件から使い分ける知識として扱います。</p>
+            <p>演習データでは「ベイズの定理が表す関係として最も適切なものはどれか。」のように問われます。ポイントは、ベイズの定理は事前確率を観測（尤度）で更新して事後確率を得る枠組み。P(原因|結果)∝P(結果|原因)×P(原因)。ナイーブベイズやベイズ最適化、スパムフィルタなどの土台で、『情報を得て信念を更新する』考え方として頻出。</p>
           </section>
 
           <section class="lesson-section visual-lesson" aria-labelledby="visualTitle">
@@ -68,7 +68,7 @@
           <section class="lesson-section">
             <h3>確認問題</h3>
             <div class="quiz-area lesson-quiz">
-              <article class="quiz-card"><h4>Q1. ベイズを学ぶとき、最も重要な見方はどれですか。</h4><fieldset><label class="quiz-option"><input type="radio" name="bayes-q1" value="ベイズの定義と使う場面を区別する"><span>ベイズの定義と使う場面を区別する</span></label><label class="quiz-option"><input type="radio" name="bayes-q1" value="用語を英字順に暗記する"><span>用語を英字順に暗記する</span></label><label class="quiz-option"><input type="radio" name="bayes-q1" value="図表を見ずに数値だけを覚える"><span>図表を見ずに数値だけを覚える</span></label><label class="quiz-option"><input type="radio" name="bayes-q1" value="関連語をすべて同じ意味として扱う"><span>関連語をすべて同じ意味として扱う</span></label></fieldset></article><article class="quiz-card"><h4>Q2. 事前確率と尤度の関係を理解するために有効な学習はどれですか。</h4><fieldset><label class="quiz-option"><input type="radio" name="bayes-q2" value="操作できる図表で変化を見る"><span>操作できる図表で変化を見る</span></label><label class="quiz-option"><input type="radio" name="bayes-q2" value="公式資料を転載する"><span>公式資料を転載する</span></label><label class="quiz-option"><input type="radio" name="bayes-q2" value="ページタイトルだけ読む"><span>ページタイトルだけ読む</span></label><label class="quiz-option"><input type="radio" name="bayes-q2" value="選択肢をランダムに選ぶ"><span>選択肢をランダムに選ぶ</span></label></fieldset></article>
+              <article class="quiz-card"><h4>Q1. ベイズの定理が表す関係として最も適切なものはどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="bayes-practice-0" value="観測データを得た後の確率（事後確率）を、事前確率と尤度から更新する"><span>観測データを得た後の確率（事後確率）を、事前確率と尤度から更新する</span></label><label class="quiz-option"><input type="radio" name="bayes-practice-0" value="誤差を逆向きに伝播させる"><span>誤差を逆向きに伝播させる</span></label><label class="quiz-option"><input type="radio" name="bayes-practice-0" value="勾配の方向に重みを更新する"><span>勾配の方向に重みを更新する</span></label><label class="quiz-option"><input type="radio" name="bayes-practice-0" value="データを低次元に射影する"><span>データを低次元に射影する</span></label></fieldset></article><article class="quiz-card"><h4>Q2. 各特徴量が条件付き独立であると仮定し、ベイズの定理を用いて分類する手法はどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="bayes-practice-1" value="ナイーブベイズ"><span>ナイーブベイズ</span></label><label class="quiz-option"><input type="radio" name="bayes-practice-1" value="k近傍法"><span>k近傍法</span></label><label class="quiz-option"><input type="radio" name="bayes-practice-1" value="サポートベクターマシン"><span>サポートベクターマシン</span></label><label class="quiz-option"><input type="radio" name="bayes-practice-1" value="決定木"><span>決定木</span></label></fieldset></article><article class="quiz-card"><h4>Q3. 観測データが得られる確率（尤度）を最大にするようにモデルのパラメータを決める推定法はどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="bayes-practice-2" value="最尤推定"><span>最尤推定</span></label><label class="quiz-option"><input type="radio" name="bayes-practice-2" value="最小二乗法のみ"><span>最小二乗法のみ</span></label><label class="quiz-option"><input type="radio" name="bayes-practice-2" value="ベイズ推定"><span>ベイズ推定</span></label><label class="quiz-option"><input type="radio" name="bayes-practice-2" value="モンテカルロ法"><span>モンテカルロ法</span></label></fieldset></article>
             </div>
             <div class="quiz-actions">
               <button class="primary-button" type="button" id="gradeLessonQuiz">採点する</button>
@@ -90,11 +90,12 @@
         </aside>
       </div>
     </section>
-    <script type="application/json" id="lessonData">{"slug":"math-stats/bayes","title":"ベイズの考え方","terms":["ベイズ","事前確率","尤度","事後確率"],"visual":{"type":"flow","steps":["事前知識","観測","尤度","更新","事後確率"],"axis":"比較と関係"},"quiz":[{"id":"bayes-q1","prompt":"ベイズを学ぶとき、最も重要な見方はどれですか。","options":["ベイズの定義と使う場面を区別する","用語を英字順に暗記する","図表を見ずに数値だけを覚える","関連語をすべて同じ意味として扱う"],"answer":"ベイズの定義と使う場面を区別する"},{"id":"bayes-q2","prompt":"事前確率と尤度の関係を理解するために有効な学習はどれですか。","options":["操作できる図表で変化を見る","公式資料を転載する","ページタイトルだけ読む","選択肢をランダムに選ぶ"],"answer":"操作できる図表で変化を見る"}]}</script>
+    <script type="application/json" id="lessonData">{"slug":"math-stats/bayes","title":"ベイズの考え方","terms":["ベイズ","事前確率","尤度","事後確率"],"visual":{"type":"flow","title":"ベイズの考え方","steps":[{"label":"事前知識","note":"起点"},{"label":"観測","note":"確認"},{"label":"尤度","note":"確認"},{"label":"更新","note":"確認"},{"label":"事後確率","note":"結果"}]},"quiz":[{"id":"bayes-practice-0","prompt":"ベイズの定理が表す関係として最も適切なものはどれか。","options":["観測データを得た後の確率（事後確率）を、事前確率と尤度から更新する","誤差を逆向きに伝播させる","勾配の方向に重みを更新する","データを低次元に射影する"],"answer":"観測データを得た後の確率（事後確率）を、事前確率と尤度から更新する","explanation":"ベイズの定理は\u003cb>事前確率を観測（尤度）で更新して事後確率を得る\u003c/b>枠組み。P(原因|結果)∝P(結果|原因)×P(原因)。ナイーブベイズやベイズ最適化、スパムフィルタなどの土台で、『情報を得て信念を更新する』考え方として頻出。"},{"id":"bayes-practice-1","prompt":"各特徴量が条件付き独立であると仮定し、ベイズの定理を用いて分類する手法はどれか。","options":["ナイーブベイズ","k近傍法","サポートベクターマシン","決定木"],"answer":"ナイーブベイズ","explanation":"\u003cb>ナイーブベイズ\u003c/b>。特徴量同士が独立という“素朴な”仮定を置くことで計算を単純化する確率的分類器。仮定は厳密には成り立たなくても、スパム判定など実務で高い性能を示すことが多い。ベイズの定理（事前確率→事後確率）が基礎。"},{"id":"bayes-practice-2","prompt":"観測データが得られる確率（尤度）を最大にするようにモデルのパラメータを決める推定法はどれか。","options":["最尤推定","最小二乗法のみ","ベイズ推定","モンテカルロ法"],"answer":"最尤推定","explanation":"\u003cb>最尤推定（MLE）\u003c/b>。『観測されたデータが最も起こりやすくなる』パラメータを選ぶ。ロジスティック回帰やニューラルネットの学習（交差エントロピー最小化）とも結びつく基礎概念。"}]}</script>
   </main>
   <footer class="app-footer">
     <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>
   </footer>
+  <script src="../../assets/js/visualizations.js" defer></script>
   <script src="../../assets/js/lesson.js" defer></script>
 </body>
 </html>

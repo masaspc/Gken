@@ -42,15 +42,15 @@
             <ul class="plain-list">
               <li>サンプリングを、試験問題の文脈で説明できる。</li>
               <li>標本、母集団、バイアスとの関係を区別できる。</li>
-              <li>図表を操作して、概念の変化やトレードオフを読み取れる。</li>
+              <li>パラメータを動かし、計算結果・指標・重みの変化を読み取れる。</li>
             </ul>
           </section>
 
           <section class="lesson-section">
             <h3>本文解説</h3>
             <p>標本の取り方が分析結果に与える影響を理解する。</p>
-            <p>G検定では、用語の暗記だけでなく、どの場面でその考え方を使うのかが問われます。このページでは <strong>サンプリング、標本、母集団、バイアス</strong> を一つの学習単位として扱い、定義、関係、判断の観点をまとめます。</p>
-            <p>まず用語の境界を押さえ、次に図表を操作して結果がどう変わるかを観察してください。操作によって値や形が変わる部分が、そのテーマで理解すべき中心です。</p>
+            <p>サンプリングと偏りでは、サンプリング、標本、母集団、バイアスを別々の暗記事項ではなく、問題文の条件から使い分ける知識として扱います。</p>
+            <p>演習データでは「学習データの収集方法に起因し、特定の属性が過小・過大に含まれることで生じる偏りを何というか。」のように問われます。ポイントは、サンプリングバイアス。データ収集段階の偏りが、AIの差別的・不公平な判断につながる。公平性確保のためデータの代表性を点検する必要がある。</p>
           </section>
 
           <section class="lesson-section visual-lesson" aria-labelledby="visualTitle">
@@ -68,7 +68,7 @@
           <section class="lesson-section">
             <h3>確認問題</h3>
             <div class="quiz-area lesson-quiz">
-              <article class="quiz-card"><h4>Q1. サンプリングを学ぶとき、最も重要な見方はどれですか。</h4><fieldset><label class="quiz-option"><input type="radio" name="sampling-q1" value="サンプリングの定義と使う場面を区別する"><span>サンプリングの定義と使う場面を区別する</span></label><label class="quiz-option"><input type="radio" name="sampling-q1" value="用語を英字順に暗記する"><span>用語を英字順に暗記する</span></label><label class="quiz-option"><input type="radio" name="sampling-q1" value="図表を見ずに数値だけを覚える"><span>図表を見ずに数値だけを覚える</span></label><label class="quiz-option"><input type="radio" name="sampling-q1" value="関連語をすべて同じ意味として扱う"><span>関連語をすべて同じ意味として扱う</span></label></fieldset></article><article class="quiz-card"><h4>Q2. 標本と母集団の関係を理解するために有効な学習はどれですか。</h4><fieldset><label class="quiz-option"><input type="radio" name="sampling-q2" value="操作できる図表で変化を見る"><span>操作できる図表で変化を見る</span></label><label class="quiz-option"><input type="radio" name="sampling-q2" value="公式資料を転載する"><span>公式資料を転載する</span></label><label class="quiz-option"><input type="radio" name="sampling-q2" value="ページタイトルだけ読む"><span>ページタイトルだけ読む</span></label><label class="quiz-option"><input type="radio" name="sampling-q2" value="選択肢をランダムに選ぶ"><span>選択肢をランダムに選ぶ</span></label></fieldset></article>
+              <article class="quiz-card"><h4>Q1. 学習データの収集方法に起因し、特定の属性が過小・過大に含まれることで生じる偏りを何というか。</h4><fieldset><label class="quiz-option"><input type="radio" name="sampling-practice-0" value="サンプリングバイアス"><span>サンプリングバイアス</span></label><label class="quiz-option"><input type="radio" name="sampling-practice-0" value="勾配消失"><span>勾配消失</span></label><label class="quiz-option"><input type="radio" name="sampling-practice-0" value="正則化"><span>正則化</span></label><label class="quiz-option"><input type="radio" name="sampling-practice-0" value="オーバーサンプリング"><span>オーバーサンプリング</span></label></fieldset></article><article class="quiz-card"><h4>Q2. バギングとブースティングの違いの説明として最も適切なものはどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="sampling-practice-1" value="バギングは並列に学習し分散を下げ、ブースティングは逐次学習しバイアスを下げる"><span>バギングは並列に学習し分散を下げ、ブースティングは逐次学習しバイアスを下げる</span></label><label class="quiz-option"><input type="radio" name="sampling-practice-1" value="両者は同じ手法の別名である"><span>両者は同じ手法の別名である</span></label><label class="quiz-option"><input type="radio" name="sampling-practice-1" value="バギングは逐次、ブースティングは並列に学習する"><span>バギングは逐次、ブースティングは並列に学習する</span></label><label class="quiz-option"><input type="radio" name="sampling-practice-1" value="どちらも教師なし学習である"><span>どちらも教師なし学習である</span></label></fieldset></article><article class="quiz-card"><h4>Q3. 複数の決定木をブートストラップ標本で並列に学習し、多数決・平均で予測を安定させるアンサンブル手法はどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="sampling-practice-2" value="ランダムフォレスト"><span>ランダムフォレスト</span></label><label class="quiz-option"><input type="radio" name="sampling-practice-2" value="勾配ブースティング"><span>勾配ブースティング</span></label><label class="quiz-option"><input type="radio" name="sampling-practice-2" value="単純パーセプトロン"><span>単純パーセプトロン</span></label><label class="quiz-option"><input type="radio" name="sampling-practice-2" value="k-means"><span>k-means</span></label></fieldset></article>
             </div>
             <div class="quiz-actions">
               <button class="primary-button" type="button" id="gradeLessonQuiz">採点する</button>
@@ -90,11 +90,12 @@
         </aside>
       </div>
     </section>
-    <script type="application/json" id="lessonData">{"slug":"math-stats/sampling","title":"サンプリングと偏り","terms":["サンプリング","標本","母集団","バイアス"],"visual":{"type":"distribution","axis":"比較と関係"},"quiz":[{"id":"sampling-q1","prompt":"サンプリングを学ぶとき、最も重要な見方はどれですか。","options":["サンプリングの定義と使う場面を区別する","用語を英字順に暗記する","図表を見ずに数値だけを覚える","関連語をすべて同じ意味として扱う"],"answer":"サンプリングの定義と使う場面を区別する"},{"id":"sampling-q2","prompt":"標本と母集団の関係を理解するために有効な学習はどれですか。","options":["操作できる図表で変化を見る","公式資料を転載する","ページタイトルだけ読む","選択肢をランダムに選ぶ"],"answer":"操作できる図表で変化を見る"}]}</script>
+    <script type="application/json" id="lessonData">{"slug":"math-stats/sampling","title":"サンプリングと偏り","terms":["サンプリング","標本","母集団","バイアス"],"visual":{"type":"distribution","title":"サンプリングと偏り","concept":"平均・分散・サンプル数"},"quiz":[{"id":"sampling-practice-0","prompt":"学習データの収集方法に起因し、特定の属性が過小・過大に含まれることで生じる偏りを何というか。","options":["サンプリングバイアス","勾配消失","正則化","オーバーサンプリング"],"answer":"サンプリングバイアス","explanation":"\u003cb>サンプリングバイアス\u003c/b>。データ収集段階の偏りが、AIの差別的・不公平な判断につながる。公平性確保のためデータの代表性を点検する必要がある。"},{"id":"sampling-practice-1","prompt":"バギングとブースティングの違いの説明として最も適切なものはどれか。","options":["バギングは並列に学習し分散を下げ、ブースティングは逐次学習しバイアスを下げる","両者は同じ手法の別名である","バギングは逐次、ブースティングは並列に学習する","どちらも教師なし学習である"],"answer":"バギングは並列に学習し分散を下げ、ブースティングは逐次学習しバイアスを下げる","explanation":"\u003cb>バギング\u003c/b>はブートストラップ標本で多数のモデルを並列に作り平均/多数決して\u003cb>分散（バリアンス）を低減\u003c/b>（例：ランダムフォレスト）。\u003cb>ブースティング\u003c/b>は弱学習器を逐次足して\u003cb>バイアスを低減\u003c/b>。狙う誤差成分が違う点が問われる。"},{"id":"sampling-practice-2","prompt":"複数の決定木をブートストラップ標本で並列に学習し、多数決・平均で予測を安定させるアンサンブル手法はどれか。","options":["ランダムフォレスト","勾配ブースティング","単純パーセプトロン","k-means"],"answer":"ランダムフォレスト","explanation":"【正解の理由】\u003cb>ランダムフォレスト\u003c/b>はバギング（並列）に基づき、データと特徴量をランダムに選んだ多数の決定木を統合して過学習を抑える。【各選択肢】②勾配ブースティングは誤りを順に補正する直列のブースティング、③④は別系統の手法。【覚え方】「バギング＝並列・分散低減」「ブースティング＝直列・バイアス低減」。"}]}</script>
   </main>
   <footer class="app-footer">
     <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>
   </footer>
+  <script src="../../assets/js/visualizations.js" defer></script>
   <script src="../../assets/js/lesson.js" defer></script>
 </body>
 </html>

@@ -42,15 +42,15 @@
             <ul class="plain-list">
               <li>モデル監視を、試験問題の文脈で説明できる。</li>
               <li>ドリフト、再学習、性能劣化との関係を区別できる。</li>
-              <li>図表を操作して、概念の変化やトレードオフを読み取れる。</li>
+              <li>判断フローから、確認すべき順序と分岐の意味を説明できる。</li>
             </ul>
           </section>
 
           <section class="lesson-section">
             <h3>本文解説</h3>
             <p>運用後にモデル性能が変化する理由と監視の必要性を学ぶ。</p>
-            <p>G検定では、用語の暗記だけでなく、どの場面でその考え方を使うのかが問われます。このページでは <strong>モデル監視、ドリフト、再学習、性能劣化</strong> を一つの学習単位として扱い、定義、関係、判断の観点をまとめます。</p>
-            <p>まず用語の境界を押さえ、次に図表を操作して結果がどう変わるかを観察してください。操作によって値や形が変わる部分が、そのテーマで理解すべき中心です。</p>
+            <p>運用監視では、モデル監視、ドリフト、再学習、性能劣化を別々の暗記事項ではなく、問題文の条件から使い分ける知識として扱います。</p>
+            <p>演習データでは「機械学習モデルを継続的に開発・デプロイ・監視し、性能劣化に対応する運用の考え方はどれか。」のように問われます。ポイントは、【正解の理由】MLOpsは、モデルの学習・デプロイ・監視・再学習を自動化/標準化し、運用後の精度劣化に継続対応する取り組み。【各選択肢】②はセキュリティを組み込んだ開発運用、③はITサービス管理の枠組み、④は開発手法で焦点が異なる。【関連】...</p>
           </section>
 
           <section class="lesson-section visual-lesson" aria-labelledby="visualTitle">
@@ -68,7 +68,7 @@
           <section class="lesson-section">
             <h3>確認問題</h3>
             <div class="quiz-area lesson-quiz">
-              <article class="quiz-card"><h4>Q1. モデル監視を学ぶとき、最も重要な見方はどれですか。</h4><fieldset><label class="quiz-option"><input type="radio" name="model-monitoring-q1" value="モデル監視の定義と使う場面を区別する"><span>モデル監視の定義と使う場面を区別する</span></label><label class="quiz-option"><input type="radio" name="model-monitoring-q1" value="用語を英字順に暗記する"><span>用語を英字順に暗記する</span></label><label class="quiz-option"><input type="radio" name="model-monitoring-q1" value="図表を見ずに数値だけを覚える"><span>図表を見ずに数値だけを覚える</span></label><label class="quiz-option"><input type="radio" name="model-monitoring-q1" value="関連語をすべて同じ意味として扱う"><span>関連語をすべて同じ意味として扱う</span></label></fieldset></article><article class="quiz-card"><h4>Q2. ドリフトと再学習の関係を理解するために有効な学習はどれですか。</h4><fieldset><label class="quiz-option"><input type="radio" name="model-monitoring-q2" value="操作できる図表で変化を見る"><span>操作できる図表で変化を見る</span></label><label class="quiz-option"><input type="radio" name="model-monitoring-q2" value="公式資料を転載する"><span>公式資料を転載する</span></label><label class="quiz-option"><input type="radio" name="model-monitoring-q2" value="ページタイトルだけ読む"><span>ページタイトルだけ読む</span></label><label class="quiz-option"><input type="radio" name="model-monitoring-q2" value="選択肢をランダムに選ぶ"><span>選択肢をランダムに選ぶ</span></label></fieldset></article>
+              <article class="quiz-card"><h4>Q1. 機械学習モデルを継続的に開発・デプロイ・監視し、性能劣化に対応する運用の考え方はどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="model-monitoring-practice-0" value="MLOps"><span>MLOps</span></label><label class="quiz-option"><input type="radio" name="model-monitoring-practice-0" value="DevSecOps"><span>DevSecOps</span></label><label class="quiz-option"><input type="radio" name="model-monitoring-practice-0" value="ITIL"><span>ITIL</span></label><label class="quiz-option"><input type="radio" name="model-monitoring-practice-0" value="アジャイル"><span>アジャイル</span></label></fieldset></article><article class="quiz-card"><h4>Q2. 学習データの偏りや母集団のずれによって、運用後にモデル性能が劣化していく現象に最も関係する語はどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="model-monitoring-practice-1" value="データ／コンセプトドリフト"><span>データ／コンセプトドリフト</span></label><label class="quiz-option"><input type="radio" name="model-monitoring-practice-1" value="勾配爆発"><span>勾配爆発</span></label><label class="quiz-option"><input type="radio" name="model-monitoring-practice-1" value="次元の呪い"><span>次元の呪い</span></label><label class="quiz-option"><input type="radio" name="model-monitoring-practice-1" value="アンサンブル"><span>アンサンブル</span></label></fieldset></article><article class="quiz-card"><h4>Q3. 運用後にデータ分布の変化などで精度が劣化したモデルに対して行う対応として適切なものはどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="model-monitoring-practice-2" value="放置する"><span>放置する</span></label><label class="quiz-option"><input type="radio" name="model-monitoring-practice-2" value="再学習（モデルの更新）"><span>再学習（モデルの更新）</span></label><label class="quiz-option"><input type="radio" name="model-monitoring-practice-2" value="学習率だけ変える"><span>学習率だけ変える</span></label><label class="quiz-option"><input type="radio" name="model-monitoring-practice-2" value="特徴量を削除して終了"><span>特徴量を削除して終了</span></label></fieldset></article>
             </div>
             <div class="quiz-actions">
               <button class="primary-button" type="button" id="gradeLessonQuiz">採点する</button>
@@ -90,11 +90,12 @@
         </aside>
       </div>
     </section>
-    <script type="application/json" id="lessonData">{"slug":"implementation/model-monitoring","title":"運用監視","terms":["モデル監視","ドリフト","再学習","性能劣化"],"visual":{"type":"flow","steps":["予測","ログ","性能確認","ドリフト検知","再学習"],"axis":"比較と関係"},"quiz":[{"id":"model-monitoring-q1","prompt":"モデル監視を学ぶとき、最も重要な見方はどれですか。","options":["モデル監視の定義と使う場面を区別する","用語を英字順に暗記する","図表を見ずに数値だけを覚える","関連語をすべて同じ意味として扱う"],"answer":"モデル監視の定義と使う場面を区別する"},{"id":"model-monitoring-q2","prompt":"ドリフトと再学習の関係を理解するために有効な学習はどれですか。","options":["操作できる図表で変化を見る","公式資料を転載する","ページタイトルだけ読む","選択肢をランダムに選ぶ"],"answer":"操作できる図表で変化を見る"}]}</script>
+    <script type="application/json" id="lessonData">{"slug":"implementation/model-monitoring","title":"運用監視","terms":["モデル監視","ドリフト","再学習","性能劣化"],"visual":{"type":"flow","title":"運用監視","steps":[{"label":"予測","note":"起点"},{"label":"ログ","note":"確認"},{"label":"性能確認","note":"確認"},{"label":"ドリフト検知","note":"確認"},{"label":"再学習","note":"結果"}]},"quiz":[{"id":"model-monitoring-practice-0","prompt":"機械学習モデルを継続的に開発・デプロイ・監視し、性能劣化に対応する運用の考え方はどれか。","options":["MLOps","DevSecOps","ITIL","アジャイル"],"answer":"MLOps","explanation":"【正解の理由】\u003cb>MLOps\u003c/b>は、モデルの学習・デプロイ・監視・再学習を自動化/標準化し、運用後の精度劣化に継続対応する取り組み。【各選択肢】②はセキュリティを組み込んだ開発運用、③はITサービス管理の枠組み、④は開発手法で焦点が異なる。【関連】データ/コンセプトドリフトの監視と再学習が要。"},{"id":"model-monitoring-practice-1","prompt":"学習データの偏りや母集団のずれによって、運用後にモデル性能が劣化していく現象に最も関係する語はどれか。","options":["データ／コンセプトドリフト","勾配爆発","次元の呪い","アンサンブル"],"answer":"データ／コンセプトドリフト","explanation":"\u003cb>ドリフト\u003c/b>。データ分布（データドリフト）や入出力関係（コンセプトドリフト）が時間とともに変化し性能が落ちる。MLOpsで監視・再学習する。"},{"id":"model-monitoring-practice-2","prompt":"運用後にデータ分布の変化などで精度が劣化したモデルに対して行う対応として適切なものはどれか。","options":["放置する","再学習（モデルの更新）","学習率だけ変える","特徴量を削除して終了"],"answer":"再学習（モデルの更新）","explanation":"運用中はデータ／コンセプトドリフトで性能が劣化しうるため、監視のうえ\u003cb>定期的な再学習・更新\u003c/b>を行う。これはMLOpsの中核活動。"}]}</script>
   </main>
   <footer class="app-footer">
     <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>
   </footer>
+  <script src="../../assets/js/visualizations.js" defer></script>
   <script src="../../assets/js/lesson.js" defer></script>
 </body>
 </html>

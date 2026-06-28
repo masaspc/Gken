@@ -42,15 +42,15 @@
             <ul class="plain-list">
               <li>ベクトルを、試験問題の文脈で説明できる。</li>
               <li>行列、内積、変換との関係を区別できる。</li>
-              <li>図表を操作して、概念の変化やトレードオフを読み取れる。</li>
+              <li>対応表から、概念どうしの関係と区別ポイントを説明できる。</li>
             </ul>
           </section>
 
           <section class="lesson-section">
             <h3>本文解説</h3>
             <p>データをベクトルや行列として扱う意味を図でつかむ。</p>
-            <p>G検定では、用語の暗記だけでなく、どの場面でその考え方を使うのかが問われます。このページでは <strong>ベクトル、行列、内積、変換</strong> を一つの学習単位として扱い、定義、関係、判断の観点をまとめます。</p>
-            <p>まず用語の境界を押さえ、次に図表を操作して結果がどう変わるかを観察してください。操作によって値や形が変わる部分が、そのテーマで理解すべき中心です。</p>
+            <p>線形代数の直感では、ベクトル、行列、内積、変換を別々の暗記事項ではなく、問題文の条件から使い分ける知識として扱います。</p>
+            <p>演習データでは「ベクトル a=(1, 2, 3) と b=(4, 5, 6) の内積はいくらか。」のように問われます。ポイントは、【計算】内積＝1×4＋2×5＋3×6＝4＋10＋18＝32。【ポイント】内積は対応成分の積の和。ニューロンの重み付き和や、ベクトルの類似度（コサイン類似度の分子）の計算に使う基本演算。</p>
           </section>
 
           <section class="lesson-section visual-lesson" aria-labelledby="visualTitle">
@@ -68,7 +68,7 @@
           <section class="lesson-section">
             <h3>確認問題</h3>
             <div class="quiz-area lesson-quiz">
-              <article class="quiz-card"><h4>Q1. ベクトルを学ぶとき、最も重要な見方はどれですか。</h4><fieldset><label class="quiz-option"><input type="radio" name="linear-algebra-q1" value="ベクトルの定義と使う場面を区別する"><span>ベクトルの定義と使う場面を区別する</span></label><label class="quiz-option"><input type="radio" name="linear-algebra-q1" value="用語を英字順に暗記する"><span>用語を英字順に暗記する</span></label><label class="quiz-option"><input type="radio" name="linear-algebra-q1" value="図表を見ずに数値だけを覚える"><span>図表を見ずに数値だけを覚える</span></label><label class="quiz-option"><input type="radio" name="linear-algebra-q1" value="関連語をすべて同じ意味として扱う"><span>関連語をすべて同じ意味として扱う</span></label></fieldset></article><article class="quiz-card"><h4>Q2. 行列と内積の関係を理解するために有効な学習はどれですか。</h4><fieldset><label class="quiz-option"><input type="radio" name="linear-algebra-q2" value="操作できる図表で変化を見る"><span>操作できる図表で変化を見る</span></label><label class="quiz-option"><input type="radio" name="linear-algebra-q2" value="公式資料を転載する"><span>公式資料を転載する</span></label><label class="quiz-option"><input type="radio" name="linear-algebra-q2" value="ページタイトルだけ読む"><span>ページタイトルだけ読む</span></label><label class="quiz-option"><input type="radio" name="linear-algebra-q2" value="選択肢をランダムに選ぶ"><span>選択肢をランダムに選ぶ</span></label></fieldset></article>
+              <article class="quiz-card"><h4>Q1. ベクトル a=(1, 2, 3) と b=(4, 5, 6) の内積はいくらか。</h4><fieldset><label class="quiz-option"><input type="radio" name="linear-algebra-practice-0" value="32"><span>32</span></label><label class="quiz-option"><input type="radio" name="linear-algebra-practice-0" value="21"><span>21</span></label><label class="quiz-option"><input type="radio" name="linear-algebra-practice-0" value="90"><span>90</span></label><label class="quiz-option"><input type="radio" name="linear-algebra-practice-0" value="6"><span>6</span></label></fieldset></article><article class="quiz-card"><h4>Q2. 単語を意味的な近さが反映されたベクトルに変換する代表的手法はどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="linear-algebra-practice-1" value="word2vec"><span>word2vec</span></label><label class="quiz-option"><input type="radio" name="linear-algebra-practice-1" value="TF-IDF"><span>TF-IDF</span></label><label class="quiz-option"><input type="radio" name="linear-algebra-practice-1" value="BoW（Bag of Words）"><span>BoW（Bag of Words）</span></label><label class="quiz-option"><input type="radio" name="linear-algebra-practice-1" value="形態素解析"><span>形態素解析</span></label></fieldset></article><article class="quiz-card"><h4>Q3. 『赤・青・緑』のようなカテゴリ変数を、各カテゴリに対応する0/1のベクトルへ変換する手法はどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="linear-algebra-practice-2" value="ワンホットエンコーディング"><span>ワンホットエンコーディング</span></label><label class="quiz-option"><input type="radio" name="linear-algebra-practice-2" value="標準化"><span>標準化</span></label><label class="quiz-option"><input type="radio" name="linear-algebra-practice-2" value="主成分分析"><span>主成分分析</span></label><label class="quiz-option"><input type="radio" name="linear-algebra-practice-2" value="ドロップアウト"><span>ドロップアウト</span></label></fieldset></article>
             </div>
             <div class="quiz-actions">
               <button class="primary-button" type="button" id="gradeLessonQuiz">採点する</button>
@@ -90,11 +90,12 @@
         </aside>
       </div>
     </section>
-    <script type="application/json" id="lessonData">{"slug":"math-stats/linear-algebra","title":"線形代数の直感","terms":["ベクトル","行列","内積","変換"],"visual":{"type":"matrix","axis":"比較と関係"},"quiz":[{"id":"linear-algebra-q1","prompt":"ベクトルを学ぶとき、最も重要な見方はどれですか。","options":["ベクトルの定義と使う場面を区別する","用語を英字順に暗記する","図表を見ずに数値だけを覚える","関連語をすべて同じ意味として扱う"],"answer":"ベクトルの定義と使う場面を区別する"},{"id":"linear-algebra-q2","prompt":"行列と内積の関係を理解するために有効な学習はどれですか。","options":["操作できる図表で変化を見る","公式資料を転載する","ページタイトルだけ読む","選択肢をランダムに選ぶ"],"answer":"操作できる図表で変化を見る"}]}</script>
+    <script type="application/json" id="lessonData">{"slug":"math-stats/linear-algebra","title":"線形代数の直感","terms":["ベクトル","行列","内積","変換"],"visual":{"type":"relation-table","title":"線形代数の直感の対応関係","columns":["概念","関係","区別ポイント"],"rows":[["ベクトル","データをベクトルや行列として扱う意味を図でつかむ。","似た用語との境界を説明できるようにする"],["行列","ベクトルを理解するための関連語","似た用語との境界を説明できるようにする"],["内積","ベクトルを理解するための関連語","似た用語との境界を説明できるようにする"],["変換","ベクトルを理解するための関連語","似た用語との境界を説明できるようにする"]]},"quiz":[{"id":"linear-algebra-practice-0","prompt":"ベクトル a=(1, 2, 3) と b=(4, 5, 6) の内積はいくらか。","options":["32","21","90","6"],"answer":"32","explanation":"【計算】内積＝1×4＋2×5＋3×6＝4＋10＋18＝\u003cb>32\u003c/b>。【ポイント】内積は対応成分の積の和。ニューロンの重み付き和や、ベクトルの類似度（コサイン類似度の分子）の計算に使う基本演算。"},{"id":"linear-algebra-practice-1","prompt":"単語を意味的な近さが反映されたベクトルに変換する代表的手法はどれか。","options":["word2vec","TF-IDF","BoW（Bag of Words）","形態素解析"],"answer":"word2vec","explanation":"\u003cb>word2vec\u003c/b>はCBOWやskip-gramで単語を分散表現（ベクトル）にする。意味の近い語が近いベクトルになり、ベクトル演算で類推もできる。"},{"id":"linear-algebra-practice-2","prompt":"『赤・青・緑』のようなカテゴリ変数を、各カテゴリに対応する0/1のベクトルへ変換する手法はどれか。","options":["ワンホットエンコーディング","標準化","主成分分析","ドロップアウト"],"answer":"ワンホットエンコーディング","explanation":"\u003cb>ワンホットエンコーディング\u003c/b>。カテゴリ間に大小関係がない名義変数を数値化する標準的方法。単純に1,2,3と振ると順序があると誤解されるため避ける。カテゴリ数が多いと次元が膨らむ（次元の呪い）点に注意。"}]}</script>
   </main>
   <footer class="app-footer">
     <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>
   </footer>
+  <script src="../../assets/js/visualizations.js" defer></script>
   <script src="../../assets/js/lesson.js" defer></script>
 </body>
 </html>

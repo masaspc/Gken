@@ -42,15 +42,15 @@
             <ul class="plain-list">
               <li>マルチモーダルを、試験問題の文脈で説明できる。</li>
               <li>画像と言語、音声と言語、クロスモーダルとの関係を区別できる。</li>
-              <li>図表を操作して、概念の変化やトレードオフを読み取れる。</li>
+              <li>対応表から、概念どうしの関係と区別ポイントを説明できる。</li>
             </ul>
           </section>
 
           <section class="lesson-section">
             <h3>本文解説</h3>
             <p>複数種類のデータを組み合わせて扱うAIの設計を理解する。</p>
-            <p>G検定では、用語の暗記だけでなく、どの場面でその考え方を使うのかが問われます。このページでは <strong>マルチモーダル、画像と言語、音声と言語、クロスモーダル</strong> を一つの学習単位として扱い、定義、関係、判断の観点をまとめます。</p>
-            <p>まず用語の境界を押さえ、次に図表を操作して結果がどう変わるかを観察してください。操作によって値や形が変わる部分が、そのテーマで理解すべき中心です。</p>
+            <p>マルチモーダルでは、マルチモーダル、画像と言語、音声と言語、クロスモーダルを別々の暗記事項ではなく、問題文の条件から使い分ける知識として扱います。</p>
+            <p>演習データでは「画像とテキストを共通の空間で対応づけて学習し、ゼロショット画像分類などに使われるマルチモーダルモデルはどれか。」のように問われます。ポイントは、CLIP。大量の画像・キャプション対から、画像とテキストの関連を学習する。生成AIの条件付けにも応用される。</p>
           </section>
 
           <section class="lesson-section visual-lesson" aria-labelledby="visualTitle">
@@ -68,7 +68,7 @@
           <section class="lesson-section">
             <h3>確認問題</h3>
             <div class="quiz-area lesson-quiz">
-              <article class="quiz-card"><h4>Q1. マルチモーダルを学ぶとき、最も重要な見方はどれですか。</h4><fieldset><label class="quiz-option"><input type="radio" name="multimodal-q1" value="マルチモーダルの定義と使う場面を区別する"><span>マルチモーダルの定義と使う場面を区別する</span></label><label class="quiz-option"><input type="radio" name="multimodal-q1" value="用語を英字順に暗記する"><span>用語を英字順に暗記する</span></label><label class="quiz-option"><input type="radio" name="multimodal-q1" value="図表を見ずに数値だけを覚える"><span>図表を見ずに数値だけを覚える</span></label><label class="quiz-option"><input type="radio" name="multimodal-q1" value="関連語をすべて同じ意味として扱う"><span>関連語をすべて同じ意味として扱う</span></label></fieldset></article><article class="quiz-card"><h4>Q2. 画像と言語と音声と言語の関係を理解するために有効な学習はどれですか。</h4><fieldset><label class="quiz-option"><input type="radio" name="multimodal-q2" value="操作できる図表で変化を見る"><span>操作できる図表で変化を見る</span></label><label class="quiz-option"><input type="radio" name="multimodal-q2" value="公式資料を転載する"><span>公式資料を転載する</span></label><label class="quiz-option"><input type="radio" name="multimodal-q2" value="ページタイトルだけ読む"><span>ページタイトルだけ読む</span></label><label class="quiz-option"><input type="radio" name="multimodal-q2" value="選択肢をランダムに選ぶ"><span>選択肢をランダムに選ぶ</span></label></fieldset></article>
+              <article class="quiz-card"><h4>Q1. 画像とテキストを共通の空間で対応づけて学習し、ゼロショット画像分類などに使われるマルチモーダルモデルはどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="multimodal-practice-0" value="CLIP"><span>CLIP</span></label><label class="quiz-option"><input type="radio" name="multimodal-practice-0" value="BERT"><span>BERT</span></label><label class="quiz-option"><input type="radio" name="multimodal-practice-0" value="LSTM"><span>LSTM</span></label><label class="quiz-option"><input type="radio" name="multimodal-practice-0" value="SSD"><span>SSD</span></label></fieldset></article><article class="quiz-card"><h4>Q2. 画像の内容を説明する自然言語の文を生成するタスクはどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="multimodal-practice-1" value="画像分類"><span>画像分類</span></label><label class="quiz-option"><input type="radio" name="multimodal-practice-1" value="画像キャプション生成"><span>画像キャプション生成</span></label><label class="quiz-option"><input type="radio" name="multimodal-practice-1" value="物体検出"><span>物体検出</span></label><label class="quiz-option"><input type="radio" name="multimodal-practice-1" value="異常検知"><span>異常検知</span></label></fieldset></article><article class="quiz-card"><h4>Q3. 生成AIが扱える主な出力（モダリティ）の組み合わせとして最も適切なものはどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="multimodal-practice-2" value="テキスト・画像・音声・動画・コードなど多様"><span>テキスト・画像・音声・動画・コードなど多様</span></label><label class="quiz-option"><input type="radio" name="multimodal-practice-2" value="数値計算の結果のみ"><span>数値計算の結果のみ</span></label><label class="quiz-option"><input type="radio" name="multimodal-practice-2" value="表計算のセルのみ"><span>表計算のセルのみ</span></label><label class="quiz-option"><input type="radio" name="multimodal-practice-2" value="音声のみ"><span>音声のみ</span></label></fieldset></article>
             </div>
             <div class="quiz-actions">
               <button class="primary-button" type="button" id="gradeLessonQuiz">採点する</button>
@@ -90,11 +90,12 @@
         </aside>
       </div>
     </section>
-    <script type="application/json" id="lessonData">{"slug":"applications/multimodal","title":"マルチモーダル","terms":["マルチモーダル","画像と言語","音声と言語","クロスモーダル"],"visual":{"type":"matrix","axis":"比較と関係"},"quiz":[{"id":"multimodal-q1","prompt":"マルチモーダルを学ぶとき、最も重要な見方はどれですか。","options":["マルチモーダルの定義と使う場面を区別する","用語を英字順に暗記する","図表を見ずに数値だけを覚える","関連語をすべて同じ意味として扱う"],"answer":"マルチモーダルの定義と使う場面を区別する"},{"id":"multimodal-q2","prompt":"画像と言語と音声と言語の関係を理解するために有効な学習はどれですか。","options":["操作できる図表で変化を見る","公式資料を転載する","ページタイトルだけ読む","選択肢をランダムに選ぶ"],"answer":"操作できる図表で変化を見る"}]}</script>
+    <script type="application/json" id="lessonData">{"slug":"applications/multimodal","title":"マルチモーダル","terms":["マルチモーダル","画像と言語","音声と言語","クロスモーダル"],"visual":{"type":"relation-table","title":"マルチモーダルの対応関係","columns":["概念","関係","区別ポイント"],"rows":[["マルチモーダル","複数種類のデータを組み合わせて扱うAIの設計を理解する。","似た用語との境界を説明できるようにする"],["画像と言語","マルチモーダルを理解するための関連語","似た用語との境界を説明できるようにする"],["音声と言語","マルチモーダルを理解するための関連語","似た用語との境界を説明できるようにする"],["クロスモーダル","マルチモーダルを理解するための関連語","似た用語との境界を説明できるようにする"]]},"quiz":[{"id":"multimodal-practice-0","prompt":"画像とテキストを共通の空間で対応づけて学習し、ゼロショット画像分類などに使われるマルチモーダルモデルはどれか。","options":["CLIP","BERT","LSTM","SSD"],"answer":"CLIP","explanation":"\u003cb>CLIP\u003c/b>。大量の画像・キャプション対から、画像とテキストの関連を学習する。生成AIの条件付けにも応用される。"},{"id":"multimodal-practice-1","prompt":"画像の内容を説明する自然言語の文を生成するタスクはどれか。","options":["画像分類","画像キャプション生成","物体検出","異常検知"],"answer":"画像キャプション生成","explanation":"\u003cb>画像キャプション生成（Image Captioning）\u003c/b>。画像認識と言語生成を組み合わせるマルチモーダルなタスク。"},{"id":"multimodal-practice-2","prompt":"生成AIが扱える主な出力（モダリティ）の組み合わせとして最も適切なものはどれか。","options":["テキスト・画像・音声・動画・コードなど多様","数値計算の結果のみ","表計算のセルのみ","音声のみ"],"answer":"テキスト・画像・音声・動画・コードなど多様","explanation":"生成AIは\u003cb>テキスト・画像・音声・動画・コード\u003c/b>など多様なモダリティを生成でき、複数を扱う\u003cb>マルチモーダル\u003c/b>モデルも普及している。用途（要約・作画・作曲・翻訳・プログラミング支援）の広がりとともに、著作権や悪用リスクの議論も重要になる。"}]}</script>
   </main>
   <footer class="app-footer">
     <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>
   </footer>
+  <script src="../../assets/js/visualizations.js" defer></script>
   <script src="../../assets/js/lesson.js" defer></script>
 </body>
 </html>

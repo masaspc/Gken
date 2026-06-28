@@ -42,15 +42,15 @@
             <ul class="plain-list">
               <li>畳み込み層を、試験問題の文脈で説明できる。</li>
               <li>カーネル、フィルタ、受容野との関係を区別できる。</li>
-              <li>図表を操作して、概念の変化やトレードオフを読み取れる。</li>
+              <li>対応表から、概念どうしの関係と区別ポイントを説明できる。</li>
             </ul>
           </section>
 
           <section class="lesson-section">
             <h3>本文解説</h3>
             <p>局所的な特徴を抽出するCNNの基本を、フィルタの動きとして捉える。</p>
-            <p>G検定では、用語の暗記だけでなく、どの場面でその考え方を使うのかが問われます。このページでは <strong>畳み込み層、カーネル、フィルタ、受容野</strong> を一つの学習単位として扱い、定義、関係、判断の観点をまとめます。</p>
-            <p>まず用語の境界を押さえ、次に図表を操作して結果がどう変わるかを観察してください。操作によって値や形が変わる部分が、そのテーマで理解すべき中心です。</p>
+            <p>畳み込み層では、畳み込み層、カーネル、フィルタ、受容野を別々の暗記事項ではなく、問題文の条件から使い分ける知識として扱います。</p>
+            <p>演習データでは「画像認識で、フィルタによる畳み込みとプーリングで局所特徴を抽出するネットワークはどれか。」のように問われます。ポイントは、CNNは畳み込み層で局所特徴を捉え、プーリング層で位置ずれに頑健にしつつ次元を縮小する。画像系タスクの標準。</p>
           </section>
 
           <section class="lesson-section visual-lesson" aria-labelledby="visualTitle">
@@ -68,7 +68,7 @@
           <section class="lesson-section">
             <h3>確認問題</h3>
             <div class="quiz-area lesson-quiz">
-              <article class="quiz-card"><h4>Q1. 畳み込み層を学ぶとき、最も重要な見方はどれですか。</h4><fieldset><label class="quiz-option"><input type="radio" name="convolution-q1" value="畳み込み層の定義と使う場面を区別する"><span>畳み込み層の定義と使う場面を区別する</span></label><label class="quiz-option"><input type="radio" name="convolution-q1" value="用語を英字順に暗記する"><span>用語を英字順に暗記する</span></label><label class="quiz-option"><input type="radio" name="convolution-q1" value="図表を見ずに数値だけを覚える"><span>図表を見ずに数値だけを覚える</span></label><label class="quiz-option"><input type="radio" name="convolution-q1" value="関連語をすべて同じ意味として扱う"><span>関連語をすべて同じ意味として扱う</span></label></fieldset></article><article class="quiz-card"><h4>Q2. カーネルとフィルタの関係を理解するために有効な学習はどれですか。</h4><fieldset><label class="quiz-option"><input type="radio" name="convolution-q2" value="操作できる図表で変化を見る"><span>操作できる図表で変化を見る</span></label><label class="quiz-option"><input type="radio" name="convolution-q2" value="公式資料を転載する"><span>公式資料を転載する</span></label><label class="quiz-option"><input type="radio" name="convolution-q2" value="ページタイトルだけ読む"><span>ページタイトルだけ読む</span></label><label class="quiz-option"><input type="radio" name="convolution-q2" value="選択肢をランダムに選ぶ"><span>選択肢をランダムに選ぶ</span></label></fieldset></article>
+              <article class="quiz-card"><h4>Q1. 画像認識で、フィルタによる畳み込みとプーリングで局所特徴を抽出するネットワークはどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="convolution-practice-0" value="RNN"><span>RNN</span></label><label class="quiz-option"><input type="radio" name="convolution-practice-0" value="CNN（畳み込みニューラルネットワーク）"><span>CNN（畳み込みニューラルネットワーク）</span></label><label class="quiz-option"><input type="radio" name="convolution-practice-0" value="GAN"><span>GAN</span></label><label class="quiz-option"><input type="radio" name="convolution-practice-0" value="LSTM"><span>LSTM</span></label></fieldset></article><article class="quiz-card"><h4>Q2. 畳み込み層が全結合層に比べてパラメータ数を大きく減らせる主な理由はどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="convolution-practice-1" value="フィルタを画像全体で使い回す重み共有"><span>フィルタを画像全体で使い回す重み共有</span></label><label class="quiz-option"><input type="radio" name="convolution-practice-1" value="ニューロンを毎回ランダムに無効化するから"><span>ニューロンを毎回ランダムに無効化するから</span></label><label class="quiz-option"><input type="radio" name="convolution-practice-1" value="出力を確率に変換するから"><span>出力を確率に変換するから</span></label><label class="quiz-option"><input type="radio" name="convolution-practice-1" value="勾配を逆向きに流すから"><span>勾配を逆向きに流すから</span></label></fieldset></article><article class="quiz-card"><h4>Q3. 入力3チャネルの画像に、3×3のフィルタを16枚（バイアスあり）適用する畳み込み層のパラメータ数はいくつか。</h4><fieldset><label class="quiz-option"><input type="radio" name="convolution-practice-2" value="448"><span>448</span></label><label class="quiz-option"><input type="radio" name="convolution-practice-2" value="432"><span>432</span></label><label class="quiz-option"><input type="radio" name="convolution-practice-2" value="144"><span>144</span></label><label class="quiz-option"><input type="radio" name="convolution-practice-2" value="160"><span>160</span></label></fieldset></article>
             </div>
             <div class="quiz-actions">
               <button class="primary-button" type="button" id="gradeLessonQuiz">採点する</button>
@@ -90,11 +90,12 @@
         </aside>
       </div>
     </section>
-    <script type="application/json" id="lessonData">{"slug":"dl-elements/convolution","title":"畳み込み層","terms":["畳み込み層","カーネル","フィルタ","受容野"],"visual":{"type":"matrix","axis":"比較と関係"},"quiz":[{"id":"convolution-q1","prompt":"畳み込み層を学ぶとき、最も重要な見方はどれですか。","options":["畳み込み層の定義と使う場面を区別する","用語を英字順に暗記する","図表を見ずに数値だけを覚える","関連語をすべて同じ意味として扱う"],"answer":"畳み込み層の定義と使う場面を区別する"},{"id":"convolution-q2","prompt":"カーネルとフィルタの関係を理解するために有効な学習はどれですか。","options":["操作できる図表で変化を見る","公式資料を転載する","ページタイトルだけ読む","選択肢をランダムに選ぶ"],"answer":"操作できる図表で変化を見る"}]}</script>
+    <script type="application/json" id="lessonData">{"slug":"dl-elements/convolution","title":"畳み込み層","terms":["畳み込み層","カーネル","フィルタ","受容野"],"visual":{"type":"relation-table","title":"畳み込み層の対応関係","columns":["概念","関係","区別ポイント"],"rows":[["畳み込み層","局所的な特徴を抽出するCNNの基本を、フィルタの動きとして捉える。","似た用語との境界を説明できるようにする"],["カーネル","畳み込み層を理解するための関連語","似た用語との境界を説明できるようにする"],["フィルタ","畳み込み層を理解するための関連語","似た用語との境界を説明できるようにする"],["受容野","畳み込み層を理解するための関連語","似た用語との境界を説明できるようにする"]]},"quiz":[{"id":"convolution-practice-0","prompt":"画像認識で、フィルタによる畳み込みとプーリングで局所特徴を抽出するネットワークはどれか。","options":["RNN","CNN（畳み込みニューラルネットワーク）","GAN","LSTM"],"answer":"CNN（畳み込みニューラルネットワーク）","explanation":"\u003cb>CNN\u003c/b>は畳み込み層で局所特徴を捉え、プーリング層で位置ずれに頑健にしつつ次元を縮小する。画像系タスクの標準。"},{"id":"convolution-practice-1","prompt":"畳み込み層が全結合層に比べてパラメータ数を大きく減らせる主な理由はどれか。","options":["フィルタを画像全体で使い回す重み共有","ニューロンを毎回ランダムに無効化するから","出力を確率に変換するから","勾配を逆向きに流すから"],"answer":"フィルタを画像全体で使い回す重み共有","explanation":"【正解の理由】畳み込みでは同じ\u003cb>フィルタ（重み）を画像全体で共有\u003c/b>し、各ニューロンは局所領域のみと結合するため、全結合に比べパラメータが激減する。【各選択肢】②はドロップアウト、③はソフトマックス、④は誤差逆伝播の説明で理由として不適。【関連】重み共有は平行移動に強い特徴抽出にもつながる。"},{"id":"convolution-practice-2","prompt":"入力3チャネルの画像に、3×3のフィルタを16枚（バイアスあり）適用する畳み込み層のパラメータ数はいくつか。","options":["448","432","144","160"],"answer":"448","explanation":"【計算】1枚のフィルタの重み＝3（高さ）×3（幅）×3（入力チャネル）＝27。バイアス1を足して28。これが16枚なので28×16＝\u003cb>448\u003c/b>。【ポイント】畳み込みのパラメータは出力サイズに依存せず、フィルタの大きさ・入力チャネル数・枚数で決まる（重み共有）。"}]}</script>
   </main>
   <footer class="app-footer">
     <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>
   </footer>
+  <script src="../../assets/js/visualizations.js" defer></script>
   <script src="../../assets/js/lesson.js" defer></script>
 </body>
 </html>

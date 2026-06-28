@@ -42,15 +42,15 @@
             <ul class="plain-list">
               <li>探索木を、試験問題の文脈で説明できる。</li>
               <li>幅優先探索、深さ優先探索、ヒューリスティックとの関係を区別できる。</li>
-              <li>図表を操作して、概念の変化やトレードオフを読み取れる。</li>
+              <li>判断フローから、確認すべき順序と分岐の意味を説明できる。</li>
             </ul>
           </section>
 
           <section class="lesson-section">
             <h3>本文解説</h3>
             <p>問題空間をどの順序で調べるかという探索の基本を、ルート選択として理解する。</p>
-            <p>G検定では、用語の暗記だけでなく、どの場面でその考え方を使うのかが問われます。このページでは <strong>探索木、幅優先探索、深さ優先探索、ヒューリスティック</strong> を一つの学習単位として扱い、定義、関係、判断の観点をまとめます。</p>
-            <p>まず用語の境界を押さえ、次に図表を操作して結果がどう変わるかを観察してください。操作によって値や形が変わる部分が、そのテーマで理解すべき中心です。</p>
+            <p>探索では、探索木、幅優先探索、深さ優先探索、ヒューリスティックを別々の暗記事項ではなく、問題文の条件から使い分ける知識として扱います。</p>
+            <p>演習データでは「探索木を一方向に可能な限り深く進み、行き止まりで戻る探索手法はどれか。」のように問われます。ポイントは、深さ優先探索（DFS）。メモリ消費が少ない一方、最短経路は保証されず無限に深い枝で迷う恐れがある。対して幅優先探索（BFS）は浅い層から調べ最短解を見つけやすいがメモリを多く使う。両者のトレードオフ（省メモリ vs 最短保証）が問われる。</p>
           </section>
 
           <section class="lesson-section visual-lesson" aria-labelledby="visualTitle">
@@ -68,7 +68,7 @@
           <section class="lesson-section">
             <h3>確認問題</h3>
             <div class="quiz-area lesson-quiz">
-              <article class="quiz-card"><h4>Q1. 探索木を学ぶとき、最も重要な見方はどれですか。</h4><fieldset><label class="quiz-option"><input type="radio" name="search-q1" value="探索木の定義と使う場面を区別する"><span>探索木の定義と使う場面を区別する</span></label><label class="quiz-option"><input type="radio" name="search-q1" value="用語を英字順に暗記する"><span>用語を英字順に暗記する</span></label><label class="quiz-option"><input type="radio" name="search-q1" value="図表を見ずに数値だけを覚える"><span>図表を見ずに数値だけを覚える</span></label><label class="quiz-option"><input type="radio" name="search-q1" value="関連語をすべて同じ意味として扱う"><span>関連語をすべて同じ意味として扱う</span></label></fieldset></article><article class="quiz-card"><h4>Q2. 幅優先探索と深さ優先探索の関係を理解するために有効な学習はどれですか。</h4><fieldset><label class="quiz-option"><input type="radio" name="search-q2" value="操作できる図表で変化を見る"><span>操作できる図表で変化を見る</span></label><label class="quiz-option"><input type="radio" name="search-q2" value="公式資料を転載する"><span>公式資料を転載する</span></label><label class="quiz-option"><input type="radio" name="search-q2" value="ページタイトルだけ読む"><span>ページタイトルだけ読む</span></label><label class="quiz-option"><input type="radio" name="search-q2" value="選択肢をランダムに選ぶ"><span>選択肢をランダムに選ぶ</span></label></fieldset></article>
+              <article class="quiz-card"><h4>Q1. 探索木を一方向に可能な限り深く進み、行き止まりで戻る探索手法はどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="search-practice-0" value="幅優先探索"><span>幅優先探索</span></label><label class="quiz-option"><input type="radio" name="search-practice-0" value="深さ優先探索"><span>深さ優先探索</span></label><label class="quiz-option"><input type="radio" name="search-practice-0" value="最良優先探索"><span>最良優先探索</span></label><label class="quiz-option"><input type="radio" name="search-practice-0" value="双方向探索"><span>双方向探索</span></label></fieldset></article><article class="quiz-card"><h4>Q2. スタートからのコストと、ゴールまでの推定コスト（ヒューリスティック）の和で次に探索する節点を選ぶ探索アルゴリズムはどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="search-practice-1" value="A*（エースター）アルゴリズム"><span>A*（エースター）アルゴリズム</span></label><label class="quiz-option"><input type="radio" name="search-practice-1" value="幅優先探索"><span>幅優先探索</span></label><label class="quiz-option"><input type="radio" name="search-practice-1" value="深さ優先探索"><span>深さ優先探索</span></label><label class="quiz-option"><input type="radio" name="search-practice-1" value="ミニマックス法"><span>ミニマックス法</span></label></fieldset></article><article class="quiz-card"><h4>Q3. 探索手法のうち、根から階層を順に全て調べていき、最短経路を保証しやすいのはどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="search-practice-2" value="深さ優先探索"><span>深さ優先探索</span></label><label class="quiz-option"><input type="radio" name="search-practice-2" value="幅優先探索"><span>幅優先探索</span></label><label class="quiz-option"><input type="radio" name="search-practice-2" value="山登り法"><span>山登り法</span></label><label class="quiz-option"><input type="radio" name="search-practice-2" value="焼きなまし法"><span>焼きなまし法</span></label></fieldset></article>
             </div>
             <div class="quiz-actions">
               <button class="primary-button" type="button" id="gradeLessonQuiz">採点する</button>
@@ -90,11 +90,12 @@
         </aside>
       </div>
     </section>
-    <script type="application/json" id="lessonData">{"slug":"ai-history/search","title":"探索","terms":["探索木","幅優先探索","深さ優先探索","ヒューリスティック"],"visual":{"type":"flow","steps":["初期状態","候補展開","評価","選択","ゴール"],"axis":"比較と関係"},"quiz":[{"id":"search-q1","prompt":"探索木を学ぶとき、最も重要な見方はどれですか。","options":["探索木の定義と使う場面を区別する","用語を英字順に暗記する","図表を見ずに数値だけを覚える","関連語をすべて同じ意味として扱う"],"answer":"探索木の定義と使う場面を区別する"},{"id":"search-q2","prompt":"幅優先探索と深さ優先探索の関係を理解するために有効な学習はどれですか。","options":["操作できる図表で変化を見る","公式資料を転載する","ページタイトルだけ読む","選択肢をランダムに選ぶ"],"answer":"操作できる図表で変化を見る"}]}</script>
+    <script type="application/json" id="lessonData">{"slug":"ai-history/search","title":"探索","terms":["探索木","幅優先探索","深さ優先探索","ヒューリスティック"],"visual":{"type":"flow","title":"探索","steps":[{"label":"初期状態","note":"起点"},{"label":"候補展開","note":"確認"},{"label":"評価","note":"確認"},{"label":"選択","note":"確認"},{"label":"ゴール","note":"結果"}]},"quiz":[{"id":"search-practice-0","prompt":"探索木を一方向に可能な限り深く進み、行き止まりで戻る探索手法はどれか。","options":["幅優先探索","深さ優先探索","最良優先探索","双方向探索"],"answer":"深さ優先探索","explanation":"\u003cb>深さ優先探索（DFS）\u003c/b>。メモリ消費が少ない一方、最短経路は保証されず無限に深い枝で迷う恐れがある。対して幅優先探索（BFS）は浅い層から調べ最短解を見つけやすいがメモリを多く使う。両者のトレードオフ（省メモリ vs 最短保証）が問われる。"},{"id":"search-practice-1","prompt":"スタートからのコストと、ゴールまでの推定コスト（ヒューリスティック）の和で次に探索する節点を選ぶ探索アルゴリズムはどれか。","options":["A*（エースター）アルゴリズム","幅優先探索","深さ優先探索","ミニマックス法"],"answer":"A*（エースター）アルゴリズム","explanation":"\u003cb>A*アルゴリズム\u003c/b>。実コストg(n)と推定コストh(n)の和f(n)=g+hが小さい節点を優先する。h(n)が過大評価しない（許容的）なら最短経路を保証する。ヒューリスティック（経験的な見積もり）で探索を効率化する代表例。"},{"id":"search-practice-2","prompt":"探索手法のうち、根から階層を順に全て調べていき、最短経路を保証しやすいのはどれか。","options":["深さ優先探索","幅優先探索","山登り法","焼きなまし法"],"answer":"幅優先探索","explanation":"\u003cb>幅優先探索\u003c/b>は浅い階層から順に探索し最短解を見つけやすいがメモリを多く使う。\u003cb>深さ優先探索\u003c/b>は一方向に深く進み省メモリだが最短性は保証しない。"}]}</script>
   </main>
   <footer class="app-footer">
     <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>
   </footer>
+  <script src="../../assets/js/visualizations.js" defer></script>
   <script src="../../assets/js/lesson.js" defer></script>
 </body>
 </html>

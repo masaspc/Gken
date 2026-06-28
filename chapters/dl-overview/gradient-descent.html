@@ -42,15 +42,15 @@
             <ul class="plain-list">
               <li>勾配降下法を、試験問題の文脈で説明できる。</li>
               <li>学習率、局所解、収束との関係を区別できる。</li>
-              <li>図表を操作して、概念の変化やトレードオフを読み取れる。</li>
+              <li>パラメータを動かし、計算結果・指標・重みの変化を読み取れる。</li>
             </ul>
           </section>
 
           <section class="lesson-section">
             <h3>本文解説</h3>
             <p>学習率を変えると最適化が安定するかどうかを観察する。</p>
-            <p>G検定では、用語の暗記だけでなく、どの場面でその考え方を使うのかが問われます。このページでは <strong>勾配降下法、学習率、局所解、収束</strong> を一つの学習単位として扱い、定義、関係、判断の観点をまとめます。</p>
-            <p>まず用語の境界を押さえ、次に図表を操作して結果がどう変わるかを観察してください。操作によって値や形が変わる部分が、そのテーマで理解すべき中心です。</p>
+            <p>勾配降下法では、勾配降下法、学習率、局所解、収束を別々の暗記事項ではなく、問題文の条件から使い分ける知識として扱います。</p>
+            <p>演習データでは「勾配降下法で、更新の歩幅を決めるハイパーパラメータはどれか。」のように問われます。ポイントは、学習率。大きすぎると発散・振動し、小さすぎると収束が遅く局所解に陥りやすい。重みは学習で更新される“パラメータ”で人が設定しない。</p>
           </section>
 
           <section class="lesson-section visual-lesson" aria-labelledby="visualTitle">
@@ -68,7 +68,7 @@
           <section class="lesson-section">
             <h3>確認問題</h3>
             <div class="quiz-area lesson-quiz">
-              <article class="quiz-card"><h4>Q1. 勾配降下法を学ぶとき、最も重要な見方はどれですか。</h4><fieldset><label class="quiz-option"><input type="radio" name="gradient-descent-q1" value="勾配降下法の定義と使う場面を区別する"><span>勾配降下法の定義と使う場面を区別する</span></label><label class="quiz-option"><input type="radio" name="gradient-descent-q1" value="用語を英字順に暗記する"><span>用語を英字順に暗記する</span></label><label class="quiz-option"><input type="radio" name="gradient-descent-q1" value="図表を見ずに数値だけを覚える"><span>図表を見ずに数値だけを覚える</span></label><label class="quiz-option"><input type="radio" name="gradient-descent-q1" value="関連語をすべて同じ意味として扱う"><span>関連語をすべて同じ意味として扱う</span></label></fieldset></article><article class="quiz-card"><h4>Q2. 学習率と局所解の関係を理解するために有効な学習はどれですか。</h4><fieldset><label class="quiz-option"><input type="radio" name="gradient-descent-q2" value="操作できる図表で変化を見る"><span>操作できる図表で変化を見る</span></label><label class="quiz-option"><input type="radio" name="gradient-descent-q2" value="公式資料を転載する"><span>公式資料を転載する</span></label><label class="quiz-option"><input type="radio" name="gradient-descent-q2" value="ページタイトルだけ読む"><span>ページタイトルだけ読む</span></label><label class="quiz-option"><input type="radio" name="gradient-descent-q2" value="選択肢をランダムに選ぶ"><span>選択肢をランダムに選ぶ</span></label></fieldset></article>
+              <article class="quiz-card"><h4>Q1. 勾配降下法で、更新の歩幅を決めるハイパーパラメータはどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="gradient-descent-practice-0" value="バッチサイズ"><span>バッチサイズ</span></label><label class="quiz-option"><input type="radio" name="gradient-descent-practice-0" value="学習率"><span>学習率</span></label><label class="quiz-option"><input type="radio" name="gradient-descent-practice-0" value="エポック数"><span>エポック数</span></label><label class="quiz-option"><input type="radio" name="gradient-descent-practice-0" value="重み"><span>重み</span></label></fieldset></article><article class="quiz-card"><h4>Q2. 勾配降下法における重みの更新の向きとして正しいものはどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="gradient-descent-practice-1" value="損失が小さくなる方向（勾配の逆向き）"><span>損失が小さくなる方向（勾配の逆向き）</span></label><label class="quiz-option"><input type="radio" name="gradient-descent-practice-1" value="損失が大きくなる方向"><span>損失が大きくなる方向</span></label><label class="quiz-option"><input type="radio" name="gradient-descent-practice-1" value="ランダムな方向"><span>ランダムな方向</span></label><label class="quiz-option"><input type="radio" name="gradient-descent-practice-1" value="常に一定方向"><span>常に一定方向</span></label></fieldset></article><article class="quiz-card"><h4>Q3. 重み w=0.5、勾配（損失のwに関する微分）=0.2、学習率=0.1 のとき、勾配降下法による更新後の重みはいくらか。</h4><fieldset><label class="quiz-option"><input type="radio" name="gradient-descent-practice-2" value="0.48"><span>0.48</span></label><label class="quiz-option"><input type="radio" name="gradient-descent-practice-2" value="0.52"><span>0.52</span></label><label class="quiz-option"><input type="radio" name="gradient-descent-practice-2" value="0.30"><span>0.30</span></label><label class="quiz-option"><input type="radio" name="gradient-descent-practice-2" value="0.70"><span>0.70</span></label></fieldset></article>
             </div>
             <div class="quiz-actions">
               <button class="primary-button" type="button" id="gradeLessonQuiz">採点する</button>
@@ -90,11 +90,12 @@
         </aside>
       </div>
     </section>
-    <script type="application/json" id="lessonData">{"slug":"dl-overview/gradient-descent","title":"勾配降下法","terms":["勾配降下法","学習率","局所解","収束"],"visual":{"type":"scatter","axis":"比較と関係"},"quiz":[{"id":"gradient-descent-q1","prompt":"勾配降下法を学ぶとき、最も重要な見方はどれですか。","options":["勾配降下法の定義と使う場面を区別する","用語を英字順に暗記する","図表を見ずに数値だけを覚える","関連語をすべて同じ意味として扱う"],"answer":"勾配降下法の定義と使う場面を区別する"},{"id":"gradient-descent-q2","prompt":"学習率と局所解の関係を理解するために有効な学習はどれですか。","options":["操作できる図表で変化を見る","公式資料を転載する","ページタイトルだけ読む","選択肢をランダムに選ぶ"],"answer":"操作できる図表で変化を見る"}]}</script>
+    <script type="application/json" id="lessonData">{"slug":"dl-overview/gradient-descent","title":"勾配降下法","terms":["勾配降下法","学習率","局所解","収束"],"visual":{"type":"regression","title":"勾配降下法","concept":"説明変数と目的変数の関係"},"quiz":[{"id":"gradient-descent-practice-0","prompt":"勾配降下法で、更新の歩幅を決めるハイパーパラメータはどれか。","options":["バッチサイズ","学習率","エポック数","重み"],"answer":"学習率","explanation":"\u003cb>学習率\u003c/b>。大きすぎると発散・振動し、小さすぎると収束が遅く局所解に陥りやすい。重みは学習で更新される“パラメータ”で人が設定しない。"},{"id":"gradient-descent-practice-1","prompt":"勾配降下法における重みの更新の向きとして正しいものはどれか。","options":["損失が小さくなる方向（勾配の逆向き）","損失が大きくなる方向","ランダムな方向","常に一定方向"],"answer":"損失が小さくなる方向（勾配の逆向き）","explanation":"勾配は損失が増える方向を指すので、重みは\u003cb>勾配の逆向き（損失が減る方向）\u003c/b>へ更新する。更新幅は学習率で決まる。大きすぎると発散、小さすぎると収束が遅く局所解に留まりやすい。"},{"id":"gradient-descent-practice-2","prompt":"重み w=0.5、勾配（損失のwに関する微分）=0.2、学習率=0.1 のとき、勾配降下法による更新後の重みはいくらか。","options":["0.48","0.52","0.30","0.70"],"answer":"0.48","explanation":"\u003cb>w ← w − 学習率×勾配\u003c/b>＝0.5−0.1×0.2＝0.5−0.02＝\u003cb>0.48\u003c/b>。勾配の逆方向（損失が減る向き）へ、学習率の幅だけ動かす。学習率が大きすぎると行き過ぎ（発散）、小さすぎると収束が遅い。"}]}</script>
   </main>
   <footer class="app-footer">
     <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>
   </footer>
+  <script src="../../assets/js/visualizations.js" defer></script>
   <script src="../../assets/js/lesson.js" defer></script>
 </body>
 </html>

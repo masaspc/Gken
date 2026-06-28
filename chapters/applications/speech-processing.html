@@ -42,15 +42,15 @@
             <ul class="plain-list">
               <li>音声認識を、試験問題の文脈で説明できる。</li>
               <li>音声合成、スペクトログラム、波形との関係を区別できる。</li>
-              <li>図表を操作して、概念の変化やトレードオフを読み取れる。</li>
+              <li>パラメータを動かし、計算結果・指標・重みの変化を読み取れる。</li>
             </ul>
           </section>
 
           <section class="lesson-section">
             <h3>本文解説</h3>
             <p>音声を時間変化する信号として扱う考え方を学ぶ。</p>
-            <p>G検定では、用語の暗記だけでなく、どの場面でその考え方を使うのかが問われます。このページでは <strong>音声認識、音声合成、スペクトログラム、波形</strong> を一つの学習単位として扱い、定義、関係、判断の観点をまとめます。</p>
-            <p>まず用語の境界を押さえ、次に図表を操作して結果がどう変わるかを観察してください。操作によって値や形が変わる部分が、そのテーマで理解すべき中心です。</p>
+            <p>音声処理では、音声認識、音声合成、スペクトログラム、波形を別々の暗記事項ではなく、問題文の条件から使い分ける知識として扱います。</p>
+            <p>演習データでは「古くは隠れマルコフモデルが使われ、近年は深層学習が主流になった、音声を文字に変換するタスクはどれか。」のように問われます。ポイントは、【正解の理由】音声認識は音声波形を文字列に変換する処理で、特徴量にメル周波数ケプストラム係数（MFCC）等を用い、HMM→深層学習（RNN/Transformer）へ発展した。【各選択肢】②音声合成は逆方向（文字→音声）、③話者識別は誰が話...</p>
           </section>
 
           <section class="lesson-section visual-lesson" aria-labelledby="visualTitle">
@@ -68,7 +68,7 @@
           <section class="lesson-section">
             <h3>確認問題</h3>
             <div class="quiz-area lesson-quiz">
-              <article class="quiz-card"><h4>Q1. 音声認識を学ぶとき、最も重要な見方はどれですか。</h4><fieldset><label class="quiz-option"><input type="radio" name="speech-processing-q1" value="音声認識の定義と使う場面を区別する"><span>音声認識の定義と使う場面を区別する</span></label><label class="quiz-option"><input type="radio" name="speech-processing-q1" value="用語を英字順に暗記する"><span>用語を英字順に暗記する</span></label><label class="quiz-option"><input type="radio" name="speech-processing-q1" value="図表を見ずに数値だけを覚える"><span>図表を見ずに数値だけを覚える</span></label><label class="quiz-option"><input type="radio" name="speech-processing-q1" value="関連語をすべて同じ意味として扱う"><span>関連語をすべて同じ意味として扱う</span></label></fieldset></article><article class="quiz-card"><h4>Q2. 音声合成とスペクトログラムの関係を理解するために有効な学習はどれですか。</h4><fieldset><label class="quiz-option"><input type="radio" name="speech-processing-q2" value="操作できる図表で変化を見る"><span>操作できる図表で変化を見る</span></label><label class="quiz-option"><input type="radio" name="speech-processing-q2" value="公式資料を転載する"><span>公式資料を転載する</span></label><label class="quiz-option"><input type="radio" name="speech-processing-q2" value="ページタイトルだけ読む"><span>ページタイトルだけ読む</span></label><label class="quiz-option"><input type="radio" name="speech-processing-q2" value="選択肢をランダムに選ぶ"><span>選択肢をランダムに選ぶ</span></label></fieldset></article>
+              <article class="quiz-card"><h4>Q1. 古くは隠れマルコフモデルが使われ、近年は深層学習が主流になった、音声を文字に変換するタスクはどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="speech-processing-practice-0" value="音声認識"><span>音声認識</span></label><label class="quiz-option"><input type="radio" name="speech-processing-practice-0" value="音声合成"><span>音声合成</span></label><label class="quiz-option"><input type="radio" name="speech-processing-practice-0" value="話者識別"><span>話者識別</span></label><label class="quiz-option"><input type="radio" name="speech-processing-practice-0" value="感情分析"><span>感情分析</span></label></fieldset></article><article class="quiz-card"><h4>Q2. 波形を直接モデル化し、自然な音声を生成するディープラーニング手法はどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="speech-processing-practice-1" value="WaveNet"><span>WaveNet</span></label><label class="quiz-option"><input type="radio" name="speech-processing-practice-1" value="word2vec"><span>word2vec</span></label><label class="quiz-option"><input type="radio" name="speech-processing-practice-1" value="YOLO"><span>YOLO</span></label><label class="quiz-option"><input type="radio" name="speech-processing-practice-1" value="ResNet"><span>ResNet</span></label></fieldset></article><article class="quiz-card"><h4>Q3. 音声をテキストに変換するタスクはどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="speech-processing-practice-2" value="音声認識"><span>音声認識</span></label><label class="quiz-option"><input type="radio" name="speech-processing-practice-2" value="音声合成"><span>音声合成</span></label><label class="quiz-option"><input type="radio" name="speech-processing-practice-2" value="話者照合"><span>話者照合</span></label><label class="quiz-option"><input type="radio" name="speech-processing-practice-2" value="感情分析"><span>感情分析</span></label></fieldset></article>
             </div>
             <div class="quiz-actions">
               <button class="primary-button" type="button" id="gradeLessonQuiz">採点する</button>
@@ -90,11 +90,12 @@
         </aside>
       </div>
     </section>
-    <script type="application/json" id="lessonData">{"slug":"applications/speech-processing","title":"音声処理","terms":["音声認識","音声合成","スペクトログラム","波形"],"visual":{"type":"distribution","axis":"比較と関係"},"quiz":[{"id":"speech-processing-q1","prompt":"音声認識を学ぶとき、最も重要な見方はどれですか。","options":["音声認識の定義と使う場面を区別する","用語を英字順に暗記する","図表を見ずに数値だけを覚える","関連語をすべて同じ意味として扱う"],"answer":"音声認識の定義と使う場面を区別する"},{"id":"speech-processing-q2","prompt":"音声合成とスペクトログラムの関係を理解するために有効な学習はどれですか。","options":["操作できる図表で変化を見る","公式資料を転載する","ページタイトルだけ読む","選択肢をランダムに選ぶ"],"answer":"操作できる図表で変化を見る"}]}</script>
+    <script type="application/json" id="lessonData">{"slug":"applications/speech-processing","title":"音声処理","terms":["音声認識","音声合成","スペクトログラム","波形"],"visual":{"type":"distribution","title":"音声処理","concept":"平均・分散・サンプル数"},"quiz":[{"id":"speech-processing-practice-0","prompt":"古くは隠れマルコフモデルが使われ、近年は深層学習が主流になった、音声を文字に変換するタスクはどれか。","options":["音声認識","音声合成","話者識別","感情分析"],"answer":"音声認識","explanation":"【正解の理由】\u003cb>音声認識\u003c/b>は音声波形を文字列に変換する処理で、特徴量にメル周波数ケプストラム係数（MFCC）等を用い、HMM→深層学習（RNN/Transformer）へ発展した。【各選択肢】②音声合成は逆方向（文字→音声）、③話者識別は誰が話したか、④感情分析はテキストの感情判定。"},{"id":"speech-processing-practice-1","prompt":"波形を直接モデル化し、自然な音声を生成するディープラーニング手法はどれか。","options":["WaveNet","word2vec","YOLO","ResNet"],"answer":"WaveNet","explanation":"\u003cb>WaveNet\u003c/b>。DeepMindが開発した音声波形の生成モデルで、高品質な音声合成（TTS）を実現した。"},{"id":"speech-processing-practice-2","prompt":"音声をテキストに変換するタスクはどれか。","options":["音声認識","音声合成","話者照合","感情分析"],"answer":"音声認識","explanation":"\u003cb>音声認識（ASR）\u003c/b>は音声→テキスト。逆にテキスト→音声は音声合成（TTS、WaveNet等）。声で本人確認するのは話者照合で、それぞれ入出力が異なる。スマートスピーカーや議事録自動化で広く使われる。"}]}</script>
   </main>
   <footer class="app-footer">
     <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>
   </footer>
+  <script src="../../assets/js/visualizations.js" defer></script>
   <script src="../../assets/js/lesson.js" defer></script>
 </body>
 </html>

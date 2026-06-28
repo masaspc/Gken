@@ -42,15 +42,15 @@
             <ul class="plain-list">
               <li>知識表現を、試験問題の文脈で説明できる。</li>
               <li>オントロジー、意味ネットワーク、ルールとの関係を区別できる。</li>
-              <li>図表を操作して、概念の変化やトレードオフを読み取れる。</li>
+              <li>対応表から、概念どうしの関係と区別ポイントを説明できる。</li>
             </ul>
           </section>
 
           <section class="lesson-section">
             <h3>本文解説</h3>
             <p>AIに知識を扱わせるための表現方法を比較し、メリットと限界を押さえる。</p>
-            <p>G検定では、用語の暗記だけでなく、どの場面でその考え方を使うのかが問われます。このページでは <strong>知識表現、オントロジー、意味ネットワーク、ルール</strong> を一つの学習単位として扱い、定義、関係、判断の観点をまとめます。</p>
-            <p>まず用語の境界を押さえ、次に図表を操作して結果がどう変わるかを観察してください。操作によって値や形が変わる部分が、そのテーマで理解すべき中心です。</p>
+            <p>知識表現では、知識表現、オントロジー、意味ネットワーク、ルールを別々の暗記事項ではなく、問題文の条件から使い分ける知識として扱います。</p>
+            <p>演習データでは「概念をノード、関係（is-a, part-of など）をリンクで表す知識表現はどれか。」のように問われます。ポイントは、意味ネットワーク。第2次ブーム（知識の時代）の知識表現の一つで、概念間の関係をグラフで表す。オントロジーや知識ベースの基礎となる考え方。</p>
           </section>
 
           <section class="lesson-section visual-lesson" aria-labelledby="visualTitle">
@@ -68,7 +68,7 @@
           <section class="lesson-section">
             <h3>確認問題</h3>
             <div class="quiz-area lesson-quiz">
-              <article class="quiz-card"><h4>Q1. 知識表現を学ぶとき、最も重要な見方はどれですか。</h4><fieldset><label class="quiz-option"><input type="radio" name="knowledge-representation-q1" value="知識表現の定義と使う場面を区別する"><span>知識表現の定義と使う場面を区別する</span></label><label class="quiz-option"><input type="radio" name="knowledge-representation-q1" value="用語を英字順に暗記する"><span>用語を英字順に暗記する</span></label><label class="quiz-option"><input type="radio" name="knowledge-representation-q1" value="図表を見ずに数値だけを覚える"><span>図表を見ずに数値だけを覚える</span></label><label class="quiz-option"><input type="radio" name="knowledge-representation-q1" value="関連語をすべて同じ意味として扱う"><span>関連語をすべて同じ意味として扱う</span></label></fieldset></article><article class="quiz-card"><h4>Q2. オントロジーと意味ネットワークの関係を理解するために有効な学習はどれですか。</h4><fieldset><label class="quiz-option"><input type="radio" name="knowledge-representation-q2" value="操作できる図表で変化を見る"><span>操作できる図表で変化を見る</span></label><label class="quiz-option"><input type="radio" name="knowledge-representation-q2" value="公式資料を転載する"><span>公式資料を転載する</span></label><label class="quiz-option"><input type="radio" name="knowledge-representation-q2" value="ページタイトルだけ読む"><span>ページタイトルだけ読む</span></label><label class="quiz-option"><input type="radio" name="knowledge-representation-q2" value="選択肢をランダムに選ぶ"><span>選択肢をランダムに選ぶ</span></label></fieldset></article>
+              <article class="quiz-card"><h4>Q1. 概念をノード、関係（is-a, part-of など）をリンクで表す知識表現はどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="knowledge-representation-practice-0" value="意味ネットワーク"><span>意味ネットワーク</span></label><label class="quiz-option"><input type="radio" name="knowledge-representation-practice-0" value="決定木"><span>決定木</span></label><label class="quiz-option"><input type="radio" name="knowledge-representation-practice-0" value="ニューラルネットワーク"><span>ニューラルネットワーク</span></label><label class="quiz-option"><input type="radio" name="knowledge-representation-practice-0" value="混同行列"><span>混同行列</span></label></fieldset></article><article class="quiz-card"><h4>Q2. 第1次AIブームの中心となった、迷路やパズルを解くための技術はどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="knowledge-representation-practice-1" value="探索・推論"><span>探索・推論</span></label><label class="quiz-option"><input type="radio" name="knowledge-representation-practice-1" value="知識表現"><span>知識表現</span></label><label class="quiz-option"><input type="radio" name="knowledge-representation-practice-1" value="ディープラーニング"><span>ディープラーニング</span></label><label class="quiz-option"><input type="radio" name="knowledge-representation-practice-1" value="強化学習"><span>強化学習</span></label></fieldset></article><article class="quiz-card"><h4>Q3. 一般常識をすべて人手でコンピュータに記述しようとした、息の長い知識ベース構築プロジェクトはどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="knowledge-representation-practice-2" value="Cycプロジェクト"><span>Cycプロジェクト</span></label><label class="quiz-option"><input type="radio" name="knowledge-representation-practice-2" value="ImageNet"><span>ImageNet</span></label><label class="quiz-option"><input type="radio" name="knowledge-representation-practice-2" value="AlphaGo"><span>AlphaGo</span></label><label class="quiz-option"><input type="radio" name="knowledge-representation-practice-2" value="seq2seq"><span>seq2seq</span></label></fieldset></article>
             </div>
             <div class="quiz-actions">
               <button class="primary-button" type="button" id="gradeLessonQuiz">採点する</button>
@@ -90,11 +90,12 @@
         </aside>
       </div>
     </section>
-    <script type="application/json" id="lessonData">{"slug":"ai-history/knowledge-representation","title":"知識表現","terms":["知識表現","オントロジー","意味ネットワーク","ルール"],"visual":{"type":"matrix","axis":"比較と関係"},"quiz":[{"id":"knowledge-representation-q1","prompt":"知識表現を学ぶとき、最も重要な見方はどれですか。","options":["知識表現の定義と使う場面を区別する","用語を英字順に暗記する","図表を見ずに数値だけを覚える","関連語をすべて同じ意味として扱う"],"answer":"知識表現の定義と使う場面を区別する"},{"id":"knowledge-representation-q2","prompt":"オントロジーと意味ネットワークの関係を理解するために有効な学習はどれですか。","options":["操作できる図表で変化を見る","公式資料を転載する","ページタイトルだけ読む","選択肢をランダムに選ぶ"],"answer":"操作できる図表で変化を見る"}]}</script>
+    <script type="application/json" id="lessonData">{"slug":"ai-history/knowledge-representation","title":"知識表現","terms":["知識表現","オントロジー","意味ネットワーク","ルール"],"visual":{"type":"relation-table","title":"知識表現の対応関係","columns":["概念","関係","区別ポイント"],"rows":[["知識表現","AIに知識を扱わせるための表現方法を比較し、メリットと限界を押さえる。","似た用語との境界を説明できるようにする"],["オントロジー","知識表現を理解するための関連語","似た用語との境界を説明できるようにする"],["意味ネットワーク","知識表現を理解するための関連語","似た用語との境界を説明できるようにする"],["ルール","知識表現を理解するための関連語","似た用語との境界を説明できるようにする"]]},"quiz":[{"id":"knowledge-representation-practice-0","prompt":"概念をノード、関係（is-a, part-of など）をリンクで表す知識表現はどれか。","options":["意味ネットワーク","決定木","ニューラルネットワーク","混同行列"],"answer":"意味ネットワーク","explanation":"\u003cb>意味ネットワーク\u003c/b>。第2次ブーム（知識の時代）の知識表現の一つで、概念間の関係をグラフで表す。オントロジーや知識ベースの基礎となる考え方。"},{"id":"knowledge-representation-practice-1","prompt":"第1次AIブームの中心となった、迷路やパズルを解くための技術はどれか。","options":["探索・推論","知識表現","ディープラーニング","強化学習"],"answer":"探索・推論","explanation":"第1次ブーム（1950〜60年代）は\u003cb>探索・推論\u003c/b>の時代。明確なルールの問題は解けたが、現実の複雑な問題（トイ・プロブレムの限界）には対応できなかった。"},{"id":"knowledge-representation-practice-2","prompt":"一般常識をすべて人手でコンピュータに記述しようとした、息の長い知識ベース構築プロジェクトはどれか。","options":["Cycプロジェクト","ImageNet","AlphaGo","seq2seq"],"answer":"Cycプロジェクト","explanation":"【正解の理由】\u003cb>Cyc（サイク）プロジェクト\u003c/b>は1984年から常識をルールとして網羅的に記述しようとした試みで、知識獲得のボトルネックの大きさを象徴する。【各選択肢】②ImageNetは大規模画像データセット、③AlphaGoは囲碁AI、④seq2seqは系列変換モデルでいずれも第3次ブーム以降。【関連】オントロジー・セマンティックウェブと関連。"}]}</script>
   </main>
   <footer class="app-footer">
     <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>
   </footer>
+  <script src="../../assets/js/visualizations.js" defer></script>
   <script src="../../assets/js/lesson.js" defer></script>
 </body>
 </html>

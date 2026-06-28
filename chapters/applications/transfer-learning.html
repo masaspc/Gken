@@ -42,15 +42,15 @@
             <ul class="plain-list">
               <li>転移学習を、試験問題の文脈で説明できる。</li>
               <li>ファインチューニング、特徴抽出、事前学習済みモデルとの関係を区別できる。</li>
-              <li>図表を操作して、概念の変化やトレードオフを読み取れる。</li>
+              <li>判断フローから、確認すべき順序と分岐の意味を説明できる。</li>
             </ul>
           </section>
 
           <section class="lesson-section">
             <h3>本文解説</h3>
             <p>既存モデルを新しいタスクに適応する実務上の利点を学ぶ。</p>
-            <p>G検定では、用語の暗記だけでなく、どの場面でその考え方を使うのかが問われます。このページでは <strong>転移学習、ファインチューニング、特徴抽出、事前学習済みモデル</strong> を一つの学習単位として扱い、定義、関係、判断の観点をまとめます。</p>
-            <p>まず用語の境界を押さえ、次に図表を操作して結果がどう変わるかを観察してください。操作によって値や形が変わる部分が、そのテーマで理解すべき中心です。</p>
+            <p>転移学習では、転移学習、ファインチューニング、特徴抽出、事前学習済みモデルを別々の暗記事項ではなく、問題文の条件から使い分ける知識として扱います。</p>
+            <p>演習データでは「学習済みモデルの知識を別の関連タスクに流用し、少ないデータでも効率よく学習する手法はどれか。」のように問われます。ポイントは、転移学習。学習済みの重みを初期値や特徴抽出器として使う。出力付近を中心に再学習するのがファインチューニング。</p>
           </section>
 
           <section class="lesson-section visual-lesson" aria-labelledby="visualTitle">
@@ -68,7 +68,7 @@
           <section class="lesson-section">
             <h3>確認問題</h3>
             <div class="quiz-area lesson-quiz">
-              <article class="quiz-card"><h4>Q1. 転移学習を学ぶとき、最も重要な見方はどれですか。</h4><fieldset><label class="quiz-option"><input type="radio" name="transfer-learning-q1" value="転移学習の定義と使う場面を区別する"><span>転移学習の定義と使う場面を区別する</span></label><label class="quiz-option"><input type="radio" name="transfer-learning-q1" value="用語を英字順に暗記する"><span>用語を英字順に暗記する</span></label><label class="quiz-option"><input type="radio" name="transfer-learning-q1" value="図表を見ずに数値だけを覚える"><span>図表を見ずに数値だけを覚える</span></label><label class="quiz-option"><input type="radio" name="transfer-learning-q1" value="関連語をすべて同じ意味として扱う"><span>関連語をすべて同じ意味として扱う</span></label></fieldset></article><article class="quiz-card"><h4>Q2. ファインチューニングと特徴抽出の関係を理解するために有効な学習はどれですか。</h4><fieldset><label class="quiz-option"><input type="radio" name="transfer-learning-q2" value="操作できる図表で変化を見る"><span>操作できる図表で変化を見る</span></label><label class="quiz-option"><input type="radio" name="transfer-learning-q2" value="公式資料を転載する"><span>公式資料を転載する</span></label><label class="quiz-option"><input type="radio" name="transfer-learning-q2" value="ページタイトルだけ読む"><span>ページタイトルだけ読む</span></label><label class="quiz-option"><input type="radio" name="transfer-learning-q2" value="選択肢をランダムに選ぶ"><span>選択肢をランダムに選ぶ</span></label></fieldset></article>
+              <article class="quiz-card"><h4>Q1. 学習済みモデルの知識を別の関連タスクに流用し、少ないデータでも効率よく学習する手法はどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="transfer-learning-practice-0" value="転移学習"><span>転移学習</span></label><label class="quiz-option"><input type="radio" name="transfer-learning-practice-0" value="正則化"><span>正則化</span></label><label class="quiz-option"><input type="radio" name="transfer-learning-practice-0" value="次元削減"><span>次元削減</span></label><label class="quiz-option"><input type="radio" name="transfer-learning-practice-0" value="アンサンブル"><span>アンサンブル</span></label></fieldset></article><article class="quiz-card"><h4>Q2. 大規模データで学習済みのモデルを、別の関連タスクに少ないデータで適応させる手法はどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="transfer-learning-practice-1" value="転移学習"><span>転移学習</span></label><label class="quiz-option"><input type="radio" name="transfer-learning-practice-1" value="強化学習"><span>強化学習</span></label><label class="quiz-option"><input type="radio" name="transfer-learning-practice-1" value="クラスタリング"><span>クラスタリング</span></label><label class="quiz-option"><input type="radio" name="transfer-learning-practice-1" value="次元削減"><span>次元削減</span></label></fieldset></article><article class="quiz-card"><h4>Q3. 正解ラベルのないデータから構造やまとまりを見つける学習はどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="transfer-learning-practice-2" value="教師あり学習"><span>教師あり学習</span></label><label class="quiz-option"><input type="radio" name="transfer-learning-practice-2" value="教師なし学習"><span>教師なし学習</span></label><label class="quiz-option"><input type="radio" name="transfer-learning-practice-2" value="強化学習"><span>強化学習</span></label><label class="quiz-option"><input type="radio" name="transfer-learning-practice-2" value="転移学習"><span>転移学習</span></label></fieldset></article>
             </div>
             <div class="quiz-actions">
               <button class="primary-button" type="button" id="gradeLessonQuiz">採点する</button>
@@ -90,11 +90,12 @@
         </aside>
       </div>
     </section>
-    <script type="application/json" id="lessonData">{"slug":"applications/transfer-learning","title":"転移学習","terms":["転移学習","ファインチューニング","特徴抽出","事前学習済みモデル"],"visual":{"type":"flow","steps":["事前学習","重み利用","追加学習","評価"],"axis":"比較と関係"},"quiz":[{"id":"transfer-learning-q1","prompt":"転移学習を学ぶとき、最も重要な見方はどれですか。","options":["転移学習の定義と使う場面を区別する","用語を英字順に暗記する","図表を見ずに数値だけを覚える","関連語をすべて同じ意味として扱う"],"answer":"転移学習の定義と使う場面を区別する"},{"id":"transfer-learning-q2","prompt":"ファインチューニングと特徴抽出の関係を理解するために有効な学習はどれですか。","options":["操作できる図表で変化を見る","公式資料を転載する","ページタイトルだけ読む","選択肢をランダムに選ぶ"],"answer":"操作できる図表で変化を見る"}]}</script>
+    <script type="application/json" id="lessonData">{"slug":"applications/transfer-learning","title":"転移学習","terms":["転移学習","ファインチューニング","特徴抽出","事前学習済みモデル"],"visual":{"type":"flow","title":"転移学習","steps":[{"label":"事前学習","note":"起点"},{"label":"重み利用","note":"確認"},{"label":"追加学習","note":"確認"},{"label":"評価","note":"結果"}]},"quiz":[{"id":"transfer-learning-practice-0","prompt":"学習済みモデルの知識を別の関連タスクに流用し、少ないデータでも効率よく学習する手法はどれか。","options":["転移学習","正則化","次元削減","アンサンブル"],"answer":"転移学習","explanation":"\u003cb>転移学習\u003c/b>。学習済みの重みを初期値や特徴抽出器として使う。出力付近を中心に再学習するのが\u003cb>ファインチューニング\u003c/b>。"},{"id":"transfer-learning-practice-1","prompt":"大規模データで学習済みのモデルを、別の関連タスクに少ないデータで適応させる手法はどれか。","options":["転移学習","強化学習","クラスタリング","次元削減"],"answer":"転移学習","explanation":"【正解の理由】\u003cb>転移学習\u003c/b>は、汎用的な特徴を学んだ学習済みモデルを土台に、出力層付近を新タスク向けに学習し直す（ファインチューニング）ことで少データでも高精度を得る。【各選択肢】②強化学習・③クラスタリング・④次元削減は別系統。【関連】事前学習＋ファインチューニングは大規模言語モデルの基本戦略。"},{"id":"transfer-learning-practice-2","prompt":"正解ラベルのないデータから構造やまとまりを見つける学習はどれか。","options":["教師あり学習","教師なし学習","強化学習","転移学習"],"answer":"教師なし学習","explanation":"\u003cb>教師なし学習\u003c/b>。クラスタリング（k-means）や次元削減（PCA）が代表。正解ラベルを使う教師あり学習、報酬で学ぶ強化学習と区別する。"}]}</script>
   </main>
   <footer class="app-footer">
     <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>
   </footer>
+  <script src="../../assets/js/visualizations.js" defer></script>
   <script src="../../assets/js/lesson.js" defer></script>
 </body>
 </html>

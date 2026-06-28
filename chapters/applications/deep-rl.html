@@ -42,15 +42,15 @@
             <ul class="plain-list">
               <li>深層強化学習を、試験問題の文脈で説明できる。</li>
               <li>DQN、方策勾配、報酬設計との関係を区別できる。</li>
-              <li>図表を操作して、概念の変化やトレードオフを読み取れる。</li>
+              <li>判断フローから、確認すべき順序と分岐の意味を説明できる。</li>
             </ul>
           </section>
 
           <section class="lesson-section">
             <h3>本文解説</h3>
             <p>深層学習と強化学習を組み合わせると何ができるかを学ぶ。</p>
-            <p>G検定では、用語の暗記だけでなく、どの場面でその考え方を使うのかが問われます。このページでは <strong>深層強化学習、DQN、方策勾配、報酬設計</strong> を一つの学習単位として扱い、定義、関係、判断の観点をまとめます。</p>
-            <p>まず用語の境界を押さえ、次に図表を操作して結果がどう変わるかを観察してください。操作によって値や形が変わる部分が、そのテーマで理解すべき中心です。</p>
+            <p>深層強化学習では、深層強化学習、DQN、方策勾配、報酬設計を別々の暗記事項ではなく、問題文の条件から使い分ける知識として扱います。</p>
+            <p>演習データでは「DQNが学習を安定化させるために導入した工夫の組み合わせはどれか。」のように問われます。ポイントは、経験再生（過去の経験をランダムに再利用して相関を低減）とターゲットネットワーク（目標値を一定期間固定して発散を防ぐ）。深層強化学習の不安定さを抑えた重要な工夫。</p>
           </section>
 
           <section class="lesson-section visual-lesson" aria-labelledby="visualTitle">
@@ -68,7 +68,7 @@
           <section class="lesson-section">
             <h3>確認問題</h3>
             <div class="quiz-area lesson-quiz">
-              <article class="quiz-card"><h4>Q1. 深層強化学習を学ぶとき、最も重要な見方はどれですか。</h4><fieldset><label class="quiz-option"><input type="radio" name="deep-rl-q1" value="深層強化学習の定義と使う場面を区別する"><span>深層強化学習の定義と使う場面を区別する</span></label><label class="quiz-option"><input type="radio" name="deep-rl-q1" value="用語を英字順に暗記する"><span>用語を英字順に暗記する</span></label><label class="quiz-option"><input type="radio" name="deep-rl-q1" value="図表を見ずに数値だけを覚える"><span>図表を見ずに数値だけを覚える</span></label><label class="quiz-option"><input type="radio" name="deep-rl-q1" value="関連語をすべて同じ意味として扱う"><span>関連語をすべて同じ意味として扱う</span></label></fieldset></article><article class="quiz-card"><h4>Q2. DQNと方策勾配の関係を理解するために有効な学習はどれですか。</h4><fieldset><label class="quiz-option"><input type="radio" name="deep-rl-q2" value="操作できる図表で変化を見る"><span>操作できる図表で変化を見る</span></label><label class="quiz-option"><input type="radio" name="deep-rl-q2" value="公式資料を転載する"><span>公式資料を転載する</span></label><label class="quiz-option"><input type="radio" name="deep-rl-q2" value="ページタイトルだけ読む"><span>ページタイトルだけ読む</span></label><label class="quiz-option"><input type="radio" name="deep-rl-q2" value="選択肢をランダムに選ぶ"><span>選択肢をランダムに選ぶ</span></label></fieldset></article>
+              <article class="quiz-card"><h4>Q1. DQNが学習を安定化させるために導入した工夫の組み合わせはどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="deep-rl-practice-0" value="経験再生（experience replay）とターゲットネットワーク"><span>経験再生（experience replay）とターゲットネットワーク</span></label><label class="quiz-option"><input type="radio" name="deep-rl-practice-0" value="ドロップアウトとデータ拡張"><span>ドロップアウトとデータ拡張</span></label><label class="quiz-option"><input type="radio" name="deep-rl-practice-0" value="剪定とバギング"><span>剪定とバギング</span></label><label class="quiz-option"><input type="radio" name="deep-rl-practice-0" value="オプトインと匿名加工"><span>オプトインと匿名加工</span></label></fieldset></article><article class="quiz-card"><h4>Q2. Atariのゲームで人間並みの成績を出し、Q学習と深層学習を組み合わせた強化学習手法はどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="deep-rl-practice-1" value="DQN"><span>DQN</span></label><label class="quiz-option"><input type="radio" name="deep-rl-practice-1" value="word2vec"><span>word2vec</span></label><label class="quiz-option"><input type="radio" name="deep-rl-practice-1" value="GAN"><span>GAN</span></label><label class="quiz-option"><input type="radio" name="deep-rl-practice-1" value="BERT"><span>BERT</span></label></fieldset></article><article class="quiz-card"><h4>Q3. 行動価値関数Qを更新しながら最適方策を学ぶ、代表的な強化学習アルゴリズムはどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="deep-rl-practice-2" value="Q学習"><span>Q学習</span></label><label class="quiz-option"><input type="radio" name="deep-rl-practice-2" value="k-means"><span>k-means</span></label><label class="quiz-option"><input type="radio" name="deep-rl-practice-2" value="主成分分析"><span>主成分分析</span></label><label class="quiz-option"><input type="radio" name="deep-rl-practice-2" value="ブースティング"><span>ブースティング</span></label></fieldset></article>
             </div>
             <div class="quiz-actions">
               <button class="primary-button" type="button" id="gradeLessonQuiz">採点する</button>
@@ -90,11 +90,12 @@
         </aside>
       </div>
     </section>
-    <script type="application/json" id="lessonData">{"slug":"applications/deep-rl","title":"深層強化学習","terms":["深層強化学習","DQN","方策勾配","報酬設計"],"visual":{"type":"flow","steps":["観測","行動選択","報酬","経験蓄積","更新"],"axis":"比較と関係"},"quiz":[{"id":"deep-rl-q1","prompt":"深層強化学習を学ぶとき、最も重要な見方はどれですか。","options":["深層強化学習の定義と使う場面を区別する","用語を英字順に暗記する","図表を見ずに数値だけを覚える","関連語をすべて同じ意味として扱う"],"answer":"深層強化学習の定義と使う場面を区別する"},{"id":"deep-rl-q2","prompt":"DQNと方策勾配の関係を理解するために有効な学習はどれですか。","options":["操作できる図表で変化を見る","公式資料を転載する","ページタイトルだけ読む","選択肢をランダムに選ぶ"],"answer":"操作できる図表で変化を見る"}]}</script>
+    <script type="application/json" id="lessonData">{"slug":"applications/deep-rl","title":"深層強化学習","terms":["深層強化学習","DQN","方策勾配","報酬設計"],"visual":{"type":"flow","title":"深層強化学習","steps":[{"label":"観測","note":"起点"},{"label":"行動選択","note":"確認"},{"label":"報酬","note":"確認"},{"label":"経験蓄積","note":"確認"},{"label":"更新","note":"結果"}]},"quiz":[{"id":"deep-rl-practice-0","prompt":"DQNが学習を安定化させるために導入した工夫の組み合わせはどれか。","options":["経験再生（experience replay）とターゲットネットワーク","ドロップアウトとデータ拡張","剪定とバギング","オプトインと匿名加工"],"answer":"経験再生（experience replay）とターゲットネットワーク","explanation":"\u003cb>経験再生\u003c/b>（過去の経験をランダムに再利用して相関を低減）と\u003cb>ターゲットネットワーク\u003c/b>（目標値を一定期間固定して発散を防ぐ）。深層強化学習の不安定さを抑えた重要な工夫。"},{"id":"deep-rl-practice-1","prompt":"Atariのゲームで人間並みの成績を出し、Q学習と深層学習を組み合わせた強化学習手法はどれか。","options":["DQN","word2vec","GAN","BERT"],"answer":"DQN","explanation":"\u003cb>DQN（Deep Q-Network）\u003c/b>。行動価値関数Qをディープニューラルネットで近似し、経験再生などで安定化した。DeepMindが発表。"},{"id":"deep-rl-practice-2","prompt":"行動価値関数Qを更新しながら最適方策を学ぶ、代表的な強化学習アルゴリズムはどれか。","options":["Q学習","k-means","主成分分析","ブースティング"],"answer":"Q学習","explanation":"\u003cb>Q学習\u003c/b>。状態・行動の価値Qを試行錯誤で更新する。これをディープラーニングで近似したのがDQN。"}]}</script>
   </main>
   <footer class="app-footer">
     <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>
   </footer>
+  <script src="../../assets/js/visualizations.js" defer></script>
   <script src="../../assets/js/lesson.js" defer></script>
 </body>
 </html>

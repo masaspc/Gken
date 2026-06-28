@@ -42,15 +42,15 @@
             <ul class="plain-list">
               <li>ReLUを、試験問題の文脈で説明できる。</li>
               <li>Sigmoid、Tanh、非線形性との関係を区別できる。</li>
-              <li>図表を操作して、概念の変化やトレードオフを読み取れる。</li>
+              <li>対応表から、概念どうしの関係と区別ポイントを説明できる。</li>
             </ul>
           </section>
 
           <section class="lesson-section">
             <h3>本文解説</h3>
             <p>活性化関数が非線形な表現を可能にする理由を整理する。</p>
-            <p>G検定では、用語の暗記だけでなく、どの場面でその考え方を使うのかが問われます。このページでは <strong>ReLU、Sigmoid、Tanh、非線形性</strong> を一つの学習単位として扱い、定義、関係、判断の観点をまとめます。</p>
-            <p>まず用語の境界を押さえ、次に図表を操作して結果がどう変わるかを観察してください。操作によって値や形が変わる部分が、そのテーマで理解すべき中心です。</p>
+            <p>活性化関数では、ReLU、Sigmoid、Tanh、非線形性を別々の暗記事項ではなく、問題文の条件から使い分ける知識として扱います。</p>
+            <p>演習データでは「ニューラルネットで活性化関数に非線形なものを使う必要がある理由として最も適切なものはどれか。」のように問われます。ポイントは、活性化が線形だと多層を重ねても結局1つの線形変換に潰れるため、非線形性が不可欠。ReLU等で非線形性を入れることで複雑な関数を近似できる。深層化の意味を支える基本原理。</p>
           </section>
 
           <section class="lesson-section visual-lesson" aria-labelledby="visualTitle">
@@ -68,7 +68,7 @@
           <section class="lesson-section">
             <h3>確認問題</h3>
             <div class="quiz-area lesson-quiz">
-              <article class="quiz-card"><h4>Q1. ReLUを学ぶとき、最も重要な見方はどれですか。</h4><fieldset><label class="quiz-option"><input type="radio" name="activation-functions-q1" value="ReLUの定義と使う場面を区別する"><span>ReLUの定義と使う場面を区別する</span></label><label class="quiz-option"><input type="radio" name="activation-functions-q1" value="用語を英字順に暗記する"><span>用語を英字順に暗記する</span></label><label class="quiz-option"><input type="radio" name="activation-functions-q1" value="図表を見ずに数値だけを覚える"><span>図表を見ずに数値だけを覚える</span></label><label class="quiz-option"><input type="radio" name="activation-functions-q1" value="関連語をすべて同じ意味として扱う"><span>関連語をすべて同じ意味として扱う</span></label></fieldset></article><article class="quiz-card"><h4>Q2. SigmoidとTanhの関係を理解するために有効な学習はどれですか。</h4><fieldset><label class="quiz-option"><input type="radio" name="activation-functions-q2" value="操作できる図表で変化を見る"><span>操作できる図表で変化を見る</span></label><label class="quiz-option"><input type="radio" name="activation-functions-q2" value="公式資料を転載する"><span>公式資料を転載する</span></label><label class="quiz-option"><input type="radio" name="activation-functions-q2" value="ページタイトルだけ読む"><span>ページタイトルだけ読む</span></label><label class="quiz-option"><input type="radio" name="activation-functions-q2" value="選択肢をランダムに選ぶ"><span>選択肢をランダムに選ぶ</span></label></fieldset></article>
+              <article class="quiz-card"><h4>Q1. ニューラルネットで活性化関数に非線形なものを使う必要がある理由として最も適切なものはどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="activation-functions-practice-0" value="線形関数だけでは層を重ねても1層の線形変換と等価になり、複雑な表現ができないから"><span>線形関数だけでは層を重ねても1層の線形変換と等価になり、複雑な表現ができないから</span></label><label class="quiz-option"><input type="radio" name="activation-functions-practice-0" value="計算を速くするため"><span>計算を速くするため</span></label><label class="quiz-option"><input type="radio" name="activation-functions-practice-0" value="勾配を消すため"><span>勾配を消すため</span></label><label class="quiz-option"><input type="radio" name="activation-functions-practice-0" value="パラメータを減らすため"><span>パラメータを減らすため</span></label></fieldset></article><article class="quiz-card"><h4>Q2. 入力が正なら値をそのまま、負なら0を返す、勾配消失を緩和し深層学習で広く使われる活性化関数はどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="activation-functions-practice-1" value="ReLU"><span>ReLU</span></label><label class="quiz-option"><input type="radio" name="activation-functions-practice-1" value="シグモイド"><span>シグモイド</span></label><label class="quiz-option"><input type="radio" name="activation-functions-practice-1" value="ステップ関数"><span>ステップ関数</span></label><label class="quiz-option"><input type="radio" name="activation-functions-practice-1" value="恒等関数"><span>恒等関数</span></label></fieldset></article><article class="quiz-card"><h4>Q3. 勾配消失を緩和し、現在の中間層で広く使われる活性化関数はどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="activation-functions-practice-2" value="シグモイド関数"><span>シグモイド関数</span></label><label class="quiz-option"><input type="radio" name="activation-functions-practice-2" value="ステップ関数"><span>ステップ関数</span></label><label class="quiz-option"><input type="radio" name="activation-functions-practice-2" value="ReLU"><span>ReLU</span></label><label class="quiz-option"><input type="radio" name="activation-functions-practice-2" value="恒等関数"><span>恒等関数</span></label></fieldset></article>
             </div>
             <div class="quiz-actions">
               <button class="primary-button" type="button" id="gradeLessonQuiz">採点する</button>
@@ -90,11 +90,12 @@
         </aside>
       </div>
     </section>
-    <script type="application/json" id="lessonData">{"slug":"dl-overview/activation-functions","title":"活性化関数","terms":["ReLU","Sigmoid","Tanh","非線形性"],"visual":{"type":"bars","axis":"比較と関係"},"quiz":[{"id":"activation-functions-q1","prompt":"ReLUを学ぶとき、最も重要な見方はどれですか。","options":["ReLUの定義と使う場面を区別する","用語を英字順に暗記する","図表を見ずに数値だけを覚える","関連語をすべて同じ意味として扱う"],"answer":"ReLUの定義と使う場面を区別する"},{"id":"activation-functions-q2","prompt":"SigmoidとTanhの関係を理解するために有効な学習はどれですか。","options":["操作できる図表で変化を見る","公式資料を転載する","ページタイトルだけ読む","選択肢をランダムに選ぶ"],"answer":"操作できる図表で変化を見る"}]}</script>
+    <script type="application/json" id="lessonData">{"slug":"dl-overview/activation-functions","title":"活性化関数","terms":["ReLU","Sigmoid","Tanh","非線形性"],"visual":{"type":"comparison-table","title":"活性化関数の比較","columns":["項目","役割","試験での見方"],"rows":[["ReLU","ニューラルネットワークに非線形性を与える","似た用語との境界を説明できるようにする"],["Sigmoid","ニューラルネットワークに非線形性を与える","似た用語との境界を説明できるようにする"],["Tanh","ニューラルネットワークに非線形性を与える","似た用語との境界を説明できるようにする"],["非線形性","活性化関数が非線形な表現を可能にする理由を整理する。","似た用語との境界を説明できるようにする"]]},"quiz":[{"id":"activation-functions-practice-0","prompt":"ニューラルネットで活性化関数に非線形なものを使う必要がある理由として最も適切なものはどれか。","options":["線形関数だけでは層を重ねても1層の線形変換と等価になり、複雑な表現ができないから","計算を速くするため","勾配を消すため","パラメータを減らすため"],"answer":"線形関数だけでは層を重ねても1層の線形変換と等価になり、複雑な表現ができないから","explanation":"活性化が線形だと\u003cb>多層を重ねても結局1つの線形変換に潰れる\u003c/b>ため、非線形性が不可欠。ReLU等で非線形性を入れることで複雑な関数を近似できる。深層化の意味を支える基本原理。"},{"id":"activation-functions-practice-1","prompt":"入力が正なら値をそのまま、負なら0を返す、勾配消失を緩和し深層学習で広く使われる活性化関数はどれか。","options":["ReLU","シグモイド","ステップ関数","恒等関数"],"answer":"ReLU","explanation":"【正解の理由】\u003cb>ReLU\u003c/b>は正領域で勾配が1のため勾配消失が起きにくく計算も軽い。【各選択肢】②シグモイドは飽和して勾配消失を招きやすい、③ステップ関数は微分が0で逆伝播不可、④恒等関数は非線形性を持たない。【関連】負側が常に0で学習が止まる「死んだReLU」対策にLeaky ReLU等。重み初期化はHeが相性良い。"},{"id":"activation-functions-practice-2","prompt":"勾配消失を緩和し、現在の中間層で広く使われる活性化関数はどれか。","options":["シグモイド関数","ステップ関数","ReLU","恒等関数"],"answer":"ReLU","explanation":"\u003cb>ReLU\u003c/b>（正の領域で勾配1）は勾配消失を起こしにくく計算も軽い。出力層の多クラス分類には\u003cb>ソフトマックス\u003c/b>を使う。"}]}</script>
   </main>
   <footer class="app-footer">
     <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>
   </footer>
+  <script src="../../assets/js/visualizations.js" defer></script>
   <script src="../../assets/js/lesson.js" defer></script>
 </body>
 </html>

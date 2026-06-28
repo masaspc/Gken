@@ -42,15 +42,15 @@
             <ul class="plain-list">
               <li>データ拡張を、試験問題の文脈で説明できる。</li>
               <li>反転、回転、ノイズとの関係を区別できる。</li>
-              <li>図表を操作して、概念の変化やトレードオフを読み取れる。</li>
+              <li>対応表から、概念どうしの関係と区別ポイントを説明できる。</li>
             </ul>
           </section>
 
           <section class="lesson-section">
             <h3>本文解説</h3>
             <p>訓練データを変形して汎化性能を高める考え方を学ぶ。</p>
-            <p>G検定では、用語の暗記だけでなく、どの場面でその考え方を使うのかが問われます。このページでは <strong>データ拡張、反転、回転、ノイズ</strong> を一つの学習単位として扱い、定義、関係、判断の観点をまとめます。</p>
-            <p>まず用語の境界を押さえ、次に図表を操作して結果がどう変わるかを観察してください。操作によって値や形が変わる部分が、そのテーマで理解すべき中心です。</p>
+            <p>データ拡張では、データ拡張、反転、回転、ノイズを別々の暗記事項ではなく、問題文の条件から使い分ける知識として扱います。</p>
+            <p>演習データでは「画像を回転・反転・切り抜き・色変換などで水増しし、過学習を抑え汎化を高める手法はどれか。」のように問われます。ポイントは、データ拡張。学習データの多様性を人工的に増やす。画像だけでなくテキスト・音声でも用いられる。</p>
           </section>
 
           <section class="lesson-section visual-lesson" aria-labelledby="visualTitle">
@@ -68,7 +68,7 @@
           <section class="lesson-section">
             <h3>確認問題</h3>
             <div class="quiz-area lesson-quiz">
-              <article class="quiz-card"><h4>Q1. データ拡張を学ぶとき、最も重要な見方はどれですか。</h4><fieldset><label class="quiz-option"><input type="radio" name="data-augmentation-q1" value="データ拡張の定義と使う場面を区別する"><span>データ拡張の定義と使う場面を区別する</span></label><label class="quiz-option"><input type="radio" name="data-augmentation-q1" value="用語を英字順に暗記する"><span>用語を英字順に暗記する</span></label><label class="quiz-option"><input type="radio" name="data-augmentation-q1" value="図表を見ずに数値だけを覚える"><span>図表を見ずに数値だけを覚える</span></label><label class="quiz-option"><input type="radio" name="data-augmentation-q1" value="関連語をすべて同じ意味として扱う"><span>関連語をすべて同じ意味として扱う</span></label></fieldset></article><article class="quiz-card"><h4>Q2. 反転と回転の関係を理解するために有効な学習はどれですか。</h4><fieldset><label class="quiz-option"><input type="radio" name="data-augmentation-q2" value="操作できる図表で変化を見る"><span>操作できる図表で変化を見る</span></label><label class="quiz-option"><input type="radio" name="data-augmentation-q2" value="公式資料を転載する"><span>公式資料を転載する</span></label><label class="quiz-option"><input type="radio" name="data-augmentation-q2" value="ページタイトルだけ読む"><span>ページタイトルだけ読む</span></label><label class="quiz-option"><input type="radio" name="data-augmentation-q2" value="選択肢をランダムに選ぶ"><span>選択肢をランダムに選ぶ</span></label></fieldset></article>
+              <article class="quiz-card"><h4>Q1. 画像を回転・反転・切り抜き・色変換などで水増しし、過学習を抑え汎化を高める手法はどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="data-augmentation-practice-0" value="データ拡張（Data Augmentation）"><span>データ拡張（Data Augmentation）</span></label><label class="quiz-option"><input type="radio" name="data-augmentation-practice-0" value="ドロップアウト"><span>ドロップアウト</span></label><label class="quiz-option"><input type="radio" name="data-augmentation-practice-0" value="蒸留"><span>蒸留</span></label><label class="quiz-option"><input type="radio" name="data-augmentation-practice-0" value="量子化"><span>量子化</span></label></fieldset></article><article class="quiz-card"><h4>Q2. 画像を左右反転・回転・切り抜きなどで変形して学習データを水増しし、過学習を抑える手法はどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="data-augmentation-practice-1" value="データ拡張（データオーグメンテーション）"><span>データ拡張（データオーグメンテーション）</span></label><label class="quiz-option"><input type="radio" name="data-augmentation-practice-1" value="転移学習"><span>転移学習</span></label><label class="quiz-option"><input type="radio" name="data-augmentation-practice-1" value="ドロップアウト"><span>ドロップアウト</span></label><label class="quiz-option"><input type="radio" name="data-augmentation-practice-1" value="正則化"><span>正則化</span></label></fieldset></article><article class="quiz-card"><h4>Q3. 学習データには高精度だが未知データで性能が落ちる状態を何というか。</h4><fieldset><label class="quiz-option"><input type="radio" name="data-augmentation-practice-2" value="未学習（過少適合）"><span>未学習（過少適合）</span></label><label class="quiz-option"><input type="radio" name="data-augmentation-practice-2" value="過学習（過剰適合）"><span>過学習（過剰適合）</span></label><label class="quiz-option"><input type="radio" name="data-augmentation-practice-2" value="正則化"><span>正則化</span></label><label class="quiz-option"><input type="radio" name="data-augmentation-practice-2" value="汎化"><span>汎化</span></label></fieldset></article>
             </div>
             <div class="quiz-actions">
               <button class="primary-button" type="button" id="gradeLessonQuiz">採点する</button>
@@ -90,11 +90,12 @@
         </aside>
       </div>
     </section>
-    <script type="application/json" id="lessonData">{"slug":"dl-elements/data-augmentation","title":"データ拡張","terms":["データ拡張","反転","回転","ノイズ"],"visual":{"type":"bars","axis":"比較と関係"},"quiz":[{"id":"data-augmentation-q1","prompt":"データ拡張を学ぶとき、最も重要な見方はどれですか。","options":["データ拡張の定義と使う場面を区別する","用語を英字順に暗記する","図表を見ずに数値だけを覚える","関連語をすべて同じ意味として扱う"],"answer":"データ拡張の定義と使う場面を区別する"},{"id":"data-augmentation-q2","prompt":"反転と回転の関係を理解するために有効な学習はどれですか。","options":["操作できる図表で変化を見る","公式資料を転載する","ページタイトルだけ読む","選択肢をランダムに選ぶ"],"answer":"操作できる図表で変化を見る"}]}</script>
+    <script type="application/json" id="lessonData">{"slug":"dl-elements/data-augmentation","title":"データ拡張","terms":["データ拡張","反転","回転","ノイズ"],"visual":{"type":"comparison-table","title":"データ拡張の比較","columns":["項目","役割","試験での見方"],"rows":[["データ拡張","訓練データを変形して汎化性能を高める考え方を学ぶ。","似た用語との境界を説明できるようにする"],["反転","訓練データを変形して汎化性能を高める考え方を学ぶ。","似た用語との境界を説明できるようにする"],["回転","訓練データを変形して汎化性能を高める考え方を学ぶ。","似た用語との境界を説明できるようにする"],["ノイズ","訓練データを変形して汎化性能を高める考え方を学ぶ。","似た用語との境界を説明できるようにする"]]},"quiz":[{"id":"data-augmentation-practice-0","prompt":"画像を回転・反転・切り抜き・色変換などで水増しし、過学習を抑え汎化を高める手法はどれか。","options":["データ拡張（Data Augmentation）","ドロップアウト","蒸留","量子化"],"answer":"データ拡張（Data Augmentation）","explanation":"\u003cb>データ拡張\u003c/b>。学習データの多様性を人工的に増やす。画像だけでなくテキスト・音声でも用いられる。"},{"id":"data-augmentation-practice-1","prompt":"画像を左右反転・回転・切り抜きなどで変形して学習データを水増しし、過学習を抑える手法はどれか。","options":["データ拡張（データオーグメンテーション）","転移学習","ドロップアウト","正則化"],"answer":"データ拡張（データオーグメンテーション）","explanation":"【正解の理由】\u003cb>データ拡張\u003c/b>は元データに反転・回転・拡大縮小・色変換などを施して多様なサンプルを生成し、汎化性能を高める。【各選択肢】②転移学習は学習済みモデルの再利用、③ドロップアウトはニューロン無効化、④正則化は罰則項。【関連】画像で特に有効。意味を壊す変形（数字の上下反転等）は避ける。"},{"id":"data-augmentation-practice-2","prompt":"学習データには高精度だが未知データで性能が落ちる状態を何というか。","options":["未学習（過少適合）","過学習（過剰適合）","正則化","汎化"],"answer":"過学習（過剰適合）","explanation":"\u003cb>過学習（オーバーフィッティング）\u003c/b>。モデルが訓練データのノイズまで覚え込んだ状態。正則化・ドロップアウト・データ拡張・早期終了などで抑制する。"}]}</script>
   </main>
   <footer class="app-footer">
     <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>
   </footer>
+  <script src="../../assets/js/visualizations.js" defer></script>
   <script src="../../assets/js/lesson.js" defer></script>
 </body>
 </html>

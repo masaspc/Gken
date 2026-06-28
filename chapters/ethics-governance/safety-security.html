@@ -42,15 +42,15 @@
             <ul class="plain-list">
               <li>安全性を、試験問題の文脈で説明できる。</li>
               <li>セキュリティ、堅牢性、攻撃との関係を区別できる。</li>
-              <li>図表を操作して、概念の変化やトレードオフを読み取れる。</li>
+              <li>対応表から、概念どうしの関係と区別ポイントを説明できる。</li>
             </ul>
           </section>
 
           <section class="lesson-section">
             <h3>本文解説</h3>
             <p>AIシステムが誤作動や攻撃に耐えるための観点を整理する。</p>
-            <p>G検定では、用語の暗記だけでなく、どの場面でその考え方を使うのかが問われます。このページでは <strong>安全性、セキュリティ、堅牢性、攻撃</strong> を一つの学習単位として扱い、定義、関係、判断の観点をまとめます。</p>
-            <p>まず用語の境界を押さえ、次に図表を操作して結果がどう変わるかを観察してください。操作によって値や形が変わる部分が、そのテーマで理解すべき中心です。</p>
+            <p>安全性とセキュリティでは、安全性、セキュリティ、堅牢性、攻撃を別々の暗記事項ではなく、問題文の条件から使い分ける知識として扱います。</p>
+            <p>演習データでは「画像に人間には気づきにくい微小なノイズを加え、AIに誤分類させる入力を何というか。」のように問われます。ポイントは、敵対的サンプル。わずかな摂動でモデルを誤認識させる攻撃。自動運転の標識誤認などセキュリティ上の脅威で、頑健性（ロバストネス）向上が課題。</p>
           </section>
 
           <section class="lesson-section visual-lesson" aria-labelledby="visualTitle">
@@ -68,7 +68,7 @@
           <section class="lesson-section">
             <h3>確認問題</h3>
             <div class="quiz-area lesson-quiz">
-              <article class="quiz-card"><h4>Q1. 安全性を学ぶとき、最も重要な見方はどれですか。</h4><fieldset><label class="quiz-option"><input type="radio" name="safety-security-q1" value="安全性の定義と使う場面を区別する"><span>安全性の定義と使う場面を区別する</span></label><label class="quiz-option"><input type="radio" name="safety-security-q1" value="用語を英字順に暗記する"><span>用語を英字順に暗記する</span></label><label class="quiz-option"><input type="radio" name="safety-security-q1" value="図表を見ずに数値だけを覚える"><span>図表を見ずに数値だけを覚える</span></label><label class="quiz-option"><input type="radio" name="safety-security-q1" value="関連語をすべて同じ意味として扱う"><span>関連語をすべて同じ意味として扱う</span></label></fieldset></article><article class="quiz-card"><h4>Q2. セキュリティと堅牢性の関係を理解するために有効な学習はどれですか。</h4><fieldset><label class="quiz-option"><input type="radio" name="safety-security-q2" value="操作できる図表で変化を見る"><span>操作できる図表で変化を見る</span></label><label class="quiz-option"><input type="radio" name="safety-security-q2" value="公式資料を転載する"><span>公式資料を転載する</span></label><label class="quiz-option"><input type="radio" name="safety-security-q2" value="ページタイトルだけ読む"><span>ページタイトルだけ読む</span></label><label class="quiz-option"><input type="radio" name="safety-security-q2" value="選択肢をランダムに選ぶ"><span>選択肢をランダムに選ぶ</span></label></fieldset></article>
+              <article class="quiz-card"><h4>Q1. 画像に人間には気づきにくい微小なノイズを加え、AIに誤分類させる入力を何というか。</h4><fieldset><label class="quiz-option"><input type="radio" name="safety-security-practice-0" value="敵対的サンプル（Adversarial Example）"><span>敵対的サンプル（Adversarial Example）</span></label><label class="quiz-option"><input type="radio" name="safety-security-practice-0" value="データ拡張"><span>データ拡張</span></label><label class="quiz-option"><input type="radio" name="safety-security-practice-0" value="正則化項"><span>正則化項</span></label><label class="quiz-option"><input type="radio" name="safety-security-practice-0" value="アノテーションエラー"><span>アノテーションエラー</span></label></fieldset></article><article class="quiz-card"><h4>Q2. 設計の初期段階からプライバシー保護を組み込んでおく考え方を何というか。</h4><fieldset><label class="quiz-option"><input type="radio" name="safety-security-practice-1" value="プライバシー・バイ・デザイン"><span>プライバシー・バイ・デザイン</span></label><label class="quiz-option"><input type="radio" name="safety-security-practice-1" value="オプトアウト"><span>オプトアウト</span></label><label class="quiz-option"><input type="radio" name="safety-security-practice-1" value="データミニマイゼーションのみ"><span>データミニマイゼーションのみ</span></label><label class="quiz-option"><input type="radio" name="safety-security-practice-1" value="セキュリティ・バイ・オブスキュリティ"><span>セキュリティ・バイ・オブスキュリティ</span></label></fieldset></article><article class="quiz-card"><h4>Q3. AIの適切な開発・利用に関する国際的な原則・枠組みの例として適切なものはどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="safety-security-practice-2" value="OECD AI原則やG7広島AIプロセス"><span>OECD AI原則やG7広島AIプロセス</span></label><label class="quiz-option"><input type="radio" name="safety-security-practice-2" value="ISO 9001のみ"><span>ISO 9001のみ</span></label><label class="quiz-option"><input type="radio" name="safety-security-practice-2" value="GPLライセンス"><span>GPLライセンス</span></label><label class="quiz-option"><input type="radio" name="safety-security-practice-2" value="TCP/IP"><span>TCP/IP</span></label></fieldset></article>
             </div>
             <div class="quiz-actions">
               <button class="primary-button" type="button" id="gradeLessonQuiz">採点する</button>
@@ -90,11 +90,12 @@
         </aside>
       </div>
     </section>
-    <script type="application/json" id="lessonData">{"slug":"ethics-governance/safety-security","title":"安全性とセキュリティ","terms":["安全性","セキュリティ","堅牢性","攻撃"],"visual":{"type":"matrix","axis":"比較と関係"},"quiz":[{"id":"safety-security-q1","prompt":"安全性を学ぶとき、最も重要な見方はどれですか。","options":["安全性の定義と使う場面を区別する","用語を英字順に暗記する","図表を見ずに数値だけを覚える","関連語をすべて同じ意味として扱う"],"answer":"安全性の定義と使う場面を区別する"},{"id":"safety-security-q2","prompt":"セキュリティと堅牢性の関係を理解するために有効な学習はどれですか。","options":["操作できる図表で変化を見る","公式資料を転載する","ページタイトルだけ読む","選択肢をランダムに選ぶ"],"answer":"操作できる図表で変化を見る"}]}</script>
+    <script type="application/json" id="lessonData">{"slug":"ethics-governance/safety-security","title":"安全性とセキュリティ","terms":["安全性","セキュリティ","堅牢性","攻撃"],"visual":{"type":"relation-table","title":"安全性とセキュリティの対応関係","columns":["概念","関係","区別ポイント"],"rows":[["安全性","AIシステムが誤作動や攻撃に耐えるための観点を整理する。","似た用語との境界を説明できるようにする"],["セキュリティ","安全性を理解するための関連語","似た用語との境界を説明できるようにする"],["堅牢性","安全性を理解するための関連語","似た用語との境界を説明できるようにする"],["攻撃","安全性を理解するための関連語","似た用語との境界を説明できるようにする"]]},"quiz":[{"id":"safety-security-practice-0","prompt":"画像に人間には気づきにくい微小なノイズを加え、AIに誤分類させる入力を何というか。","options":["敵対的サンプル（Adversarial Example）","データ拡張","正則化項","アノテーションエラー"],"answer":"敵対的サンプル（Adversarial Example）","explanation":"\u003cb>敵対的サンプル\u003c/b>。わずかな摂動でモデルを誤認識させる攻撃。自動運転の標識誤認などセキュリティ上の脅威で、頑健性（ロバストネス）向上が課題。"},{"id":"safety-security-practice-1","prompt":"設計の初期段階からプライバシー保護を組み込んでおく考え方を何というか。","options":["プライバシー・バイ・デザイン","オプトアウト","データミニマイゼーションのみ","セキュリティ・バイ・オブスキュリティ"],"answer":"プライバシー・バイ・デザイン","explanation":"\u003cb>プライバシー・バイ・デザイン\u003c/b>。製品・サービスの企画・設計段階からプライバシー保護を作り込む考え方。事後対応ではなく予防的に取り組む。"},{"id":"safety-security-practice-2","prompt":"AIの適切な開発・利用に関する国際的な原則・枠組みの例として適切なものはどれか。","options":["OECD AI原則やG7広島AIプロセス","ISO 9001のみ","GPLライセンス","TCP/IP"],"answer":"OECD AI原則やG7広島AIプロセス","explanation":"\u003cb>OECD AI原則\u003c/b>（2019年）や\u003cb>G7広島AIプロセス\u003c/b>（2023年）は、人間中心・透明性・説明責任・安全性などを掲げる国際的な指針。各国のガイドライン（日本のAI事業者ガイドライン等）とも整合する。国際協調の動きとして問われる。"}]}</script>
   </main>
   <footer class="app-footer">
     <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>
   </footer>
+  <script src="../../assets/js/visualizations.js" defer></script>
   <script src="../../assets/js/lesson.js" defer></script>
 </body>
 </html>

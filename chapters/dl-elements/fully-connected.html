@@ -42,15 +42,15 @@
             <ul class="plain-list">
               <li>全結合層を、試験問題の文脈で説明できる。</li>
               <li>重み行列、特徴結合、パラメータとの関係を区別できる。</li>
-              <li>図表を操作して、概念の変化やトレードオフを読み取れる。</li>
+              <li>構造図から、層・ユニット・接続の役割を読み取れる。</li>
             </ul>
           </section>
 
           <section class="lesson-section">
             <h3>本文解説</h3>
             <p>すべての入力と出力を結ぶ層の役割とパラメータ数を理解する。</p>
-            <p>G検定では、用語の暗記だけでなく、どの場面でその考え方を使うのかが問われます。このページでは <strong>全結合層、重み行列、特徴結合、パラメータ</strong> を一つの学習単位として扱い、定義、関係、判断の観点をまとめます。</p>
-            <p>まず用語の境界を押さえ、次に図表を操作して結果がどう変わるかを観察してください。操作によって値や形が変わる部分が、そのテーマで理解すべき中心です。</p>
+            <p>全結合層では、全結合層、重み行列、特徴結合、パラメータを別々の暗記事項ではなく、問題文の条件から使い分ける知識として扱います。</p>
+            <p>演習データでは「入力ユニット100、出力ユニット10の全結合層（バイアスあり）のパラメータ数はいくつか。」のように問われます。ポイントは、全結合層のパラメータ＝（入力数×出力数）＋出力数（バイアス）＝100×10＋10＝1010。重み行列1000個＋バイアス10個。層が増えるとパラメータが急増し、過学習や計算量の要因になる。</p>
           </section>
 
           <section class="lesson-section visual-lesson" aria-labelledby="visualTitle">
@@ -68,7 +68,7 @@
           <section class="lesson-section">
             <h3>確認問題</h3>
             <div class="quiz-area lesson-quiz">
-              <article class="quiz-card"><h4>Q1. 全結合層を学ぶとき、最も重要な見方はどれですか。</h4><fieldset><label class="quiz-option"><input type="radio" name="fully-connected-q1" value="全結合層の定義と使う場面を区別する"><span>全結合層の定義と使う場面を区別する</span></label><label class="quiz-option"><input type="radio" name="fully-connected-q1" value="用語を英字順に暗記する"><span>用語を英字順に暗記する</span></label><label class="quiz-option"><input type="radio" name="fully-connected-q1" value="図表を見ずに数値だけを覚える"><span>図表を見ずに数値だけを覚える</span></label><label class="quiz-option"><input type="radio" name="fully-connected-q1" value="関連語をすべて同じ意味として扱う"><span>関連語をすべて同じ意味として扱う</span></label></fieldset></article><article class="quiz-card"><h4>Q2. 重み行列と特徴結合の関係を理解するために有効な学習はどれですか。</h4><fieldset><label class="quiz-option"><input type="radio" name="fully-connected-q2" value="操作できる図表で変化を見る"><span>操作できる図表で変化を見る</span></label><label class="quiz-option"><input type="radio" name="fully-connected-q2" value="公式資料を転載する"><span>公式資料を転載する</span></label><label class="quiz-option"><input type="radio" name="fully-connected-q2" value="ページタイトルだけ読む"><span>ページタイトルだけ読む</span></label><label class="quiz-option"><input type="radio" name="fully-connected-q2" value="選択肢をランダムに選ぶ"><span>選択肢をランダムに選ぶ</span></label></fieldset></article>
+              <article class="quiz-card"><h4>Q1. 入力ユニット100、出力ユニット10の全結合層（バイアスあり）のパラメータ数はいくつか。</h4><fieldset><label class="quiz-option"><input type="radio" name="fully-connected-practice-0" value="1010"><span>1010</span></label><label class="quiz-option"><input type="radio" name="fully-connected-practice-0" value="1000"><span>1000</span></label><label class="quiz-option"><input type="radio" name="fully-connected-practice-0" value="110"><span>110</span></label><label class="quiz-option"><input type="radio" name="fully-connected-practice-0" value="10000"><span>10000</span></label></fieldset></article><article class="quiz-card"><h4>Q2. 特徴マップ全体を1つの値（チャネルごとの平均）に集約し、全結合層を減らして過学習を抑える手法はどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="fully-connected-practice-1" value="グローバル平均プーリング（GAP）"><span>グローバル平均プーリング（GAP）</span></label><label class="quiz-option"><input type="radio" name="fully-connected-practice-1" value="最大プーリング"><span>最大プーリング</span></label><label class="quiz-option"><input type="radio" name="fully-connected-practice-1" value="ストライド"><span>ストライド</span></label><label class="quiz-option"><input type="radio" name="fully-connected-practice-1" value="パディング"><span>パディング</span></label></fieldset></article><article class="quiz-card"><h4>Q3. 畳み込み層が全結合層に比べてパラメータ数を大きく減らせる主な理由はどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="fully-connected-practice-2" value="フィルタを画像全体で使い回す重み共有"><span>フィルタを画像全体で使い回す重み共有</span></label><label class="quiz-option"><input type="radio" name="fully-connected-practice-2" value="ニューロンを毎回ランダムに無効化するから"><span>ニューロンを毎回ランダムに無効化するから</span></label><label class="quiz-option"><input type="radio" name="fully-connected-practice-2" value="出力を確率に変換するから"><span>出力を確率に変換するから</span></label><label class="quiz-option"><input type="radio" name="fully-connected-practice-2" value="勾配を逆向きに流すから"><span>勾配を逆向きに流すから</span></label></fieldset></article>
             </div>
             <div class="quiz-actions">
               <button class="primary-button" type="button" id="gradeLessonQuiz">採点する</button>
@@ -90,11 +90,12 @@
         </aside>
       </div>
     </section>
-    <script type="application/json" id="lessonData">{"slug":"dl-elements/fully-connected","title":"全結合層","terms":["全結合層","重み行列","特徴結合","パラメータ"],"visual":{"type":"network","axis":"比較と関係"},"quiz":[{"id":"fully-connected-q1","prompt":"全結合層を学ぶとき、最も重要な見方はどれですか。","options":["全結合層の定義と使う場面を区別する","用語を英字順に暗記する","図表を見ずに数値だけを覚える","関連語をすべて同じ意味として扱う"],"answer":"全結合層の定義と使う場面を区別する"},{"id":"fully-connected-q2","prompt":"重み行列と特徴結合の関係を理解するために有効な学習はどれですか。","options":["操作できる図表で変化を見る","公式資料を転載する","ページタイトルだけ読む","選択肢をランダムに選ぶ"],"answer":"操作できる図表で変化を見る"}]}</script>
+    <script type="application/json" id="lessonData">{"slug":"dl-elements/fully-connected","title":"全結合層","terms":["全結合層","重み行列","特徴結合","パラメータ"],"visual":{"type":"network","title":"全結合層","layers":[{"name":"入力","units":4},{"name":"特徴抽出","units":6},{"name":"出力","units":2}]},"quiz":[{"id":"fully-connected-practice-0","prompt":"入力ユニット100、出力ユニット10の全結合層（バイアスあり）のパラメータ数はいくつか。","options":["1010","1000","110","10000"],"answer":"1010","explanation":"全結合層のパラメータ＝（入力数×出力数）＋出力数（バイアス）＝100×10＋10＝\u003cb>1010\u003c/b>。重み行列1000個＋バイアス10個。層が増えるとパラメータが急増し、過学習や計算量の要因になる。"},{"id":"fully-connected-practice-1","prompt":"特徴マップ全体を1つの値（チャネルごとの平均）に集約し、全結合層を減らして過学習を抑える手法はどれか。","options":["グローバル平均プーリング（GAP）","最大プーリング","ストライド","パディング"],"answer":"グローバル平均プーリング（GAP）","explanation":"\u003cb>GAP\u003c/b>。各チャネルの平均で空間次元を潰し、巨大な全結合層を不要にしてパラメータと過学習を削減する。GoogLeNet以降のCNNで広く採用。位置情報を捨てる代わりに頑健性が増す。"},{"id":"fully-connected-practice-2","prompt":"畳み込み層が全結合層に比べてパラメータ数を大きく減らせる主な理由はどれか。","options":["フィルタを画像全体で使い回す重み共有","ニューロンを毎回ランダムに無効化するから","出力を確率に変換するから","勾配を逆向きに流すから"],"answer":"フィルタを画像全体で使い回す重み共有","explanation":"【正解の理由】畳み込みでは同じ\u003cb>フィルタ（重み）を画像全体で共有\u003c/b>し、各ニューロンは局所領域のみと結合するため、全結合に比べパラメータが激減する。【各選択肢】②はドロップアウト、③はソフトマックス、④は誤差逆伝播の説明で理由として不適。【関連】重み共有は平行移動に強い特徴抽出にもつながる。"}]}</script>
   </main>
   <footer class="app-footer">
     <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>
   </footer>
+  <script src="../../assets/js/visualizations.js" defer></script>
   <script src="../../assets/js/lesson.js" defer></script>
 </body>
 </html>

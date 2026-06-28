@@ -42,15 +42,15 @@
             <ul class="plain-list">
               <li>分類を、試験問題の文脈で説明できる。</li>
               <li>決定境界、クラス、しきい値との関係を区別できる。</li>
-              <li>図表を操作して、概念の変化やトレードオフを読み取れる。</li>
+              <li>パラメータを動かし、計算結果・指標・重みの変化を読み取れる。</li>
             </ul>
           </section>
 
           <section class="lesson-section">
             <h3>本文解説</h3>
             <p>カテゴリを予測する課題で、境界の動かし方が誤分類に与える影響を見る。</p>
-            <p>G検定では、用語の暗記だけでなく、どの場面でその考え方を使うのかが問われます。このページでは <strong>分類、決定境界、クラス、しきい値</strong> を一つの学習単位として扱い、定義、関係、判断の観点をまとめます。</p>
-            <p>まず用語の境界を押さえ、次に図表を操作して結果がどう変わるかを観察してください。操作によって値や形が変わる部分が、そのテーマで理解すべき中心です。</p>
+            <p>分類では、分類、決定境界、クラス、しきい値を別々の暗記事項ではなく、問題文の条件から使い分ける知識として扱います。</p>
+            <p>演習データでは「出力をシグモイド関数で0〜1の確率に変換し、2値分類に用いる手法はどれか。」のように問われます。ポイントは、【正解の理由】ロジスティック回帰は線形結合をシグモイドに通して確率を出し、しきい値で2クラスに分類する。名前は回帰だが用途は分類。【各選択肢】②線形回帰は連続値の予測、③PCAは次元削減、④k-meansはクラスタリング。【覚え方】「ロジス...</p>
           </section>
 
           <section class="lesson-section visual-lesson" aria-labelledby="visualTitle">
@@ -68,7 +68,7 @@
           <section class="lesson-section">
             <h3>確認問題</h3>
             <div class="quiz-area lesson-quiz">
-              <article class="quiz-card"><h4>Q1. 分類を学ぶとき、最も重要な見方はどれですか。</h4><fieldset><label class="quiz-option"><input type="radio" name="classification-q1" value="分類の定義と使う場面を区別する"><span>分類の定義と使う場面を区別する</span></label><label class="quiz-option"><input type="radio" name="classification-q1" value="用語を英字順に暗記する"><span>用語を英字順に暗記する</span></label><label class="quiz-option"><input type="radio" name="classification-q1" value="図表を見ずに数値だけを覚える"><span>図表を見ずに数値だけを覚える</span></label><label class="quiz-option"><input type="radio" name="classification-q1" value="関連語をすべて同じ意味として扱う"><span>関連語をすべて同じ意味として扱う</span></label></fieldset></article><article class="quiz-card"><h4>Q2. 決定境界とクラスの関係を理解するために有効な学習はどれですか。</h4><fieldset><label class="quiz-option"><input type="radio" name="classification-q2" value="操作できる図表で変化を見る"><span>操作できる図表で変化を見る</span></label><label class="quiz-option"><input type="radio" name="classification-q2" value="公式資料を転載する"><span>公式資料を転載する</span></label><label class="quiz-option"><input type="radio" name="classification-q2" value="ページタイトルだけ読む"><span>ページタイトルだけ読む</span></label><label class="quiz-option"><input type="radio" name="classification-q2" value="選択肢をランダムに選ぶ"><span>選択肢をランダムに選ぶ</span></label></fieldset></article>
+              <article class="quiz-card"><h4>Q1. 出力をシグモイド関数で0〜1の確率に変換し、2値分類に用いる手法はどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="classification-practice-0" value="ロジスティック回帰"><span>ロジスティック回帰</span></label><label class="quiz-option"><input type="radio" name="classification-practice-0" value="線形回帰"><span>線形回帰</span></label><label class="quiz-option"><input type="radio" name="classification-practice-0" value="主成分分析"><span>主成分分析</span></label><label class="quiz-option"><input type="radio" name="classification-practice-0" value="k-means"><span>k-means</span></label></fieldset></article><article class="quiz-card"><h4>Q2. 出力が「連続値」になるのが回帰、「離散的なクラス」になるのが分類である。次のうち分類タスクはどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="classification-practice-1" value="明日の気温の予測"><span>明日の気温の予測</span></label><label class="quiz-option"><input type="radio" name="classification-practice-1" value="住宅価格の予測"><span>住宅価格の予測</span></label><label class="quiz-option"><input type="radio" name="classification-practice-1" value="メールが迷惑メールか判定"><span>メールが迷惑メールか判定</span></label><label class="quiz-option"><input type="radio" name="classification-practice-1" value="株価の予測"><span>株価の予測</span></label></fieldset></article><article class="quiz-card"><h4>Q3. 出力をシグモイド関数で0〜1の確率に変換し、2クラス分類に用いる手法はどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="classification-practice-2" value="線形回帰"><span>線形回帰</span></label><label class="quiz-option"><input type="radio" name="classification-practice-2" value="ロジスティック回帰"><span>ロジスティック回帰</span></label><label class="quiz-option"><input type="radio" name="classification-practice-2" value="主成分分析"><span>主成分分析</span></label><label class="quiz-option"><input type="radio" name="classification-practice-2" value="k近傍法"><span>k近傍法</span></label></fieldset></article>
             </div>
             <div class="quiz-actions">
               <button class="primary-button" type="button" id="gradeLessonQuiz">採点する</button>
@@ -90,11 +90,12 @@
         </aside>
       </div>
     </section>
-    <script type="application/json" id="lessonData">{"slug":"ml-overview/classification","title":"分類","terms":["分類","決定境界","クラス","しきい値"],"visual":{"type":"boundary","axis":"比較と関係"},"quiz":[{"id":"classification-q1","prompt":"分類を学ぶとき、最も重要な見方はどれですか。","options":["分類の定義と使う場面を区別する","用語を英字順に暗記する","図表を見ずに数値だけを覚える","関連語をすべて同じ意味として扱う"],"answer":"分類の定義と使う場面を区別する"},{"id":"classification-q2","prompt":"決定境界とクラスの関係を理解するために有効な学習はどれですか。","options":["操作できる図表で変化を見る","公式資料を転載する","ページタイトルだけ読む","選択肢をランダムに選ぶ"],"answer":"操作できる図表で変化を見る"}]}</script>
+    <script type="application/json" id="lessonData">{"slug":"ml-overview/classification","title":"分類","terms":["分類","決定境界","クラス","しきい値"],"visual":{"type":"classification","title":"分類","concept":"しきい値・決定境界・混同行列"},"quiz":[{"id":"classification-practice-0","prompt":"出力をシグモイド関数で0〜1の確率に変換し、2値分類に用いる手法はどれか。","options":["ロジスティック回帰","線形回帰","主成分分析","k-means"],"answer":"ロジスティック回帰","explanation":"【正解の理由】\u003cb>ロジスティック回帰\u003c/b>は線形結合をシグモイドに通して確率を出し、しきい値で2クラスに分類する。名前は回帰だが用途は分類。【各選択肢】②線形回帰は連続値の予測、③PCAは次元削減、④k-meansはクラスタリング。【覚え方】「ロジスティック回帰＝分類」「線形回帰＝数値予測」を混同しない。"},{"id":"classification-practice-1","prompt":"出力が「連続値」になるのが回帰、「離散的なクラス」になるのが分類である。次のうち分類タスクはどれか。","options":["明日の気温の予測","住宅価格の予測","メールが迷惑メールか判定","株価の予測"],"answer":"メールが迷惑メールか判定","explanation":"迷惑メール判定は\u003cb>分類\u003c/b>（スパム/非スパムの離散クラス）。気温・価格・株価のように連続値を予測するのは\u003cb>回帰\u003c/b>。"},{"id":"classification-practice-2","prompt":"出力をシグモイド関数で0〜1の確率に変換し、2クラス分類に用いる手法はどれか。","options":["線形回帰","ロジスティック回帰","主成分分析","k近傍法"],"answer":"ロジスティック回帰","explanation":"\u003cb>ロジスティック回帰\u003c/b>。名前は回帰だが分類手法。確率として解釈できる出力を返す。"}]}</script>
   </main>
   <footer class="app-footer">
     <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>
   </footer>
+  <script src="../../assets/js/visualizations.js" defer></script>
   <script src="../../assets/js/lesson.js" defer></script>
 </body>
 </html>

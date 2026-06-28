@@ -42,15 +42,15 @@
             <ul class="plain-list">
               <li>プーリングを、試験問題の文脈で説明できる。</li>
               <li>Max Pooling、Average Pooling、位置ずれとの関係を区別できる。</li>
-              <li>図表を操作して、概念の変化やトレードオフを読み取れる。</li>
+              <li>対応表から、概念どうしの関係と区別ポイントを説明できる。</li>
             </ul>
           </section>
 
           <section class="lesson-section">
             <h3>本文解説</h3>
             <p>特徴マップを圧縮し、位置ずれに強くする働きを学ぶ。</p>
-            <p>G検定では、用語の暗記だけでなく、どの場面でその考え方を使うのかが問われます。このページでは <strong>プーリング、Max Pooling、Average Pooling、位置ずれ</strong> を一つの学習単位として扱い、定義、関係、判断の観点をまとめます。</p>
-            <p>まず用語の境界を押さえ、次に図表を操作して結果がどう変わるかを観察してください。操作によって値や形が変わる部分が、そのテーマで理解すべき中心です。</p>
+            <p>プーリング層では、プーリング、Max Pooling、Average Pooling、位置ずれを別々の暗記事項ではなく、問題文の条件から使い分ける知識として扱います。</p>
+            <p>演習データでは「画像認識で、フィルタによる畳み込みとプーリングで局所特徴を抽出するネットワークはどれか。」のように問われます。ポイントは、CNNは畳み込み層で局所特徴を捉え、プーリング層で位置ずれに頑健にしつつ次元を縮小する。画像系タスクの標準。</p>
           </section>
 
           <section class="lesson-section visual-lesson" aria-labelledby="visualTitle">
@@ -68,7 +68,7 @@
           <section class="lesson-section">
             <h3>確認問題</h3>
             <div class="quiz-area lesson-quiz">
-              <article class="quiz-card"><h4>Q1. プーリングを学ぶとき、最も重要な見方はどれですか。</h4><fieldset><label class="quiz-option"><input type="radio" name="pooling-q1" value="プーリングの定義と使う場面を区別する"><span>プーリングの定義と使う場面を区別する</span></label><label class="quiz-option"><input type="radio" name="pooling-q1" value="用語を英字順に暗記する"><span>用語を英字順に暗記する</span></label><label class="quiz-option"><input type="radio" name="pooling-q1" value="図表を見ずに数値だけを覚える"><span>図表を見ずに数値だけを覚える</span></label><label class="quiz-option"><input type="radio" name="pooling-q1" value="関連語をすべて同じ意味として扱う"><span>関連語をすべて同じ意味として扱う</span></label></fieldset></article><article class="quiz-card"><h4>Q2. Max PoolingとAverage Poolingの関係を理解するために有効な学習はどれですか。</h4><fieldset><label class="quiz-option"><input type="radio" name="pooling-q2" value="操作できる図表で変化を見る"><span>操作できる図表で変化を見る</span></label><label class="quiz-option"><input type="radio" name="pooling-q2" value="公式資料を転載する"><span>公式資料を転載する</span></label><label class="quiz-option"><input type="radio" name="pooling-q2" value="ページタイトルだけ読む"><span>ページタイトルだけ読む</span></label><label class="quiz-option"><input type="radio" name="pooling-q2" value="選択肢をランダムに選ぶ"><span>選択肢をランダムに選ぶ</span></label></fieldset></article>
+              <article class="quiz-card"><h4>Q1. 画像認識で、フィルタによる畳み込みとプーリングで局所特徴を抽出するネットワークはどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="pooling-practice-0" value="RNN"><span>RNN</span></label><label class="quiz-option"><input type="radio" name="pooling-practice-0" value="CNN（畳み込みニューラルネットワーク）"><span>CNN（畳み込みニューラルネットワーク）</span></label><label class="quiz-option"><input type="radio" name="pooling-practice-0" value="GAN"><span>GAN</span></label><label class="quiz-option"><input type="radio" name="pooling-practice-0" value="LSTM"><span>LSTM</span></label></fieldset></article><article class="quiz-card"><h4>Q2. 画像認識で、局所的な特徴を捉える畳み込み層と、位置ずれに頑健にする縮小処理を組み合わせたネットワークはどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="pooling-practice-1" value="CNN（畳み込みニューラルネットワーク）"><span>CNN（畳み込みニューラルネットワーク）</span></label><label class="quiz-option"><input type="radio" name="pooling-practice-1" value="RNN"><span>RNN</span></label><label class="quiz-option"><input type="radio" name="pooling-practice-1" value="GAN"><span>GAN</span></label><label class="quiz-option"><input type="radio" name="pooling-practice-1" value="オートエンコーダ"><span>オートエンコーダ</span></label></fieldset></article><article class="quiz-card"><h4>Q3. 福島邦彦が考案し、現在の畳み込みニューラルネットワーク（CNN）の源流とされるモデルはどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="pooling-practice-2" value="ネオコグニトロン"><span>ネオコグニトロン</span></label><label class="quiz-option"><input type="radio" name="pooling-practice-2" value="パーセプトロン"><span>パーセプトロン</span></label><label class="quiz-option"><input type="radio" name="pooling-practice-2" value="ボルツマンマシン"><span>ボルツマンマシン</span></label><label class="quiz-option"><input type="radio" name="pooling-practice-2" value="オートエンコーダ"><span>オートエンコーダ</span></label></fieldset></article>
             </div>
             <div class="quiz-actions">
               <button class="primary-button" type="button" id="gradeLessonQuiz">採点する</button>
@@ -90,11 +90,12 @@
         </aside>
       </div>
     </section>
-    <script type="application/json" id="lessonData">{"slug":"dl-elements/pooling","title":"プーリング層","terms":["プーリング","Max Pooling","Average Pooling","位置ずれ"],"visual":{"type":"matrix","axis":"比較と関係"},"quiz":[{"id":"pooling-q1","prompt":"プーリングを学ぶとき、最も重要な見方はどれですか。","options":["プーリングの定義と使う場面を区別する","用語を英字順に暗記する","図表を見ずに数値だけを覚える","関連語をすべて同じ意味として扱う"],"answer":"プーリングの定義と使う場面を区別する"},{"id":"pooling-q2","prompt":"Max PoolingとAverage Poolingの関係を理解するために有効な学習はどれですか。","options":["操作できる図表で変化を見る","公式資料を転載する","ページタイトルだけ読む","選択肢をランダムに選ぶ"],"answer":"操作できる図表で変化を見る"}]}</script>
+    <script type="application/json" id="lessonData">{"slug":"dl-elements/pooling","title":"プーリング層","terms":["プーリング","Max Pooling","Average Pooling","位置ずれ"],"visual":{"type":"relation-table","title":"プーリング層の対応関係","columns":["概念","関係","区別ポイント"],"rows":[["プーリング","特徴マップを圧縮し、位置ずれに強くする働きを学ぶ。","似た用語との境界を説明できるようにする"],["Max Pooling","プーリングを理解するための関連語","似た用語との境界を説明できるようにする"],["Average Pooling","プーリングを理解するための関連語","似た用語との境界を説明できるようにする"],["位置ずれ","プーリングを理解するための関連語","似た用語との境界を説明できるようにする"]]},"quiz":[{"id":"pooling-practice-0","prompt":"画像認識で、フィルタによる畳み込みとプーリングで局所特徴を抽出するネットワークはどれか。","options":["RNN","CNN（畳み込みニューラルネットワーク）","GAN","LSTM"],"answer":"CNN（畳み込みニューラルネットワーク）","explanation":"\u003cb>CNN\u003c/b>は畳み込み層で局所特徴を捉え、プーリング層で位置ずれに頑健にしつつ次元を縮小する。画像系タスクの標準。"},{"id":"pooling-practice-1","prompt":"画像認識で、局所的な特徴を捉える畳み込み層と、位置ずれに頑健にする縮小処理を組み合わせたネットワークはどれか。","options":["CNN（畳み込みニューラルネットワーク）","RNN","GAN","オートエンコーダ"],"answer":"CNN（畳み込みニューラルネットワーク）","explanation":"【正解の理由】\u003cb>CNN\u003c/b>は畳み込み層で局所特徴（エッジ等）を抽出し、プーリング層で縮小して移動不変性を持たせる画像向けの構造。【各選択肢】②RNNは系列、③GANは生成、④オートエンコーダは圧縮・再構成。【関連】畳み込みは「局所結合＋重み共有」でパラメータを削減できる点が利点。"},{"id":"pooling-practice-2","prompt":"福島邦彦が考案し、現在の畳み込みニューラルネットワーク（CNN）の源流とされるモデルはどれか。","options":["ネオコグニトロン","パーセプトロン","ボルツマンマシン","オートエンコーダ"],"answer":"ネオコグニトロン","explanation":"\u003cb>ネオコグニトロン\u003c/b>（1980年）。視覚野の構造に着想を得て、特徴抽出層と位置ずれを吸収する層を交互に重ねた。これが畳み込み層・プーリング層を持つCNNの先駆けとされる。日本発の重要業績として問われやすい。"}]}</script>
   </main>
   <footer class="app-footer">
     <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>
   </footer>
+  <script src="../../assets/js/visualizations.js" defer></script>
   <script src="../../assets/js/lesson.js" defer></script>
 </body>
 </html>

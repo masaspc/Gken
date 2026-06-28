@@ -42,15 +42,15 @@
             <ul class="plain-list">
               <li>平均を、試験問題の文脈で説明できる。</li>
               <li>分散、標準偏差、ばらつきとの関係を区別できる。</li>
-              <li>図表を操作して、概念の変化やトレードオフを読み取れる。</li>
+              <li>パラメータを動かし、計算結果・指標・重みの変化を読み取れる。</li>
             </ul>
           </section>
 
           <section class="lesson-section">
             <h3>本文解説</h3>
             <p>代表値と散らばりを同時に見て、データの形を読む。</p>
-            <p>G検定では、用語の暗記だけでなく、どの場面でその考え方を使うのかが問われます。このページでは <strong>平均、分散、標準偏差、ばらつき</strong> を一つの学習単位として扱い、定義、関係、判断の観点をまとめます。</p>
-            <p>まず用語の境界を押さえ、次に図表を操作して結果がどう変わるかを観察してください。操作によって値や形が変わる部分が、そのテーマで理解すべき中心です。</p>
+            <p>平均と分散では、平均、分散、標準偏差、ばらつきを別々の暗記事項ではなく、問題文の条件から使い分ける知識として扱います。</p>
+            <p>演習データでは「データ {4, 8} の母分散と標準偏差はそれぞれいくらか。」のように問われます。ポイントは、【計算】平均＝(4＋8)/2＝6。分散＝((4−6)²＋(8−6)²)/2＝(4＋4)/2＝4。標準偏差＝√4＝2。【ポイント】分散は偏差の二乗平均、標準偏差はその平方根で元の単位に戻る。ばらつきの大きさを表す。標準化（zスコア）に用いる。</p>
           </section>
 
           <section class="lesson-section visual-lesson" aria-labelledby="visualTitle">
@@ -68,7 +68,7 @@
           <section class="lesson-section">
             <h3>確認問題</h3>
             <div class="quiz-area lesson-quiz">
-              <article class="quiz-card"><h4>Q1. 平均を学ぶとき、最も重要な見方はどれですか。</h4><fieldset><label class="quiz-option"><input type="radio" name="mean-variance-q1" value="平均の定義と使う場面を区別する"><span>平均の定義と使う場面を区別する</span></label><label class="quiz-option"><input type="radio" name="mean-variance-q1" value="用語を英字順に暗記する"><span>用語を英字順に暗記する</span></label><label class="quiz-option"><input type="radio" name="mean-variance-q1" value="図表を見ずに数値だけを覚える"><span>図表を見ずに数値だけを覚える</span></label><label class="quiz-option"><input type="radio" name="mean-variance-q1" value="関連語をすべて同じ意味として扱う"><span>関連語をすべて同じ意味として扱う</span></label></fieldset></article><article class="quiz-card"><h4>Q2. 分散と標準偏差の関係を理解するために有効な学習はどれですか。</h4><fieldset><label class="quiz-option"><input type="radio" name="mean-variance-q2" value="操作できる図表で変化を見る"><span>操作できる図表で変化を見る</span></label><label class="quiz-option"><input type="radio" name="mean-variance-q2" value="公式資料を転載する"><span>公式資料を転載する</span></label><label class="quiz-option"><input type="radio" name="mean-variance-q2" value="ページタイトルだけ読む"><span>ページタイトルだけ読む</span></label><label class="quiz-option"><input type="radio" name="mean-variance-q2" value="選択肢をランダムに選ぶ"><span>選択肢をランダムに選ぶ</span></label></fieldset></article>
+              <article class="quiz-card"><h4>Q1. データ {4, 8} の母分散と標準偏差はそれぞれいくらか。</h4><fieldset><label class="quiz-option"><input type="radio" name="mean-variance-practice-0" value="分散4・標準偏差2"><span>分散4・標準偏差2</span></label><label class="quiz-option"><input type="radio" name="mean-variance-practice-0" value="分散2・標準偏差4"><span>分散2・標準偏差4</span></label><label class="quiz-option"><input type="radio" name="mean-variance-practice-0" value="分散8・標準偏差2"><span>分散8・標準偏差2</span></label><label class="quiz-option"><input type="radio" name="mean-variance-practice-0" value="分散16・標準偏差4"><span>分散16・標準偏差4</span></label></fieldset></article><article class="quiz-card"><h4>Q2. 特徴量を平均0・分散1に変換する前処理はどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="mean-variance-practice-1" value="標準化"><span>標準化</span></label><label class="quiz-option"><input type="radio" name="mean-variance-practice-1" value="正規化（min-maxスケーリング）"><span>正規化（min-maxスケーリング）</span></label><label class="quiz-option"><input type="radio" name="mean-variance-practice-1" value="ワンホット化"><span>ワンホット化</span></label><label class="quiz-option"><input type="radio" name="mean-variance-practice-1" value="欠損補完"><span>欠損補完</span></label></fieldset></article><article class="quiz-card"><h4>Q3. 平均を中心に左右対称の釣鐘型をなし、多くの自然・社会現象の近似に使われる分布はどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="mean-variance-practice-2" value="正規分布（ガウス分布）"><span>正規分布（ガウス分布）</span></label><label class="quiz-option"><input type="radio" name="mean-variance-practice-2" value="一様分布"><span>一様分布</span></label><label class="quiz-option"><input type="radio" name="mean-variance-practice-2" value="ポアソン分布"><span>ポアソン分布</span></label><label class="quiz-option"><input type="radio" name="mean-variance-practice-2" value="指数分布"><span>指数分布</span></label></fieldset></article>
             </div>
             <div class="quiz-actions">
               <button class="primary-button" type="button" id="gradeLessonQuiz">採点する</button>
@@ -90,11 +90,12 @@
         </aside>
       </div>
     </section>
-    <script type="application/json" id="lessonData">{"slug":"math-stats/mean-variance","title":"平均と分散","terms":["平均","分散","標準偏差","ばらつき"],"visual":{"type":"distribution","axis":"比較と関係"},"quiz":[{"id":"mean-variance-q1","prompt":"平均を学ぶとき、最も重要な見方はどれですか。","options":["平均の定義と使う場面を区別する","用語を英字順に暗記する","図表を見ずに数値だけを覚える","関連語をすべて同じ意味として扱う"],"answer":"平均の定義と使う場面を区別する"},{"id":"mean-variance-q2","prompt":"分散と標準偏差の関係を理解するために有効な学習はどれですか。","options":["操作できる図表で変化を見る","公式資料を転載する","ページタイトルだけ読む","選択肢をランダムに選ぶ"],"answer":"操作できる図表で変化を見る"}]}</script>
+    <script type="application/json" id="lessonData">{"slug":"math-stats/mean-variance","title":"平均と分散","terms":["平均","分散","標準偏差","ばらつき"],"visual":{"type":"distribution","title":"平均と分散","concept":"平均・分散・サンプル数"},"quiz":[{"id":"mean-variance-practice-0","prompt":"データ {4, 8} の母分散と標準偏差はそれぞれいくらか。","options":["分散4・標準偏差2","分散2・標準偏差4","分散8・標準偏差2","分散16・標準偏差4"],"answer":"分散4・標準偏差2","explanation":"【計算】平均＝(4＋8)/2＝6。分散＝((4−6)²＋(8−6)²)/2＝(4＋4)/2＝\u003cb>4\u003c/b>。標準偏差＝√4＝\u003cb>2\u003c/b>。【ポイント】分散は偏差の二乗平均、標準偏差はその平方根で元の単位に戻る。ばらつきの大きさを表す。標準化（zスコア）に用いる。"},{"id":"mean-variance-practice-1","prompt":"特徴量を平均0・分散1に変換する前処理はどれか。","options":["標準化","正規化（min-maxスケーリング）","ワンホット化","欠損補完"],"answer":"標準化","explanation":"\u003cb>標準化（standardization）\u003c/b>は平均0・標準偏差1に揃える。0〜1の範囲に収める\u003cb>正規化（min-max）\u003c/b>と区別される。スケールの異なる特徴量を揃えると、距離ベースの手法（k-means・kNN・SVM）や勾配法の学習が安定する。"},{"id":"mean-variance-practice-2","prompt":"平均を中心に左右対称の釣鐘型をなし、多くの自然・社会現象の近似に使われる分布はどれか。","options":["正規分布（ガウス分布）","一様分布","ポアソン分布","指数分布"],"answer":"正規分布（ガウス分布）","explanation":"\u003cb>正規分布\u003c/b>。平均と標準偏差（分散）で形が決まる。標準化（平均0・分散1）や多くの統計手法が正規性を前提にする。データ分析の基礎統計として頻出。"}]}</script>
   </main>
   <footer class="app-footer">
     <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>
   </footer>
+  <script src="../../assets/js/visualizations.js" defer></script>
   <script src="../../assets/js/lesson.js" defer></script>
 </body>
 </html>

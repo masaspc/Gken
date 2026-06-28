@@ -42,15 +42,15 @@
             <ul class="plain-list">
               <li>公平性を、試験問題の文脈で説明できる。</li>
               <li>バイアス、差別、属性との関係を区別できる。</li>
-              <li>図表を操作して、概念の変化やトレードオフを読み取れる。</li>
+              <li>対応表から、概念どうしの関係と区別ポイントを説明できる。</li>
             </ul>
           </section>
 
           <section class="lesson-section">
             <h3>本文解説</h3>
             <p>データやモデルが特定集団に不利な結果を出すリスクを学ぶ。</p>
-            <p>G検定では、用語の暗記だけでなく、どの場面でその考え方を使うのかが問われます。このページでは <strong>公平性、バイアス、差別、属性</strong> を一つの学習単位として扱い、定義、関係、判断の観点をまとめます。</p>
-            <p>まず用語の境界を押さえ、次に図表を操作して結果がどう変わるかを観察してください。操作によって値や形が変わる部分が、そのテーマで理解すべき中心です。</p>
+            <p>公平性では、公平性、バイアス、差別、属性を別々の暗記事項ではなく、問題文の条件から使い分ける知識として扱います。</p>
+            <p>演習データでは「学習データの収集方法に起因し、特定の属性が過小・過大に含まれることで生じる偏りを何というか。」のように問われます。ポイントは、サンプリングバイアス。データ収集段階の偏りが、AIの差別的・不公平な判断につながる。公平性確保のためデータの代表性を点検する必要がある。</p>
           </section>
 
           <section class="lesson-section visual-lesson" aria-labelledby="visualTitle">
@@ -68,7 +68,7 @@
           <section class="lesson-section">
             <h3>確認問題</h3>
             <div class="quiz-area lesson-quiz">
-              <article class="quiz-card"><h4>Q1. 公平性を学ぶとき、最も重要な見方はどれですか。</h4><fieldset><label class="quiz-option"><input type="radio" name="fairness-q1" value="公平性の定義と使う場面を区別する"><span>公平性の定義と使う場面を区別する</span></label><label class="quiz-option"><input type="radio" name="fairness-q1" value="用語を英字順に暗記する"><span>用語を英字順に暗記する</span></label><label class="quiz-option"><input type="radio" name="fairness-q1" value="図表を見ずに数値だけを覚える"><span>図表を見ずに数値だけを覚える</span></label><label class="quiz-option"><input type="radio" name="fairness-q1" value="関連語をすべて同じ意味として扱う"><span>関連語をすべて同じ意味として扱う</span></label></fieldset></article><article class="quiz-card"><h4>Q2. バイアスと差別の関係を理解するために有効な学習はどれですか。</h4><fieldset><label class="quiz-option"><input type="radio" name="fairness-q2" value="操作できる図表で変化を見る"><span>操作できる図表で変化を見る</span></label><label class="quiz-option"><input type="radio" name="fairness-q2" value="公式資料を転載する"><span>公式資料を転載する</span></label><label class="quiz-option"><input type="radio" name="fairness-q2" value="ページタイトルだけ読む"><span>ページタイトルだけ読む</span></label><label class="quiz-option"><input type="radio" name="fairness-q2" value="選択肢をランダムに選ぶ"><span>選択肢をランダムに選ぶ</span></label></fieldset></article>
+              <article class="quiz-card"><h4>Q1. 学習データの収集方法に起因し、特定の属性が過小・過大に含まれることで生じる偏りを何というか。</h4><fieldset><label class="quiz-option"><input type="radio" name="fairness-practice-0" value="サンプリングバイアス"><span>サンプリングバイアス</span></label><label class="quiz-option"><input type="radio" name="fairness-practice-0" value="勾配消失"><span>勾配消失</span></label><label class="quiz-option"><input type="radio" name="fairness-practice-0" value="正則化"><span>正則化</span></label><label class="quiz-option"><input type="radio" name="fairness-practice-0" value="オーバーサンプリング"><span>オーバーサンプリング</span></label></fieldset></article><article class="quiz-card"><h4>Q2. 学習データの偏りによって、特定の属性に不利な予測をしてしまう問題に対処する観点はどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="fairness-practice-1" value="公平性（fairness）"><span>公平性（fairness）</span></label><label class="quiz-option"><input type="radio" name="fairness-practice-1" value="可用性"><span>可用性</span></label><label class="quiz-option"><input type="radio" name="fairness-practice-1" value="冪等性"><span>冪等性</span></label><label class="quiz-option"><input type="radio" name="fairness-practice-1" value="再現性"><span>再現性</span></label></fieldset></article><article class="quiz-card"><h4>Q3. AIシステムの出力に潜む差別・偏りの問題で、原因が学習データに由来する場合に最も関係する語はどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="fairness-practice-2" value="公平性（フェアネス）と学習データのバイアス"><span>公平性（フェアネス）と学習データのバイアス</span></label><label class="quiz-option"><input type="radio" name="fairness-practice-2" value="勾配消失"><span>勾配消失</span></label><label class="quiz-option"><input type="radio" name="fairness-practice-2" value="次元削減"><span>次元削減</span></label><label class="quiz-option"><input type="radio" name="fairness-practice-2" value="アンサンブル"><span>アンサンブル</span></label></fieldset></article>
             </div>
             <div class="quiz-actions">
               <button class="primary-button" type="button" id="gradeLessonQuiz">採点する</button>
@@ -90,11 +90,12 @@
         </aside>
       </div>
     </section>
-    <script type="application/json" id="lessonData">{"slug":"ethics-governance/fairness","title":"公平性","terms":["公平性","バイアス","差別","属性"],"visual":{"type":"boundary","axis":"比較と関係"},"quiz":[{"id":"fairness-q1","prompt":"公平性を学ぶとき、最も重要な見方はどれですか。","options":["公平性の定義と使う場面を区別する","用語を英字順に暗記する","図表を見ずに数値だけを覚える","関連語をすべて同じ意味として扱う"],"answer":"公平性の定義と使う場面を区別する"},{"id":"fairness-q2","prompt":"バイアスと差別の関係を理解するために有効な学習はどれですか。","options":["操作できる図表で変化を見る","公式資料を転載する","ページタイトルだけ読む","選択肢をランダムに選ぶ"],"answer":"操作できる図表で変化を見る"}]}</script>
+    <script type="application/json" id="lessonData">{"slug":"ethics-governance/fairness","title":"公平性","terms":["公平性","バイアス","差別","属性"],"visual":{"type":"relation-table","title":"公平性の対応関係","columns":["概念","関係","区別ポイント"],"rows":[["公平性","データやモデルが特定集団に不利な結果を出すリスクを学ぶ。","似た用語との境界を説明できるようにする"],["バイアス","公平性を理解するための関連語","似た用語との境界を説明できるようにする"],["差別","公平性を理解するための関連語","似た用語との境界を説明できるようにする"],["属性","公平性を理解するための関連語","似た用語との境界を説明できるようにする"]]},"quiz":[{"id":"fairness-practice-0","prompt":"学習データの収集方法に起因し、特定の属性が過小・過大に含まれることで生じる偏りを何というか。","options":["サンプリングバイアス","勾配消失","正則化","オーバーサンプリング"],"answer":"サンプリングバイアス","explanation":"\u003cb>サンプリングバイアス\u003c/b>。データ収集段階の偏りが、AIの差別的・不公平な判断につながる。公平性確保のためデータの代表性を点検する必要がある。"},{"id":"fairness-practice-1","prompt":"学習データの偏りによって、特定の属性に不利な予測をしてしまう問題に対処する観点はどれか。","options":["公平性（fairness）","可用性","冪等性","再現性"],"answer":"公平性（fairness）","explanation":"【正解の理由】\u003cb>公平性\u003c/b>は、性別・人種などの属性で不当な差別が生じないようにする観点で、データの偏り（バイアス）の是正が重要。【各選択肢】②可用性・③冪等性・④再現性はシステム/実験の性質で差別の問題とは別。【関連】過去データの差別構造をそのまま学習する危険。複数の公平性指標は同時に満たせないこともある。"},{"id":"fairness-practice-2","prompt":"AIシステムの出力に潜む差別・偏りの問題で、原因が学習データに由来する場合に最も関係する語はどれか。","options":["公平性（フェアネス）と学習データのバイアス","勾配消失","次元削減","アンサンブル"],"answer":"公平性（フェアネス）と学習データのバイアス","explanation":"AIの\u003cb>公平性\u003c/b>は、学習データに含まれる社会的偏り（バイアス）を学習して差別的判断を再生産しうる点が課題。データの偏り是正や評価指標の工夫が必要。"}]}</script>
   </main>
   <footer class="app-footer">
     <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>
   </footer>
+  <script src="../../assets/js/visualizations.js" defer></script>
   <script src="../../assets/js/lesson.js" defer></script>
 </body>
 </html>

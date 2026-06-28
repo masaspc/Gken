@@ -42,15 +42,15 @@
             <ul class="plain-list">
               <li>スキップ結合を、試験問題の文脈で説明できる。</li>
               <li>ResNet、勾配消失、残差学習との関係を区別できる。</li>
-              <li>図表を操作して、概念の変化やトレードオフを読み取れる。</li>
+              <li>判断フローから、確認すべき順序と分岐の意味を説明できる。</li>
             </ul>
           </section>
 
           <section class="lesson-section">
             <h3>本文解説</h3>
             <p>深いネットワークで情報を飛び越して伝える利点を学ぶ。</p>
-            <p>G検定では、用語の暗記だけでなく、どの場面でその考え方を使うのかが問われます。このページでは <strong>スキップ結合、ResNet、勾配消失、残差学習</strong> を一つの学習単位として扱い、定義、関係、判断の観点をまとめます。</p>
-            <p>まず用語の境界を押さえ、次に図表を操作して結果がどう変わるかを観察してください。操作によって値や形が変わる部分が、そのテーマで理解すべき中心です。</p>
+            <p>スキップ結合では、スキップ結合、ResNet、勾配消失、残差学習を別々の暗記事項ではなく、問題文の条件から使い分ける知識として扱います。</p>
+            <p>演習データでは「すべての層を後続の全層に直接つなぐ密な結合で、勾配の流れと特徴の再利用を改善したCNNはどれか。」のように問われます。ポイントは、DenseNet。各層が前のすべての層の出力を受け取る密結合により、勾配消失を抑えパラメータ効率を高めた。残差接続（スキップ結合）で深層化を可能にしたResNetの発展形として位置づけられる。</p>
           </section>
 
           <section class="lesson-section visual-lesson" aria-labelledby="visualTitle">
@@ -68,7 +68,7 @@
           <section class="lesson-section">
             <h3>確認問題</h3>
             <div class="quiz-area lesson-quiz">
-              <article class="quiz-card"><h4>Q1. スキップ結合を学ぶとき、最も重要な見方はどれですか。</h4><fieldset><label class="quiz-option"><input type="radio" name="skip-connection-q1" value="スキップ結合の定義と使う場面を区別する"><span>スキップ結合の定義と使う場面を区別する</span></label><label class="quiz-option"><input type="radio" name="skip-connection-q1" value="用語を英字順に暗記する"><span>用語を英字順に暗記する</span></label><label class="quiz-option"><input type="radio" name="skip-connection-q1" value="図表を見ずに数値だけを覚える"><span>図表を見ずに数値だけを覚える</span></label><label class="quiz-option"><input type="radio" name="skip-connection-q1" value="関連語をすべて同じ意味として扱う"><span>関連語をすべて同じ意味として扱う</span></label></fieldset></article><article class="quiz-card"><h4>Q2. ResNetと勾配消失の関係を理解するために有効な学習はどれですか。</h4><fieldset><label class="quiz-option"><input type="radio" name="skip-connection-q2" value="操作できる図表で変化を見る"><span>操作できる図表で変化を見る</span></label><label class="quiz-option"><input type="radio" name="skip-connection-q2" value="公式資料を転載する"><span>公式資料を転載する</span></label><label class="quiz-option"><input type="radio" name="skip-connection-q2" value="ページタイトルだけ読む"><span>ページタイトルだけ読む</span></label><label class="quiz-option"><input type="radio" name="skip-connection-q2" value="選択肢をランダムに選ぶ"><span>選択肢をランダムに選ぶ</span></label></fieldset></article>
+              <article class="quiz-card"><h4>Q1. すべての層を後続の全層に直接つなぐ密な結合で、勾配の流れと特徴の再利用を改善したCNNはどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="skip-connection-practice-0" value="DenseNet"><span>DenseNet</span></label><label class="quiz-option"><input type="radio" name="skip-connection-practice-0" value="VGG"><span>VGG</span></label><label class="quiz-option"><input type="radio" name="skip-connection-practice-0" value="LeNet"><span>LeNet</span></label><label class="quiz-option"><input type="radio" name="skip-connection-practice-0" value="RNN"><span>RNN</span></label></fieldset></article><article class="quiz-card"><h4>Q2. ResNetの残差接続（スキップ結合）が超深層の学習を可能にした理由として最も適切なものはどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="skip-connection-practice-1" value="恒等写像の経路で勾配が直接伝わり、勾配消失を緩和できるから"><span>恒等写像の経路で勾配が直接伝わり、勾配消失を緩和できるから</span></label><label class="quiz-option"><input type="radio" name="skip-connection-practice-1" value="パラメータが増えるから"><span>パラメータが増えるから</span></label><label class="quiz-option"><input type="radio" name="skip-connection-practice-1" value="活性化関数が不要になるから"><span>活性化関数が不要になるから</span></label><label class="quiz-option"><input type="radio" name="skip-connection-practice-1" value="データが増えるから"><span>データが増えるから</span></label></fieldset></article><article class="quiz-card"><h4>Q3. 2015年に提案され、層を飛び越える接続で超深層でも勾配消失を抑え学習可能にしたCNNはどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="skip-connection-practice-2" value="ResNet"><span>ResNet</span></label><label class="quiz-option"><input type="radio" name="skip-connection-practice-2" value="VGG"><span>VGG</span></label><label class="quiz-option"><input type="radio" name="skip-connection-practice-2" value="AlexNet"><span>AlexNet</span></label><label class="quiz-option"><input type="radio" name="skip-connection-practice-2" value="LeNet"><span>LeNet</span></label></fieldset></article>
             </div>
             <div class="quiz-actions">
               <button class="primary-button" type="button" id="gradeLessonQuiz">採点する</button>
@@ -90,11 +90,12 @@
         </aside>
       </div>
     </section>
-    <script type="application/json" id="lessonData">{"slug":"dl-elements/skip-connection","title":"スキップ結合","terms":["スキップ結合","ResNet","勾配消失","残差学習"],"visual":{"type":"flow","steps":["入力","畳み込み","残差","加算","出力"],"axis":"比較と関係"},"quiz":[{"id":"skip-connection-q1","prompt":"スキップ結合を学ぶとき、最も重要な見方はどれですか。","options":["スキップ結合の定義と使う場面を区別する","用語を英字順に暗記する","図表を見ずに数値だけを覚える","関連語をすべて同じ意味として扱う"],"answer":"スキップ結合の定義と使う場面を区別する"},{"id":"skip-connection-q2","prompt":"ResNetと勾配消失の関係を理解するために有効な学習はどれですか。","options":["操作できる図表で変化を見る","公式資料を転載する","ページタイトルだけ読む","選択肢をランダムに選ぶ"],"answer":"操作できる図表で変化を見る"}]}</script>
+    <script type="application/json" id="lessonData">{"slug":"dl-elements/skip-connection","title":"スキップ結合","terms":["スキップ結合","ResNet","勾配消失","残差学習"],"visual":{"type":"flow","title":"スキップ結合","steps":[{"label":"入力","note":"起点"},{"label":"畳み込み","note":"確認"},{"label":"残差","note":"確認"},{"label":"加算","note":"確認"},{"label":"出力","note":"結果"}]},"quiz":[{"id":"skip-connection-practice-0","prompt":"すべての層を後続の全層に直接つなぐ密な結合で、勾配の流れと特徴の再利用を改善したCNNはどれか。","options":["DenseNet","VGG","LeNet","RNN"],"answer":"DenseNet","explanation":"\u003cb>DenseNet\u003c/b>。各層が前のすべての層の出力を受け取る密結合により、勾配消失を抑えパラメータ効率を高めた。残差接続（スキップ結合）で深層化を可能にしたResNetの発展形として位置づけられる。"},{"id":"skip-connection-practice-1","prompt":"ResNetの残差接続（スキップ結合）が超深層の学習を可能にした理由として最も適切なものはどれか。","options":["恒等写像の経路で勾配が直接伝わり、勾配消失を緩和できるから","パラメータが増えるから","活性化関数が不要になるから","データが増えるから"],"answer":"恒等写像の経路で勾配が直接伝わり、勾配消失を緩和できるから","explanation":"\u003cb>残差接続\u003c/b>は入力をそのまま足す経路を作り、勾配が深い層まで直接流れるため勾配消失を抑える。学習すべきは『残差（差分）』だけになり最適化も容易になる。100層超のネット実現の鍵。"},{"id":"skip-connection-practice-2","prompt":"2015年に提案され、層を飛び越える接続で超深層でも勾配消失を抑え学習可能にしたCNNはどれか。","options":["ResNet","VGG","AlexNet","LeNet"],"answer":"ResNet","explanation":"【正解の理由】\u003cb>ResNet\u003c/b>はスキップ結合（残差接続）で入力を出力に足し込み、勾配が直接流れる経路を作って100層超でも学習できるようにした。【各選択肢】②VGGは3×3フィルタを単純に深く積む、③AlexNetは2012の火付け役、④LeNetは初期CNN。【覚え方】「ResNet＝スキップ結合＝超深層」。"}]}</script>
   </main>
   <footer class="app-footer">
     <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>
   </footer>
+  <script src="../../assets/js/visualizations.js" defer></script>
   <script src="../../assets/js/lesson.js" defer></script>
 </body>
 </html>

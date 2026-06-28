@@ -42,15 +42,15 @@
             <ul class="plain-list">
               <li>データ収集を、試験問題の文脈で説明できる。</li>
               <li>サンプリング、偏り、同意との関係を区別できる。</li>
-              <li>図表を操作して、概念の変化やトレードオフを読み取れる。</li>
+              <li>パラメータを動かし、計算結果・指標・重みの変化を読み取れる。</li>
             </ul>
           </section>
 
           <section class="lesson-section">
             <h3>本文解説</h3>
             <p>データ量だけでなく、質・偏り・利用条件を見る。</p>
-            <p>G検定では、用語の暗記だけでなく、どの場面でその考え方を使うのかが問われます。このページでは <strong>データ収集、サンプリング、偏り、同意</strong> を一つの学習単位として扱い、定義、関係、判断の観点をまとめます。</p>
-            <p>まず用語の境界を押さえ、次に図表を操作して結果がどう変わるかを観察してください。操作によって値や形が変わる部分が、そのテーマで理解すべき中心です。</p>
+            <p>データ収集では、データ収集、サンプリング、偏り、同意を別々の暗記事項ではなく、問題文の条件から使い分ける知識として扱います。</p>
+            <p>演習データでは「学習データの収集方法に起因し、特定の属性が過小・過大に含まれることで生じる偏りを何というか。」のように問われます。ポイントは、サンプリングバイアス。データ収集段階の偏りが、AIの差別的・不公平な判断につながる。公平性確保のためデータの代表性を点検する必要がある。</p>
           </section>
 
           <section class="lesson-section visual-lesson" aria-labelledby="visualTitle">
@@ -68,7 +68,7 @@
           <section class="lesson-section">
             <h3>確認問題</h3>
             <div class="quiz-area lesson-quiz">
-              <article class="quiz-card"><h4>Q1. データ収集を学ぶとき、最も重要な見方はどれですか。</h4><fieldset><label class="quiz-option"><input type="radio" name="data-collection-q1" value="データ収集の定義と使う場面を区別する"><span>データ収集の定義と使う場面を区別する</span></label><label class="quiz-option"><input type="radio" name="data-collection-q1" value="用語を英字順に暗記する"><span>用語を英字順に暗記する</span></label><label class="quiz-option"><input type="radio" name="data-collection-q1" value="図表を見ずに数値だけを覚える"><span>図表を見ずに数値だけを覚える</span></label><label class="quiz-option"><input type="radio" name="data-collection-q1" value="関連語をすべて同じ意味として扱う"><span>関連語をすべて同じ意味として扱う</span></label></fieldset></article><article class="quiz-card"><h4>Q2. サンプリングと偏りの関係を理解するために有効な学習はどれですか。</h4><fieldset><label class="quiz-option"><input type="radio" name="data-collection-q2" value="操作できる図表で変化を見る"><span>操作できる図表で変化を見る</span></label><label class="quiz-option"><input type="radio" name="data-collection-q2" value="公式資料を転載する"><span>公式資料を転載する</span></label><label class="quiz-option"><input type="radio" name="data-collection-q2" value="ページタイトルだけ読む"><span>ページタイトルだけ読む</span></label><label class="quiz-option"><input type="radio" name="data-collection-q2" value="選択肢をランダムに選ぶ"><span>選択肢をランダムに選ぶ</span></label></fieldset></article>
+              <article class="quiz-card"><h4>Q1. 学習データの収集方法に起因し、特定の属性が過小・過大に含まれることで生じる偏りを何というか。</h4><fieldset><label class="quiz-option"><input type="radio" name="data-collection-practice-0" value="サンプリングバイアス"><span>サンプリングバイアス</span></label><label class="quiz-option"><input type="radio" name="data-collection-practice-0" value="勾配消失"><span>勾配消失</span></label><label class="quiz-option"><input type="radio" name="data-collection-practice-0" value="正則化"><span>正則化</span></label><label class="quiz-option"><input type="radio" name="data-collection-practice-0" value="オーバーサンプリング"><span>オーバーサンプリング</span></label></fieldset></article><article class="quiz-card"><h4>Q2. AI活用プロジェクトで最初に行うべきこととして最も適切なものはどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="data-collection-practice-1" value="モデルの選定"><span>モデルの選定</span></label><label class="quiz-option"><input type="radio" name="data-collection-practice-1" value="解決すべきビジネス課題・目的の明確化"><span>解決すべきビジネス課題・目的の明確化</span></label><label class="quiz-option"><input type="radio" name="data-collection-practice-1" value="GPUの調達"><span>GPUの調達</span></label><label class="quiz-option"><input type="radio" name="data-collection-practice-1" value="ハイパーパラメータ調整"><span>ハイパーパラメータ調整</span></label></fieldset></article><article class="quiz-card"><h4>Q3. データを複数に分割し、検証用を入れ替えながら学習・評価を繰り返す手法はどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="data-collection-practice-2" value="ホールドアウト法"><span>ホールドアウト法</span></label><label class="quiz-option"><input type="radio" name="data-collection-practice-2" value="k分割交差検証"><span>k分割交差検証</span></label><label class="quiz-option"><input type="radio" name="data-collection-practice-2" value="アンダーサンプリング"><span>アンダーサンプリング</span></label><label class="quiz-option"><input type="radio" name="data-collection-practice-2" value="グリッドサーチ"><span>グリッドサーチ</span></label></fieldset></article>
             </div>
             <div class="quiz-actions">
               <button class="primary-button" type="button" id="gradeLessonQuiz">採点する</button>
@@ -90,11 +90,12 @@
         </aside>
       </div>
     </section>
-    <script type="application/json" id="lessonData">{"slug":"implementation/data-collection","title":"データ収集","terms":["データ収集","サンプリング","偏り","同意"],"visual":{"type":"distribution","axis":"比較と関係"},"quiz":[{"id":"data-collection-q1","prompt":"データ収集を学ぶとき、最も重要な見方はどれですか。","options":["データ収集の定義と使う場面を区別する","用語を英字順に暗記する","図表を見ずに数値だけを覚える","関連語をすべて同じ意味として扱う"],"answer":"データ収集の定義と使う場面を区別する"},{"id":"data-collection-q2","prompt":"サンプリングと偏りの関係を理解するために有効な学習はどれですか。","options":["操作できる図表で変化を見る","公式資料を転載する","ページタイトルだけ読む","選択肢をランダムに選ぶ"],"answer":"操作できる図表で変化を見る"}]}</script>
+    <script type="application/json" id="lessonData">{"slug":"implementation/data-collection","title":"データ収集","terms":["データ収集","サンプリング","偏り","同意"],"visual":{"type":"distribution","title":"データ収集","concept":"平均・分散・サンプル数"},"quiz":[{"id":"data-collection-practice-0","prompt":"学習データの収集方法に起因し、特定の属性が過小・過大に含まれることで生じる偏りを何というか。","options":["サンプリングバイアス","勾配消失","正則化","オーバーサンプリング"],"answer":"サンプリングバイアス","explanation":"\u003cb>サンプリングバイアス\u003c/b>。データ収集段階の偏りが、AIの差別的・不公平な判断につながる。公平性確保のためデータの代表性を点検する必要がある。"},{"id":"data-collection-practice-1","prompt":"AI活用プロジェクトで最初に行うべきこととして最も適切なものはどれか。","options":["モデルの選定","解決すべきビジネス課題・目的の明確化","GPUの調達","ハイパーパラメータ調整"],"answer":"解決すべきビジネス課題・目的の明確化","explanation":"まず\u003cb>課題・目的の明確化\u003c/b>。何をどれだけ改善したいか（KPI）を定めないと、データ収集も評価も方向を誤る。"},{"id":"data-collection-practice-2","prompt":"データを複数に分割し、検証用を入れ替えながら学習・評価を繰り返す手法はどれか。","options":["ホールドアウト法","k分割交差検証","アンダーサンプリング","グリッドサーチ"],"answer":"k分割交差検証","explanation":"\u003cb>k分割交差検証（k-fold cross validation）\u003c/b>。データをk個に分け、各回1つを検証、残りを学習に使う。少ないデータでも評価の偏りを抑えられる。"}]}</script>
   </main>
   <footer class="app-footer">
     <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>
   </footer>
+  <script src="../../assets/js/visualizations.js" defer></script>
   <script src="../../assets/js/lesson.js" defer></script>
 </body>
 </html>

@@ -42,15 +42,15 @@
             <ul class="plain-list">
               <li>解釈性を、試験問題の文脈で説明できる。</li>
               <li>説明可能AI、特徴量重要度、可視化との関係を区別できる。</li>
-              <li>図表を操作して、概念の変化やトレードオフを読み取れる。</li>
+              <li>対応表から、概念どうしの関係と区別ポイントを説明できる。</li>
             </ul>
           </section>
 
           <section class="lesson-section">
             <h3>本文解説</h3>
             <p>モデルがなぜそう判断したかを説明する必要性を学ぶ。</p>
-            <p>G検定では、用語の暗記だけでなく、どの場面でその考え方を使うのかが問われます。このページでは <strong>解釈性、説明可能AI、特徴量重要度、可視化</strong> を一つの学習単位として扱い、定義、関係、判断の観点をまとめます。</p>
-            <p>まず用語の境界を押さえ、次に図表を操作して結果がどう変わるかを観察してください。操作によって値や形が変わる部分が、そのテーマで理解すべき中心です。</p>
+            <p>モデルの解釈性では、解釈性、説明可能AI、特徴量重要度、可視化を別々の暗記事項ではなく、問題文の条件から使い分ける知識として扱います。</p>
+            <p>演習データでは「AIの判断根拠を人間が理解できるよう説明する技術・研究領域を何というか。」のように問われます。ポイントは、XAI（Explainable AI）。LIME、SHAP、Grad-CAMなどで判断根拠を可視化・説明する。ブラックボックス問題への対応として重要。</p>
           </section>
 
           <section class="lesson-section visual-lesson" aria-labelledby="visualTitle">
@@ -68,7 +68,7 @@
           <section class="lesson-section">
             <h3>確認問題</h3>
             <div class="quiz-area lesson-quiz">
-              <article class="quiz-card"><h4>Q1. 解釈性を学ぶとき、最も重要な見方はどれですか。</h4><fieldset><label class="quiz-option"><input type="radio" name="explainability-q1" value="解釈性の定義と使う場面を区別する"><span>解釈性の定義と使う場面を区別する</span></label><label class="quiz-option"><input type="radio" name="explainability-q1" value="用語を英字順に暗記する"><span>用語を英字順に暗記する</span></label><label class="quiz-option"><input type="radio" name="explainability-q1" value="図表を見ずに数値だけを覚える"><span>図表を見ずに数値だけを覚える</span></label><label class="quiz-option"><input type="radio" name="explainability-q1" value="関連語をすべて同じ意味として扱う"><span>関連語をすべて同じ意味として扱う</span></label></fieldset></article><article class="quiz-card"><h4>Q2. 説明可能AIと特徴量重要度の関係を理解するために有効な学習はどれですか。</h4><fieldset><label class="quiz-option"><input type="radio" name="explainability-q2" value="操作できる図表で変化を見る"><span>操作できる図表で変化を見る</span></label><label class="quiz-option"><input type="radio" name="explainability-q2" value="公式資料を転載する"><span>公式資料を転載する</span></label><label class="quiz-option"><input type="radio" name="explainability-q2" value="ページタイトルだけ読む"><span>ページタイトルだけ読む</span></label><label class="quiz-option"><input type="radio" name="explainability-q2" value="選択肢をランダムに選ぶ"><span>選択肢をランダムに選ぶ</span></label></fieldset></article>
+              <article class="quiz-card"><h4>Q1. AIの判断根拠を人間が理解できるよう説明する技術・研究領域を何というか。</h4><fieldset><label class="quiz-option"><input type="radio" name="explainability-practice-0" value="XAI（説明可能AI）"><span>XAI（説明可能AI）</span></label><label class="quiz-option"><input type="radio" name="explainability-practice-0" value="AGI"><span>AGI</span></label><label class="quiz-option"><input type="radio" name="explainability-practice-0" value="GAN"><span>GAN</span></label><label class="quiz-option"><input type="radio" name="explainability-practice-0" value="RPA"><span>RPA</span></label></fieldset></article><article class="quiz-card"><h4>Q2. 決定木の長所として最も適切なものはどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="explainability-practice-1" value="判断過程を木構造で可視化でき解釈しやすい"><span>判断過程を木構造で可視化でき解釈しやすい</span></label><label class="quiz-option"><input type="radio" name="explainability-practice-1" value="必ず過学習しない"><span>必ず過学習しない</span></label><label class="quiz-option"><input type="radio" name="explainability-practice-1" value="常に最高精度になる"><span>常に最高精度になる</span></label><label class="quiz-option"><input type="radio" name="explainability-practice-1" value="勾配計算が不要なため深層学習に使われる"><span>勾配計算が不要なため深層学習に使われる</span></label></fieldset></article><article class="quiz-card"><h4>Q3. モデルの予測根拠を人間が理解できるよう説明する技術・取り組みを総称する語はどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="explainability-practice-2" value="説明可能AI（XAI）"><span>説明可能AI（XAI）</span></label><label class="quiz-option"><input type="radio" name="explainability-practice-2" value="強化学習"><span>強化学習</span></label><label class="quiz-option"><input type="radio" name="explainability-practice-2" value="次元削減"><span>次元削減</span></label><label class="quiz-option"><input type="radio" name="explainability-practice-2" value="データ拡張"><span>データ拡張</span></label></fieldset></article>
             </div>
             <div class="quiz-actions">
               <button class="primary-button" type="button" id="gradeLessonQuiz">採点する</button>
@@ -90,11 +90,12 @@
         </aside>
       </div>
     </section>
-    <script type="application/json" id="lessonData">{"slug":"applications/explainability","title":"モデルの解釈性","terms":["解釈性","説明可能AI","特徴量重要度","可視化"],"visual":{"type":"bars","axis":"比較と関係"},"quiz":[{"id":"explainability-q1","prompt":"解釈性を学ぶとき、最も重要な見方はどれですか。","options":["解釈性の定義と使う場面を区別する","用語を英字順に暗記する","図表を見ずに数値だけを覚える","関連語をすべて同じ意味として扱う"],"answer":"解釈性の定義と使う場面を区別する"},{"id":"explainability-q2","prompt":"説明可能AIと特徴量重要度の関係を理解するために有効な学習はどれですか。","options":["操作できる図表で変化を見る","公式資料を転載する","ページタイトルだけ読む","選択肢をランダムに選ぶ"],"answer":"操作できる図表で変化を見る"}]}</script>
+    <script type="application/json" id="lessonData">{"slug":"applications/explainability","title":"モデルの解釈性","terms":["解釈性","説明可能AI","特徴量重要度","可視化"],"visual":{"type":"comparison-table","title":"モデルの解釈性の比較","columns":["項目","役割","試験での見方"],"rows":[["解釈性","モデルがなぜそう判断したかを説明する必要性を学ぶ。","似た用語との境界を説明できるようにする"],["説明可能AI","モデルがなぜそう判断したかを説明する必要性を学ぶ。","似た用語との境界を説明できるようにする"],["特徴量重要度","モデルがなぜそう判断したかを説明する必要性を学ぶ。","似た用語との境界を説明できるようにする"],["可視化","モデルがなぜそう判断したかを説明する必要性を学ぶ。","似た用語との境界を説明できるようにする"]]},"quiz":[{"id":"explainability-practice-0","prompt":"AIの判断根拠を人間が理解できるよう説明する技術・研究領域を何というか。","options":["XAI（説明可能AI）","AGI","GAN","RPA"],"answer":"XAI（説明可能AI）","explanation":"\u003cb>XAI（Explainable AI）\u003c/b>。LIME、SHAP、Grad-CAMなどで判断根拠を可視化・説明する。ブラックボックス問題への対応として重要。"},{"id":"explainability-practice-1","prompt":"決定木の長所として最も適切なものはどれか。","options":["判断過程を木構造で可視化でき解釈しやすい","必ず過学習しない","常に最高精度になる","勾配計算が不要なため深層学習に使われる"],"answer":"判断過程を木構造で可視化でき解釈しやすい","explanation":"決定木は\u003cb>解釈性（説明性）が高い\u003c/b>のが長所で、なぜその判断かを木で追える。一方、深く育てると過学習しやすいのが短所で、剪定やアンサンブル（ランダムフォレスト・勾配ブースティング）で補う。XAIの文脈でも“説明しやすいモデル”として登場する。"},{"id":"explainability-practice-2","prompt":"モデルの予測根拠を人間が理解できるよう説明する技術・取り組みを総称する語はどれか。","options":["説明可能AI（XAI）","強化学習","次元削減","データ拡張"],"answer":"説明可能AI（XAI）","explanation":"【正解の理由】\u003cb>説明可能AI（XAI）\u003c/b>は、ブラックボックス化した予測の根拠を可視化・提示する取り組みで、LIME・SHAP・Grad-CAM等の手法がある。【各選択肢】②③④は別技術。【関連】医療・与信など説明責任が問われる領域で重要。精度と説明性のトレードオフに注意。"}]}</script>
   </main>
   <footer class="app-footer">
     <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>
   </footer>
+  <script src="../../assets/js/visualizations.js" defer></script>
   <script src="../../assets/js/lesson.js" defer></script>
 </body>
 </html>

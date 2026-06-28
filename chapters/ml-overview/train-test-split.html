@@ -42,15 +42,15 @@
             <ul class="plain-list">
               <li>訓練データを、試験問題の文脈で説明できる。</li>
               <li>テストデータ、検証データ、汎化との関係を区別できる。</li>
-              <li>図表を操作して、概念の変化やトレードオフを読み取れる。</li>
+              <li>対応表から、概念どうしの関係と区別ポイントを説明できる。</li>
             </ul>
           </section>
 
           <section class="lesson-section">
             <h3>本文解説</h3>
             <p>学習に使ったデータだけで性能を見る危うさを理解する。</p>
-            <p>G検定では、用語の暗記だけでなく、どの場面でその考え方を使うのかが問われます。このページでは <strong>訓練データ、テストデータ、検証データ、汎化</strong> を一つの学習単位として扱い、定義、関係、判断の観点をまとめます。</p>
-            <p>まず用語の境界を押さえ、次に図表を操作して結果がどう変わるかを観察してください。操作によって値や形が変わる部分が、そのテーマで理解すべき中心です。</p>
+            <p>訓練データとテストデータでは、訓練データ、テストデータ、検証データ、汎化を別々の暗記事項ではなく、問題文の条件から使い分ける知識として扱います。</p>
+            <p>演習データでは「学習データには高精度だが未知データで性能が落ちる状態を何というか。」のように問われます。ポイントは、過学習（オーバーフィッティング）。モデルが訓練データのノイズまで覚え込んだ状態。正則化・ドロップアウト・データ拡張・早期終了などで抑制する。</p>
           </section>
 
           <section class="lesson-section visual-lesson" aria-labelledby="visualTitle">
@@ -68,7 +68,7 @@
           <section class="lesson-section">
             <h3>確認問題</h3>
             <div class="quiz-area lesson-quiz">
-              <article class="quiz-card"><h4>Q1. 訓練データを学ぶとき、最も重要な見方はどれですか。</h4><fieldset><label class="quiz-option"><input type="radio" name="train-test-split-q1" value="訓練データの定義と使う場面を区別する"><span>訓練データの定義と使う場面を区別する</span></label><label class="quiz-option"><input type="radio" name="train-test-split-q1" value="用語を英字順に暗記する"><span>用語を英字順に暗記する</span></label><label class="quiz-option"><input type="radio" name="train-test-split-q1" value="図表を見ずに数値だけを覚える"><span>図表を見ずに数値だけを覚える</span></label><label class="quiz-option"><input type="radio" name="train-test-split-q1" value="関連語をすべて同じ意味として扱う"><span>関連語をすべて同じ意味として扱う</span></label></fieldset></article><article class="quiz-card"><h4>Q2. テストデータと検証データの関係を理解するために有効な学習はどれですか。</h4><fieldset><label class="quiz-option"><input type="radio" name="train-test-split-q2" value="操作できる図表で変化を見る"><span>操作できる図表で変化を見る</span></label><label class="quiz-option"><input type="radio" name="train-test-split-q2" value="公式資料を転載する"><span>公式資料を転載する</span></label><label class="quiz-option"><input type="radio" name="train-test-split-q2" value="ページタイトルだけ読む"><span>ページタイトルだけ読む</span></label><label class="quiz-option"><input type="radio" name="train-test-split-q2" value="選択肢をランダムに選ぶ"><span>選択肢をランダムに選ぶ</span></label></fieldset></article>
+              <article class="quiz-card"><h4>Q1. 学習データには高精度だが未知データで性能が落ちる状態を何というか。</h4><fieldset><label class="quiz-option"><input type="radio" name="train-test-split-practice-0" value="未学習（過少適合）"><span>未学習（過少適合）</span></label><label class="quiz-option"><input type="radio" name="train-test-split-practice-0" value="過学習（過剰適合）"><span>過学習（過剰適合）</span></label><label class="quiz-option"><input type="radio" name="train-test-split-practice-0" value="正則化"><span>正則化</span></label><label class="quiz-option"><input type="radio" name="train-test-split-practice-0" value="汎化"><span>汎化</span></label></fieldset></article><article class="quiz-card"><h4>Q2. モデルが単純すぎて、訓練データに対してすら十分に当てはまらない状態を何というか。</h4><fieldset><label class="quiz-option"><input type="radio" name="train-test-split-practice-1" value="過学習"><span>過学習</span></label><label class="quiz-option"><input type="radio" name="train-test-split-practice-1" value="未学習（過少適合）"><span>未学習（過少適合）</span></label><label class="quiz-option"><input type="radio" name="train-test-split-practice-1" value="正則化"><span>正則化</span></label><label class="quiz-option"><input type="radio" name="train-test-split-practice-1" value="汎化"><span>汎化</span></label></fieldset></article><article class="quiz-card"><h4>Q3. 育ちすぎた決定木の枝を削り、過学習を抑えて汎化性能を高める処理はどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="train-test-split-practice-2" value="剪定（プルーニング）"><span>剪定（プルーニング）</span></label><label class="quiz-option"><input type="radio" name="train-test-split-practice-2" value="ブースティング"><span>ブースティング</span></label><label class="quiz-option"><input type="radio" name="train-test-split-practice-2" value="正規化"><span>正規化</span></label><label class="quiz-option"><input type="radio" name="train-test-split-practice-2" value="アノテーション"><span>アノテーション</span></label></fieldset></article>
             </div>
             <div class="quiz-actions">
               <button class="primary-button" type="button" id="gradeLessonQuiz">採点する</button>
@@ -90,11 +90,12 @@
         </aside>
       </div>
     </section>
-    <script type="application/json" id="lessonData">{"slug":"ml-overview/train-test-split","title":"訓練データとテストデータ","terms":["訓練データ","テストデータ","検証データ","汎化"],"visual":{"type":"bars","axis":"比較と関係"},"quiz":[{"id":"train-test-split-q1","prompt":"訓練データを学ぶとき、最も重要な見方はどれですか。","options":["訓練データの定義と使う場面を区別する","用語を英字順に暗記する","図表を見ずに数値だけを覚える","関連語をすべて同じ意味として扱う"],"answer":"訓練データの定義と使う場面を区別する"},{"id":"train-test-split-q2","prompt":"テストデータと検証データの関係を理解するために有効な学習はどれですか。","options":["操作できる図表で変化を見る","公式資料を転載する","ページタイトルだけ読む","選択肢をランダムに選ぶ"],"answer":"操作できる図表で変化を見る"}]}</script>
+    <script type="application/json" id="lessonData">{"slug":"ml-overview/train-test-split","title":"訓練データとテストデータ","terms":["訓練データ","テストデータ","検証データ","汎化"],"visual":{"type":"comparison-table","title":"訓練データとテストデータの比較","columns":["項目","役割","試験での見方"],"rows":[["訓練データ","学習に使ったデータだけで性能を見る危うさを理解する。","似た用語との境界を説明できるようにする"],["テストデータ","学習に使ったデータだけで性能を見る危うさを理解する。","似た用語との境界を説明できるようにする"],["検証データ","学習に使ったデータだけで性能を見る危うさを理解する。","似た用語との境界を説明できるようにする"],["汎化","学習に使ったデータだけで性能を見る危うさを理解する。","似た用語との境界を説明できるようにする"]]},"quiz":[{"id":"train-test-split-practice-0","prompt":"学習データには高精度だが未知データで性能が落ちる状態を何というか。","options":["未学習（過少適合）","過学習（過剰適合）","正則化","汎化"],"answer":"過学習（過剰適合）","explanation":"\u003cb>過学習（オーバーフィッティング）\u003c/b>。モデルが訓練データのノイズまで覚え込んだ状態。正則化・ドロップアウト・データ拡張・早期終了などで抑制する。"},{"id":"train-test-split-practice-1","prompt":"モデルが単純すぎて、訓練データに対してすら十分に当てはまらない状態を何というか。","options":["過学習","未学習（過少適合）","正則化","汎化"],"answer":"未学習（過少適合）","explanation":"\u003cb>未学習（アンダーフィッティング）\u003c/b>。表現力不足で訓練データのパターンを捉えきれていない。モデルの複雑化や特徴量追加で改善する。"},{"id":"train-test-split-practice-2","prompt":"育ちすぎた決定木の枝を削り、過学習を抑えて汎化性能を高める処理はどれか。","options":["剪定（プルーニング）","ブースティング","正規化","アノテーション"],"answer":"剪定（プルーニング）","explanation":"\u003cb>剪定（pruning）\u003c/b>。検証データで効果の薄い枝を切り、木を単純化して過学習を抑える。ニューラルネットの“枝刈り”も同じ言葉が使われるが、こちらはモデル軽量化が目的で文脈が異なる点に注意。"}]}</script>
   </main>
   <footer class="app-footer">
     <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>
   </footer>
+  <script src="../../assets/js/visualizations.js" defer></script>
   <script src="../../assets/js/lesson.js" defer></script>
 </body>
 </html>

@@ -42,15 +42,15 @@
             <ul class="plain-list">
               <li>オートエンコーダを、試験問題の文脈で説明できる。</li>
               <li>エンコーダ、デコーダ、潜在表現との関係を区別できる。</li>
-              <li>図表を操作して、概念の変化やトレードオフを読み取れる。</li>
+              <li>判断フローから、確認すべき順序と分岐の意味を説明できる。</li>
             </ul>
           </section>
 
           <section class="lesson-section">
             <h3>本文解説</h3>
             <p>入力を圧縮し復元することで表現を学ぶ仕組みを理解する。</p>
-            <p>G検定では、用語の暗記だけでなく、どの場面でその考え方を使うのかが問われます。このページでは <strong>オートエンコーダ、エンコーダ、デコーダ、潜在表現</strong> を一つの学習単位として扱い、定義、関係、判断の観点をまとめます。</p>
-            <p>まず用語の境界を押さえ、次に図表を操作して結果がどう変わるかを観察してください。操作によって値や形が変わる部分が、そのテーマで理解すべき中心です。</p>
+            <p>オートエンコーダでは、オートエンコーダ、エンコーダ、デコーダ、潜在表現を別々の暗記事項ではなく、問題文の条件から使い分ける知識として扱います。</p>
+            <p>演習データでは「入力をいったん低次元に圧縮し、それを元に復元するよう学習する、次元圧縮や異常検知に使われるネットワークはどれか。」のように問われます。ポイントは、【正解の理由】オートエンコーダはエンコーダで圧縮（潜在表現）し、デコーダで復元する自己教師あり的な構造。復元誤差が大きい入力を異常とみなせる。【各選択肢】②③④は別目的。【関連】確率分布を学ぶ発展形がVAEで、潜在空間からの生成が可能。</p>
           </section>
 
           <section class="lesson-section visual-lesson" aria-labelledby="visualTitle">
@@ -68,7 +68,7 @@
           <section class="lesson-section">
             <h3>確認問題</h3>
             <div class="quiz-area lesson-quiz">
-              <article class="quiz-card"><h4>Q1. オートエンコーダを学ぶとき、最も重要な見方はどれですか。</h4><fieldset><label class="quiz-option"><input type="radio" name="autoencoder-q1" value="オートエンコーダの定義と使う場面を区別する"><span>オートエンコーダの定義と使う場面を区別する</span></label><label class="quiz-option"><input type="radio" name="autoencoder-q1" value="用語を英字順に暗記する"><span>用語を英字順に暗記する</span></label><label class="quiz-option"><input type="radio" name="autoencoder-q1" value="図表を見ずに数値だけを覚える"><span>図表を見ずに数値だけを覚える</span></label><label class="quiz-option"><input type="radio" name="autoencoder-q1" value="関連語をすべて同じ意味として扱う"><span>関連語をすべて同じ意味として扱う</span></label></fieldset></article><article class="quiz-card"><h4>Q2. エンコーダとデコーダの関係を理解するために有効な学習はどれですか。</h4><fieldset><label class="quiz-option"><input type="radio" name="autoencoder-q2" value="操作できる図表で変化を見る"><span>操作できる図表で変化を見る</span></label><label class="quiz-option"><input type="radio" name="autoencoder-q2" value="公式資料を転載する"><span>公式資料を転載する</span></label><label class="quiz-option"><input type="radio" name="autoencoder-q2" value="ページタイトルだけ読む"><span>ページタイトルだけ読む</span></label><label class="quiz-option"><input type="radio" name="autoencoder-q2" value="選択肢をランダムに選ぶ"><span>選択肢をランダムに選ぶ</span></label></fieldset></article>
+              <article class="quiz-card"><h4>Q1. 入力をいったん低次元に圧縮し、それを元に復元するよう学習する、次元圧縮や異常検知に使われるネットワークはどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="autoencoder-practice-0" value="オートエンコーダ"><span>オートエンコーダ</span></label><label class="quiz-option"><input type="radio" name="autoencoder-practice-0" value="Transformer"><span>Transformer</span></label><label class="quiz-option"><input type="radio" name="autoencoder-practice-0" value="ResNet"><span>ResNet</span></label><label class="quiz-option"><input type="radio" name="autoencoder-practice-0" value="SVM"><span>SVM</span></label></fieldset></article><article class="quiz-card"><h4>Q2. 自己注意のみで構成され、RNNを使わず系列を並列処理できるため大規模言語モデルの基盤となったアーキテクチャはどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="autoencoder-practice-1" value="Transformer"><span>Transformer</span></label><label class="quiz-option"><input type="radio" name="autoencoder-practice-1" value="LSTM"><span>LSTM</span></label><label class="quiz-option"><input type="radio" name="autoencoder-practice-1" value="GRU"><span>GRU</span></label><label class="quiz-option"><input type="radio" name="autoencoder-practice-1" value="オートエンコーダ"><span>オートエンコーダ</span></label></fieldset></article><article class="quiz-card"><h4>Q3. 時系列や文章など順序のあるデータを扱い、過去の情報を内部状態として保持するネットワークはどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="autoencoder-practice-2" value="CNN"><span>CNN</span></label><label class="quiz-option"><input type="radio" name="autoencoder-practice-2" value="RNN（再帰型ニューラルネットワーク）"><span>RNN（再帰型ニューラルネットワーク）</span></label><label class="quiz-option"><input type="radio" name="autoencoder-practice-2" value="オートエンコーダ"><span>オートエンコーダ</span></label><label class="quiz-option"><input type="radio" name="autoencoder-practice-2" value="VAE"><span>VAE</span></label></fieldset></article>
             </div>
             <div class="quiz-actions">
               <button class="primary-button" type="button" id="gradeLessonQuiz">採点する</button>
@@ -90,11 +90,12 @@
         </aside>
       </div>
     </section>
-    <script type="application/json" id="lessonData">{"slug":"dl-elements/autoencoder","title":"オートエンコーダ","terms":["オートエンコーダ","エンコーダ","デコーダ","潜在表現"],"visual":{"type":"flow","steps":["入力","圧縮","潜在表現","復元","誤差"],"axis":"比較と関係"},"quiz":[{"id":"autoencoder-q1","prompt":"オートエンコーダを学ぶとき、最も重要な見方はどれですか。","options":["オートエンコーダの定義と使う場面を区別する","用語を英字順に暗記する","図表を見ずに数値だけを覚える","関連語をすべて同じ意味として扱う"],"answer":"オートエンコーダの定義と使う場面を区別する"},{"id":"autoencoder-q2","prompt":"エンコーダとデコーダの関係を理解するために有効な学習はどれですか。","options":["操作できる図表で変化を見る","公式資料を転載する","ページタイトルだけ読む","選択肢をランダムに選ぶ"],"answer":"操作できる図表で変化を見る"}]}</script>
+    <script type="application/json" id="lessonData">{"slug":"dl-elements/autoencoder","title":"オートエンコーダ","terms":["オートエンコーダ","エンコーダ","デコーダ","潜在表現"],"visual":{"type":"flow","title":"オートエンコーダ","steps":[{"label":"入力","note":"起点"},{"label":"圧縮","note":"確認"},{"label":"潜在表現","note":"確認"},{"label":"復元","note":"確認"},{"label":"誤差","note":"結果"}]},"quiz":[{"id":"autoencoder-practice-0","prompt":"入力をいったん低次元に圧縮し、それを元に復元するよう学習する、次元圧縮や異常検知に使われるネットワークはどれか。","options":["オートエンコーダ","Transformer","ResNet","SVM"],"answer":"オートエンコーダ","explanation":"【正解の理由】\u003cb>オートエンコーダ\u003c/b>はエンコーダで圧縮（潜在表現）し、デコーダで復元する自己教師あり的な構造。復元誤差が大きい入力を異常とみなせる。【各選択肢】②③④は別目的。【関連】確率分布を学ぶ発展形が\u003cb>VAE\u003c/b>で、潜在空間からの生成が可能。"},{"id":"autoencoder-practice-1","prompt":"自己注意のみで構成され、RNNを使わず系列を並列処理できるため大規模言語モデルの基盤となったアーキテクチャはどれか。","options":["Transformer","LSTM","GRU","オートエンコーダ"],"answer":"Transformer","explanation":"【正解の理由】\u003cb>Transformer\u003c/b>は自己注意で系列内の依存を一括計算でき、逐次処理のRNNより並列化に強く、長距離依存も捉えやすい。【各選択肢】②LSTM・③GRUは逐次のRNN系、④オートエンコーダは圧縮。【関連】エンコーダ型がBERT、デコーダ型がGPTの系譜。位置情報は位置エンコーディングで補う。"},{"id":"autoencoder-practice-2","prompt":"時系列や文章など順序のあるデータを扱い、過去の情報を内部状態として保持するネットワークはどれか。","options":["CNN","RNN（再帰型ニューラルネットワーク）","オートエンコーダ","VAE"],"answer":"RNN（再帰型ニューラルネットワーク）","explanation":"\u003cb>RNN\u003c/b>は前の時刻の出力を次に渡す再帰構造を持つ。ただし長期依存で勾配消失しやすく、それを改善したのがLSTMやGRU。"}]}</script>
   </main>
   <footer class="app-footer">
     <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>
   </footer>
+  <script src="../../assets/js/visualizations.js" defer></script>
   <script src="../../assets/js/lesson.js" defer></script>
 </body>
 </html>

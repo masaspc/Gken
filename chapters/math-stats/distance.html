@@ -42,15 +42,15 @@
             <ul class="plain-list">
               <li>ユークリッド距離を、試験問題の文脈で説明できる。</li>
               <li>コサイン類似度、近傍、埋め込みとの関係を区別できる。</li>
-              <li>図表を操作して、概念の変化やトレードオフを読み取れる。</li>
+              <li>対応表から、概念どうしの関係と区別ポイントを説明できる。</li>
             </ul>
           </section>
 
           <section class="lesson-section">
             <h3>本文解説</h3>
             <p>近い・似ているを数値化する方法を比較する。</p>
-            <p>G検定では、用語の暗記だけでなく、どの場面でその考え方を使うのかが問われます。このページでは <strong>ユークリッド距離、コサイン類似度、近傍、埋め込み</strong> を一つの学習単位として扱い、定義、関係、判断の観点をまとめます。</p>
-            <p>まず用語の境界を押さえ、次に図表を操作して結果がどう変わるかを観察してください。操作によって値や形が変わる部分が、そのテーマで理解すべき中心です。</p>
+            <p>距離と類似度では、ユークリッド距離、コサイン類似度、近傍、埋め込みを別々の暗記事項ではなく、問題文の条件から使い分ける知識として扱います。</p>
+            <p>演習データでは「ベクトル a=(1, 2, 3) と b=(4, 5, 6) の内積はいくらか。」のように問われます。ポイントは、【計算】内積＝1×4＋2×5＋3×6＝4＋10＋18＝32。【ポイント】内積は対応成分の積の和。ニューロンの重み付き和や、ベクトルの類似度（コサイン類似度の分子）の計算に使う基本演算。</p>
           </section>
 
           <section class="lesson-section visual-lesson" aria-labelledby="visualTitle">
@@ -68,7 +68,7 @@
           <section class="lesson-section">
             <h3>確認問題</h3>
             <div class="quiz-area lesson-quiz">
-              <article class="quiz-card"><h4>Q1. ユークリッド距離を学ぶとき、最も重要な見方はどれですか。</h4><fieldset><label class="quiz-option"><input type="radio" name="distance-q1" value="ユークリッド距離の定義と使う場面を区別する"><span>ユークリッド距離の定義と使う場面を区別する</span></label><label class="quiz-option"><input type="radio" name="distance-q1" value="用語を英字順に暗記する"><span>用語を英字順に暗記する</span></label><label class="quiz-option"><input type="radio" name="distance-q1" value="図表を見ずに数値だけを覚える"><span>図表を見ずに数値だけを覚える</span></label><label class="quiz-option"><input type="radio" name="distance-q1" value="関連語をすべて同じ意味として扱う"><span>関連語をすべて同じ意味として扱う</span></label></fieldset></article><article class="quiz-card"><h4>Q2. コサイン類似度と近傍の関係を理解するために有効な学習はどれですか。</h4><fieldset><label class="quiz-option"><input type="radio" name="distance-q2" value="操作できる図表で変化を見る"><span>操作できる図表で変化を見る</span></label><label class="quiz-option"><input type="radio" name="distance-q2" value="公式資料を転載する"><span>公式資料を転載する</span></label><label class="quiz-option"><input type="radio" name="distance-q2" value="ページタイトルだけ読む"><span>ページタイトルだけ読む</span></label><label class="quiz-option"><input type="radio" name="distance-q2" value="選択肢をランダムに選ぶ"><span>選択肢をランダムに選ぶ</span></label></fieldset></article>
+              <article class="quiz-card"><h4>Q1. ベクトル a=(1, 2, 3) と b=(4, 5, 6) の内積はいくらか。</h4><fieldset><label class="quiz-option"><input type="radio" name="distance-practice-0" value="32"><span>32</span></label><label class="quiz-option"><input type="radio" name="distance-practice-0" value="21"><span>21</span></label><label class="quiz-option"><input type="radio" name="distance-practice-0" value="90"><span>90</span></label><label class="quiz-option"><input type="radio" name="distance-practice-0" value="6"><span>6</span></label></fieldset></article><article class="quiz-card"><h4>Q2. マージン（境界と最近傍データの距離）を最大化し、カーネルトリックで非線形分離も扱える手法はどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="distance-practice-1" value="決定木"><span>決定木</span></label><label class="quiz-option"><input type="radio" name="distance-practice-1" value="サポートベクターマシン（SVM）"><span>サポートベクターマシン（SVM）</span></label><label class="quiz-option"><input type="radio" name="distance-practice-1" value="ロジスティック回帰"><span>ロジスティック回帰</span></label><label class="quiz-option"><input type="radio" name="distance-practice-1" value="ナイーブベイズ"><span>ナイーブベイズ</span></label></fieldset></article><article class="quiz-card"><h4>Q3. 出力をシグモイド関数で0〜1の確率に変換し、2クラス分類に用いる手法はどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="distance-practice-2" value="線形回帰"><span>線形回帰</span></label><label class="quiz-option"><input type="radio" name="distance-practice-2" value="ロジスティック回帰"><span>ロジスティック回帰</span></label><label class="quiz-option"><input type="radio" name="distance-practice-2" value="主成分分析"><span>主成分分析</span></label><label class="quiz-option"><input type="radio" name="distance-practice-2" value="k近傍法"><span>k近傍法</span></label></fieldset></article>
             </div>
             <div class="quiz-actions">
               <button class="primary-button" type="button" id="gradeLessonQuiz">採点する</button>
@@ -90,11 +90,12 @@
         </aside>
       </div>
     </section>
-    <script type="application/json" id="lessonData">{"slug":"math-stats/distance","title":"距離と類似度","terms":["ユークリッド距離","コサイン類似度","近傍","埋め込み"],"visual":{"type":"scatter","axis":"比較と関係"},"quiz":[{"id":"distance-q1","prompt":"ユークリッド距離を学ぶとき、最も重要な見方はどれですか。","options":["ユークリッド距離の定義と使う場面を区別する","用語を英字順に暗記する","図表を見ずに数値だけを覚える","関連語をすべて同じ意味として扱う"],"answer":"ユークリッド距離の定義と使う場面を区別する"},{"id":"distance-q2","prompt":"コサイン類似度と近傍の関係を理解するために有効な学習はどれですか。","options":["操作できる図表で変化を見る","公式資料を転載する","ページタイトルだけ読む","選択肢をランダムに選ぶ"],"answer":"操作できる図表で変化を見る"}]}</script>
+    <script type="application/json" id="lessonData">{"slug":"math-stats/distance","title":"距離と類似度","terms":["ユークリッド距離","コサイン類似度","近傍","埋め込み"],"visual":{"type":"relation-table","title":"距離と類似度の対応関係","columns":["概念","関係","区別ポイント"],"rows":[["ユークリッド距離","近い・似ているを数値化する方法を比較する。","似た用語との境界を説明できるようにする"],["コサイン類似度","ユークリッド距離を理解するための関連語","似た用語との境界を説明できるようにする"],["近傍","ユークリッド距離を理解するための関連語","似た用語との境界を説明できるようにする"],["埋め込み","ユークリッド距離を理解するための関連語","似た用語との境界を説明できるようにする"]]},"quiz":[{"id":"distance-practice-0","prompt":"ベクトル a=(1, 2, 3) と b=(4, 5, 6) の内積はいくらか。","options":["32","21","90","6"],"answer":"32","explanation":"【計算】内積＝1×4＋2×5＋3×6＝4＋10＋18＝\u003cb>32\u003c/b>。【ポイント】内積は対応成分の積の和。ニューロンの重み付き和や、ベクトルの類似度（コサイン類似度の分子）の計算に使う基本演算。"},{"id":"distance-practice-1","prompt":"マージン（境界と最近傍データの距離）を最大化し、カーネルトリックで非線形分離も扱える手法はどれか。","options":["決定木","サポートベクターマシン（SVM）","ロジスティック回帰","ナイーブベイズ"],"answer":"サポートベクターマシン（SVM）","explanation":"\u003cb>SVM\u003c/b>はマージン最大化で汎化性能を高める。カーネル法により高次元へ写像し、非線形な境界も表現できる。"},{"id":"distance-practice-2","prompt":"出力をシグモイド関数で0〜1の確率に変換し、2クラス分類に用いる手法はどれか。","options":["線形回帰","ロジスティック回帰","主成分分析","k近傍法"],"answer":"ロジスティック回帰","explanation":"\u003cb>ロジスティック回帰\u003c/b>。名前は回帰だが分類手法。確率として解釈できる出力を返す。"}]}</script>
   </main>
   <footer class="app-footer">
     <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>
   </footer>
+  <script src="../../assets/js/visualizations.js" defer></script>
   <script src="../../assets/js/lesson.js" defer></script>
 </body>
 </html>

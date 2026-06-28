@@ -2,6 +2,10 @@ const fs = require("fs");
 const path = require("path");
 
 const root = path.resolve(__dirname, "..");
+const practiceQuestionsPath = path.join(root, "content", "gtest-questions.json");
+const practiceQuestions = fs.existsSync(practiceQuestionsPath)
+  ? JSON.parse(fs.readFileSync(practiceQuestionsPath, "utf8"))
+  : [];
 
 const chapters = [
   {
@@ -169,12 +173,102 @@ function lesson(slug, title, terms, focus, visualType, steps) {
     title,
     terms,
     focus,
-    visual: {
-      type: visualType,
-      steps,
-      axis: "比較と関係"
-    }
+    visual: visualFor(slug, title, terms, focus, visualType, steps)
   };
+}
+
+function visualFor(slug, title, terms, focus, visualType, steps) {
+  if (visualType === "distribution") {
+    return { type: "distribution", title, concept: "平均・分散・サンプル数" };
+  }
+  if (visualType === "scatter") {
+    if (["regression", "correlation", "overfitting", "machine-learning-rise", "gradient-descent", "loss-functions"].includes(slug)) {
+      return { type: "regression", title, concept: "説明変数と目的変数の関係" };
+    }
+    return relationSpec(title, terms, focus);
+  }
+  if (visualType === "boundary") {
+    if (["classification", "evaluation-metrics", "metrics-math", "perceptron"].includes(slug)) {
+      return { type: "classification", title, concept: "しきい値・決定境界・混同行列" };
+    }
+    return relationSpec(title, terms, focus);
+  }
+  if (visualType === "network") {
+    return {
+      type: "network",
+      title,
+      layers: [
+        { name: "入力", units: 4 },
+        { name: "特徴抽出", units: title.includes("全結合") ? 6 : 5 },
+        { name: "出力", units: title.includes("分類") ? 3 : 2 }
+      ]
+    };
+  }
+  if (visualType === "attention") {
+    return {
+      type: "attention",
+      title,
+      tokens: title.includes("Transformer")
+        ? ["入力", "位置", "Query", "Key", "Value", "出力"]
+        : ["文脈", "Query", "Key", "Value", "重み"]
+    };
+  }
+  if (visualType === "flow") {
+    return {
+      type: "flow",
+      title,
+      steps: (steps || terms).map((step, index) => ({ label: step, note: index === 0 ? "起点" : index === (steps || terms).length - 1 ? "結果" : "確認" }))
+    };
+  }
+  if (visualType === "bars") {
+    return comparisonSpec(title, terms, focus);
+  }
+  if (visualType === "matrix") {
+    return relationSpec(title, terms, focus);
+  }
+  return relationSpec(title, terms, focus);
+}
+
+function comparisonSpec(title, terms, focus) {
+  return {
+    type: "comparison-table",
+    title: `${title}の比較`,
+    columns: ["項目", "役割", "試験での見方"],
+    rows: terms.map((term) => [
+      term,
+      roleFor(term, focus),
+      perspectiveFor(term)
+    ])
+  };
+}
+
+function relationSpec(title, terms, focus) {
+  return {
+    type: "relation-table",
+    title: `${title}の対応関係`,
+    columns: ["概念", "関係", "区別ポイント"],
+    rows: terms.map((term, index) => [
+      term,
+      index === 0 ? focus : `${terms[0]}を理解するための関連語`,
+      perspectiveFor(term)
+    ])
+  };
+}
+
+function roleFor(term, focus) {
+  if (/正解率|適合率|再現率|F値|IoU|RMSE|MAE/.test(term)) return "評価指標としてモデルの性能を読む";
+  if (/ReLU|Sigmoid|Tanh|活性化/.test(term)) return "ニューラルネットワークに非線形性を与える";
+  if (/著作権|個人情報|特許|営業秘密|契約/.test(term)) return "法的な確認対象として扱う";
+  if (/公平性|透明性|安全性|ガバナンス/.test(term)) return "AI利用時のリスク管理観点として扱う";
+  return focus;
+}
+
+function perspectiveFor(term) {
+  if (/率|F値|IoU|RMSE|MAE/.test(term)) return "式・分母・分子を確認する";
+  if (/法|契約|情報|秘密|権/.test(term)) return "要件・対象・例外を分ける";
+  if (/Attention|Query|Key|Value/.test(term)) return "重み計算の役割を区別する";
+  if (/強化|報酬|方策/.test(term)) return "状態・行動・報酬の流れで見る";
+  return "似た用語との境界を説明できるようにする";
 }
 
 function ensureDir(dir) {
@@ -246,12 +340,14 @@ function lessonPage(chapter, item, index) {
   const currentIndex = flat.findIndex((entry) => entry.chapter.slug === chapter.slug && entry.lesson.slug === item.slug);
   const prev = flat[currentIndex - 1];
   const next = flat[currentIndex + 1];
+  const quiz = quizFor(item, chapter);
+  const explanation = explanationFor(item, quiz);
   const data = {
     slug: `${chapter.slug}/${item.slug}`,
     title: item.title,
     terms: item.terms,
     visual: item.visual,
-    quiz: quizFor(item)
+    quiz
   };
   const body = `    <section class="lesson-shell">
       <div class="breadcrumb"><a href="../../index.html">トップ</a> / <a href="./index.html">${esc(chapter.title)}</a> / ${esc(item.title)}</div>
@@ -266,16 +362,16 @@ function lessonPage(chapter, item, index) {
             <h3>学習目標</h3>
             <ul class="plain-list">
               <li>${esc(item.terms[0])}を、試験問題の文脈で説明できる。</li>
-              <li>${esc(item.terms.slice(1).join("、"))}との関係を区別できる。</li>
-              <li>図表を操作して、概念の変化やトレードオフを読み取れる。</li>
+              <li>${esc(relatedTerms(item.terms))}との関係を区別できる。</li>
+              <li>${esc(visualGoal(item.visual.type))}</li>
             </ul>
           </section>
 
           <section class="lesson-section">
             <h3>本文解説</h3>
             <p>${esc(item.focus)}</p>
-            <p>G検定では、用語の暗記だけでなく、どの場面でその考え方を使うのかが問われます。このページでは <strong>${esc(item.terms.join("、"))}</strong> を一つの学習単位として扱い、定義、関係、判断の観点をまとめます。</p>
-            <p>まず用語の境界を押さえ、次に図表を操作して結果がどう変わるかを観察してください。操作によって値や形が変わる部分が、そのテーマで理解すべき中心です。</p>
+            <p>${esc(explanation.main)}</p>
+            <p>${esc(explanation.exam)}</p>
           </section>
 
           <section class="lesson-section visual-lesson" aria-labelledby="visualTitle">
@@ -293,7 +389,7 @@ function lessonPage(chapter, item, index) {
           <section class="lesson-section">
             <h3>確認問題</h3>
             <div class="quiz-area lesson-quiz">
-              ${quizFor(item).map((q, qIndex) => `<article class="quiz-card"><h4>Q${qIndex + 1}. ${esc(q.prompt)}</h4><fieldset>${q.options.map((option) => `<label class="quiz-option"><input type="radio" name="${q.id}" value="${esc(option)}"><span>${esc(option)}</span></label>`).join("")}</fieldset></article>`).join("")}
+              ${quiz.map((q, qIndex) => `<article class="quiz-card"><h4>Q${qIndex + 1}. ${esc(q.prompt)}</h4><fieldset>${q.options.map((option) => `<label class="quiz-option"><input type="radio" name="${q.id}" value="${esc(option)}"><span>${esc(option)}</span></label>`).join("")}</fieldset></article>`).join("")}
             </div>
             <div class="quiz-actions">
               <button class="primary-button" type="button" id="gradeLessonQuiz">採点する</button>
@@ -321,26 +417,81 @@ function lessonPage(chapter, item, index) {
     title: item.title,
     description: item.focus,
     body,
-    extraScript: `  <script src="../../assets/js/lesson.js" defer></script>`
+    extraScript: `  <script src="../../assets/js/visualizations.js" defer></script>
+  <script src="../../assets/js/lesson.js" defer></script>`
   });
 }
 
-function quizFor(item) {
-  const [a, b, c] = item.terms;
-  return [
-    {
-      id: `${item.slug}-q1`,
-      prompt: `${a}を学ぶとき、最も重要な見方はどれですか。`,
-      options: [`${a}の定義と使う場面を区別する`, "用語を英字順に暗記する", "図表を見ずに数値だけを覚える", "関連語をすべて同じ意味として扱う"],
-      answer: `${a}の定義と使う場面を区別する`
-    },
-    {
-      id: `${item.slug}-q2`,
-      prompt: `${b || a}と${c || a}の関係を理解するために有効な学習はどれですか。`,
-      options: ["操作できる図表で変化を見る", "公式資料を転載する", "ページタイトルだけ読む", "選択肢をランダムに選ぶ"],
-      answer: "操作できる図表で変化を見る"
-    }
-  ];
+function quizFor(item, chapter) {
+  const matches = matchingQuestions(item, chapter).slice(0, 3);
+  if (matches.length) {
+    return matches.map((q, index) => ({
+      id: `${item.slug}-practice-${index}`,
+      prompt: q.q,
+      options: q.c,
+      answer: q.c[q.a],
+      explanation: q.e
+    }));
+  }
+  return [{
+    id: `${item.slug}-fallback`,
+    prompt: `${item.title}について、最も適切な説明はどれですか。`,
+    options: [
+      item.focus,
+      "関連用語をすべて同じ意味として扱う。",
+      "数値や図表だけを暗記し、意味は確認しない。",
+      "試験範囲とは無関係な一般論として扱う。"
+    ],
+    answer: item.focus,
+    explanation: item.focus
+  }];
+}
+
+function matchingQuestions(item, chapter) {
+  const terms = [item.title, ...item.terms].filter(Boolean);
+  const cat = chapterCategory(chapter.title);
+  return practiceQuestions
+    .map((q) => {
+      const haystack = `${q.cat} ${q.q} ${q.c.join(" ")} ${stripHtml(q.e)}`;
+      const termScore = terms.reduce((score, term) => score + (haystack.includes(term) ? 3 : 0), 0);
+      const catScore = q.cat.includes(cat) ? 1 : 0;
+      return { q, score: termScore + catScore };
+    })
+    .filter((entry) => entry.score > 0)
+    .sort((a, b) => b.score - a.score)
+    .map((entry) => entry.q);
+}
+
+function explanationFor(item, quiz) {
+  const first = quiz[0];
+  const explanation = first ? stripHtml(first.explanation || "") : "";
+  return {
+    main: `${item.title}では、${item.terms.join("、")}を別々の暗記事項ではなく、問題文の条件から使い分ける知識として扱います。`,
+    exam: explanation
+      ? `演習データでは「${first.prompt}」のように問われます。ポイントは、${shorten(explanation, 120)}`
+      : `試験では、${item.terms[0]}の定義だけでなく、関連語との違いと利用場面が問われます。`
+  };
+}
+
+function chapterCategory(title) {
+  if (title.includes("人工知能とは")) return "第1章";
+  if (title.includes("動向")) return "第2章";
+  if (title.includes("機械学習")) return "第3章";
+  if (title.includes("概要") && title.includes("ディープ")) return "第4章";
+  if (title.includes("要素技術")) return "第5章";
+  if (title.includes("応用")) return "第6章";
+  if (title.includes("社会実装")) return "第7章";
+  if (title.includes("法律") || title.includes("倫理")) return "第8章";
+  if (title.includes("数理")) return "第9章";
+  return "";
+}
+
+function stripHtml(value) {
+  return String(value).replace(/<[^>]*>/g, "");
+}
+
+function shorten(value, length) {
+  return value.length > length ? `${value.slice(0, length)}...` : value;
 }
 
 function chapterIndex(chapter) {
@@ -351,10 +502,27 @@ function chapterIndex(chapter) {
         <p>${esc(chapter.summary)}</p>
       </div>
       <div class="lesson-grid">
-        ${chapter.lessons.map((item, index) => `<a class="lesson-card" href="./${item.slug}.html"><span>${String(index + 1).padStart(2, "0")}</span><h3>${esc(item.title)}</h3><p>${esc(item.focus)}</p><div class="tag-list">${item.terms.slice(0, 3).map((term) => `<em>${esc(term)}</em>`).join("")}</div></a>`).join("")}
+        ${chapter.lessons.map((item, index) => `<a class="lesson-card" href="./${item.slug}.html"><span>${String(index + 1).padStart(2, "0")}</span><h3>${esc(item.title)}</h3><p>${esc(item.focus)}</p><div class="tag-list">${tagTerms(item.terms).map((term) => `<em>${esc(term)}</em>`).join("")}</div></a>`).join("")}
       </div>
     </section>`;
   return layout({ depth: 2, title: chapter.title, description: chapter.summary, body });
+}
+
+function visualGoal(type) {
+  if (["distribution", "regression", "classification", "attention"].includes(type)) {
+    return "パラメータを動かし、計算結果・指標・重みの変化を読み取れる。";
+  }
+  if (type === "network") return "構造図から、層・ユニット・接続の役割を読み取れる。";
+  if (type === "flow") return "判断フローから、確認すべき順序と分岐の意味を説明できる。";
+  return "対応表から、概念どうしの関係と区別ポイントを説明できる。";
+}
+
+function relatedTerms(terms) {
+  return terms.filter((_, index) => index > 0).join("、") || terms[0];
+}
+
+function tagTerms(terms) {
+  return terms.filter((_, index) => index < 3);
 }
 
 function homePage() {

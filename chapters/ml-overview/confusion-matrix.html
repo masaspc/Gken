@@ -42,15 +42,15 @@
             <ul class="plain-list">
               <li>真陽性を、試験問題の文脈で説明できる。</li>
               <li>偽陽性、真陰性、偽陰性との関係を区別できる。</li>
-              <li>図表を操作して、概念の変化やトレードオフを読み取れる。</li>
+              <li>対応表から、概念どうしの関係と区別ポイントを説明できる。</li>
             </ul>
           </section>
 
           <section class="lesson-section">
             <h3>本文解説</h3>
             <p>予測の当たり外れを4区分で整理し、指標の意味につなげる。</p>
-            <p>G検定では、用語の暗記だけでなく、どの場面でその考え方を使うのかが問われます。このページでは <strong>真陽性、偽陽性、真陰性、偽陰性</strong> を一つの学習単位として扱い、定義、関係、判断の観点をまとめます。</p>
-            <p>まず用語の境界を押さえ、次に図表を操作して結果がどう変わるかを観察してください。操作によって値や形が変わる部分が、そのテーマで理解すべき中心です。</p>
+            <p>混同行列では、真陽性、偽陽性、真陰性、偽陰性を別々の暗記事項ではなく、問題文の条件から使い分ける知識として扱います。</p>
+            <p>演習データでは「予測結果を「真陽性・偽陽性・偽陰性・真陰性」の4区分で整理した表はどれか。」のように問われます。ポイントは、混同行列（Confusion Matrix）。適合率・再現率・正解率などの評価指標はここから計算される。</p>
           </section>
 
           <section class="lesson-section visual-lesson" aria-labelledby="visualTitle">
@@ -68,7 +68,7 @@
           <section class="lesson-section">
             <h3>確認問題</h3>
             <div class="quiz-area lesson-quiz">
-              <article class="quiz-card"><h4>Q1. 真陽性を学ぶとき、最も重要な見方はどれですか。</h4><fieldset><label class="quiz-option"><input type="radio" name="confusion-matrix-q1" value="真陽性の定義と使う場面を区別する"><span>真陽性の定義と使う場面を区別する</span></label><label class="quiz-option"><input type="radio" name="confusion-matrix-q1" value="用語を英字順に暗記する"><span>用語を英字順に暗記する</span></label><label class="quiz-option"><input type="radio" name="confusion-matrix-q1" value="図表を見ずに数値だけを覚える"><span>図表を見ずに数値だけを覚える</span></label><label class="quiz-option"><input type="radio" name="confusion-matrix-q1" value="関連語をすべて同じ意味として扱う"><span>関連語をすべて同じ意味として扱う</span></label></fieldset></article><article class="quiz-card"><h4>Q2. 偽陽性と真陰性の関係を理解するために有効な学習はどれですか。</h4><fieldset><label class="quiz-option"><input type="radio" name="confusion-matrix-q2" value="操作できる図表で変化を見る"><span>操作できる図表で変化を見る</span></label><label class="quiz-option"><input type="radio" name="confusion-matrix-q2" value="公式資料を転載する"><span>公式資料を転載する</span></label><label class="quiz-option"><input type="radio" name="confusion-matrix-q2" value="ページタイトルだけ読む"><span>ページタイトルだけ読む</span></label><label class="quiz-option"><input type="radio" name="confusion-matrix-q2" value="選択肢をランダムに選ぶ"><span>選択肢をランダムに選ぶ</span></label></fieldset></article>
+              <article class="quiz-card"><h4>Q1. 予測結果を「真陽性・偽陽性・偽陰性・真陰性」の4区分で整理した表はどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="confusion-matrix-practice-0" value="混同行列"><span>混同行列</span></label><label class="quiz-option"><input type="radio" name="confusion-matrix-practice-0" value="相関行列"><span>相関行列</span></label><label class="quiz-option"><input type="radio" name="confusion-matrix-practice-0" value="重み行列"><span>重み行列</span></label><label class="quiz-option"><input type="radio" name="confusion-matrix-practice-0" value="共分散行列"><span>共分散行列</span></label></fieldset></article><article class="quiz-card"><h4>Q2. 分類器の閾値を変えながら真陽性率と偽陽性率の関係を描いた曲線、およびその下面積はどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="confusion-matrix-practice-1" value="ROC曲線とAUC"><span>ROC曲線とAUC</span></label><label class="quiz-option"><input type="radio" name="confusion-matrix-practice-1" value="学習曲線"><span>学習曲線</span></label><label class="quiz-option"><input type="radio" name="confusion-matrix-practice-1" value="損失曲線"><span>損失曲線</span></label><label class="quiz-option"><input type="radio" name="confusion-matrix-practice-1" value="ヒストグラム"><span>ヒストグラム</span></label></fieldset></article><article class="quiz-card"><h4>Q3. 実際に陰性のもののうち、正しく陰性と判定できた割合を表す指標はどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="confusion-matrix-practice-2" value="特異度（specificity）"><span>特異度（specificity）</span></label><label class="quiz-option"><input type="radio" name="confusion-matrix-practice-2" value="適合率"><span>適合率</span></label><label class="quiz-option"><input type="radio" name="confusion-matrix-practice-2" value="再現率"><span>再現率</span></label><label class="quiz-option"><input type="radio" name="confusion-matrix-practice-2" value="正解率"><span>正解率</span></label></fieldset></article>
             </div>
             <div class="quiz-actions">
               <button class="primary-button" type="button" id="gradeLessonQuiz">採点する</button>
@@ -90,11 +90,12 @@
         </aside>
       </div>
     </section>
-    <script type="application/json" id="lessonData">{"slug":"ml-overview/confusion-matrix","title":"混同行列","terms":["真陽性","偽陽性","真陰性","偽陰性"],"visual":{"type":"matrix","axis":"比較と関係"},"quiz":[{"id":"confusion-matrix-q1","prompt":"真陽性を学ぶとき、最も重要な見方はどれですか。","options":["真陽性の定義と使う場面を区別する","用語を英字順に暗記する","図表を見ずに数値だけを覚える","関連語をすべて同じ意味として扱う"],"answer":"真陽性の定義と使う場面を区別する"},{"id":"confusion-matrix-q2","prompt":"偽陽性と真陰性の関係を理解するために有効な学習はどれですか。","options":["操作できる図表で変化を見る","公式資料を転載する","ページタイトルだけ読む","選択肢をランダムに選ぶ"],"answer":"操作できる図表で変化を見る"}]}</script>
+    <script type="application/json" id="lessonData">{"slug":"ml-overview/confusion-matrix","title":"混同行列","terms":["真陽性","偽陽性","真陰性","偽陰性"],"visual":{"type":"relation-table","title":"混同行列の対応関係","columns":["概念","関係","区別ポイント"],"rows":[["真陽性","予測の当たり外れを4区分で整理し、指標の意味につなげる。","似た用語との境界を説明できるようにする"],["偽陽性","真陽性を理解するための関連語","似た用語との境界を説明できるようにする"],["真陰性","真陽性を理解するための関連語","似た用語との境界を説明できるようにする"],["偽陰性","真陽性を理解するための関連語","似た用語との境界を説明できるようにする"]]},"quiz":[{"id":"confusion-matrix-practice-0","prompt":"予測結果を「真陽性・偽陽性・偽陰性・真陰性」の4区分で整理した表はどれか。","options":["混同行列","相関行列","重み行列","共分散行列"],"answer":"混同行列","explanation":"\u003cb>混同行列（Confusion Matrix）\u003c/b>。適合率・再現率・正解率などの評価指標はここから計算される。"},{"id":"confusion-matrix-practice-1","prompt":"分類器の閾値を変えながら真陽性率と偽陽性率の関係を描いた曲線、およびその下面積はどれか。","options":["ROC曲線とAUC","学習曲線","損失曲線","ヒストグラム"],"answer":"ROC曲線とAUC","explanation":"\u003cb>ROC曲線\u003c/b>と、その下の面積\u003cb>AUC\u003c/b>。AUCが1に近いほど分類性能が高い。"},{"id":"confusion-matrix-practice-2","prompt":"実際に陰性のもののうち、正しく陰性と判定できた割合を表す指標はどれか。","options":["特異度（specificity）","適合率","再現率","正解率"],"answer":"特異度（specificity）","explanation":"\u003cb>特異度＝真陰性率＝TN/(TN+FP)\u003c/b>。一方、実際に陽性のものを正しく当てる割合が感度（＝再現率）。ROC曲線は感度と（1−特異度）の関係で描かれる。両者の意味の取り違えに注意。"}]}</script>
   </main>
   <footer class="app-footer">
     <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>
   </footer>
+  <script src="../../assets/js/visualizations.js" defer></script>
   <script src="../../assets/js/lesson.js" defer></script>
 </body>
 </html>

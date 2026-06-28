@@ -42,15 +42,15 @@
             <ul class="plain-list">
               <li>誤差逆伝播法を、試験問題の文脈で説明できる。</li>
               <li>勾配、連鎖律、重み更新との関係を区別できる。</li>
-              <li>図表を操作して、概念の変化やトレードオフを読み取れる。</li>
+              <li>判断フローから、確認すべき順序と分岐の意味を説明できる。</li>
             </ul>
           </section>
 
           <section class="lesson-section">
             <h3>本文解説</h3>
             <p>出力側の誤差を前の層へ伝え、重みを更新する流れを追う。</p>
-            <p>G検定では、用語の暗記だけでなく、どの場面でその考え方を使うのかが問われます。このページでは <strong>誤差逆伝播法、勾配、連鎖律、重み更新</strong> を一つの学習単位として扱い、定義、関係、判断の観点をまとめます。</p>
-            <p>まず用語の境界を押さえ、次に図表を操作して結果がどう変わるかを観察してください。操作によって値や形が変わる部分が、そのテーマで理解すべき中心です。</p>
+            <p>誤差逆伝播法では、誤差逆伝播法、勾配、連鎖律、重み更新を別々の暗記事項ではなく、問題文の条件から使い分ける知識として扱います。</p>
+            <p>演習データでは「出力と正解の誤差を出力層から入力層へ逆向きに伝え、重みを更新する学習アルゴリズムはどれか。」のように問われます。ポイントは、誤差逆伝播法（バックプロパゲーション）。連鎖律で各重みの勾配を効率的に求め、勾配降下法で更新する。ニューラルネット学習の基盤。</p>
           </section>
 
           <section class="lesson-section visual-lesson" aria-labelledby="visualTitle">
@@ -68,7 +68,7 @@
           <section class="lesson-section">
             <h3>確認問題</h3>
             <div class="quiz-area lesson-quiz">
-              <article class="quiz-card"><h4>Q1. 誤差逆伝播法を学ぶとき、最も重要な見方はどれですか。</h4><fieldset><label class="quiz-option"><input type="radio" name="backpropagation-q1" value="誤差逆伝播法の定義と使う場面を区別する"><span>誤差逆伝播法の定義と使う場面を区別する</span></label><label class="quiz-option"><input type="radio" name="backpropagation-q1" value="用語を英字順に暗記する"><span>用語を英字順に暗記する</span></label><label class="quiz-option"><input type="radio" name="backpropagation-q1" value="図表を見ずに数値だけを覚える"><span>図表を見ずに数値だけを覚える</span></label><label class="quiz-option"><input type="radio" name="backpropagation-q1" value="関連語をすべて同じ意味として扱う"><span>関連語をすべて同じ意味として扱う</span></label></fieldset></article><article class="quiz-card"><h4>Q2. 勾配と連鎖律の関係を理解するために有効な学習はどれですか。</h4><fieldset><label class="quiz-option"><input type="radio" name="backpropagation-q2" value="操作できる図表で変化を見る"><span>操作できる図表で変化を見る</span></label><label class="quiz-option"><input type="radio" name="backpropagation-q2" value="公式資料を転載する"><span>公式資料を転載する</span></label><label class="quiz-option"><input type="radio" name="backpropagation-q2" value="ページタイトルだけ読む"><span>ページタイトルだけ読む</span></label><label class="quiz-option"><input type="radio" name="backpropagation-q2" value="選択肢をランダムに選ぶ"><span>選択肢をランダムに選ぶ</span></label></fieldset></article>
+              <article class="quiz-card"><h4>Q1. 出力と正解の誤差を出力層から入力層へ逆向きに伝え、重みを更新する学習アルゴリズムはどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="backpropagation-practice-0" value="誤差逆伝播法"><span>誤差逆伝播法</span></label><label class="quiz-option"><input type="radio" name="backpropagation-practice-0" value="モンテカルロ法"><span>モンテカルロ法</span></label><label class="quiz-option"><input type="radio" name="backpropagation-practice-0" value="主成分分析"><span>主成分分析</span></label><label class="quiz-option"><input type="radio" name="backpropagation-practice-0" value="焼きなまし法"><span>焼きなまし法</span></label></fieldset></article><article class="quiz-card"><h4>Q2. 出力の誤差を出力側から入力側へさかのぼり、各重みの勾配を効率的に求めて更新する学習アルゴリズムはどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="backpropagation-practice-1" value="誤差逆伝播法"><span>誤差逆伝播法</span></label><label class="quiz-option"><input type="radio" name="backpropagation-practice-1" value="主成分分析"><span>主成分分析</span></label><label class="quiz-option"><input type="radio" name="backpropagation-practice-1" value="モンテカルロ木探索"><span>モンテカルロ木探索</span></label><label class="quiz-option"><input type="radio" name="backpropagation-practice-1" value="焼きなまし法"><span>焼きなまし法</span></label></fieldset></article><article class="quiz-card"><h4>Q3. 1986年に再評価され、多層ニューラルネットの学習を実用化する契機となった手法はどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="backpropagation-practice-2" value="誤差逆伝播法（バックプロパゲーション）"><span>誤差逆伝播法（バックプロパゲーション）</span></label><label class="quiz-option"><input type="radio" name="backpropagation-practice-2" value="モンテカルロ木探索"><span>モンテカルロ木探索</span></label><label class="quiz-option"><input type="radio" name="backpropagation-practice-2" value="主成分分析"><span>主成分分析</span></label><label class="quiz-option"><input type="radio" name="backpropagation-practice-2" value="遺伝的アルゴリズム"><span>遺伝的アルゴリズム</span></label></fieldset></article>
             </div>
             <div class="quiz-actions">
               <button class="primary-button" type="button" id="gradeLessonQuiz">採点する</button>
@@ -90,11 +90,12 @@
         </aside>
       </div>
     </section>
-    <script type="application/json" id="lessonData">{"slug":"dl-overview/backpropagation","title":"誤差逆伝播法","terms":["誤差逆伝播法","勾配","連鎖律","重み更新"],"visual":{"type":"flow","steps":["予測","損失計算","勾配計算","逆伝播","更新"],"axis":"比較と関係"},"quiz":[{"id":"backpropagation-q1","prompt":"誤差逆伝播法を学ぶとき、最も重要な見方はどれですか。","options":["誤差逆伝播法の定義と使う場面を区別する","用語を英字順に暗記する","図表を見ずに数値だけを覚える","関連語をすべて同じ意味として扱う"],"answer":"誤差逆伝播法の定義と使う場面を区別する"},{"id":"backpropagation-q2","prompt":"勾配と連鎖律の関係を理解するために有効な学習はどれですか。","options":["操作できる図表で変化を見る","公式資料を転載する","ページタイトルだけ読む","選択肢をランダムに選ぶ"],"answer":"操作できる図表で変化を見る"}]}</script>
+    <script type="application/json" id="lessonData">{"slug":"dl-overview/backpropagation","title":"誤差逆伝播法","terms":["誤差逆伝播法","勾配","連鎖律","重み更新"],"visual":{"type":"flow","title":"誤差逆伝播法","steps":[{"label":"予測","note":"起点"},{"label":"損失計算","note":"確認"},{"label":"勾配計算","note":"確認"},{"label":"逆伝播","note":"確認"},{"label":"更新","note":"結果"}]},"quiz":[{"id":"backpropagation-practice-0","prompt":"出力と正解の誤差を出力層から入力層へ逆向きに伝え、重みを更新する学習アルゴリズムはどれか。","options":["誤差逆伝播法","モンテカルロ法","主成分分析","焼きなまし法"],"answer":"誤差逆伝播法","explanation":"\u003cb>誤差逆伝播法（バックプロパゲーション）\u003c/b>。連鎖律で各重みの勾配を効率的に求め、勾配降下法で更新する。ニューラルネット学習の基盤。"},{"id":"backpropagation-practice-1","prompt":"出力の誤差を出力側から入力側へさかのぼり、各重みの勾配を効率的に求めて更新する学習アルゴリズムはどれか。","options":["誤差逆伝播法","主成分分析","モンテカルロ木探索","焼きなまし法"],"answer":"誤差逆伝播法","explanation":"【正解の理由】\u003cb>誤差逆伝播法（バックプロパゲーション）\u003c/b>は連鎖律で出力層から入力層へ勾配を伝え、各層の重みを勾配降下で更新する。【各選択肢】②PCAは次元削減、③は探索、④は最適化の別手法。【関連】層が深いと勾配消失が起き、ReLUやバッチ正規化で緩和する。多層NN学習の中核。"},{"id":"backpropagation-practice-2","prompt":"1986年に再評価され、多層ニューラルネットの学習を実用化する契機となった手法はどれか。","options":["誤差逆伝播法（バックプロパゲーション）","モンテカルロ木探索","主成分分析","遺伝的アルゴリズム"],"answer":"誤差逆伝播法（バックプロパゲーション）","explanation":"\u003cb>誤差逆伝播法\u003c/b>。ラメルハートらが1986年に有効性を示し、多層パーセプトロンの学習を可能にした。連鎖律で各層の勾配を効率的に求める点が要で、これによりニューラルネット研究が再び活性化した。"}]}</script>
   </main>
   <footer class="app-footer">
     <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>
   </footer>
+  <script src="../../assets/js/visualizations.js" defer></script>
   <script src="../../assets/js/lesson.js" defer></script>
 </body>
 </html>

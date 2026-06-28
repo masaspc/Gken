@@ -42,15 +42,15 @@
             <ul class="plain-list">
               <li>SaaSを、試験問題の文脈で説明できる。</li>
               <li>利用規約、SLA、データ利用との関係を区別できる。</li>
-              <li>図表を操作して、概念の変化やトレードオフを読み取れる。</li>
+              <li>対応表から、概念どうしの関係と区別ポイントを説明できる。</li>
             </ul>
           </section>
 
           <section class="lesson-section">
             <h3>本文解説</h3>
             <p>AIサービスを使う側・提供する側の確認ポイントを整理する。</p>
-            <p>G検定では、用語の暗記だけでなく、どの場面でその考え方を使うのかが問われます。このページでは <strong>SaaS、利用規約、SLA、データ利用</strong> を一つの学習単位として扱い、定義、関係、判断の観点をまとめます。</p>
-            <p>まず用語の境界を押さえ、次に図表を操作して結果がどう変わるかを観察してください。操作によって値や形が変わる部分が、そのテーマで理解すべき中心です。</p>
+            <p>AIサービス提供契約では、SaaS、利用規約、SLA、データ利用を別々の暗記事項ではなく、問題文の条件から使い分ける知識として扱います。</p>
+            <p>演習データでは「AIの研究・実装に伴う倫理的・法的・社会的な課題を総称する語はどれか。」のように問われます。ポイントは、【正解の理由】ELSI（Ethical, Legal and Social Issues）は、技術がもたらす倫理的・法的・社会的課題を包括的に検討する考え方。【各選択肢】②ROIは投資対効果、③SLAはサービス品質保証、④APIは接続仕様で...</p>
           </section>
 
           <section class="lesson-section visual-lesson" aria-labelledby="visualTitle">
@@ -68,7 +68,7 @@
           <section class="lesson-section">
             <h3>確認問題</h3>
             <div class="quiz-area lesson-quiz">
-              <article class="quiz-card"><h4>Q1. SaaSを学ぶとき、最も重要な見方はどれですか。</h4><fieldset><label class="quiz-option"><input type="radio" name="service-contract-q1" value="SaaSの定義と使う場面を区別する"><span>SaaSの定義と使う場面を区別する</span></label><label class="quiz-option"><input type="radio" name="service-contract-q1" value="用語を英字順に暗記する"><span>用語を英字順に暗記する</span></label><label class="quiz-option"><input type="radio" name="service-contract-q1" value="図表を見ずに数値だけを覚える"><span>図表を見ずに数値だけを覚える</span></label><label class="quiz-option"><input type="radio" name="service-contract-q1" value="関連語をすべて同じ意味として扱う"><span>関連語をすべて同じ意味として扱う</span></label></fieldset></article><article class="quiz-card"><h4>Q2. 利用規約とSLAの関係を理解するために有効な学習はどれですか。</h4><fieldset><label class="quiz-option"><input type="radio" name="service-contract-q2" value="操作できる図表で変化を見る"><span>操作できる図表で変化を見る</span></label><label class="quiz-option"><input type="radio" name="service-contract-q2" value="公式資料を転載する"><span>公式資料を転載する</span></label><label class="quiz-option"><input type="radio" name="service-contract-q2" value="ページタイトルだけ読む"><span>ページタイトルだけ読む</span></label><label class="quiz-option"><input type="radio" name="service-contract-q2" value="選択肢をランダムに選ぶ"><span>選択肢をランダムに選ぶ</span></label></fieldset></article>
+              <article class="quiz-card"><h4>Q1. AIの研究・実装に伴う倫理的・法的・社会的な課題を総称する語はどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="service-contract-practice-0" value="ELSI"><span>ELSI</span></label><label class="quiz-option"><input type="radio" name="service-contract-practice-0" value="ROI"><span>ROI</span></label><label class="quiz-option"><input type="radio" name="service-contract-practice-0" value="SLA"><span>SLA</span></label><label class="quiz-option"><input type="radio" name="service-contract-practice-0" value="API"><span>API</span></label></fieldset></article><article class="quiz-card"><h4>Q2. 本格開発の前に、技術的・事業的な実現可能性を小規模に検証する段階を何というか。</h4><fieldset><label class="quiz-option"><input type="radio" name="service-contract-practice-1" value="PoC（概念実証）"><span>PoC（概念実証）</span></label><label class="quiz-option"><input type="radio" name="service-contract-practice-1" value="MVP"><span>MVP</span></label><label class="quiz-option"><input type="radio" name="service-contract-practice-1" value="KPI"><span>KPI</span></label><label class="quiz-option"><input type="radio" name="service-contract-practice-1" value="SLA"><span>SLA</span></label></fieldset></article><article class="quiz-card"><h4>Q3. 科学技術の倫理的・法的・社会的課題を総称する語はどれか。</h4><fieldset><label class="quiz-option"><input type="radio" name="service-contract-practice-2" value="ELSI"><span>ELSI</span></label><label class="quiz-option"><input type="radio" name="service-contract-practice-2" value="CRISP-DM"><span>CRISP-DM</span></label><label class="quiz-option"><input type="radio" name="service-contract-practice-2" value="MLOps"><span>MLOps</span></label><label class="quiz-option"><input type="radio" name="service-contract-practice-2" value="SLA"><span>SLA</span></label></fieldset></article>
             </div>
             <div class="quiz-actions">
               <button class="primary-button" type="button" id="gradeLessonQuiz">採点する</button>
@@ -90,11 +90,12 @@
         </aside>
       </div>
     </section>
-    <script type="application/json" id="lessonData">{"slug":"law-contract/service-contract","title":"AIサービス提供契約","terms":["SaaS","利用規約","SLA","データ利用"],"visual":{"type":"matrix","axis":"比較と関係"},"quiz":[{"id":"service-contract-q1","prompt":"SaaSを学ぶとき、最も重要な見方はどれですか。","options":["SaaSの定義と使う場面を区別する","用語を英字順に暗記する","図表を見ずに数値だけを覚える","関連語をすべて同じ意味として扱う"],"answer":"SaaSの定義と使う場面を区別する"},{"id":"service-contract-q2","prompt":"利用規約とSLAの関係を理解するために有効な学習はどれですか。","options":["操作できる図表で変化を見る","公式資料を転載する","ページタイトルだけ読む","選択肢をランダムに選ぶ"],"answer":"操作できる図表で変化を見る"}]}</script>
+    <script type="application/json" id="lessonData">{"slug":"law-contract/service-contract","title":"AIサービス提供契約","terms":["SaaS","利用規約","SLA","データ利用"],"visual":{"type":"relation-table","title":"AIサービス提供契約の対応関係","columns":["概念","関係","区別ポイント"],"rows":[["SaaS","AIサービスを使う側・提供する側の確認ポイントを整理する。","似た用語との境界を説明できるようにする"],["利用規約","SaaSを理解するための関連語","似た用語との境界を説明できるようにする"],["SLA","SaaSを理解するための関連語","似た用語との境界を説明できるようにする"],["データ利用","SaaSを理解するための関連語","似た用語との境界を説明できるようにする"]]},"quiz":[{"id":"service-contract-practice-0","prompt":"AIの研究・実装に伴う倫理的・法的・社会的な課題を総称する語はどれか。","options":["ELSI","ROI","SLA","API"],"answer":"ELSI","explanation":"【正解の理由】\u003cb>ELSI（Ethical, Legal and Social Issues）\u003c/b>は、技術がもたらす倫理的・法的・社会的課題を包括的に検討する考え方。【各選択肢】②ROIは投資対効果、③SLAはサービス品質保証、④APIは接続仕様で無関係。【関連】公平性・プライバシー・説明責任・雇用への影響などを早期から検討する重要性。"},{"id":"service-contract-practice-1","prompt":"本格開発の前に、技術的・事業的な実現可能性を小規模に検証する段階を何というか。","options":["PoC（概念実証）","MVP","KPI","SLA"],"answer":"PoC（概念実証）","explanation":"\u003cb>PoC（Proof of Concept／概念実証）\u003c/b>。少ない投資で「そもそも実現・効果が見込めるか」を検証し、本格投資の判断に使う。"},{"id":"service-contract-practice-2","prompt":"科学技術の倫理的・法的・社会的課題を総称する語はどれか。","options":["ELSI","CRISP-DM","MLOps","SLA"],"answer":"ELSI","explanation":"\u003cb>ELSI（Ethical, Legal and Social Issues）\u003c/b>。AIを社会実装する際に技術面だけでなく倫理・法・社会の観点から検討する枠組み。"}]}</script>
   </main>
   <footer class="app-footer">
     <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>
   </footer>
+  <script src="../../assets/js/visualizations.js" defer></script>
   <script src="../../assets/js/lesson.js" defer></script>
 </body>
 </html>
