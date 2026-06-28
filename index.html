@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="G検定の試験範囲をインタラクティブな図解と小テストで学ぶ静的HTML学習サイト。">
+  <title>G検定インタラクティブ学習サイト</title>
+  <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">本文へ移動</a>
+
+  <header class="app-header">
+    <div class="brand-block">
+      <p class="eyebrow">JDLA G検定 学習ダッシュボード</p>
+      <h1>G検定インタラクティブ学習サイト</h1>
+      <p class="lead">公式シラバスの十区分を、動く図解・ミニテスト・用語検索で体系的に学べます。</p>
+    </div>
+    <div class="header-actions" aria-label="表示設定">
+      <button class="icon-button" type="button" id="themeToggle" aria-label="ライトテーマとダークテーマを切り替え">◐</button>
+      <a class="text-button" href="#sources">参照資料</a>
+    </div>
+  </header>
+
+  <nav class="top-nav" aria-label="主要ナビゲーション">
+    <a href="#map">学習マップ</a>
+    <a href="#today">今日の学習</a>
+    <a href="#visuals">インタラクティブ図解</a>
+    <a href="#quiz">ミニテスト</a>
+    <a href="#glossary">用語集</a>
+  </nav>
+
+  <main id="main">
+    <section class="dashboard-band" aria-labelledby="dashboardTitle">
+      <div>
+        <p class="section-kicker">Current plan</p>
+        <h2 id="dashboardTitle">初期公開版の学習体験</h2>
+        <p>ログインなしで使える静的HTML教材です。進捗はこのブラウザだけに保存され、GitHub Pages でそのまま公開できます。</p>
+      </div>
+      <div class="metric-grid" aria-label="学習サマリー">
+        <div class="metric">
+          <span id="completedModules">0</span>
+          <small>完了モジュール</small>
+        </div>
+        <div class="metric">
+          <span id="averageScore">0%</span>
+          <small>平均スコア</small>
+        </div>
+        <div class="metric">
+          <span id="nextMinutes">25分</span>
+          <small>今日の目安</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="layout" id="map" aria-labelledby="mapTitle">
+      <div class="section-heading">
+        <p class="section-kicker">Learning map</p>
+        <h2 id="mapTitle">学習マップ</h2>
+        <p>十区分と横断復習を、試験範囲に沿って並べています。カードを選ぶと今日の学習に反映されます。</p>
+      </div>
+      <div class="module-grid" id="moduleGrid" aria-live="polite"></div>
+    </section>
+
+    <section class="learning-surface" id="today" aria-labelledby="todayTitle">
+      <div class="module-detail">
+        <p class="section-kicker">Today's module</p>
+        <h2 id="todayTitle">今日の学習</h2>
+        <div id="moduleDetail"></div>
+      </div>
+      <aside class="progress-panel" aria-label="進捗操作">
+        <h3>学習記録</h3>
+        <p id="progressHint">モジュールを完了すると、この端末に進捗が保存されます。</p>
+        <button class="primary-button" type="button" id="completeModule">このモジュールを完了</button>
+        <button class="ghost-button" type="button" id="resetProgress">進捗をリセット</button>
+      </aside>
+    </section>
+
+    <section id="visuals" class="layout" aria-labelledby="visualTitle">
+      <div class="section-heading">
+        <p class="section-kicker">Interactive lab</p>
+        <h2 id="visualTitle">インタラクティブ図解</h2>
+        <p>数式を丸暗記する前に、パラメータを動かして「何が変わるか」を掴みます。</p>
+      </div>
+
+      <div class="visual-tabs" role="tablist" aria-label="図解の種類">
+        <button type="button" class="tab is-active" data-visual-tab="distribution">分布</button>
+        <button type="button" class="tab" data-visual-tab="regression">回帰</button>
+        <button type="button" class="tab" data-visual-tab="classification">分類</button>
+        <button type="button" class="tab" data-visual-tab="network">ニューラルネットワーク</button>
+        <button type="button" class="tab" data-visual-tab="attention">Attention</button>
+      </div>
+
+      <div class="visual-workbench">
+        <div class="control-panel" id="visualControls"></div>
+        <div class="visual-output">
+          <canvas id="mainCanvas" width="900" height="520" role="img" aria-label="選択した学習テーマのインタラクティブ図解"></canvas>
+          <div id="svgVisual" class="svg-visual" aria-label="構造図"></div>
+          <div class="visual-metrics" id="visualMetrics" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="quiz-band" id="quiz" aria-labelledby="quizTitle">
+      <div class="section-heading">
+        <p class="section-kicker">Practice</p>
+        <h2 id="quizTitle">ミニテスト</h2>
+        <p>独自問題で、公式試験に近い粒度の理解確認を行います。</p>
+      </div>
+      <div id="quizArea" class="quiz-area"></div>
+      <div class="quiz-actions">
+        <button class="primary-button" type="button" id="gradeQuiz">採点する</button>
+        <button class="ghost-button" type="button" id="newQuiz">別の問題にする</button>
+      </div>
+      <p class="quiz-result" id="quizResult" aria-live="polite"></p>
+    </section>
+
+    <section class="glossary-band" id="glossary" aria-labelledby="glossaryTitle">
+      <div class="section-heading">
+        <p class="section-kicker">Glossary</p>
+        <h2 id="glossaryTitle">用語集</h2>
+        <p>G検定で頻出する概念を、短い説明で検索できます。</p>
+      </div>
+      <label class="search-box">
+        <span>用語検索</span>
+        <input type="search" id="glossarySearch" placeholder="例: Attention、過学習、個人情報保護法">
+      </label>
+      <div class="glossary-list" id="glossaryList"></div>
+    </section>
+
+    <section class="sources-band" id="sources" aria-labelledby="sourcesTitle">
+      <div class="section-heading">
+        <p class="section-kicker">Sources</p>
+        <h2 id="sourcesTitle">参照資料と公開方針</h2>
+      </div>
+      <div class="source-grid">
+        <article>
+          <h3>公式資料</h3>
+          <p>JDLA公式のG検定ページ、シラバス、公式例題を参照し、本文は独自に要約・再構成しています。</p>
+          <a href="https://www.jdla.org/certificate/general/" target="_blank" rel="noopener">JDLA G検定とは</a>
+        </article>
+        <article>
+          <h3>安全な公開</h3>
+          <p>初期版はサーバー保存なし。進捗はブラウザ内の localStorage のみに保存します。</p>
+        </article>
+        <article>
+          <h3>更新日</h3>
+          <p>サイト初版: 2026-06-28。法律・倫理分野は改訂確認を優先します。</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <p>G検定インタラクティブ学習サイト。公式資料の代替ではなく、学習補助として公開します。</p>
+  </footer>
+
+  <script src="./assets/js/quizzes.js" defer></script>
+  <script src="./assets/js/visualizations.js" defer></script>
+  <script src="./assets/js/app.js" defer></script>
+</body>
+</html>
