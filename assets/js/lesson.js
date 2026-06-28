@@ -57,6 +57,7 @@
   }
 
   function buildControls() {
+    if (!controls || !lesson.visual || lesson.visual.type === "none") return;
     controls.innerHTML = "";
     const type = lesson.visual.type;
     if (type === "distribution") {
@@ -85,6 +86,7 @@
   }
 
   function renderVisual() {
+    if (!lesson.visual || lesson.visual.type === "none" || !canvas || !svg || !metrics) return;
     if (!core) {
       controls.innerHTML = "<p>可視化エンジンを読み込めませんでした。</p>";
       return;

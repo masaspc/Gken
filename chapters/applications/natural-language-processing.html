@@ -48,9 +48,7 @@
 
           <section class="lesson-section">
             <h3>本文解説</h3>
-            <p>テキストを数値として扱い、意味や文脈を処理する流れを理解する。</p>
-            <p>自然言語処理では、形態素解析、埋め込み、言語モデル、翻訳を別々の暗記事項ではなく、問題文の条件から使い分ける知識として扱います。</p>
-            <p>演習データでは「日本語テキストを単語に分割し品詞などを判定する、自然言語処理の前処理はどれか。」のように問われます。ポイントは、形態素解析。分かち書きのない日本語を意味の最小単位（形態素）に分割し品詞を付与する。MeCabなどが代表ツール。</p>
+            <p>テキストを数値として扱い、意味や文脈を処理する流れを理解する。</p><p>確認問題では、形態素解析。分かち書きのない日本語を意味の最小単位（形態素）に分割し品詞を付与する。MeCabなどが代表ツール。</p><p>別の出題では、BLEU。機械翻訳の出力と人手の参照訳のn-gram一致率を基に採点する代表的指標。簡便だが意味の正しさを完全には測れない限界もある。言語モデル内在評価のperplexityとは目的が異なる。</p>
           </section>
 
           <section class="lesson-section visual-lesson" aria-labelledby="visualTitle">
@@ -90,7 +88,7 @@
         </aside>
       </div>
     </section>
-    <script type="application/json" id="lessonData">{"slug":"applications/natural-language-processing","title":"自然言語処理","terms":["形態素解析","埋め込み","言語モデル","翻訳"],"visual":{"type":"flow","title":"自然言語処理","steps":[{"label":"テキスト","note":"起点"},{"label":"トークン化","note":"確認"},{"label":"埋め込み","note":"確認"},{"label":"文脈化","note":"確認"},{"label":"出力","note":"結果"}]},"quiz":[{"id":"natural-language-processing-practice-0","prompt":"日本語テキストを単語に分割し品詞などを判定する、自然言語処理の前処理はどれか。","options":["形態素解析","正規化","アノテーション","トークン化（部分語）のみ"],"answer":"形態素解析","explanation":"\u003cb>形態素解析\u003c/b>。分かち書きのない日本語を意味の最小単位（形態素）に分割し品詞を付与する。MeCabなどが代表ツール。"},{"id":"natural-language-processing-practice-1","prompt":"機械翻訳の自動評価で、生成文と参照文のn-gramの一致度を測る指標はどれか。","options":["BLEU","perplexity","AUC","F値"],"answer":"BLEU","explanation":"\u003cb>BLEU\u003c/b>。機械翻訳の出力と人手の参照訳のn-gram一致率を基に採点する代表的指標。簡便だが意味の正しさを完全には測れない限界もある。言語モデル内在評価のperplexityとは目的が異なる。"},{"id":"natural-language-processing-practice-2","prompt":"レビュー文が肯定的か否定的かを判定するタスクはどれか。","options":["感情分析（センチメント分析）","固有表現抽出","機械翻訳","音声認識"],"answer":"感情分析（センチメント分析）","explanation":"\u003cb>感情分析\u003c/b>。テキストの極性（ポジティブ/ネガティブ）や感情を推定する。マーケティングやVOC分析で広く使われる分類タスク。単語の分散表現や言語モデルを特徴として用いる。"}]}</script>
+    <script type="application/json" id="lessonData">{"slug":"applications/natural-language-processing","title":"自然言語処理","terms":["形態素解析","埋め込み","言語モデル","翻訳"],"visual":{"type":"flow","title":"自然言語処理の基本パイプライン","steps":[{"label":"テキスト","note":"文章を入力する"},{"label":"トークン化","note":"語やサブワードに分ける"},{"label":"埋め込み","note":"ベクトルへ変換"},{"label":"文脈化","note":"前後関係を反映"},{"label":"出力","note":"分類・翻訳などへ使う"}]},"quiz":[{"id":"natural-language-processing-practice-0","prompt":"日本語テキストを単語に分割し品詞などを判定する、自然言語処理の前処理はどれか。","options":["形態素解析","正規化","アノテーション","トークン化（部分語）のみ"],"answer":"形態素解析","explanation":"\u003cb>形態素解析\u003c/b>。分かち書きのない日本語を意味の最小単位（形態素）に分割し品詞を付与する。MeCabなどが代表ツール。"},{"id":"natural-language-processing-practice-1","prompt":"機械翻訳の自動評価で、生成文と参照文のn-gramの一致度を測る指標はどれか。","options":["BLEU","perplexity","AUC","F値"],"answer":"BLEU","explanation":"\u003cb>BLEU\u003c/b>。機械翻訳の出力と人手の参照訳のn-gram一致率を基に採点する代表的指標。簡便だが意味の正しさを完全には測れない限界もある。言語モデル内在評価のperplexityとは目的が異なる。"},{"id":"natural-language-processing-practice-2","prompt":"レビュー文が肯定的か否定的かを判定するタスクはどれか。","options":["感情分析（センチメント分析）","固有表現抽出","機械翻訳","音声認識"],"answer":"感情分析（センチメント分析）","explanation":"\u003cb>感情分析\u003c/b>。テキストの極性（ポジティブ/ネガティブ）や感情を推定する。マーケティングやVOC分析で広く使われる分類タスク。単語の分散表現や言語モデルを特徴として用いる。"}]}</script>
   </main>
   <footer class="app-footer">
     <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>

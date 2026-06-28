@@ -48,9 +48,7 @@
 
           <section class="lesson-section">
             <h3>本文解説</h3>
-            <p>AIサービスを使う側・提供する側の確認ポイントを整理する。</p>
-            <p>AIサービス提供契約では、SaaS、利用規約、SLA、データ利用を別々の暗記事項ではなく、問題文の条件から使い分ける知識として扱います。</p>
-            <p>演習データでは「AIの研究・実装に伴う倫理的・法的・社会的な課題を総称する語はどれか。」のように問われます。ポイントは、【正解の理由】ELSI（Ethical, Legal and Social Issues）は、技術がもたらす倫理的・法的・社会的課題を包括的に検討する考え方。【各選択肢】②ROIは投資対効果、③SLAはサービス品質保証、④APIは接続仕様で...</p>
+            <p>AIサービスを使う側・提供する側の確認ポイントを整理する。</p><p>確認問題では、【正解の理由】ELSI（Ethical, Legal and Social Issues）は、技術がもたらす倫理的・法的・社会的課題を包括的に検討する考え方。【各選択肢】②ROIは投資対効果、③SLAはサービス品質保証、④APIは接続仕様で無関係。【関連】公平性・プライバシー・説明責任・雇用への影響などを早期から検討する重要性。</p><p>別の出題では、PoC（Proof of Concept／概念実証）。少ない投資で「そもそも実現・効果が見込めるか」を検証し、本格投資の判断に使う。</p>
           </section>
 
           <section class="lesson-section visual-lesson" aria-labelledby="visualTitle">
@@ -90,7 +88,7 @@
         </aside>
       </div>
     </section>
-    <script type="application/json" id="lessonData">{"slug":"law-contract/service-contract","title":"AIサービス提供契約","terms":["SaaS","利用規約","SLA","データ利用"],"visual":{"type":"relation-table","title":"AIサービス提供契約の対応関係","columns":["概念","関係","区別ポイント"],"rows":[["SaaS","AIサービスを使う側・提供する側の確認ポイントを整理する。","似た用語との境界を説明できるようにする"],["利用規約","SaaSを理解するための関連語","似た用語との境界を説明できるようにする"],["SLA","SaaSを理解するための関連語","似た用語との境界を説明できるようにする"],["データ利用","SaaSを理解するための関連語","似た用語との境界を説明できるようにする"]]},"quiz":[{"id":"service-contract-practice-0","prompt":"AIの研究・実装に伴う倫理的・法的・社会的な課題を総称する語はどれか。","options":["ELSI","ROI","SLA","API"],"answer":"ELSI","explanation":"【正解の理由】\u003cb>ELSI（Ethical, Legal and Social Issues）\u003c/b>は、技術がもたらす倫理的・法的・社会的課題を包括的に検討する考え方。【各選択肢】②ROIは投資対効果、③SLAはサービス品質保証、④APIは接続仕様で無関係。【関連】公平性・プライバシー・説明責任・雇用への影響などを早期から検討する重要性。"},{"id":"service-contract-practice-1","prompt":"本格開発の前に、技術的・事業的な実現可能性を小規模に検証する段階を何というか。","options":["PoC（概念実証）","MVP","KPI","SLA"],"answer":"PoC（概念実証）","explanation":"\u003cb>PoC（Proof of Concept／概念実証）\u003c/b>。少ない投資で「そもそも実現・効果が見込めるか」を検証し、本格投資の判断に使う。"},{"id":"service-contract-practice-2","prompt":"科学技術の倫理的・法的・社会的課題を総称する語はどれか。","options":["ELSI","CRISP-DM","MLOps","SLA"],"answer":"ELSI","explanation":"\u003cb>ELSI（Ethical, Legal and Social Issues）\u003c/b>。AIを社会実装する際に技術面だけでなく倫理・法・社会の観点から検討する枠組み。"}]}</script>
+    <script type="application/json" id="lessonData">{"slug":"law-contract/service-contract","title":"AIサービス提供契約","terms":["SaaS","利用規約","SLA","データ利用"],"visual":{"type":"relation-table","title":"AIサービス提供契約の確認点","columns":["項目","確認する内容","利用者側の注意"],"rows":[["利用規約","入力データや出力結果の扱い","再学習利用の有無を確認"],["SLA","可用性・応答時間・サポート範囲","業務停止時の代替手段を用意"],["データ利用","保存場所・第三者提供・削除条件","個人情報や機密情報を入れる前に確認"]]},"quiz":[{"id":"service-contract-practice-0","prompt":"AIの研究・実装に伴う倫理的・法的・社会的な課題を総称する語はどれか。","options":["ELSI","ROI","SLA","API"],"answer":"ELSI","explanation":"【正解の理由】\u003cb>ELSI（Ethical, Legal and Social Issues）\u003c/b>は、技術がもたらす倫理的・法的・社会的課題を包括的に検討する考え方。【各選択肢】②ROIは投資対効果、③SLAはサービス品質保証、④APIは接続仕様で無関係。【関連】公平性・プライバシー・説明責任・雇用への影響などを早期から検討する重要性。"},{"id":"service-contract-practice-1","prompt":"本格開発の前に、技術的・事業的な実現可能性を小規模に検証する段階を何というか。","options":["PoC（概念実証）","MVP","KPI","SLA"],"answer":"PoC（概念実証）","explanation":"\u003cb>PoC（Proof of Concept／概念実証）\u003c/b>。少ない投資で「そもそも実現・効果が見込めるか」を検証し、本格投資の判断に使う。"},{"id":"service-contract-practice-2","prompt":"科学技術の倫理的・法的・社会的課題を総称する語はどれか。","options":["ELSI","CRISP-DM","MLOps","SLA"],"answer":"ELSI","explanation":"\u003cb>ELSI（Ethical, Legal and Social Issues）\u003c/b>。AIを社会実装する際に技術面だけでなく倫理・法・社会の観点から検討する枠組み。"}]}</script>
   </main>
   <footer class="app-footer">
     <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>

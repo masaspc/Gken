@@ -299,11 +299,13 @@
     const scale = Math.sqrt(3);
     const focus = Math.max(0, Math.min(tokens.length - 1, Number(state.focus ?? spec.focus ?? 2)));
     const temperature = Number(state.temperature ?? 1);
-    const vectors = tokens.map((_, i) => [
-      Math.sin((i + 1) * 1.7),
-      Math.cos((i + 1) * 0.9),
-      (i === focus ? 1 : 0) + (i / tokens.length)
-    ]);
+    const vectors = Array.isArray(spec.features) && spec.features.length === tokens.length
+      ? spec.features
+      : tokens.map((_, i) => [
+        Math.sin((i + 1) * 1.7),
+        Math.cos((i + 1) * 0.9),
+        (i === focus ? 1 : 0) + (i / tokens.length)
+      ]);
     const query = vectors[focus];
     const scores = vectors.map((key) => dot(query, key) / scale / temperature);
     const weights = softmax(scores);
@@ -326,7 +328,9 @@
     const boxes = steps.map((step, index) => {
       const x = 95 + index * (710 / Math.max(steps.length - 1, 1));
       const line = index < steps.length - 1 ? `<line x1="${x + 58}" y1="215" x2="${95 + (index + 1) * (710 / Math.max(steps.length - 1, 1)) - 58}" y2="215" stroke="var(--line)" stroke-width="3"/>` : "";
-      return `${line}<rect x="${x - 58}" y="168" width="116" height="94" rx="8" fill="var(--surface-strong)" stroke="var(--line)"/><text x="${x}" y="204" text-anchor="middle" font-size="13" fill="currentColor">${escapeSvg(step.label || step)}</text><text x="${x}" y="229" text-anchor="middle" font-size="11" fill="currentColor">${escapeSvg(step.note || `Step ${index + 1}`)}</text>`;
+      const label = flowTspans(step.label || step, x, 198, 7, 2);
+      const note = flowTspans(step.note || `Step ${index + 1}`, x, 232, 9, 2);
+      return `${line}<rect x="${x - 58}" y="168" width="116" height="94" rx="8" fill="var(--surface-strong)" stroke="var(--line)"/><text text-anchor="middle" font-size="13" fill="currentColor">${label}</text><text text-anchor="middle" font-size="11" fill="currentColor">${note}</text>`;
     }).join("");
     out.svg.innerHTML = `<svg viewBox="0 0 900 430" role="img" aria-label="判断フロー"><rect x="1" y="1" width="898" height="428" rx="8" fill="transparent" stroke="var(--line)"/><text x="40" y="50" font-size="22" fill="currentColor">${escapeSvg(spec.title || "判断フロー")}</text><text x="40" y="80" font-size="13" fill="currentColor">左から右へ、確認順に読む</text>${boxes}</svg>`;
     metric(out.metrics, "ステップ数", steps.length);
@@ -356,15 +360,43 @@
   };
 
   function tableSvg(title, columns, rows, subtitle) {
-    const rowH = 54;
+    const wrappedRows = rows.map((row) => columns.map((_, c) => wrapText(Array.isArray(row) ? row[c] : row[columns[c]] || "", 18, 3)));
+    const rowH = 82;
     const startY = 118;
     const colW = 780 / columns.length;
     const header = columns.map((col, i) => `<rect x="${60 + i * colW}" y="78" width="${colW}" height="40" fill="var(--accent)" opacity="${i === 0 ? 1 : 0.82}"/><text x="${72 + i * colW}" y="103" font-size="13" fill="#fff">${escapeSvg(col)}</text>`).join("");
-    const body = rows.map((row, r) => columns.map((_, c) => {
-      const value = Array.isArray(row) ? row[c] : row[columns[c]] || "";
-      return `<rect x="${60 + c * colW}" y="${startY + r * rowH}" width="${colW}" height="${rowH}" fill="${r % 2 ? "var(--surface)" : "var(--surface-strong)"}" stroke="var(--line)"/><text x="${72 + c * colW}" y="${startY + r * rowH + 24}" font-size="12" fill="currentColor">${escapeSvg(value).slice(0, 28)}</text>`;
+    const body = wrappedRows.map((row, r) => columns.map((_, c) => {
+      const lines = row[c].map((line, i) => `<tspan x="${72 + c * colW}" dy="${i === 0 ? 0 : 17}">${escapeSvg(line)}</tspan>`).join("");
+      return `<rect x="${60 + c * colW}" y="${startY + r * rowH}" width="${colW}" height="${rowH}" fill="${r % 2 ? "var(--surface)" : "var(--surface-strong)"}" stroke="var(--line)"/><text x="${72 + c * colW}" y="${startY + r * rowH + 24}" font-size="12" fill="currentColor">${lines}</text>`;
     }).join("")).join("");
     return `<svg viewBox="0 0 900 ${Math.max(430, startY + rows.length * rowH + 40)}" role="img" aria-label="${escapeSvg(title)}"><rect x="1" y="1" width="898" height="${Math.max(428, startY + rows.length * rowH + 38)}" rx="8" fill="transparent" stroke="var(--line)"/><text x="40" y="44" font-size="22" fill="currentColor">${escapeSvg(title)}</text><text x="40" y="66" font-size="13" fill="currentColor">${escapeSvg(subtitle)}</text>${header}${body}</svg>`;
+  }
+
+  function wrapText(value, limit, maxLines) {
+    const text = String(value || "");
+    const lines = [];
+    let current = "";
+    Array.from(text).forEach((char) => {
+      if ((current + char).length > limit) {
+        lines.push(current);
+        current = char;
+      } else {
+        current += char;
+      }
+    });
+    if (current) lines.push(current);
+    if (lines.length > maxLines) {
+      const kept = lines.slice(0, maxLines);
+      kept[maxLines - 1] = `${kept[maxLines - 1].slice(0, Math.max(0, limit - 1))}…`;
+      return kept;
+    }
+    return lines.length ? lines : [""];
+  }
+
+  function flowTspans(value, x, y, limit, maxLines) {
+    return wrapText(value, limit, maxLines)
+      .map((line, i) => `<tspan x="${x}" y="${y + i * 15}">${escapeSvg(line)}</tspan>`)
+      .join("");
   }
 
   function dot(a, b) {

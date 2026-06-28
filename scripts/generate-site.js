@@ -6,6 +6,10 @@ const practiceQuestionsPath = path.join(root, "content", "gtest-questions.json")
 const practiceQuestions = fs.existsSync(practiceQuestionsPath)
   ? JSON.parse(fs.readFileSync(practiceQuestionsPath, "utf8"))
   : [];
+const lessonContentPath = path.join(root, "content", "lesson-content.json");
+const lessonContent = fs.existsSync(lessonContentPath)
+  ? JSON.parse(fs.readFileSync(lessonContentPath, "utf8"))
+  : {};
 
 const chapters = [
   {
@@ -168,16 +172,19 @@ const chapters = [
 ];
 
 function lesson(slug, title, terms, focus, visualType, steps) {
+  const authored = lessonContent[slug] || {};
   return {
     slug,
     title,
     terms,
-    focus,
-    visual: visualFor(slug, title, terms, focus, visualType, steps)
+    focus: authored.focus || focus,
+    explanation: authored.explanation || [],
+    visual: visualFor(slug, title, visualType, authored.visual)
   };
 }
 
-function visualFor(slug, title, terms, focus, visualType, steps) {
+function visualFor(slug, title, visualType, authoredVisual) {
+  if (authoredVisual) return authoredVisual;
   if (visualType === "distribution") {
     return { type: "distribution", title, concept: "平均・分散・サンプル数" };
   }
@@ -185,13 +192,13 @@ function visualFor(slug, title, terms, focus, visualType, steps) {
     if (["regression", "correlation", "overfitting", "machine-learning-rise", "gradient-descent", "loss-functions"].includes(slug)) {
       return { type: "regression", title, concept: "説明変数と目的変数の関係" };
     }
-    return relationSpec(title, terms, focus);
+    return { type: "none", reason: "数値散布図より本文で概念の区別を読むテーマ" };
   }
   if (visualType === "boundary") {
     if (["classification", "evaluation-metrics", "metrics-math", "perceptron"].includes(slug)) {
       return { type: "classification", title, concept: "しきい値・決定境界・混同行列" };
     }
-    return relationSpec(title, terms, focus);
+    return { type: "none", reason: "分類境界ではなく社会的な判断観点を整理するテーマ" };
   }
   if (visualType === "network") {
     return {
@@ -209,66 +216,20 @@ function visualFor(slug, title, terms, focus, visualType, steps) {
       type: "attention",
       title,
       tokens: title.includes("Transformer")
-        ? ["入力", "位置", "Query", "Key", "Value", "出力"]
-        : ["文脈", "Query", "Key", "Value", "重み"]
+        ? ["私は", "昨日", "読んだ", "本を", "要約する"]
+        : ["猫が", "魚を", "静かに", "食べた", "。"]
     };
   }
   if (visualType === "flow") {
-    return {
-      type: "flow",
-      title,
-      steps: (steps || terms).map((step, index) => ({ label: step, note: index === 0 ? "起点" : index === (steps || terms).length - 1 ? "結果" : "確認" }))
-    };
+    return { type: "none", reason: "手書きの手順データがないため図表を表示しない" };
   }
   if (visualType === "bars") {
-    return comparisonSpec(title, terms, focus);
+    return { type: "none", reason: "比較表の著作データがないため図表を表示しない" };
   }
   if (visualType === "matrix") {
-    return relationSpec(title, terms, focus);
+    return { type: "none", reason: "対応表の著作データがないため図表を表示しない" };
   }
-  return relationSpec(title, terms, focus);
-}
-
-function comparisonSpec(title, terms, focus) {
-  return {
-    type: "comparison-table",
-    title: `${title}の比較`,
-    columns: ["項目", "役割", "試験での見方"],
-    rows: terms.map((term) => [
-      term,
-      roleFor(term, focus),
-      perspectiveFor(term)
-    ])
-  };
-}
-
-function relationSpec(title, terms, focus) {
-  return {
-    type: "relation-table",
-    title: `${title}の対応関係`,
-    columns: ["概念", "関係", "区別ポイント"],
-    rows: terms.map((term, index) => [
-      term,
-      index === 0 ? focus : `${terms[0]}を理解するための関連語`,
-      perspectiveFor(term)
-    ])
-  };
-}
-
-function roleFor(term, focus) {
-  if (/正解率|適合率|再現率|F値|IoU|RMSE|MAE/.test(term)) return "評価指標としてモデルの性能を読む";
-  if (/ReLU|Sigmoid|Tanh|活性化/.test(term)) return "ニューラルネットワークに非線形性を与える";
-  if (/著作権|個人情報|特許|営業秘密|契約/.test(term)) return "法的な確認対象として扱う";
-  if (/公平性|透明性|安全性|ガバナンス/.test(term)) return "AI利用時のリスク管理観点として扱う";
-  return focus;
-}
-
-function perspectiveFor(term) {
-  if (/率|F値|IoU|RMSE|MAE/.test(term)) return "式・分母・分子を確認する";
-  if (/法|契約|情報|秘密|権/.test(term)) return "要件・対象・例外を分ける";
-  if (/Attention|Query|Key|Value/.test(term)) return "重み計算の役割を区別する";
-  if (/強化|報酬|方策/.test(term)) return "状態・行動・報酬の流れで見る";
-  return "似た用語との境界を説明できるようにする";
+  return { type: "none", reason: "このページは本文と確認問題で扱う" };
 }
 
 function ensureDir(dir) {
@@ -342,6 +303,20 @@ function lessonPage(chapter, item, index) {
   const next = flat[currentIndex + 1];
   const quiz = quizFor(item, chapter);
   const explanation = explanationFor(item, quiz);
+  const visualSection = hasVisual(item.visual) ? `          <section class="lesson-section visual-lesson" aria-labelledby="visualTitle">
+            <h3 id="visualTitle">インタラクティブ図表</h3>
+            <div class="visual-workbench lesson-workbench">
+              <div class="control-panel" id="lessonControls"></div>
+              <div class="visual-output">
+                <canvas id="lessonCanvas" width="900" height="500" role="img" aria-label="${esc(item.title)}のインタラクティブ図表"></canvas>
+                <div id="lessonSvg" class="svg-visual" aria-label="${esc(item.title)}の構造図"></div>
+                <div class="visual-metrics lesson-metrics" id="lessonMetrics" aria-live="polite"></div>
+              </div>
+            </div>
+          </section>` : `          <section class="lesson-section">
+            <h3>このページの整理</h3>
+            <p>このテーマは無理に図表化せず、定義・判断条件・確認問題を中心に学習します。</p>
+          </section>`;
   const data = {
     slug: `${chapter.slug}/${item.slug}`,
     title: item.title,
@@ -369,22 +344,10 @@ function lessonPage(chapter, item, index) {
 
           <section class="lesson-section">
             <h3>本文解説</h3>
-            <p>${esc(item.focus)}</p>
-            <p>${esc(explanation.main)}</p>
-            <p>${esc(explanation.exam)}</p>
+            ${explanation.map((paragraph) => `<p>${esc(paragraph)}</p>`).join("")}
           </section>
 
-          <section class="lesson-section visual-lesson" aria-labelledby="visualTitle">
-            <h3 id="visualTitle">インタラクティブ図表</h3>
-            <div class="visual-workbench lesson-workbench">
-              <div class="control-panel" id="lessonControls"></div>
-              <div class="visual-output">
-                <canvas id="lessonCanvas" width="900" height="500" role="img" aria-label="${esc(item.title)}のインタラクティブ図表"></canvas>
-                <div id="lessonSvg" class="svg-visual" aria-label="${esc(item.title)}の構造図"></div>
-                <div class="visual-metrics lesson-metrics" id="lessonMetrics" aria-live="polite"></div>
-              </div>
-            </div>
-          </section>
+${visualSection}
 
           <section class="lesson-section">
             <h3>確認問題</h3>
@@ -463,14 +426,18 @@ function matchingQuestions(item, chapter) {
 }
 
 function explanationFor(item, quiz) {
-  const first = quiz[0];
-  const explanation = first ? stripHtml(first.explanation || "") : "";
-  return {
-    main: `${item.title}では、${item.terms.join("、")}を別々の暗記事項ではなく、問題文の条件から使い分ける知識として扱います。`,
-    exam: explanation
-      ? `演習データでは「${first.prompt}」のように問われます。ポイントは、${shorten(explanation, 120)}`
-      : `試験では、${item.terms[0]}の定義だけでなく、関連語との違いと利用場面が問われます。`
-  };
+  if (item.explanation && item.explanation.length >= 2) return item.explanation;
+  const paragraphs = [item.focus];
+  const useful = quiz
+    .map((question) => stripHtml(question.explanation || ""))
+    .filter(Boolean)
+    .map((text) => shorten(text, 170));
+  if (useful[0]) paragraphs.push(`確認問題では、${useful[0]}`);
+  if (useful[1]) paragraphs.push(`別の出題では、${useful[1]}`);
+  if (paragraphs.length < 2) {
+    paragraphs.push(`${item.title}は、用語の定義だけでなく、どの条件で使われるかを問われやすい項目です。`);
+  }
+  return paragraphs;
 }
 
 function chapterCategory(title) {
@@ -509,12 +476,17 @@ function chapterIndex(chapter) {
 }
 
 function visualGoal(type) {
+  if (type === "none") return "本文と確認問題から、定義・判断条件・典型的な出題観点を説明できる。";
   if (["distribution", "regression", "classification", "attention"].includes(type)) {
     return "パラメータを動かし、計算結果・指標・重みの変化を読み取れる。";
   }
   if (type === "network") return "構造図から、層・ユニット・接続の役割を読み取れる。";
   if (type === "flow") return "判断フローから、確認すべき順序と分岐の意味を説明できる。";
   return "対応表から、概念どうしの関係と区別ポイントを説明できる。";
+}
+
+function hasVisual(visual) {
+  return visual && visual.type && visual.type !== "none";
 }
 
 function relatedTerms(terms) {
@@ -527,16 +499,17 @@ function tagTerms(terms) {
 
 function homePage() {
   const totalLessons = chapters.reduce((sum, chapter) => sum + chapter.lessons.length, 0);
+  const visualLessons = allLessons().filter(({ lesson }) => hasVisual(lesson.visual)).length;
   const body = `    <section class="dashboard-band">
       <div>
         <p class="section-kicker">Full syllabus build</p>
         <h2>用語・内容単位で学ぶG検定教材</h2>
-        <p>トップページだけで終わらせず、シラバスの重要項目を独立ページ化しました。各ページには本文、用語、操作できる図表、確認問題があります。</p>
+        <p>トップページだけで終わらせず、シラバスの重要項目を独立ページ化しました。図表は有効なテーマに限定し、本文・用語・確認問題と合わせて学びます。</p>
       </div>
       <div class="metric-grid">
         <div class="metric"><span>${chapters.length}</span><small>章</small></div>
         <div class="metric"><span>${totalLessons}</span><small>学習ページ</small></div>
-        <div class="metric"><span>全</span><small>ページ図表つき</small></div>
+        <div class="metric"><span>${visualLessons}</span><small>図表つきページ</small></div>
       </div>
     </section>
     <section class="layout">
@@ -553,12 +526,12 @@ function homePage() {
       <div class="section-heading">
         <p class="section-kicker">Interactive coverage</p>
         <h2>図表の種類</h2>
-        <p>分布、散布図、分類境界、ネットワーク、Attention、フロー、マトリクス、比較チャートを学習内容に応じて使い分けます。</p>
+        <p>分布、回帰、分類境界、ネットワーク、Attention、フロー、比較表、対応表を、学習内容に合う場合だけ使います。</p>
       </div>
       <div class="source-grid">
         <article><h3>数理・統計</h3><p>平均、分散、相関、評価指標は操作できるグラフで学びます。</p></article>
         <article><h3>技術構造</h3><p>ニューラルネットワーク、CNN、Attentionは構造図で関係を見ます。</p></article>
-        <article><h3>法律・倫理</h3><p>判断フローとリスクマトリクスで確認手順として学びます。</p></article>
+        <article><h3>法律・倫理</h3><p>表やフローが有効な論点だけ可視化し、無理な数値化はしません。</p></article>
       </div>
     </section>
     <section class="layout">

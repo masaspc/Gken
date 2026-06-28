@@ -48,9 +48,7 @@
 
           <section class="lesson-section">
             <h3>本文解説</h3>
-            <p>現在の言語モデルの中核であるTransformerの部品を整理する。</p>
-            <p>Transformerでは、Transformer、Self-Attention、Multi-Head Attention、位置エンコーディングを別々の暗記事項ではなく、問題文の条件から使い分ける知識として扱います。</p>
-            <p>演習データでは「2017年の論文「Attention Is All You Need」で提案され、Attention機構を中核とするモデルはどれか。」のように問われます。ポイントは、Transformerは再帰や畳み込みを使わず自己注意（Self-Attention）で系列を並列処理する。BERTやGPTなど大規模言語モデルの基盤となった。</p>
+            <p>現在の言語モデルの中核であるTransformerの部品を整理する。</p><p>確認問題では、Transformerは再帰や畳み込みを使わず自己注意（Self-Attention）で系列を並列処理する。BERTやGPTなど大規模言語モデルの基盤となった。</p><p>別の出題では、Attention（注意機構）。系列内の関連性に応じて重みを割り当てる。自己注意（Self-Attention）はTransformerの中核。</p>
           </section>
 
           <section class="lesson-section visual-lesson" aria-labelledby="visualTitle">
@@ -90,7 +88,7 @@
         </aside>
       </div>
     </section>
-    <script type="application/json" id="lessonData">{"slug":"dl-elements/transformer","title":"Transformer","terms":["Transformer","Self-Attention","Multi-Head Attention","位置エンコーディング"],"visual":{"type":"attention","title":"Transformer","tokens":["入力","位置","Query","Key","Value","出力"]},"quiz":[{"id":"transformer-practice-0","prompt":"2017年の論文「Attention Is All You Need」で提案され、Attention機構を中核とするモデルはどれか。","options":["LSTM","Transformer","AlexNet","word2vec"],"answer":"Transformer","explanation":"\u003cb>Transformer\u003c/b>は再帰や畳み込みを使わず自己注意（Self-Attention）で系列を並列処理する。BERTやGPTなど大規模言語モデルの基盤となった。"},{"id":"transformer-practice-1","prompt":"入力系列の中で「どこに注目するか」を動的に重み付けし、長距離の依存関係を捉える仕組みはどれか。","options":["プーリング","Attention（注意機構）","ドロップアウト","畳み込み"],"answer":"Attention（注意機構）","explanation":"\u003cb>Attention（注意機構）\u003c/b>。系列内の関連性に応じて重みを割り当てる。自己注意（Self-Attention）はTransformerの中核。"},{"id":"transformer-practice-2","prompt":"Transformerが単語の並び順（位置）の情報を取り込むために加える仕組みはどれか。","options":["位置エンコーディング","畳み込み","再帰結合","プーリング"],"answer":"位置エンコーディング","explanation":"\u003cb>位置エンコーディング（Positional Encoding）\u003c/b>。自己注意は順序を区別しないため、位置情報を埋め込みに加算して系列の順序を扱えるようにする。"}]}</script>
+    <script type="application/json" id="lessonData">{"slug":"dl-elements/transformer","title":"Transformer","terms":["Transformer","Self-Attention","Multi-Head Attention","位置エンコーディング"],"visual":{"type":"attention","title":"Transformer: Self-Attentionの入力例","tokens":["私は","昨日","読んだ","本を","要約する"],"focus":4,"features":[[0.8,0.2,0.1],[0.1,0.8,0.2],[0.4,0.7,0.2],[0.7,0.6,0.1],[0.6,0.7,0.5]]},"quiz":[{"id":"transformer-practice-0","prompt":"2017年の論文「Attention Is All You Need」で提案され、Attention機構を中核とするモデルはどれか。","options":["LSTM","Transformer","AlexNet","word2vec"],"answer":"Transformer","explanation":"\u003cb>Transformer\u003c/b>は再帰や畳み込みを使わず自己注意（Self-Attention）で系列を並列処理する。BERTやGPTなど大規模言語モデルの基盤となった。"},{"id":"transformer-practice-1","prompt":"入力系列の中で「どこに注目するか」を動的に重み付けし、長距離の依存関係を捉える仕組みはどれか。","options":["プーリング","Attention（注意機構）","ドロップアウト","畳み込み"],"answer":"Attention（注意機構）","explanation":"\u003cb>Attention（注意機構）\u003c/b>。系列内の関連性に応じて重みを割り当てる。自己注意（Self-Attention）はTransformerの中核。"},{"id":"transformer-practice-2","prompt":"Transformerが単語の並び順（位置）の情報を取り込むために加える仕組みはどれか。","options":["位置エンコーディング","畳み込み","再帰結合","プーリング"],"answer":"位置エンコーディング","explanation":"\u003cb>位置エンコーディング（Positional Encoding）\u003c/b>。自己注意は順序を区別しないため、位置情報を埋め込みに加算して系列の順序を扱えるようにする。"}]}</script>
   </main>
   <footer class="app-footer">
     <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>
