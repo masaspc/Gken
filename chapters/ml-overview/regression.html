@@ -22,9 +22,12 @@
   </header>
   <nav class="top-nav" aria-label="主要ナビゲーション">
     <a href="../../index.html">学習マップ</a>
+    <a href="../../dashboard/index.html">ダッシュボード</a>
+    <a href="../../mock/index.html">模試</a>
+    <a href="../../review/index.html">復習</a>
+    <a href="../../search/index.html">検索</a>
     <a href="../../practice/index.html">4択演習</a>
     <a href="../../glossary/index.html">用語集</a>
-    <a href="../../review/index.html">横断復習</a>
     <a href="../../sources/index.html">参照資料</a>
   </nav>
   <main id="main">
@@ -82,18 +85,22 @@
           <ol>
             <li>回帰</li><li>目的変数</li><li>説明変数</li><li>残差</li>
           </ol>
+          <h3>関連する練習問題</h3>
+          <p><a href="../../practice/index.html?cat=undefined">この章の4択演習を開く</a></p>
           <h3>前後の学習</h3>
           <p><a href="../../chapters/ml-overview/supervised-learning.html">前: 教師あり学習</a></p>
           <p><a href="../../chapters/ml-overview/classification.html">次: 分類</a></p>
         </aside>
       </div>
     </section>
-    <script type="application/json" id="lessonData">{"slug":"ml-overview/regression","title":"回帰","terms":["回帰","目的変数","説明変数","残差"],"visual":{"type":"regression","title":"回帰","concept":"説明変数と目的変数の関係"},"quiz":[{"id":"regression-practice-0","prompt":"入力と出力の関係を直線（超平面）で表し、誤差の二乗和を最小化して当てはめる回帰手法はどれか。","options":["ロジスティック回帰","線形回帰","決定木","k-means"],"answer":"線形回帰","explanation":"\u003cb>線形回帰\u003c/b>。最小二乗法で残差平方和を最小化し、連続値を予測する。"},{"id":"regression-practice-1","prompt":"重回帰分析で、説明変数同士に強い相関があり回帰係数が不安定になる問題はどれか。","options":["多重共線性（マルチコ）","次元の呪い","過学習","勾配消失"],"answer":"多重共線性（マルチコ）","explanation":"\u003cb>多重共線性\u003c/b>。相関の高い説明変数が併存すると、係数の推定が不安定になり解釈も困難になる。相関の高い変数を除く・主成分分析でまとめる・正則化などで対処する。"},{"id":"regression-practice-2","prompt":"回帰モデルが目的変数の変動をどれだけ説明できているかを0〜1で表す指標はどれか。","options":["決定係数（R²）","AUC","適合率","エントロピー"],"answer":"決定係数（R²）","explanation":"\u003cb>決定係数R²\u003c/b>。1に近いほど当てはまりが良い（全変動のうち説明できた割合）。ただしR²は変数を増やすと上がりやすいため、自由度調整済みR²も併用する。"}]}</script>
+    <script type="application/json" id="lessonData">{"slug":"ml-overview/regression","title":"回帰","terms":["回帰","目的変数","説明変数","残差"],"visual":{"type":"regression","title":"回帰","concept":"説明変数と目的変数の関係"},"quiz":[{"id":"regression-practice-0","qid":"q-51e6a1b8","cat":"第3章 機械学習","q":"入力と出力の関係を直線（超平面）で表し、誤差の二乗和を最小化して当てはめる回帰手法はどれか。","c":["ロジスティック回帰","線形回帰","決定木","k-means"],"a":1,"e":"\u003cb>線形回帰\u003c/b>。最小二乗法で残差平方和を最小化し、連続値を予測する。","prompt":"入力と出力の関係を直線（超平面）で表し、誤差の二乗和を最小化して当てはめる回帰手法はどれか。","options":["ロジスティック回帰","線形回帰","決定木","k-means"],"answer":"線形回帰","explanation":"\u003cb>線形回帰\u003c/b>。最小二乗法で残差平方和を最小化し、連続値を予測する。"},{"id":"regression-practice-1","qid":"q-ae3ce98b","cat":"第3章 機械学習","q":"重回帰分析で、説明変数同士に強い相関があり回帰係数が不安定になる問題はどれか。","c":["多重共線性（マルチコ）","次元の呪い","過学習","勾配消失"],"a":0,"e":"\u003cb>多重共線性\u003c/b>。相関の高い説明変数が併存すると、係数の推定が不安定になり解釈も困難になる。相関の高い変数を除く・主成分分析でまとめる・正則化などで対処する。","prompt":"重回帰分析で、説明変数同士に強い相関があり回帰係数が不安定になる問題はどれか。","options":["多重共線性（マルチコ）","次元の呪い","過学習","勾配消失"],"answer":"多重共線性（マルチコ）","explanation":"\u003cb>多重共線性\u003c/b>。相関の高い説明変数が併存すると、係数の推定が不安定になり解釈も困難になる。相関の高い変数を除く・主成分分析でまとめる・正則化などで対処する。"},{"id":"regression-practice-2","qid":"q-34799ef4","cat":"第3章 機械学習","q":"回帰モデルが目的変数の変動をどれだけ説明できているかを0〜1で表す指標はどれか。","c":["決定係数（R²）","AUC","適合率","エントロピー"],"a":0,"e":"\u003cb>決定係数R²\u003c/b>。1に近いほど当てはまりが良い（全変動のうち説明できた割合）。ただしR²は変数を増やすと上がりやすいため、自由度調整済みR²も併用する。","prompt":"回帰モデルが目的変数の変動をどれだけ説明できているかを0〜1で表す指標はどれか。","options":["決定係数（R²）","AUC","適合率","エントロピー"],"answer":"決定係数（R²）","explanation":"\u003cb>決定係数R²\u003c/b>。1に近いほど当てはまりが良い（全変動のうち説明できた割合）。ただしR²は変数を増やすと上がりやすいため、自由度調整済みR²も併用する。"}]}</script>
   </main>
   <footer class="app-footer">
     <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>
   </footer>
   <script src="../../assets/js/visualizations.js" defer></script>
+  <script src="../../assets/js/store.js" defer></script>
+  <script src="../../assets/js/learning.js" defer></script>
   <script src="../../assets/js/lesson.js" defer></script>
 </body>
 </html>

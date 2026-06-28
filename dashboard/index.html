@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="G検定学習の進捗と弱点を確認するダッシュボードです。">
+  <title>学習ダッシュボード | G検定インタラクティブ学習サイト</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">本文へ移動</a>
+  <header class="app-header compact-header">
+    <div class="brand-block">
+      <p class="eyebrow">G検定 Interactive Syllabus</p>
+      <h1>学習ダッシュボード</h1>
+      <p class="lead">G検定学習の進捗と弱点を確認するダッシュボードです。</p>
+    </div>
+    <div class="header-actions">
+      <button class="icon-button" type="button" id="themeToggle" aria-label="ライトテーマとダークテーマを切り替え">◐</button>
+      <a class="text-button" href="../index.html">トップ</a>
+    </div>
+  </header>
+  <nav class="top-nav" aria-label="主要ナビゲーション">
+    <a href="../index.html">学習マップ</a>
+    <a href="../dashboard/index.html">ダッシュボード</a>
+    <a href="../mock/index.html">模試</a>
+    <a href="../review/index.html">復習</a>
+    <a href="../search/index.html">検索</a>
+    <a href="../practice/index.html">4択演習</a>
+    <a href="../glossary/index.html">用語集</a>
+    <a href="../sources/index.html">参照資料</a>
+  </nav>
+  <main id="main">
+    <section class="layout">
+      <div class="section-heading">
+        <p class="section-kicker">Dashboard</p>
+        <h2>学習ダッシュボード</h2>
+        <p>レッスン進捗、問題カバレッジ、弱点カテゴリ、模試履歴、試験日からの学習ノルマを確認します。</p>
+      </div>
+      <div class="dashboard-metrics" id="dashboardMetrics"></div>
+      <section class="dashboard-panel">
+        <h3>カテゴリ別正答率</h3>
+        <div class="category-stats" id="categoryStats"></div>
+      </section>
+      <section class="dashboard-panel">
+        <h3>試験日からの学習プラン</h3>
+        <div class="practice-toolbar">
+          <label class="control-field"><span>受験日</span><input id="examDate" type="date"></label>
+          <button class="primary-button" type="button" id="savePlan">保存</button>
+        </div>
+        <p id="planSummary" class="progress-state"></p>
+      </section>
+      <section class="dashboard-panel">
+        <h3>模試履歴</h3>
+        <div id="examHistory"></div>
+      </section>
+      <section class="dashboard-panel">
+        <h3>進捗のバックアップ</h3>
+        <div class="practice-toolbar">
+          <button class="ghost-button" type="button" id="exportProgress">エクスポート</button>
+          <label class="ghost-button import-button">インポート<input id="importProgress" type="file" accept="application/json"></label>
+        </div>
+        <p id="importStatus" class="progress-state"></p>
+      </section>
+    </section>
+  </main>
+  <footer class="app-footer">
+    <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>
+  </footer>
+  <script src="../assets/js/store.js" defer></script>
+  <script src="../assets/js/learning.js" defer></script>
+  <script src="../assets/js/dashboard.js" defer></script>
+</body>
+</html>

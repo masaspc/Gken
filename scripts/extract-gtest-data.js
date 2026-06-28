@@ -1,4 +1,5 @@
 const fs = require("fs");
+const crypto = require("crypto");
 
 const html = fs.readFileSync("gtest-quiz.html", "utf8");
 
@@ -17,6 +18,11 @@ function extractArray(name, nextMarker) {
 
 const questions = eval(extractArray("QUESTIONS", "const CATS"));
 const glossary = eval(extractArray("GLOSSARY", "const GCATS"));
+
+questions.forEach((question) => {
+  const key = JSON.stringify([question.q, question.c]);
+  question.id = question.id || `q-${crypto.createHash("sha1").update(key).digest("hex").slice(0, 8)}`;
+});
 
 fs.mkdirSync("content", { recursive: true });
 fs.writeFileSync("content/gtest-questions.json", JSON.stringify(questions, null, 2), "utf8");

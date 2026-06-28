@@ -22,9 +22,12 @@
   </header>
   <nav class="top-nav" aria-label="主要ナビゲーション">
     <a href="../../index.html">学習マップ</a>
+    <a href="../../dashboard/index.html">ダッシュボード</a>
+    <a href="../../mock/index.html">模試</a>
+    <a href="../../review/index.html">復習</a>
+    <a href="../../search/index.html">検索</a>
     <a href="../../practice/index.html">4択演習</a>
     <a href="../../glossary/index.html">用語集</a>
-    <a href="../../review/index.html">横断復習</a>
     <a href="../../sources/index.html">参照資料</a>
   </nav>
   <main id="main">
@@ -79,18 +82,22 @@
           <ol>
             <li>全結合層</li><li>重み行列</li><li>特徴結合</li><li>パラメータ</li>
           </ol>
+          <h3>関連する練習問題</h3>
+          <p><a href="../../practice/index.html?cat=undefined">この章の4択演習を開く</a></p>
           <h3>前後の学習</h3>
           <p><a href="../../chapters/dl-overview/batch-normalization.html">前: バッチ正規化</a></p>
           <p><a href="../../chapters/dl-elements/convolution.html">次: 畳み込み層</a></p>
         </aside>
       </div>
     </section>
-    <script type="application/json" id="lessonData">{"slug":"dl-elements/fully-connected","title":"全結合層","terms":["全結合層","重み行列","特徴結合","パラメータ"],"visual":{"type":"network","title":"全結合層","layers":[{"name":"入力","units":4},{"name":"特徴抽出","units":6},{"name":"出力","units":2}]},"quiz":[{"id":"fully-connected-practice-0","prompt":"入力ユニット100、出力ユニット10の全結合層（バイアスあり）のパラメータ数はいくつか。","options":["1010","1000","110","10000"],"answer":"1010","explanation":"全結合層のパラメータ＝（入力数×出力数）＋出力数（バイアス）＝100×10＋10＝\u003cb>1010\u003c/b>。重み行列1000個＋バイアス10個。層が増えるとパラメータが急増し、過学習や計算量の要因になる。"},{"id":"fully-connected-practice-1","prompt":"特徴マップ全体を1つの値（チャネルごとの平均）に集約し、全結合層を減らして過学習を抑える手法はどれか。","options":["グローバル平均プーリング（GAP）","最大プーリング","ストライド","パディング"],"answer":"グローバル平均プーリング（GAP）","explanation":"\u003cb>GAP\u003c/b>。各チャネルの平均で空間次元を潰し、巨大な全結合層を不要にしてパラメータと過学習を削減する。GoogLeNet以降のCNNで広く採用。位置情報を捨てる代わりに頑健性が増す。"},{"id":"fully-connected-practice-2","prompt":"畳み込み層が全結合層に比べてパラメータ数を大きく減らせる主な理由はどれか。","options":["フィルタを画像全体で使い回す重み共有","ニューロンを毎回ランダムに無効化するから","出力を確率に変換するから","勾配を逆向きに流すから"],"answer":"フィルタを画像全体で使い回す重み共有","explanation":"【正解の理由】畳み込みでは同じ\u003cb>フィルタ（重み）を画像全体で共有\u003c/b>し、各ニューロンは局所領域のみと結合するため、全結合に比べパラメータが激減する。【各選択肢】②はドロップアウト、③はソフトマックス、④は誤差逆伝播の説明で理由として不適。【関連】重み共有は平行移動に強い特徴抽出にもつながる。"}]}</script>
+    <script type="application/json" id="lessonData">{"slug":"dl-elements/fully-connected","title":"全結合層","terms":["全結合層","重み行列","特徴結合","パラメータ"],"visual":{"type":"network","title":"全結合層","layers":[{"name":"入力","units":4},{"name":"特徴抽出","units":6},{"name":"出力","units":2}]},"quiz":[{"id":"fully-connected-practice-0","qid":"q-f8aa6e31","cat":"第9章 計算・数理","q":"入力ユニット100、出力ユニット10の全結合層（バイアスあり）のパラメータ数はいくつか。","c":["1010","1000","110","10000"],"a":0,"e":"全結合層のパラメータ＝（入力数×出力数）＋出力数（バイアス）＝100×10＋10＝\u003cb>1010\u003c/b>。重み行列1000個＋バイアス10個。層が増えるとパラメータが急増し、過学習や計算量の要因になる。","prompt":"入力ユニット100、出力ユニット10の全結合層（バイアスあり）のパラメータ数はいくつか。","options":["1010","1000","110","10000"],"answer":"1010","explanation":"全結合層のパラメータ＝（入力数×出力数）＋出力数（バイアス）＝100×10＋10＝\u003cb>1010\u003c/b>。重み行列1000個＋バイアス10個。層が増えるとパラメータが急増し、過学習や計算量の要因になる。"},{"id":"fully-connected-practice-1","qid":"q-d4863864","cat":"第5章 要素技術","q":"特徴マップ全体を1つの値（チャネルごとの平均）に集約し、全結合層を減らして過学習を抑える手法はどれか。","c":["グローバル平均プーリング（GAP）","最大プーリング","ストライド","パディング"],"a":0,"e":"\u003cb>GAP\u003c/b>。各チャネルの平均で空間次元を潰し、巨大な全結合層を不要にしてパラメータと過学習を削減する。GoogLeNet以降のCNNで広く採用。位置情報を捨てる代わりに頑健性が増す。","prompt":"特徴マップ全体を1つの値（チャネルごとの平均）に集約し、全結合層を減らして過学習を抑える手法はどれか。","options":["グローバル平均プーリング（GAP）","最大プーリング","ストライド","パディング"],"answer":"グローバル平均プーリング（GAP）","explanation":"\u003cb>GAP\u003c/b>。各チャネルの平均で空間次元を潰し、巨大な全結合層を不要にしてパラメータと過学習を削減する。GoogLeNet以降のCNNで広く採用。位置情報を捨てる代わりに頑健性が増す。"},{"id":"fully-connected-practice-2","qid":"q-2698a1ab","cat":"第5章 要素技術","q":"畳み込み層が全結合層に比べてパラメータ数を大きく減らせる主な理由はどれか。","c":["フィルタを画像全体で使い回す重み共有","ニューロンを毎回ランダムに無効化するから","出力を確率に変換するから","勾配を逆向きに流すから"],"a":0,"e":"【正解の理由】畳み込みでは同じ\u003cb>フィルタ（重み）を画像全体で共有\u003c/b>し、各ニューロンは局所領域のみと結合するため、全結合に比べパラメータが激減する。【各選択肢】②はドロップアウト、③はソフトマックス、④は誤差逆伝播の説明で理由として不適。【関連】重み共有は平行移動に強い特徴抽出にもつながる。","prompt":"畳み込み層が全結合層に比べてパラメータ数を大きく減らせる主な理由はどれか。","options":["フィルタを画像全体で使い回す重み共有","ニューロンを毎回ランダムに無効化するから","出力を確率に変換するから","勾配を逆向きに流すから"],"answer":"フィルタを画像全体で使い回す重み共有","explanation":"【正解の理由】畳み込みでは同じ\u003cb>フィルタ（重み）を画像全体で共有\u003c/b>し、各ニューロンは局所領域のみと結合するため、全結合に比べパラメータが激減する。【各選択肢】②はドロップアウト、③はソフトマックス、④は誤差逆伝播の説明で理由として不適。【関連】重み共有は平行移動に強い特徴抽出にもつながる。"}]}</script>
   </main>
   <footer class="app-footer">
     <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>
   </footer>
   <script src="../../assets/js/visualizations.js" defer></script>
+  <script src="../../assets/js/store.js" defer></script>
+  <script src="../../assets/js/learning.js" defer></script>
   <script src="../../assets/js/lesson.js" defer></script>
 </body>
 </html>

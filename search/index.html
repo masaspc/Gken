@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="教材と問題を横断検索します。">
+  <title>サイト内検索 | G検定インタラクティブ学習サイト</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">本文へ移動</a>
+  <header class="app-header compact-header">
+    <div class="brand-block">
+      <p class="eyebrow">G検定 Interactive Syllabus</p>
+      <h1>サイト内検索</h1>
+      <p class="lead">教材と問題を横断検索します。</p>
+    </div>
+    <div class="header-actions">
+      <button class="icon-button" type="button" id="themeToggle" aria-label="ライトテーマとダークテーマを切り替え">◐</button>
+      <a class="text-button" href="../index.html">トップ</a>
+    </div>
+  </header>
+  <nav class="top-nav" aria-label="主要ナビゲーション">
+    <a href="../index.html">学習マップ</a>
+    <a href="../dashboard/index.html">ダッシュボード</a>
+    <a href="../mock/index.html">模試</a>
+    <a href="../review/index.html">復習</a>
+    <a href="../search/index.html">検索</a>
+    <a href="../practice/index.html">4択演習</a>
+    <a href="../glossary/index.html">用語集</a>
+    <a href="../sources/index.html">参照資料</a>
+  </nav>
+  <main id="main">
+    <section class="layout">
+      <div class="section-heading">
+        <p class="section-kicker">Search</p>
+        <h2>サイト内検索</h2>
+        <p>レッスン、用語、問題を横断して検索できます。</p>
+      </div>
+      <label class="search-box"><span>検索語</span><input id="siteSearch" type="search" placeholder="例: Attention、著作権、混同行列"></label>
+      <div class="search-results" id="searchResults"></div>
+    </section>
+  </main>
+  <footer class="app-footer">
+    <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>
+  </footer>
+  <script src="../assets/js/store.js" defer></script>
+  <script src="../assets/js/learning.js" defer></script>
+  <script src="../assets/js/search.js" defer></script>
+</body>
+</html>

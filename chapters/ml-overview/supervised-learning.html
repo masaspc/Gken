@@ -22,9 +22,12 @@
   </header>
   <nav class="top-nav" aria-label="主要ナビゲーション">
     <a href="../../index.html">学習マップ</a>
+    <a href="../../dashboard/index.html">ダッシュボード</a>
+    <a href="../../mock/index.html">模試</a>
+    <a href="../../review/index.html">復習</a>
+    <a href="../../search/index.html">検索</a>
     <a href="../../practice/index.html">4択演習</a>
     <a href="../../glossary/index.html">用語集</a>
-    <a href="../../review/index.html">横断復習</a>
     <a href="../../sources/index.html">参照資料</a>
   </nav>
   <main id="main">
@@ -81,18 +84,22 @@
           <ol>
             <li>教師あり学習</li><li>ラベル</li><li>訓練データ</li><li>予測</li>
           </ol>
+          <h3>関連する練習問題</h3>
+          <p><a href="../../practice/index.html?cat=undefined">この章の4択演習を開く</a></p>
           <h3>前後の学習</h3>
           <p><a href="../../chapters/ai-history/deep-learning-rise.html">前: ディープラーニングの発展</a></p>
           <p><a href="../../chapters/ml-overview/regression.html">次: 回帰</a></p>
         </aside>
       </div>
     </section>
-    <script type="application/json" id="lessonData">{"slug":"ml-overview/supervised-learning","title":"教師あり学習","terms":["教師あり学習","ラベル","訓練データ","予測"],"visual":{"type":"relation-table","title":"教師あり学習: データの役割","columns":["要素","役割","確認ポイント"],"rows":[["入力データ","予測の根拠になる特徴を持つ","学習時と運用時で分布が変わらないか"],["ラベル","正解としてモデルに対応関係を教える","誤ラベルや主観差が混ざらないか"],["予測モデル","入力から出力を推定する関数を学ぶ","未知データで汎化するか"]]},"quiz":[{"id":"supervised-learning-practice-0","prompt":"次のうち『教師なし学習』に分類されるタスクはどれか。","options":["顧客のクラスタリング","スパムメールの分類","住宅価格の回帰予測","画像にラベルを付けて学習する分類"],"answer":"顧客のクラスタリング","explanation":"正解ラベルを使わずデータの構造を見つける\u003cb>クラスタリング\u003c/b>が教師なし。スパム分類・回帰・ラベル付き画像分類はいずれも正解（教師信号）を使う教師あり学習。学習の種類（教師あり/なし/強化/自己教師）の切り分けは頻出。"},{"id":"supervised-learning-practice-1","prompt":"ラベルなしの大量データから、データ自身の一部を予測課題に変えて表現を学ぶ枠組みはどれか。","options":["教師あり学習","自己教師あり学習","強化学習","アンサンブル学習"],"answer":"自己教師あり学習","explanation":"\u003cb>自己教師あり学習（Self-Supervised Learning）\u003c/b>。マスク予測など、データから擬似的な正解を作って学ぶ。大規模言語モデルや基盤モデルの事前学習を支える。"},{"id":"supervised-learning-practice-2","prompt":"正解ラベルのないデータから構造やまとまりを見つける学習はどれか。","options":["教師あり学習","教師なし学習","強化学習","転移学習"],"answer":"教師なし学習","explanation":"\u003cb>教師なし学習\u003c/b>。クラスタリング（k-means）や次元削減（PCA）が代表。正解ラベルを使う教師あり学習、報酬で学ぶ強化学習と区別する。"}]}</script>
+    <script type="application/json" id="lessonData">{"slug":"ml-overview/supervised-learning","title":"教師あり学習","terms":["教師あり学習","ラベル","訓練データ","予測"],"visual":{"type":"relation-table","title":"教師あり学習: データの役割","columns":["要素","役割","確認ポイント"],"rows":[["入力データ","予測の根拠になる特徴を持つ","学習時と運用時で分布が変わらないか"],["ラベル","正解としてモデルに対応関係を教える","誤ラベルや主観差が混ざらないか"],["予測モデル","入力から出力を推定する関数を学ぶ","未知データで汎化するか"]]},"quiz":[{"id":"supervised-learning-practice-0","qid":"q-a26dcefd","cat":"第3章 機械学習","q":"次のうち『教師なし学習』に分類されるタスクはどれか。","c":["顧客のクラスタリング","スパムメールの分類","住宅価格の回帰予測","画像にラベルを付けて学習する分類"],"a":0,"e":"正解ラベルを使わずデータの構造を見つける\u003cb>クラスタリング\u003c/b>が教師なし。スパム分類・回帰・ラベル付き画像分類はいずれも正解（教師信号）を使う教師あり学習。学習の種類（教師あり/なし/強化/自己教師）の切り分けは頻出。","prompt":"次のうち『教師なし学習』に分類されるタスクはどれか。","options":["顧客のクラスタリング","スパムメールの分類","住宅価格の回帰予測","画像にラベルを付けて学習する分類"],"answer":"顧客のクラスタリング","explanation":"正解ラベルを使わずデータの構造を見つける\u003cb>クラスタリング\u003c/b>が教師なし。スパム分類・回帰・ラベル付き画像分類はいずれも正解（教師信号）を使う教師あり学習。学習の種類（教師あり/なし/強化/自己教師）の切り分けは頻出。"},{"id":"supervised-learning-practice-1","qid":"q-502577f9","cat":"第5章 要素技術","q":"ラベルなしの大量データから、データ自身の一部を予測課題に変えて表現を学ぶ枠組みはどれか。","c":["教師あり学習","自己教師あり学習","強化学習","アンサンブル学習"],"a":1,"e":"\u003cb>自己教師あり学習（Self-Supervised Learning）\u003c/b>。マスク予測など、データから擬似的な正解を作って学ぶ。大規模言語モデルや基盤モデルの事前学習を支える。","prompt":"ラベルなしの大量データから、データ自身の一部を予測課題に変えて表現を学ぶ枠組みはどれか。","options":["教師あり学習","自己教師あり学習","強化学習","アンサンブル学習"],"answer":"自己教師あり学習","explanation":"\u003cb>自己教師あり学習（Self-Supervised Learning）\u003c/b>。マスク予測など、データから擬似的な正解を作って学ぶ。大規模言語モデルや基盤モデルの事前学習を支える。"},{"id":"supervised-learning-practice-2","qid":"q-97afd05b","cat":"第3章 機械学習","q":"正解ラベルのないデータから構造やまとまりを見つける学習はどれか。","c":["教師あり学習","教師なし学習","強化学習","転移学習"],"a":1,"e":"\u003cb>教師なし学習\u003c/b>。クラスタリング（k-means）や次元削減（PCA）が代表。正解ラベルを使う教師あり学習、報酬で学ぶ強化学習と区別する。","prompt":"正解ラベルのないデータから構造やまとまりを見つける学習はどれか。","options":["教師あり学習","教師なし学習","強化学習","転移学習"],"answer":"教師なし学習","explanation":"\u003cb>教師なし学習\u003c/b>。クラスタリング（k-means）や次元削減（PCA）が代表。正解ラベルを使う教師あり学習、報酬で学ぶ強化学習と区別する。"}]}</script>
   </main>
   <footer class="app-footer">
     <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>
   </footer>
   <script src="../../assets/js/visualizations.js" defer></script>
+  <script src="../../assets/js/store.js" defer></script>
+  <script src="../../assets/js/learning.js" defer></script>
   <script src="../../assets/js/lesson.js" defer></script>
 </body>
 </html>

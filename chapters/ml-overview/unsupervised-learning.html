@@ -22,9 +22,12 @@
   </header>
   <nav class="top-nav" aria-label="主要ナビゲーション">
     <a href="../../index.html">学習マップ</a>
+    <a href="../../dashboard/index.html">ダッシュボード</a>
+    <a href="../../mock/index.html">模試</a>
+    <a href="../../review/index.html">復習</a>
+    <a href="../../search/index.html">検索</a>
     <a href="../../practice/index.html">4択演習</a>
     <a href="../../glossary/index.html">用語集</a>
-    <a href="../../review/index.html">横断復習</a>
     <a href="../../sources/index.html">参照資料</a>
   </nav>
   <main id="main">
@@ -81,18 +84,22 @@
           <ol>
             <li>教師なし学習</li><li>クラスタリング</li><li>次元削減</li><li>潜在構造</li>
           </ol>
+          <h3>関連する練習問題</h3>
+          <p><a href="../../practice/index.html?cat=undefined">この章の4択演習を開く</a></p>
           <h3>前後の学習</h3>
           <p><a href="../../chapters/ml-overview/classification.html">前: 分類</a></p>
           <p><a href="../../chapters/ml-overview/clustering.html">次: クラスタリング</a></p>
         </aside>
       </div>
     </section>
-    <script type="application/json" id="lessonData">{"slug":"ml-overview/unsupervised-learning","title":"教師なし学習","terms":["教師なし学習","クラスタリング","次元削減","潜在構造"],"visual":{"type":"comparison-table","title":"教師なし学習の代表用途","columns":["用途","狙い","結果の読み方"],"rows":[["クラスタリング","似たデータをグループに分ける","分け方に業務上の意味があるか確認"],["次元削減","高次元データを低次元で見やすくする","情報の損失と可視化の歪みに注意"],["異常検知","通常と異なるパターンを見つける","異常の定義を後から人が評価する"]]},"quiz":[{"id":"unsupervised-learning-practice-0","prompt":"正解ラベルのないデータから構造やまとまりを見つける学習はどれか。","options":["教師あり学習","教師なし学習","強化学習","転移学習"],"answer":"教師なし学習","explanation":"\u003cb>教師なし学習\u003c/b>。クラスタリング（k-means）や次元削減（PCA）が代表。正解ラベルを使う教師あり学習、報酬で学ぶ強化学習と区別する。"},{"id":"unsupervised-learning-practice-1","prompt":"次のうち『教師なし学習』に分類されるタスクはどれか。","options":["顧客のクラスタリング","スパムメールの分類","住宅価格の回帰予測","画像にラベルを付けて学習する分類"],"answer":"顧客のクラスタリング","explanation":"正解ラベルを使わずデータの構造を見つける\u003cb>クラスタリング\u003c/b>が教師なし。スパム分類・回帰・ラベル付き画像分類はいずれも正解（教師信号）を使う教師あり学習。学習の種類（教師あり/なし/強化/自己教師）の切り分けは頻出。"},{"id":"unsupervised-learning-practice-2","prompt":"正解ラベルのないデータから、似たもの同士をグループにまとめる代表的な教師なし学習の手法はどれか。","options":["k-meansクラスタリング","ロジスティック回帰","サポートベクターマシン","ランダムフォレスト"],"answer":"k-meansクラスタリング","explanation":"【正解の理由】\u003cb>k-means\u003c/b>はあらかじめ決めたk個の重心にデータを割り当て直す反復で、ラベルなしデータをクラスタに分ける教師なし学習の代表例。【各選択肢】②③④はいずれも正解ラベルを使う教師あり学習。【覚え方】「クラスタリング＝教師なし＝グループ分け」。【関連】kの決定にはエルボー法・シルエット分析。"}]}</script>
+    <script type="application/json" id="lessonData">{"slug":"ml-overview/unsupervised-learning","title":"教師なし学習","terms":["教師なし学習","クラスタリング","次元削減","潜在構造"],"visual":{"type":"comparison-table","title":"教師なし学習の代表用途","columns":["用途","狙い","結果の読み方"],"rows":[["クラスタリング","似たデータをグループに分ける","分け方に業務上の意味があるか確認"],["次元削減","高次元データを低次元で見やすくする","情報の損失と可視化の歪みに注意"],["異常検知","通常と異なるパターンを見つける","異常の定義を後から人が評価する"]]},"quiz":[{"id":"unsupervised-learning-practice-0","qid":"q-97afd05b","cat":"第3章 機械学習","q":"正解ラベルのないデータから構造やまとまりを見つける学習はどれか。","c":["教師あり学習","教師なし学習","強化学習","転移学習"],"a":1,"e":"\u003cb>教師なし学習\u003c/b>。クラスタリング（k-means）や次元削減（PCA）が代表。正解ラベルを使う教師あり学習、報酬で学ぶ強化学習と区別する。","prompt":"正解ラベルのないデータから構造やまとまりを見つける学習はどれか。","options":["教師あり学習","教師なし学習","強化学習","転移学習"],"answer":"教師なし学習","explanation":"\u003cb>教師なし学習\u003c/b>。クラスタリング（k-means）や次元削減（PCA）が代表。正解ラベルを使う教師あり学習、報酬で学ぶ強化学習と区別する。"},{"id":"unsupervised-learning-practice-1","qid":"q-a26dcefd","cat":"第3章 機械学習","q":"次のうち『教師なし学習』に分類されるタスクはどれか。","c":["顧客のクラスタリング","スパムメールの分類","住宅価格の回帰予測","画像にラベルを付けて学習する分類"],"a":0,"e":"正解ラベルを使わずデータの構造を見つける\u003cb>クラスタリング\u003c/b>が教師なし。スパム分類・回帰・ラベル付き画像分類はいずれも正解（教師信号）を使う教師あり学習。学習の種類（教師あり/なし/強化/自己教師）の切り分けは頻出。","prompt":"次のうち『教師なし学習』に分類されるタスクはどれか。","options":["顧客のクラスタリング","スパムメールの分類","住宅価格の回帰予測","画像にラベルを付けて学習する分類"],"answer":"顧客のクラスタリング","explanation":"正解ラベルを使わずデータの構造を見つける\u003cb>クラスタリング\u003c/b>が教師なし。スパム分類・回帰・ラベル付き画像分類はいずれも正解（教師信号）を使う教師あり学習。学習の種類（教師あり/なし/強化/自己教師）の切り分けは頻出。"},{"id":"unsupervised-learning-practice-2","qid":"q-13cbf561","cat":"第3章 機械学習","q":"正解ラベルのないデータから、似たもの同士をグループにまとめる代表的な教師なし学習の手法はどれか。","c":["k-meansクラスタリング","ロジスティック回帰","サポートベクターマシン","ランダムフォレスト"],"a":0,"e":"【正解の理由】\u003cb>k-means\u003c/b>はあらかじめ決めたk個の重心にデータを割り当て直す反復で、ラベルなしデータをクラスタに分ける教師なし学習の代表例。【各選択肢】②③④はいずれも正解ラベルを使う教師あり学習。【覚え方】「クラスタリング＝教師なし＝グループ分け」。【関連】kの決定にはエルボー法・シルエット分析。","prompt":"正解ラベルのないデータから、似たもの同士をグループにまとめる代表的な教師なし学習の手法はどれか。","options":["k-meansクラスタリング","ロジスティック回帰","サポートベクターマシン","ランダムフォレスト"],"answer":"k-meansクラスタリング","explanation":"【正解の理由】\u003cb>k-means\u003c/b>はあらかじめ決めたk個の重心にデータを割り当て直す反復で、ラベルなしデータをクラスタに分ける教師なし学習の代表例。【各選択肢】②③④はいずれも正解ラベルを使う教師あり学習。【覚え方】「クラスタリング＝教師なし＝グループ分け」。【関連】kの決定にはエルボー法・シルエット分析。"}]}</script>
   </main>
   <footer class="app-footer">
     <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>
   </footer>
   <script src="../../assets/js/visualizations.js" defer></script>
+  <script src="../../assets/js/store.js" defer></script>
+  <script src="../../assets/js/learning.js" defer></script>
   <script src="../../assets/js/lesson.js" defer></script>
 </body>
 </html>

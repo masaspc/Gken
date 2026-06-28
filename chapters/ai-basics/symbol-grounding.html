@@ -22,9 +22,12 @@
   </header>
   <nav class="top-nav" aria-label="主要ナビゲーション">
     <a href="../../index.html">学習マップ</a>
+    <a href="../../dashboard/index.html">ダッシュボード</a>
+    <a href="../../mock/index.html">模試</a>
+    <a href="../../review/index.html">復習</a>
+    <a href="../../search/index.html">検索</a>
     <a href="../../practice/index.html">4択演習</a>
     <a href="../../glossary/index.html">用語集</a>
-    <a href="../../review/index.html">横断復習</a>
     <a href="../../sources/index.html">参照資料</a>
   </nav>
   <main id="main">
@@ -79,18 +82,22 @@
           <ol>
             <li>記号接地問題</li><li>意味理解</li><li>シンボル</li><li>身体性</li>
           </ol>
+          <h3>関連する練習問題</h3>
+          <p><a href="../../practice/index.html?cat=undefined">この章の4択演習を開く</a></p>
           <h3>前後の学習</h3>
           <p><a href="../../chapters/ai-basics/strong-weak-ai.html">前: 強いAIと弱いAI</a></p>
           <p><a href="../../chapters/ai-basics/frame-problem.html">次: フレーム問題</a></p>
         </aside>
       </div>
     </section>
-    <script type="application/json" id="lessonData">{"slug":"ai-basics/symbol-grounding","title":"記号接地問題","terms":["記号接地問題","意味理解","シンボル","身体性"],"visual":{"type":"flow","title":"記号接地問題: 意味が成立するまで","steps":[{"label":"記号入力","note":"文字列だけを受け取る"},{"label":"規則処理","note":"辞書や構文で操作する"},{"label":"経験との対応","note":"知覚や行動へ結び付く"},{"label":"意味形成","note":"対象との関係が生まれる"},{"label":"理解の判定","note":"応答だけで足りるか問う"}]},"quiz":[{"id":"symbol-grounding-practice-0","prompt":"第1次AIブーム（推論・探索の時代）が直面した、現実の複雑な問題には適用しにくいという限界を表す言葉はどれか。","options":["トイ・プロブレム","フレーム問題","記号接地問題","シンボルグラウンディング"],"answer":"トイ・プロブレム","explanation":"【正解の理由】迷路やパズルなど明確に定義された\u003cb>トイ・プロブレム\u003c/b>は解けても、現実の曖昧で大規模な問題には歯が立たなかったのが第1次ブームの限界。【各選択肢】②フレーム問題・③④記号接地問題は重要だが、第1次ブームの「おもちゃの問題しか解けない」限界を直接指す語ではない。【関連】第2次＝知識（エキスパートシステム）、第3次＝機械学習・深層学習。"},{"id":"symbol-grounding-practice-1","prompt":"知能には身体を通じた環境との相互作用が重要だとする考え方を何というか。","options":["身体性（embodiment）","フレーム問題","強いAI","チューリングテスト"],"answer":"身体性（embodiment）","explanation":"\u003cb>身体性（embodiment）\u003c/b>。記号を実世界に接地（グラウンディング）するには、センサーや身体を介した経験が必要だとする立場。ロボティクスやシンボルグラウンディング問題と関連して論じられる。"},{"id":"symbol-grounding-practice-2","prompt":"「今しようとしていることに関係のある事柄だけを効率よく選び出すことが難しい」という、AIの本質的限界を指す問題はどれか。","options":["シンボルグラウンディング問題","フレーム問題","中国語の部屋","トロッコ問題"],"answer":"フレーム問題","explanation":"\u003cb>フレーム問題\u003c/b>は、有限の処理能力で「考慮すべき範囲（フレーム）」を限定できないという難問。マッカーシーとヘイズが提起した。"}]}</script>
+    <script type="application/json" id="lessonData">{"slug":"ai-basics/symbol-grounding","title":"記号接地問題","terms":["記号接地問題","意味理解","シンボル","身体性"],"visual":{"type":"flow","title":"記号接地問題: 意味が成立するまで","steps":[{"label":"記号入力","note":"文字列だけを受け取る"},{"label":"規則処理","note":"辞書や構文で操作する"},{"label":"経験との対応","note":"知覚や行動へ結び付く"},{"label":"意味形成","note":"対象との関係が生まれる"},{"label":"理解の判定","note":"応答だけで足りるか問う"}]},"quiz":[{"id":"symbol-grounding-practice-0","qid":"q-d09da583","cat":"第1章 AIとは","q":"第1次AIブーム（推論・探索の時代）が直面した、現実の複雑な問題には適用しにくいという限界を表す言葉はどれか。","c":["トイ・プロブレム","フレーム問題","記号接地問題","シンボルグラウンディング"],"a":0,"e":"【正解の理由】迷路やパズルなど明確に定義された\u003cb>トイ・プロブレム\u003c/b>は解けても、現実の曖昧で大規模な問題には歯が立たなかったのが第1次ブームの限界。【各選択肢】②フレーム問題・③④記号接地問題は重要だが、第1次ブームの「おもちゃの問題しか解けない」限界を直接指す語ではない。【関連】第2次＝知識（エキスパートシステム）、第3次＝機械学習・深層学習。","prompt":"第1次AIブーム（推論・探索の時代）が直面した、現実の複雑な問題には適用しにくいという限界を表す言葉はどれか。","options":["トイ・プロブレム","フレーム問題","記号接地問題","シンボルグラウンディング"],"answer":"トイ・プロブレム","explanation":"【正解の理由】迷路やパズルなど明確に定義された\u003cb>トイ・プロブレム\u003c/b>は解けても、現実の曖昧で大規模な問題には歯が立たなかったのが第1次ブームの限界。【各選択肢】②フレーム問題・③④記号接地問題は重要だが、第1次ブームの「おもちゃの問題しか解けない」限界を直接指す語ではない。【関連】第2次＝知識（エキスパートシステム）、第3次＝機械学習・深層学習。"},{"id":"symbol-grounding-practice-1","qid":"q-976fa90b","cat":"第1章 AIとは","q":"知能には身体を通じた環境との相互作用が重要だとする考え方を何というか。","c":["身体性（embodiment）","フレーム問題","強いAI","チューリングテスト"],"a":0,"e":"\u003cb>身体性（embodiment）\u003c/b>。記号を実世界に接地（グラウンディング）するには、センサーや身体を介した経験が必要だとする立場。ロボティクスやシンボルグラウンディング問題と関連して論じられる。","prompt":"知能には身体を通じた環境との相互作用が重要だとする考え方を何というか。","options":["身体性（embodiment）","フレーム問題","強いAI","チューリングテスト"],"answer":"身体性（embodiment）","explanation":"\u003cb>身体性（embodiment）\u003c/b>。記号を実世界に接地（グラウンディング）するには、センサーや身体を介した経験が必要だとする立場。ロボティクスやシンボルグラウンディング問題と関連して論じられる。"},{"id":"symbol-grounding-practice-2","qid":"q-7ef51fe0","cat":"第1章 AIとは","q":"「今しようとしていることに関係のある事柄だけを効率よく選び出すことが難しい」という、AIの本質的限界を指す問題はどれか。","c":["シンボルグラウンディング問題","フレーム問題","中国語の部屋","トロッコ問題"],"a":1,"e":"\u003cb>フレーム問題\u003c/b>は、有限の処理能力で「考慮すべき範囲（フレーム）」を限定できないという難問。マッカーシーとヘイズが提起した。","prompt":"「今しようとしていることに関係のある事柄だけを効率よく選び出すことが難しい」という、AIの本質的限界を指す問題はどれか。","options":["シンボルグラウンディング問題","フレーム問題","中国語の部屋","トロッコ問題"],"answer":"フレーム問題","explanation":"\u003cb>フレーム問題\u003c/b>は、有限の処理能力で「考慮すべき範囲（フレーム）」を限定できないという難問。マッカーシーとヘイズが提起した。"}]}</script>
   </main>
   <footer class="app-footer">
     <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>
   </footer>
   <script src="../../assets/js/visualizations.js" defer></script>
+  <script src="../../assets/js/store.js" defer></script>
+  <script src="../../assets/js/learning.js" defer></script>
   <script src="../../assets/js/lesson.js" defer></script>
 </body>
 </html>

@@ -22,9 +22,12 @@
   </header>
   <nav class="top-nav" aria-label="主要ナビゲーション">
     <a href="../../index.html">学習マップ</a>
+    <a href="../../dashboard/index.html">ダッシュボード</a>
+    <a href="../../mock/index.html">模試</a>
+    <a href="../../review/index.html">復習</a>
+    <a href="../../search/index.html">検索</a>
     <a href="../../practice/index.html">4択演習</a>
     <a href="../../glossary/index.html">用語集</a>
-    <a href="../../review/index.html">横断復習</a>
     <a href="../../sources/index.html">参照資料</a>
   </nav>
   <main id="main">
@@ -81,18 +84,22 @@
           <ol>
             <li>プーリング</li><li>Max Pooling</li><li>Average Pooling</li><li>位置ずれ</li>
           </ol>
+          <h3>関連する練習問題</h3>
+          <p><a href="../../practice/index.html?cat=undefined">この章の4択演習を開く</a></p>
           <h3>前後の学習</h3>
           <p><a href="../../chapters/dl-elements/convolution.html">前: 畳み込み層</a></p>
           <p><a href="../../chapters/dl-elements/normalization-layer.html">次: 正規化層</a></p>
         </aside>
       </div>
     </section>
-    <script type="application/json" id="lessonData">{"slug":"dl-elements/pooling","title":"プーリング層","terms":["プーリング","Max Pooling","Average Pooling","位置ずれ"],"visual":{"type":"comparison-table","title":"プーリングの種類","columns":["方法","処理","効果"],"rows":[["Max Pooling","領域内の最大値を残す","強く反応した特徴を保つ"],["Average Pooling","領域内の平均値を残す","全体的な傾向を滑らかに残す"],["位置ずれ耐性","細かな位置変化を吸収する","出力サイズを小さくし計算量も下げる"]]},"quiz":[{"id":"pooling-practice-0","prompt":"画像認識で、フィルタによる畳み込みとプーリングで局所特徴を抽出するネットワークはどれか。","options":["RNN","CNN（畳み込みニューラルネットワーク）","GAN","LSTM"],"answer":"CNN（畳み込みニューラルネットワーク）","explanation":"\u003cb>CNN\u003c/b>は畳み込み層で局所特徴を捉え、プーリング層で位置ずれに頑健にしつつ次元を縮小する。画像系タスクの標準。"},{"id":"pooling-practice-1","prompt":"画像認識で、局所的な特徴を捉える畳み込み層と、位置ずれに頑健にする縮小処理を組み合わせたネットワークはどれか。","options":["CNN（畳み込みニューラルネットワーク）","RNN","GAN","オートエンコーダ"],"answer":"CNN（畳み込みニューラルネットワーク）","explanation":"【正解の理由】\u003cb>CNN\u003c/b>は畳み込み層で局所特徴（エッジ等）を抽出し、プーリング層で縮小して移動不変性を持たせる画像向けの構造。【各選択肢】②RNNは系列、③GANは生成、④オートエンコーダは圧縮・再構成。【関連】畳み込みは「局所結合＋重み共有」でパラメータを削減できる点が利点。"},{"id":"pooling-practice-2","prompt":"福島邦彦が考案し、現在の畳み込みニューラルネットワーク（CNN）の源流とされるモデルはどれか。","options":["ネオコグニトロン","パーセプトロン","ボルツマンマシン","オートエンコーダ"],"answer":"ネオコグニトロン","explanation":"\u003cb>ネオコグニトロン\u003c/b>（1980年）。視覚野の構造に着想を得て、特徴抽出層と位置ずれを吸収する層を交互に重ねた。これが畳み込み層・プーリング層を持つCNNの先駆けとされる。日本発の重要業績として問われやすい。"}]}</script>
+    <script type="application/json" id="lessonData">{"slug":"dl-elements/pooling","title":"プーリング層","terms":["プーリング","Max Pooling","Average Pooling","位置ずれ"],"visual":{"type":"comparison-table","title":"プーリングの種類","columns":["方法","処理","効果"],"rows":[["Max Pooling","領域内の最大値を残す","強く反応した特徴を保つ"],["Average Pooling","領域内の平均値を残す","全体的な傾向を滑らかに残す"],["位置ずれ耐性","細かな位置変化を吸収する","出力サイズを小さくし計算量も下げる"]]},"quiz":[{"id":"pooling-practice-0","qid":"q-eb635194","cat":"第5章 要素技術","q":"画像認識で、フィルタによる畳み込みとプーリングで局所特徴を抽出するネットワークはどれか。","c":["RNN","CNN（畳み込みニューラルネットワーク）","GAN","LSTM"],"a":1,"e":"\u003cb>CNN\u003c/b>は畳み込み層で局所特徴を捉え、プーリング層で位置ずれに頑健にしつつ次元を縮小する。画像系タスクの標準。","prompt":"画像認識で、フィルタによる畳み込みとプーリングで局所特徴を抽出するネットワークはどれか。","options":["RNN","CNN（畳み込みニューラルネットワーク）","GAN","LSTM"],"answer":"CNN（畳み込みニューラルネットワーク）","explanation":"\u003cb>CNN\u003c/b>は畳み込み層で局所特徴を捉え、プーリング層で位置ずれに頑健にしつつ次元を縮小する。画像系タスクの標準。"},{"id":"pooling-practice-1","qid":"q-17af7b11","cat":"第5章 要素技術","q":"画像認識で、局所的な特徴を捉える畳み込み層と、位置ずれに頑健にする縮小処理を組み合わせたネットワークはどれか。","c":["CNN（畳み込みニューラルネットワーク）","RNN","GAN","オートエンコーダ"],"a":0,"e":"【正解の理由】\u003cb>CNN\u003c/b>は畳み込み層で局所特徴（エッジ等）を抽出し、プーリング層で縮小して移動不変性を持たせる画像向けの構造。【各選択肢】②RNNは系列、③GANは生成、④オートエンコーダは圧縮・再構成。【関連】畳み込みは「局所結合＋重み共有」でパラメータを削減できる点が利点。","prompt":"画像認識で、局所的な特徴を捉える畳み込み層と、位置ずれに頑健にする縮小処理を組み合わせたネットワークはどれか。","options":["CNN（畳み込みニューラルネットワーク）","RNN","GAN","オートエンコーダ"],"answer":"CNN（畳み込みニューラルネットワーク）","explanation":"【正解の理由】\u003cb>CNN\u003c/b>は畳み込み層で局所特徴（エッジ等）を抽出し、プーリング層で縮小して移動不変性を持たせる画像向けの構造。【各選択肢】②RNNは系列、③GANは生成、④オートエンコーダは圧縮・再構成。【関連】畳み込みは「局所結合＋重み共有」でパラメータを削減できる点が利点。"},{"id":"pooling-practice-2","qid":"q-825b6803","cat":"第2章 動向","q":"福島邦彦が考案し、現在の畳み込みニューラルネットワーク（CNN）の源流とされるモデルはどれか。","c":["ネオコグニトロン","パーセプトロン","ボルツマンマシン","オートエンコーダ"],"a":0,"e":"\u003cb>ネオコグニトロン\u003c/b>（1980年）。視覚野の構造に着想を得て、特徴抽出層と位置ずれを吸収する層を交互に重ねた。これが畳み込み層・プーリング層を持つCNNの先駆けとされる。日本発の重要業績として問われやすい。","prompt":"福島邦彦が考案し、現在の畳み込みニューラルネットワーク（CNN）の源流とされるモデルはどれか。","options":["ネオコグニトロン","パーセプトロン","ボルツマンマシン","オートエンコーダ"],"answer":"ネオコグニトロン","explanation":"\u003cb>ネオコグニトロン\u003c/b>（1980年）。視覚野の構造に着想を得て、特徴抽出層と位置ずれを吸収する層を交互に重ねた。これが畳み込み層・プーリング層を持つCNNの先駆けとされる。日本発の重要業績として問われやすい。"}]}</script>
   </main>
   <footer class="app-footer">
     <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>
   </footer>
   <script src="../../assets/js/visualizations.js" defer></script>
+  <script src="../../assets/js/store.js" defer></script>
+  <script src="../../assets/js/learning.js" defer></script>
   <script src="../../assets/js/lesson.js" defer></script>
 </body>
 </html>

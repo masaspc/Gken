@@ -22,9 +22,12 @@
   </header>
   <nav class="top-nav" aria-label="主要ナビゲーション">
     <a href="../../index.html">学習マップ</a>
+    <a href="../../dashboard/index.html">ダッシュボード</a>
+    <a href="../../mock/index.html">模試</a>
+    <a href="../../review/index.html">復習</a>
+    <a href="../../search/index.html">検索</a>
     <a href="../../practice/index.html">4択演習</a>
     <a href="../../glossary/index.html">用語集</a>
-    <a href="../../review/index.html">横断復習</a>
     <a href="../../sources/index.html">参照資料</a>
   </nav>
   <main id="main">
@@ -81,18 +84,22 @@
           <ol>
             <li>SGD</li><li>Momentum</li><li>Adam</li><li>RMSprop</li>
           </ol>
+          <h3>関連する練習問題</h3>
+          <p><a href="../../practice/index.html?cat=undefined">この章の4択演習を開く</a></p>
           <h3>前後の学習</h3>
           <p><a href="../../chapters/dl-overview/gradient-descent.html">前: 勾配降下法</a></p>
           <p><a href="../../chapters/dl-overview/regularization.html">次: 正則化</a></p>
         </aside>
       </div>
     </section>
-    <script type="application/json" id="lessonData">{"slug":"dl-overview/optimizers","title":"最適化手法","terms":["SGD","Momentum","Adam","RMSprop"],"visual":{"type":"comparison-table","title":"最適化手法の比較","columns":["手法","更新の特徴","押さえる点"],"rows":[["SGD","一部のデータで勾配を見て更新する","単純だが揺れながら進む"],["Momentum","過去の更新方向を慣性として使う","谷間での振動を抑えやすい"],["Adam","勾配の平均と分散を使い学習率を調整する","実務で広く使われる代表例"]]},"quiz":[{"id":"optimizers-practice-0","prompt":"AdaGradの『学習率が下がり続けて止まる』弱点を、勾配二乗の指数移動平均を使って改善した手法はどれか。","options":["RMSProp","SGD","ニュートン法","主成分分析"],"answer":"RMSProp","explanation":"\u003cb>RMSProp\u003c/b>。直近の勾配を重視する移動平均で学習率を調整し、AdaGradの過度な減衰を防ぐ。モーメンタムと組み合わせるとAdamに近づく。最適化手法の改良の流れ（SGD→Momentum/AdaGrad→RMSProp→Adam）を順に理解するとよい。"},{"id":"optimizers-practice-1","prompt":"パラメータごとに過去の勾配の二乗和を蓄積し、よく動いた方向の学習率を小さくしていく最適化手法はどれか。","options":["AdaGrad","モーメンタム","SGD","ドロップアウト"],"answer":"AdaGrad","explanation":"\u003cb>AdaGrad\u003c/b>。頻繁に更新される次元の学習率を自動的に下げ、まれにしか出ない特徴を学習しやすくする。ただし学習率が下がり続けて止まる弱点があり、それを改善したのがRMSProp、さらに統合したのがAdam。"},{"id":"optimizers-practice-2","prompt":"モーメンタムとRMSProp（AdaGrad系）の利点を組み合わせ、広く使われる最適化アルゴリズムはどれか。","options":["SGD","Adam","Adagradのみ","Momentumのみ"],"answer":"Adam","explanation":"\u003cb>Adam\u003c/b>。勾配の一次・二次モーメントの推定を用いて各パラメータの学習率を適応的に調整する。デフォルトの選択肢として人気。"}]}</script>
+    <script type="application/json" id="lessonData">{"slug":"dl-overview/optimizers","title":"最適化手法","terms":["SGD","Momentum","Adam","RMSprop"],"visual":{"type":"comparison-table","title":"最適化手法の比較","columns":["手法","更新の特徴","押さえる点"],"rows":[["SGD","一部のデータで勾配を見て更新する","単純だが揺れながら進む"],["Momentum","過去の更新方向を慣性として使う","谷間での振動を抑えやすい"],["Adam","勾配の平均と分散を使い学習率を調整する","実務で広く使われる代表例"]]},"quiz":[{"id":"optimizers-practice-0","qid":"q-cee15b58","cat":"第4章 DL概要","q":"AdaGradの『学習率が下がり続けて止まる』弱点を、勾配二乗の指数移動平均を使って改善した手法はどれか。","c":["RMSProp","SGD","ニュートン法","主成分分析"],"a":0,"e":"\u003cb>RMSProp\u003c/b>。直近の勾配を重視する移動平均で学習率を調整し、AdaGradの過度な減衰を防ぐ。モーメンタムと組み合わせるとAdamに近づく。最適化手法の改良の流れ（SGD→Momentum/AdaGrad→RMSProp→Adam）を順に理解するとよい。","prompt":"AdaGradの『学習率が下がり続けて止まる』弱点を、勾配二乗の指数移動平均を使って改善した手法はどれか。","options":["RMSProp","SGD","ニュートン法","主成分分析"],"answer":"RMSProp","explanation":"\u003cb>RMSProp\u003c/b>。直近の勾配を重視する移動平均で学習率を調整し、AdaGradの過度な減衰を防ぐ。モーメンタムと組み合わせるとAdamに近づく。最適化手法の改良の流れ（SGD→Momentum/AdaGrad→RMSProp→Adam）を順に理解するとよい。"},{"id":"optimizers-practice-1","qid":"q-6af6a993","cat":"第4章 DL概要","q":"パラメータごとに過去の勾配の二乗和を蓄積し、よく動いた方向の学習率を小さくしていく最適化手法はどれか。","c":["AdaGrad","モーメンタム","SGD","ドロップアウト"],"a":0,"e":"\u003cb>AdaGrad\u003c/b>。頻繁に更新される次元の学習率を自動的に下げ、まれにしか出ない特徴を学習しやすくする。ただし学習率が下がり続けて止まる弱点があり、それを改善したのがRMSProp、さらに統合したのがAdam。","prompt":"パラメータごとに過去の勾配の二乗和を蓄積し、よく動いた方向の学習率を小さくしていく最適化手法はどれか。","options":["AdaGrad","モーメンタム","SGD","ドロップアウト"],"answer":"AdaGrad","explanation":"\u003cb>AdaGrad\u003c/b>。頻繁に更新される次元の学習率を自動的に下げ、まれにしか出ない特徴を学習しやすくする。ただし学習率が下がり続けて止まる弱点があり、それを改善したのがRMSProp、さらに統合したのがAdam。"},{"id":"optimizers-practice-2","qid":"q-a646ec22","cat":"第5章 要素技術","q":"モーメンタムとRMSProp（AdaGrad系）の利点を組み合わせ、広く使われる最適化アルゴリズムはどれか。","c":["SGD","Adam","Adagradのみ","Momentumのみ"],"a":1,"e":"\u003cb>Adam\u003c/b>。勾配の一次・二次モーメントの推定を用いて各パラメータの学習率を適応的に調整する。デフォルトの選択肢として人気。","prompt":"モーメンタムとRMSProp（AdaGrad系）の利点を組み合わせ、広く使われる最適化アルゴリズムはどれか。","options":["SGD","Adam","Adagradのみ","Momentumのみ"],"answer":"Adam","explanation":"\u003cb>Adam\u003c/b>。勾配の一次・二次モーメントの推定を用いて各パラメータの学習率を適応的に調整する。デフォルトの選択肢として人気。"}]}</script>
   </main>
   <footer class="app-footer">
     <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>
   </footer>
   <script src="../../assets/js/visualizations.js" defer></script>
+  <script src="../../assets/js/store.js" defer></script>
+  <script src="../../assets/js/learning.js" defer></script>
   <script src="../../assets/js/lesson.js" defer></script>
 </body>
 </html>

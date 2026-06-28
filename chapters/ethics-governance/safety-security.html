@@ -22,9 +22,12 @@
   </header>
   <nav class="top-nav" aria-label="主要ナビゲーション">
     <a href="../../index.html">学習マップ</a>
+    <a href="../../dashboard/index.html">ダッシュボード</a>
+    <a href="../../mock/index.html">模試</a>
+    <a href="../../review/index.html">復習</a>
+    <a href="../../search/index.html">検索</a>
     <a href="../../practice/index.html">4択演習</a>
     <a href="../../glossary/index.html">用語集</a>
-    <a href="../../review/index.html">横断復習</a>
     <a href="../../sources/index.html">参照資料</a>
   </nav>
   <main id="main">
@@ -81,18 +84,22 @@
           <ol>
             <li>安全性</li><li>セキュリティ</li><li>堅牢性</li><li>攻撃</li>
           </ol>
+          <h3>関連する練習問題</h3>
+          <p><a href="../../practice/index.html?cat=undefined">この章の4択演習を開く</a></p>
           <h3>前後の学習</h3>
           <p><a href="../../chapters/ethics-governance/fairness.html">前: 公平性</a></p>
           <p><a href="../../chapters/ethics-governance/misuse.html">次: 悪用への対策</a></p>
         </aside>
       </div>
     </section>
-    <script type="application/json" id="lessonData">{"slug":"ethics-governance/safety-security","title":"安全性とセキュリティ","terms":["安全性","セキュリティ","堅牢性","攻撃"],"visual":{"type":"comparison-table","title":"安全性とセキュリティの観点","columns":["観点","見るリスク","対策例"],"rows":[["安全性","誤作動が人や社会に被害を出す","フェイルセーフと人の確認を設計"],["セキュリティ","攻撃者が入力やモデルを悪用する","アクセス制御と監視を行う"],["堅牢性","ノイズや環境変化で性能が落ちる","テスト範囲を広げ継続評価する"]]},"quiz":[{"id":"safety-security-practice-0","prompt":"画像に人間には気づきにくい微小なノイズを加え、AIに誤分類させる入力を何というか。","options":["敵対的サンプル（Adversarial Example）","データ拡張","正則化項","アノテーションエラー"],"answer":"敵対的サンプル（Adversarial Example）","explanation":"\u003cb>敵対的サンプル\u003c/b>。わずかな摂動でモデルを誤認識させる攻撃。自動運転の標識誤認などセキュリティ上の脅威で、頑健性（ロバストネス）向上が課題。"},{"id":"safety-security-practice-1","prompt":"設計の初期段階からプライバシー保護を組み込んでおく考え方を何というか。","options":["プライバシー・バイ・デザイン","オプトアウト","データミニマイゼーションのみ","セキュリティ・バイ・オブスキュリティ"],"answer":"プライバシー・バイ・デザイン","explanation":"\u003cb>プライバシー・バイ・デザイン\u003c/b>。製品・サービスの企画・設計段階からプライバシー保護を作り込む考え方。事後対応ではなく予防的に取り組む。"},{"id":"safety-security-practice-2","prompt":"AIの適切な開発・利用に関する国際的な原則・枠組みの例として適切なものはどれか。","options":["OECD AI原則やG7広島AIプロセス","ISO 9001のみ","GPLライセンス","TCP/IP"],"answer":"OECD AI原則やG7広島AIプロセス","explanation":"\u003cb>OECD AI原則\u003c/b>（2019年）や\u003cb>G7広島AIプロセス\u003c/b>（2023年）は、人間中心・透明性・説明責任・安全性などを掲げる国際的な指針。各国のガイドライン（日本のAI事業者ガイドライン等）とも整合する。国際協調の動きとして問われる。"}]}</script>
+    <script type="application/json" id="lessonData">{"slug":"ethics-governance/safety-security","title":"安全性とセキュリティ","terms":["安全性","セキュリティ","堅牢性","攻撃"],"visual":{"type":"comparison-table","title":"安全性とセキュリティの観点","columns":["観点","見るリスク","対策例"],"rows":[["安全性","誤作動が人や社会に被害を出す","フェイルセーフと人の確認を設計"],["セキュリティ","攻撃者が入力やモデルを悪用する","アクセス制御と監視を行う"],["堅牢性","ノイズや環境変化で性能が落ちる","テスト範囲を広げ継続評価する"]]},"quiz":[{"id":"safety-security-practice-0","qid":"q-6970f06e","cat":"第8章 法律・倫理","q":"画像に人間には気づきにくい微小なノイズを加え、AIに誤分類させる入力を何というか。","c":["敵対的サンプル（Adversarial Example）","データ拡張","正則化項","アノテーションエラー"],"a":0,"e":"\u003cb>敵対的サンプル\u003c/b>。わずかな摂動でモデルを誤認識させる攻撃。自動運転の標識誤認などセキュリティ上の脅威で、頑健性（ロバストネス）向上が課題。","prompt":"画像に人間には気づきにくい微小なノイズを加え、AIに誤分類させる入力を何というか。","options":["敵対的サンプル（Adversarial Example）","データ拡張","正則化項","アノテーションエラー"],"answer":"敵対的サンプル（Adversarial Example）","explanation":"\u003cb>敵対的サンプル\u003c/b>。わずかな摂動でモデルを誤認識させる攻撃。自動運転の標識誤認などセキュリティ上の脅威で、頑健性（ロバストネス）向上が課題。"},{"id":"safety-security-practice-1","qid":"q-913ae396","cat":"第8章 法律・倫理","q":"設計の初期段階からプライバシー保護を組み込んでおく考え方を何というか。","c":["プライバシー・バイ・デザイン","オプトアウト","データミニマイゼーションのみ","セキュリティ・バイ・オブスキュリティ"],"a":0,"e":"\u003cb>プライバシー・バイ・デザイン\u003c/b>。製品・サービスの企画・設計段階からプライバシー保護を作り込む考え方。事後対応ではなく予防的に取り組む。","prompt":"設計の初期段階からプライバシー保護を組み込んでおく考え方を何というか。","options":["プライバシー・バイ・デザイン","オプトアウト","データミニマイゼーションのみ","セキュリティ・バイ・オブスキュリティ"],"answer":"プライバシー・バイ・デザイン","explanation":"\u003cb>プライバシー・バイ・デザイン\u003c/b>。製品・サービスの企画・設計段階からプライバシー保護を作り込む考え方。事後対応ではなく予防的に取り組む。"},{"id":"safety-security-practice-2","qid":"q-9bf94a00","cat":"第8章 法律・倫理","q":"AIの適切な開発・利用に関する国際的な原則・枠組みの例として適切なものはどれか。","c":["OECD AI原則やG7広島AIプロセス","ISO 9001のみ","GPLライセンス","TCP/IP"],"a":0,"e":"\u003cb>OECD AI原則\u003c/b>（2019年）や\u003cb>G7広島AIプロセス\u003c/b>（2023年）は、人間中心・透明性・説明責任・安全性などを掲げる国際的な指針。各国のガイドライン（日本のAI事業者ガイドライン等）とも整合する。国際協調の動きとして問われる。","prompt":"AIの適切な開発・利用に関する国際的な原則・枠組みの例として適切なものはどれか。","options":["OECD AI原則やG7広島AIプロセス","ISO 9001のみ","GPLライセンス","TCP/IP"],"answer":"OECD AI原則やG7広島AIプロセス","explanation":"\u003cb>OECD AI原則\u003c/b>（2019年）や\u003cb>G7広島AIプロセス\u003c/b>（2023年）は、人間中心・透明性・説明責任・安全性などを掲げる国際的な指針。各国のガイドライン（日本のAI事業者ガイドライン等）とも整合する。国際協調の動きとして問われる。"}]}</script>
   </main>
   <footer class="app-footer">
     <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>
   </footer>
   <script src="../../assets/js/visualizations.js" defer></script>
+  <script src="../../assets/js/store.js" defer></script>
+  <script src="../../assets/js/learning.js" defer></script>
   <script src="../../assets/js/lesson.js" defer></script>
 </body>
 </html>

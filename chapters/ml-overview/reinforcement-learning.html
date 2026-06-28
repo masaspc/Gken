@@ -22,9 +22,12 @@
   </header>
   <nav class="top-nav" aria-label="主要ナビゲーション">
     <a href="../../index.html">学習マップ</a>
+    <a href="../../dashboard/index.html">ダッシュボード</a>
+    <a href="../../mock/index.html">模試</a>
+    <a href="../../review/index.html">復習</a>
+    <a href="../../search/index.html">検索</a>
     <a href="../../practice/index.html">4択演習</a>
     <a href="../../glossary/index.html">用語集</a>
-    <a href="../../review/index.html">横断復習</a>
     <a href="../../sources/index.html">参照資料</a>
   </nav>
   <main id="main">
@@ -79,18 +82,22 @@
           <ol>
             <li>強化学習</li><li>エージェント</li><li>環境</li><li>報酬</li>
           </ol>
+          <h3>関連する練習問題</h3>
+          <p><a href="../../practice/index.html?cat=undefined">この章の4択演習を開く</a></p>
           <h3>前後の学習</h3>
           <p><a href="../../chapters/ml-overview/clustering.html">前: クラスタリング</a></p>
           <p><a href="../../chapters/ml-overview/train-test-split.html">次: 訓練データとテストデータ</a></p>
         </aside>
       </div>
     </section>
-    <script type="application/json" id="lessonData">{"slug":"ml-overview/reinforcement-learning","title":"強化学習","terms":["強化学習","エージェント","環境","報酬"],"visual":{"type":"flow","title":"強化学習のループ","steps":[{"label":"状態","note":"環境の現在情報を観測"},{"label":"行動","note":"エージェントが選択"},{"label":"報酬","note":"行動の良さを受け取る"},{"label":"価値更新","note":"将来報酬の見込みを修正"},{"label":"方策改善","note":"次の行動選択へ反映"}]},"quiz":[{"id":"reinforcement-learning-practice-0","prompt":"試行錯誤を通じて得られる報酬を最大化するように行動を学習する枠組みはどれか。","options":["教師あり学習","教師なし学習","強化学習","半教師あり学習"],"answer":"強化学習","explanation":"\u003cb>強化学習\u003c/b>。エージェントが環境と相互作用し、報酬を手がかりに最適な方策を学ぶ。"},{"id":"reinforcement-learning-practice-1","prompt":"報酬を最大化する行動方策を、環境との試行錯誤を通じて学習する枠組みはどれか。","options":["強化学習","教師あり学習","教師なし学習","半教師あり学習"],"answer":"強化学習","explanation":"【正解の理由】\u003cb>強化学習\u003c/b>はエージェントが状態に応じて行動し、得られる報酬を最大化する方策を試行錯誤で学ぶ。【各選択肢】②教師ありは正解ラベル、③教師なしはラベルなしの構造発見、④半教師ありは少量のラベル＋多量の未ラベル。【関連】探索と活用のトレードオフ、Q学習、価値関数・方策。AlphaGoで活用。"},{"id":"reinforcement-learning-practice-2","prompt":"強化学習で、エージェントが行動を選ぶ基準（状態→行動の規則）を何というか。","options":["報酬","方策（ポリシー）","価値関数","状態遷移"],"answer":"方策（ポリシー）","explanation":"\u003cb>方策（ポリシー）\u003c/b>は状態に対しどの行動を取るかの規則。報酬を最大化するよう方策を改善していく。価値関数は将来得られる報酬の期待値を表す。"}]}</script>
+    <script type="application/json" id="lessonData">{"slug":"ml-overview/reinforcement-learning","title":"強化学習","terms":["強化学習","エージェント","環境","報酬"],"visual":{"type":"flow","title":"強化学習のループ","steps":[{"label":"状態","note":"環境の現在情報を観測"},{"label":"行動","note":"エージェントが選択"},{"label":"報酬","note":"行動の良さを受け取る"},{"label":"価値更新","note":"将来報酬の見込みを修正"},{"label":"方策改善","note":"次の行動選択へ反映"}]},"quiz":[{"id":"reinforcement-learning-practice-0","qid":"q-167f7eb1","cat":"第3章 機械学習","q":"試行錯誤を通じて得られる報酬を最大化するように行動を学習する枠組みはどれか。","c":["教師あり学習","教師なし学習","強化学習","半教師あり学習"],"a":2,"e":"\u003cb>強化学習\u003c/b>。エージェントが環境と相互作用し、報酬を手がかりに最適な方策を学ぶ。","prompt":"試行錯誤を通じて得られる報酬を最大化するように行動を学習する枠組みはどれか。","options":["教師あり学習","教師なし学習","強化学習","半教師あり学習"],"answer":"強化学習","explanation":"\u003cb>強化学習\u003c/b>。エージェントが環境と相互作用し、報酬を手がかりに最適な方策を学ぶ。"},{"id":"reinforcement-learning-practice-1","qid":"q-23de5857","cat":"第3章 機械学習","q":"報酬を最大化する行動方策を、環境との試行錯誤を通じて学習する枠組みはどれか。","c":["強化学習","教師あり学習","教師なし学習","半教師あり学習"],"a":0,"e":"【正解の理由】\u003cb>強化学習\u003c/b>はエージェントが状態に応じて行動し、得られる報酬を最大化する方策を試行錯誤で学ぶ。【各選択肢】②教師ありは正解ラベル、③教師なしはラベルなしの構造発見、④半教師ありは少量のラベル＋多量の未ラベル。【関連】探索と活用のトレードオフ、Q学習、価値関数・方策。AlphaGoで活用。","prompt":"報酬を最大化する行動方策を、環境との試行錯誤を通じて学習する枠組みはどれか。","options":["強化学習","教師あり学習","教師なし学習","半教師あり学習"],"answer":"強化学習","explanation":"【正解の理由】\u003cb>強化学習\u003c/b>はエージェントが状態に応じて行動し、得られる報酬を最大化する方策を試行錯誤で学ぶ。【各選択肢】②教師ありは正解ラベル、③教師なしはラベルなしの構造発見、④半教師ありは少量のラベル＋多量の未ラベル。【関連】探索と活用のトレードオフ、Q学習、価値関数・方策。AlphaGoで活用。"},{"id":"reinforcement-learning-practice-2","qid":"q-75910741","cat":"第6章 応用例","q":"強化学習で、エージェントが行動を選ぶ基準（状態→行動の規則）を何というか。","c":["報酬","方策（ポリシー）","価値関数","状態遷移"],"a":1,"e":"\u003cb>方策（ポリシー）\u003c/b>は状態に対しどの行動を取るかの規則。報酬を最大化するよう方策を改善していく。価値関数は将来得られる報酬の期待値を表す。","prompt":"強化学習で、エージェントが行動を選ぶ基準（状態→行動の規則）を何というか。","options":["報酬","方策（ポリシー）","価値関数","状態遷移"],"answer":"方策（ポリシー）","explanation":"\u003cb>方策（ポリシー）\u003c/b>は状態に対しどの行動を取るかの規則。報酬を最大化するよう方策を改善していく。価値関数は将来得られる報酬の期待値を表す。"}]}</script>
   </main>
   <footer class="app-footer">
     <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>
   </footer>
   <script src="../../assets/js/visualizations.js" defer></script>
+  <script src="../../assets/js/store.js" defer></script>
+  <script src="../../assets/js/learning.js" defer></script>
   <script src="../../assets/js/lesson.js" defer></script>
 </body>
 </html>

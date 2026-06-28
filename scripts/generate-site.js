@@ -279,9 +279,12 @@ function layout({ depth, title, description, body, extraScript = "" }) {
   </header>
   <nav class="top-nav" aria-label="主要ナビゲーション">
     <a href="${rel(depth, "index.html")}">学習マップ</a>
+    <a href="${rel(depth, "dashboard/index.html")}">ダッシュボード</a>
+    <a href="${rel(depth, "mock/index.html")}">模試</a>
+    <a href="${rel(depth, "review/index.html")}">復習</a>
+    <a href="${rel(depth, "search/index.html")}">検索</a>
     <a href="${rel(depth, "practice/index.html")}">4択演習</a>
     <a href="${rel(depth, "glossary/index.html")}">用語集</a>
-    <a href="${rel(depth, "review/index.html")}">横断復習</a>
     <a href="${rel(depth, "sources/index.html")}">参照資料</a>
   </nav>
   <main id="main">
@@ -355,6 +358,8 @@ ${visualSection}
           <ol>
             ${item.terms.map((term) => `<li>${esc(term)}</li>`).join("")}
           </ol>
+          <h3>関連する練習問題</h3>
+          <p><a href="../../practice/index.html?cat=${encodeURIComponent(chapter.quizCat)}">この章の4択演習を開く</a></p>
           <h3>前後の学習</h3>
           <p>${prev ? `<a href="../../chapters/${prev.chapter.slug}/${prev.lesson.slug}.html">前: ${esc(prev.lesson.title)}</a>` : "前のページはありません。"}</p>
           <p>${next ? `<a href="../../chapters/${next.chapter.slug}/${next.lesson.slug}.html">次: ${esc(next.lesson.title)}</a>` : "次のページはありません。"}</p>
@@ -368,6 +373,8 @@ ${visualSection}
     description: item.focus,
     body,
     extraScript: `  <script src="../../assets/js/visualizations.js" defer></script>
+  <script src="../../assets/js/store.js" defer></script>
+  <script src="../../assets/js/learning.js" defer></script>
   <script src="../../assets/js/lesson.js" defer></script>`
   });
 }
@@ -426,6 +433,12 @@ function quizFor(item, chapter) {
   if (matches.length) {
     return matches.map((q, index) => ({
       id: `${item.slug}-practice-${index}`,
+      qid: q.id,
+      cat: q.cat,
+      q: q.q,
+      c: q.c,
+      a: q.a,
+      e: q.e,
       prompt: q.q,
       options: q.c,
       answer: q.c[q.a],
@@ -572,6 +585,18 @@ function homePage() {
     </section>
     <section class="layout">
       <div class="section-heading">
+        <p class="section-kicker">Learning tools</p>
+        <h2>合格支援ツール</h2>
+        <p>進捗、復習、模試、検索をまとめて使い、次にやるべき学習へ進めます。</p>
+      </div>
+      <div class="source-grid">
+        <article><h3>ダッシュボード</h3><p>弱点カテゴリ、復習待ち、試験日からの今日のノルマを確認します。</p><a href="./dashboard/index.html">開く</a></article>
+        <article><h3>100分模試</h3><p>全カテゴリ横断の本番形式で解き、カテゴリ別の正答率を確認します。</p><a href="./mock/index.html">開始する</a></article>
+        <article><h3>今日の復習</h3><p>間隔反復とブックマークから、見直すべき問題だけを解きます。</p><a href="./review/index.html">復習する</a></article>
+      </div>
+    </section>
+    <section class="layout">
+      <div class="section-heading">
         <p class="section-kicker">Practice bank</p>
         <h2>本番形式の4択演習</h2>
         <p>既存の gtest-quiz.html から抽出した567問を、カテゴリ別に解ける演習ページとして組み込みます。</p>
@@ -609,15 +634,144 @@ function glossaryPage() {
 function reviewPage() {
   const body = `    <section class="layout">
       <div class="section-heading">
-        <p class="section-kicker">Review</p>
-        <h2>横断復習</h2>
-        <p>章をまたいで、用語の対応関係と弱点を確認します。</p>
+        <p class="section-kicker">Spaced review</p>
+        <h2>今日の復習</h2>
+        <p>間隔反復で期限が来た問題と、ブックマークした問題だけを解き直します。</p>
       </div>
-      <div class="lesson-grid">
-        ${chapters.map((chapter) => `<a class="lesson-card" href="../chapters/${chapter.slug}/index.html"><h3>${esc(chapter.title)}</h3><p>${esc(chapter.lessons.slice(0, 3).map((l) => l.title).join(" / "))} などを復習します。</p><span>${chapter.lessons.length}ページ</span></a>`).join("")}
-      </div>
+      <div class="dashboard-metrics" id="reviewSummary"></div>
+      <section class="practice-setup" id="reviewSetup">
+        <div class="practice-toolbar">
+          <button class="primary-button" type="button" id="startDueReview">期限到来の問題を復習</button>
+          <button class="ghost-button" type="button" id="startBookmarkReview">ブックマークだけ演習</button>
+        </div>
+      </section>
+      <section class="practice-stage" id="reviewStage" hidden>
+        <p class="practice-meta" id="reviewMeta"></p>
+        <h3 class="practice-question" id="reviewQuestion"></h3>
+        <div class="practice-options" id="reviewOptions"></div>
+        <div class="practice-feedback" id="reviewFeedback" aria-live="polite"></div>
+        <div class="practice-toolbar"><button class="primary-button" type="button" id="reviewNext" disabled>次へ</button></div>
+      </section>
+      <section class="practice-result" id="reviewResult" hidden></section>
     </section>`;
-  return layout({ depth: 1, title: "横断復習", description: "全章の復習導線です。", body });
+  return layout({
+    depth: 1,
+    title: "今日の復習",
+    description: "SRSとブックマークによる復習ページです。",
+    body,
+    extraScript: `  <script src="../assets/js/store.js" defer></script>
+  <script src="../assets/js/learning.js" defer></script>
+  <script src="../assets/js/review.js" defer></script>`
+  });
+}
+
+function dashboardPage() {
+  const body = `    <section class="layout">
+      <div class="section-heading">
+        <p class="section-kicker">Dashboard</p>
+        <h2>学習ダッシュボード</h2>
+        <p>レッスン進捗、問題カバレッジ、弱点カテゴリ、模試履歴、試験日からの学習ノルマを確認します。</p>
+      </div>
+      <div class="dashboard-metrics" id="dashboardMetrics"></div>
+      <section class="dashboard-panel">
+        <h3>カテゴリ別正答率</h3>
+        <div class="category-stats" id="categoryStats"></div>
+      </section>
+      <section class="dashboard-panel">
+        <h3>試験日からの学習プラン</h3>
+        <div class="practice-toolbar">
+          <label class="control-field"><span>受験日</span><input id="examDate" type="date"></label>
+          <button class="primary-button" type="button" id="savePlan">保存</button>
+        </div>
+        <p id="planSummary" class="progress-state"></p>
+      </section>
+      <section class="dashboard-panel">
+        <h3>模試履歴</h3>
+        <div id="examHistory"></div>
+      </section>
+      <section class="dashboard-panel">
+        <h3>進捗のバックアップ</h3>
+        <div class="practice-toolbar">
+          <button class="ghost-button" type="button" id="exportProgress">エクスポート</button>
+          <label class="ghost-button import-button">インポート<input id="importProgress" type="file" accept="application/json"></label>
+        </div>
+        <p id="importStatus" class="progress-state"></p>
+      </section>
+    </section>`;
+  return layout({
+    depth: 1,
+    title: "学習ダッシュボード",
+    description: "G検定学習の進捗と弱点を確認するダッシュボードです。",
+    body,
+    extraScript: `  <script src="../assets/js/store.js" defer></script>
+  <script src="../assets/js/learning.js" defer></script>
+  <script src="../assets/js/dashboard.js" defer></script>`
+  });
+}
+
+function mockPage() {
+  const body = `    <section class="layout">
+      <div class="section-heading">
+        <p class="section-kicker">Mock exam</p>
+        <h2>100分 模試モード</h2>
+        <p>全カテゴリから横断出題します。解答中は正誤を表示せず、提出後にカテゴリ別の弱点を分析します。</p>
+      </div>
+      <section class="practice-setup" id="mockSetup">
+        <h3>出題設定</h3>
+        <p id="mockConfig">読み込み中</p>
+        <button class="primary-button" type="button" id="mockStart">模試を開始</button>
+      </section>
+      <section class="mock-stage" id="mockStage" hidden>
+        <div class="mock-toolbar">
+          <strong id="mockTimer">100:00</strong>
+          <button class="ghost-button" type="button" id="mockFlag">後で見直す</button>
+          <button class="primary-button" type="button" id="mockSubmit">提出</button>
+        </div>
+        <div class="mock-layout">
+          <article class="practice-stage">
+            <p class="practice-meta" id="mockMeta"></p>
+            <h3 class="practice-question" id="mockQuestion"></h3>
+            <div class="mock-options" id="mockOptions"></div>
+            <div class="practice-toolbar">
+              <button class="ghost-button" type="button" id="mockPrev">前へ</button>
+              <button class="primary-button" type="button" id="mockNext">次へ</button>
+            </div>
+          </article>
+          <aside class="mock-palette" id="mockPalette" aria-label="問題パレット"></aside>
+        </div>
+      </section>
+      <section class="practice-result" id="mockResult" hidden></section>
+    </section>`;
+  return layout({
+    depth: 1,
+    title: "100分 模試モード",
+    description: "本番形式に近い横断模試ページです。",
+    body,
+    extraScript: `  <script src="../assets/js/store.js" defer></script>
+  <script src="../assets/js/learning.js" defer></script>
+  <script src="../assets/js/mock.js" defer></script>`
+  });
+}
+
+function searchPage() {
+  const body = `    <section class="layout">
+      <div class="section-heading">
+        <p class="section-kicker">Search</p>
+        <h2>サイト内検索</h2>
+        <p>レッスン、用語、問題を横断して検索できます。</p>
+      </div>
+      <label class="search-box"><span>検索語</span><input id="siteSearch" type="search" placeholder="例: Attention、著作権、混同行列"></label>
+      <div class="search-results" id="searchResults"></div>
+    </section>`;
+  return layout({
+    depth: 1,
+    title: "サイト内検索",
+    description: "教材と問題を横断検索します。",
+    body,
+    extraScript: `  <script src="../assets/js/store.js" defer></script>
+  <script src="../assets/js/learning.js" defer></script>
+  <script src="../assets/js/search.js" defer></script>`
+  });
 }
 
 function practicePage() {
@@ -658,7 +812,9 @@ function practicePage() {
     title: "G検定 4択トレーニング",
     description: "既存の4択演習コンテンツを統合した本番形式の練習ページです。",
     body,
-    extraScript: `  <script src="../assets/js/practice.js" defer></script>`
+    extraScript: `  <script src="../assets/js/store.js" defer></script>
+  <script src="../assets/js/learning.js" defer></script>
+  <script src="../assets/js/practice.js" defer></script>`
   });
 }
 
@@ -682,6 +838,28 @@ function allLessons() {
   return chapters.flatMap((chapter) => chapter.lessons.map((lesson) => ({ chapter, lesson })));
 }
 
+function searchIndex() {
+  const lessonItems = allLessons().map(({ chapter, lesson }) => ({
+    kind: "レッスン",
+    title: lesson.title,
+    body: `${chapter.title} ${lesson.focus} ${lesson.terms.join(" ")}`,
+    url: `../chapters/${chapter.slug}/${lesson.slug}.html`
+  }));
+  const termItems = allLessons().flatMap(({ chapter, lesson }) => lesson.terms.map((term) => ({
+    kind: "用語",
+    title: term,
+    body: `${chapter.title} / ${lesson.title}`,
+    url: `../chapters/${chapter.slug}/${lesson.slug}.html`
+  })));
+  const questionItems = practiceQuestions.map((question) => ({
+    kind: "問題",
+    title: question.q,
+    body: `${question.cat} ${question.c.join(" ")} ${stripHtml(question.e || "")}`,
+    url: `../practice/index.html?cat=${encodeURIComponent(question.cat)}`
+  }));
+  return [...lessonItems, ...termItems, ...questionItems];
+}
+
 function generate() {
   ensureDir("chapters");
   chapters.forEach((chapter) => {
@@ -691,11 +869,15 @@ function generate() {
     });
   });
   writeFile("index.html", homePage());
+  writeFile("dashboard/index.html", dashboardPage());
+  writeFile("mock/index.html", mockPage());
   writeFile("glossary/index.html", glossaryPage());
   writeFile("review/index.html", reviewPage());
+  writeFile("search/index.html", searchPage());
   writeFile("practice/index.html", practicePage());
   writeFile("sources/index.html", sourcesPage());
   writeFile("content/syllabus-map.json", JSON.stringify(chapters, null, 2));
+  writeFile("content/search-index.json", JSON.stringify(searchIndex(), null, 2));
 }
 
 generate();

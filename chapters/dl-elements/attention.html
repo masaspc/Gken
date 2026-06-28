@@ -22,9 +22,12 @@
   </header>
   <nav class="top-nav" aria-label="主要ナビゲーション">
     <a href="../../index.html">学習マップ</a>
+    <a href="../../dashboard/index.html">ダッシュボード</a>
+    <a href="../../mock/index.html">模試</a>
+    <a href="../../review/index.html">復習</a>
+    <a href="../../search/index.html">検索</a>
     <a href="../../practice/index.html">4択演習</a>
     <a href="../../glossary/index.html">用語集</a>
-    <a href="../../review/index.html">横断復習</a>
     <a href="../../sources/index.html">参照資料</a>
   </nav>
   <main id="main">
@@ -82,18 +85,22 @@
           <ol>
             <li>Attention</li><li>Query</li><li>Key</li><li>Value</li><li>重み</li>
           </ol>
+          <h3>関連する練習問題</h3>
+          <p><a href="../../practice/index.html?cat=undefined">この章の4択演習を開く</a></p>
           <h3>前後の学習</h3>
           <p><a href="../../chapters/dl-elements/rnn.html">前: 回帰結合層とRNN</a></p>
           <p><a href="../../chapters/dl-elements/transformer.html">次: Transformer</a></p>
         </aside>
       </div>
     </section>
-    <script type="application/json" id="lessonData">{"slug":"dl-elements/attention","title":"Attention","terms":["Attention","Query","Key","Value","重み"],"visual":{"type":"attention","title":"Attention: 文中の依存関係","tokens":["猫が","魚を","静かに","食べた","。"],"focus":3,"features":[[0.9,0.1,0.1],[0.2,0.9,0.1],[0.1,0.2,0.8],[0.7,0.8,0.2],[0,0,0.1]]},"quiz":[{"id":"attention-practice-0","prompt":"入力系列の中で「どこに注目するか」を動的に重み付けし、長距離の依存関係を捉える仕組みはどれか。","options":["プーリング","Attention（注意機構）","ドロップアウト","畳み込み"],"answer":"Attention（注意機構）","explanation":"\u003cb>Attention（注意機構）\u003c/b>。系列内の関連性に応じて重みを割り当てる。自己注意（Self-Attention）はTransformerの中核。"},{"id":"attention-practice-1","prompt":"seq2seqの機械翻訳で、出力の各語を生成する際に入力系列の関連部分へ動的に注目できるよう導入された仕組みはどれか。","options":["Attention（注意機構）","ドロップアウト","プーリング","バッチ正規化"],"answer":"Attention（注意機構）","explanation":"\u003cb>Attention\u003c/b>。固定長ベクトルに全入力を押し込むseq2seqの情報ボトルネックを解消し、出力ごとに入力の重要箇所へ重みを置く。これを推し進め再帰を排したのがTransformer。NLP性能向上の決定的アイデア。"},{"id":"attention-practice-2","prompt":"系列の各要素が他のどの要素にどれだけ関連するかを動的に重みづけして参照する仕組みはどれか。","options":["注意機構（Attention）","プーリング","ドロップアウト","バッチ正規化"],"answer":"注意機構（Attention）","explanation":"【正解の理由】\u003cb>注意機構（Attention）\u003c/b>は、出力の各位置が入力のどこを重視すべきかを重みで表し、長距離の関係を直接捉える。自己注意（Self-Attention）はTransformerの中核。【各選択肢】②③④はCNN/正則化の要素で参照の重みづけではない。【関連】「Attention Is All You Need」でRNN不要を示した。"}]}</script>
+    <script type="application/json" id="lessonData">{"slug":"dl-elements/attention","title":"Attention","terms":["Attention","Query","Key","Value","重み"],"visual":{"type":"attention","title":"Attention: 文中の依存関係","tokens":["猫が","魚を","静かに","食べた","。"],"focus":3,"features":[[0.9,0.1,0.1],[0.2,0.9,0.1],[0.1,0.2,0.8],[0.7,0.8,0.2],[0,0,0.1]]},"quiz":[{"id":"attention-practice-0","qid":"q-943aa12c","cat":"第5章 要素技術","q":"入力系列の中で「どこに注目するか」を動的に重み付けし、長距離の依存関係を捉える仕組みはどれか。","c":["プーリング","Attention（注意機構）","ドロップアウト","畳み込み"],"a":1,"e":"\u003cb>Attention（注意機構）\u003c/b>。系列内の関連性に応じて重みを割り当てる。自己注意（Self-Attention）はTransformerの中核。","prompt":"入力系列の中で「どこに注目するか」を動的に重み付けし、長距離の依存関係を捉える仕組みはどれか。","options":["プーリング","Attention（注意機構）","ドロップアウト","畳み込み"],"answer":"Attention（注意機構）","explanation":"\u003cb>Attention（注意機構）\u003c/b>。系列内の関連性に応じて重みを割り当てる。自己注意（Self-Attention）はTransformerの中核。"},{"id":"attention-practice-1","qid":"q-7f5c38b1","cat":"第5章 要素技術","q":"seq2seqの機械翻訳で、出力の各語を生成する際に入力系列の関連部分へ動的に注目できるよう導入された仕組みはどれか。","c":["Attention（注意機構）","ドロップアウト","プーリング","バッチ正規化"],"a":0,"e":"\u003cb>Attention\u003c/b>。固定長ベクトルに全入力を押し込むseq2seqの情報ボトルネックを解消し、出力ごとに入力の重要箇所へ重みを置く。これを推し進め再帰を排したのがTransformer。NLP性能向上の決定的アイデア。","prompt":"seq2seqの機械翻訳で、出力の各語を生成する際に入力系列の関連部分へ動的に注目できるよう導入された仕組みはどれか。","options":["Attention（注意機構）","ドロップアウト","プーリング","バッチ正規化"],"answer":"Attention（注意機構）","explanation":"\u003cb>Attention\u003c/b>。固定長ベクトルに全入力を押し込むseq2seqの情報ボトルネックを解消し、出力ごとに入力の重要箇所へ重みを置く。これを推し進め再帰を排したのがTransformer。NLP性能向上の決定的アイデア。"},{"id":"attention-practice-2","qid":"q-262cb801","cat":"第5章 要素技術","q":"系列の各要素が他のどの要素にどれだけ関連するかを動的に重みづけして参照する仕組みはどれか。","c":["注意機構（Attention）","プーリング","ドロップアウト","バッチ正規化"],"a":0,"e":"【正解の理由】\u003cb>注意機構（Attention）\u003c/b>は、出力の各位置が入力のどこを重視すべきかを重みで表し、長距離の関係を直接捉える。自己注意（Self-Attention）はTransformerの中核。【各選択肢】②③④はCNN/正則化の要素で参照の重みづけではない。【関連】「Attention Is All You Need」でRNN不要を示した。","prompt":"系列の各要素が他のどの要素にどれだけ関連するかを動的に重みづけして参照する仕組みはどれか。","options":["注意機構（Attention）","プーリング","ドロップアウト","バッチ正規化"],"answer":"注意機構（Attention）","explanation":"【正解の理由】\u003cb>注意機構（Attention）\u003c/b>は、出力の各位置が入力のどこを重視すべきかを重みで表し、長距離の関係を直接捉える。自己注意（Self-Attention）はTransformerの中核。【各選択肢】②③④はCNN/正則化の要素で参照の重みづけではない。【関連】「Attention Is All You Need」でRNN不要を示した。"}]}</script>
   </main>
   <footer class="app-footer">
     <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>
   </footer>
   <script src="../../assets/js/visualizations.js" defer></script>
+  <script src="../../assets/js/store.js" defer></script>
+  <script src="../../assets/js/learning.js" defer></script>
   <script src="../../assets/js/lesson.js" defer></script>
 </body>
 </html>

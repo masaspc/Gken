@@ -22,9 +22,12 @@
   </header>
   <nav class="top-nav" aria-label="主要ナビゲーション">
     <a href="../../index.html">学習マップ</a>
+    <a href="../../dashboard/index.html">ダッシュボード</a>
+    <a href="../../mock/index.html">模試</a>
+    <a href="../../review/index.html">復習</a>
+    <a href="../../search/index.html">検索</a>
     <a href="../../practice/index.html">4択演習</a>
     <a href="../../glossary/index.html">用語集</a>
-    <a href="../../review/index.html">横断復習</a>
     <a href="../../sources/index.html">参照資料</a>
   </nav>
   <main id="main">
@@ -79,18 +82,22 @@
           <ol>
             <li>深層強化学習</li><li>DQN</li><li>方策勾配</li><li>報酬設計</li>
           </ol>
+          <h3>関連する練習問題</h3>
+          <p><a href="../../practice/index.html?cat=undefined">この章の4択演習を開く</a></p>
           <h3>前後の学習</h3>
           <p><a href="../../chapters/applications/speech-processing.html">前: 音声処理</a></p>
           <p><a href="../../chapters/applications/generative-models.html">次: 生成モデル</a></p>
         </aside>
       </div>
     </section>
-    <script type="application/json" id="lessonData">{"slug":"applications/deep-rl","title":"深層強化学習","terms":["深層強化学習","DQN","方策勾配","報酬設計"],"visual":{"type":"flow","title":"深層強化学習の学習サイクル","steps":[{"label":"観測","note":"画像や状態を入力"},{"label":"行動選択","note":"ネットワークが価値を推定"},{"label":"報酬","note":"環境から結果を受ける"},{"label":"経験再生","note":"過去経験を再利用"},{"label":"更新","note":"価値関数を安定化"}]},"quiz":[{"id":"deep-rl-practice-0","prompt":"DQNが学習を安定化させるために導入した工夫の組み合わせはどれか。","options":["経験再生（experience replay）とターゲットネットワーク","ドロップアウトとデータ拡張","剪定とバギング","オプトインと匿名加工"],"answer":"経験再生（experience replay）とターゲットネットワーク","explanation":"\u003cb>経験再生\u003c/b>（過去の経験をランダムに再利用して相関を低減）と\u003cb>ターゲットネットワーク\u003c/b>（目標値を一定期間固定して発散を防ぐ）。深層強化学習の不安定さを抑えた重要な工夫。"},{"id":"deep-rl-practice-1","prompt":"Atariのゲームで人間並みの成績を出し、Q学習と深層学習を組み合わせた強化学習手法はどれか。","options":["DQN","word2vec","GAN","BERT"],"answer":"DQN","explanation":"\u003cb>DQN（Deep Q-Network）\u003c/b>。行動価値関数Qをディープニューラルネットで近似し、経験再生などで安定化した。DeepMindが発表。"},{"id":"deep-rl-practice-2","prompt":"行動価値関数Qを更新しながら最適方策を学ぶ、代表的な強化学習アルゴリズムはどれか。","options":["Q学習","k-means","主成分分析","ブースティング"],"answer":"Q学習","explanation":"\u003cb>Q学習\u003c/b>。状態・行動の価値Qを試行錯誤で更新する。これをディープラーニングで近似したのがDQN。"}]}</script>
+    <script type="application/json" id="lessonData">{"slug":"applications/deep-rl","title":"深層強化学習","terms":["深層強化学習","DQN","方策勾配","報酬設計"],"visual":{"type":"flow","title":"深層強化学習の学習サイクル","steps":[{"label":"観測","note":"画像や状態を入力"},{"label":"行動選択","note":"ネットワークが価値を推定"},{"label":"報酬","note":"環境から結果を受ける"},{"label":"経験再生","note":"過去経験を再利用"},{"label":"更新","note":"価値関数を安定化"}]},"quiz":[{"id":"deep-rl-practice-0","qid":"q-76d83d98","cat":"第6章 応用例","q":"DQNが学習を安定化させるために導入した工夫の組み合わせはどれか。","c":["経験再生（experience replay）とターゲットネットワーク","ドロップアウトとデータ拡張","剪定とバギング","オプトインと匿名加工"],"a":0,"e":"\u003cb>経験再生\u003c/b>（過去の経験をランダムに再利用して相関を低減）と\u003cb>ターゲットネットワーク\u003c/b>（目標値を一定期間固定して発散を防ぐ）。深層強化学習の不安定さを抑えた重要な工夫。","prompt":"DQNが学習を安定化させるために導入した工夫の組み合わせはどれか。","options":["経験再生（experience replay）とターゲットネットワーク","ドロップアウトとデータ拡張","剪定とバギング","オプトインと匿名加工"],"answer":"経験再生（experience replay）とターゲットネットワーク","explanation":"\u003cb>経験再生\u003c/b>（過去の経験をランダムに再利用して相関を低減）と\u003cb>ターゲットネットワーク\u003c/b>（目標値を一定期間固定して発散を防ぐ）。深層強化学習の不安定さを抑えた重要な工夫。"},{"id":"deep-rl-practice-1","qid":"q-0d3d8650","cat":"第6章 応用例","q":"Atariのゲームで人間並みの成績を出し、Q学習と深層学習を組み合わせた強化学習手法はどれか。","c":["DQN","word2vec","GAN","BERT"],"a":0,"e":"\u003cb>DQN（Deep Q-Network）\u003c/b>。行動価値関数Qをディープニューラルネットで近似し、経験再生などで安定化した。DeepMindが発表。","prompt":"Atariのゲームで人間並みの成績を出し、Q学習と深層学習を組み合わせた強化学習手法はどれか。","options":["DQN","word2vec","GAN","BERT"],"answer":"DQN","explanation":"\u003cb>DQN（Deep Q-Network）\u003c/b>。行動価値関数Qをディープニューラルネットで近似し、経験再生などで安定化した。DeepMindが発表。"},{"id":"deep-rl-practice-2","qid":"q-4736ce54","cat":"第6章 応用例","q":"行動価値関数Qを更新しながら最適方策を学ぶ、代表的な強化学習アルゴリズムはどれか。","c":["Q学習","k-means","主成分分析","ブースティング"],"a":0,"e":"\u003cb>Q学習\u003c/b>。状態・行動の価値Qを試行錯誤で更新する。これをディープラーニングで近似したのがDQN。","prompt":"行動価値関数Qを更新しながら最適方策を学ぶ、代表的な強化学習アルゴリズムはどれか。","options":["Q学習","k-means","主成分分析","ブースティング"],"answer":"Q学習","explanation":"\u003cb>Q学習\u003c/b>。状態・行動の価値Qを試行錯誤で更新する。これをディープラーニングで近似したのがDQN。"}]}</script>
   </main>
   <footer class="app-footer">
     <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>
   </footer>
   <script src="../../assets/js/visualizations.js" defer></script>
+  <script src="../../assets/js/store.js" defer></script>
+  <script src="../../assets/js/learning.js" defer></script>
   <script src="../../assets/js/lesson.js" defer></script>
 </body>
 </html>

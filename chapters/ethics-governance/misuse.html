@@ -22,9 +22,12 @@
   </header>
   <nav class="top-nav" aria-label="主要ナビゲーション">
     <a href="../../index.html">学習マップ</a>
+    <a href="../../dashboard/index.html">ダッシュボード</a>
+    <a href="../../mock/index.html">模試</a>
+    <a href="../../review/index.html">復習</a>
+    <a href="../../search/index.html">検索</a>
     <a href="../../practice/index.html">4択演習</a>
     <a href="../../glossary/index.html">用語集</a>
-    <a href="../../review/index.html">横断復習</a>
     <a href="../../sources/index.html">参照資料</a>
   </nav>
   <main id="main">
@@ -81,18 +84,22 @@
           <ol>
             <li>悪用</li><li>ディープフェイク</li><li>なりすまし</li><li>濫用防止</li>
           </ol>
+          <h3>関連する練習問題</h3>
+          <p><a href="../../practice/index.html?cat=undefined">この章の4択演習を開く</a></p>
           <h3>前後の学習</h3>
           <p><a href="../../chapters/ethics-governance/safety-security.html">前: 安全性とセキュリティ</a></p>
           <p><a href="../../chapters/ethics-governance/transparency.html">次: 透明性</a></p>
         </aside>
       </div>
     </section>
-    <script type="application/json" id="lessonData">{"slug":"ethics-governance/misuse","title":"悪用への対策","terms":["悪用","ディープフェイク","なりすまし","濫用防止"],"visual":{"type":"relation-table","title":"AI悪用と対策","columns":["悪用例","被害","対策"],"rows":[["ディープフェイク","本人になりすました映像や音声を作る","検出技術と出所確認を組み合わせる"],["なりすまし","文章生成で詐欺や偽連絡を行う","本人確認と利用ログ監査を行う"],["濫用","大量生成で迷惑行為や情報汚染を起こす","利用制限とポリシー enforcement を設ける"]]},"quiz":[{"id":"misuse-practice-0","prompt":"実在しない映像や音声を本物のように生成・合成し、悪用が懸念される技術を何というか。","options":["ディープフェイク","データ拡張","アノテーション","ハルシネーション"],"answer":"ディープフェイク","explanation":"\u003cb>ディープフェイク\u003c/b>。GAN等で人物の顔や声を合成する技術。なりすまし・偽情報・名誉毀損などのリスクがあり、検知技術や規制が議論されている。"},{"id":"misuse-practice-1","prompt":"実在する人物の顔や声を合成し、本人が言っていない発言をさせるなど悪用が懸念される技術はどれか。","options":["ディープフェイク","データ拡張","蒸留","正則化"],"answer":"ディープフェイク","explanation":"【正解の理由】\u003cb>ディープフェイク\u003c/b>は深層生成技術で本物と見分けにくい偽の映像・音声を作る技術で、なりすまし・偽情報・名誉毀損などのリスクがある。【各選択肢】②③④は学習・モデルの技法で悪用技術ではない。【関連】肖像権・著作権・名誉毀損等の法的問題、検知技術や来歴情報の付与（電子透かし等）が対策。"},{"id":"misuse-practice-2","prompt":"スタイルを段階的に制御でき、非常に高品質な顔画像生成で知られるGANはどれか。","options":["StyleGAN","DCGAN","CycleGAN","U-Net"],"answer":"StyleGAN","explanation":"\u003cb>StyleGAN\u003c/b>。各解像度でスタイル情報を注入し、髪型・表情などを制御しつつフォトリアルな顔を生成する。ディープフェイクの基盤技術ともなり、倫理・悪用の観点でも語られる。"}]}</script>
+    <script type="application/json" id="lessonData">{"slug":"ethics-governance/misuse","title":"悪用への対策","terms":["悪用","ディープフェイク","なりすまし","濫用防止"],"visual":{"type":"relation-table","title":"AI悪用と対策","columns":["悪用例","被害","対策"],"rows":[["ディープフェイク","本人になりすました映像や音声を作る","検出技術と出所確認を組み合わせる"],["なりすまし","文章生成で詐欺や偽連絡を行う","本人確認と利用ログ監査を行う"],["濫用","大量生成で迷惑行為や情報汚染を起こす","利用制限とポリシー enforcement を設ける"]]},"quiz":[{"id":"misuse-practice-0","qid":"q-a548bd0d","cat":"第8章 法律・倫理","q":"実在しない映像や音声を本物のように生成・合成し、悪用が懸念される技術を何というか。","c":["ディープフェイク","データ拡張","アノテーション","ハルシネーション"],"a":0,"e":"\u003cb>ディープフェイク\u003c/b>。GAN等で人物の顔や声を合成する技術。なりすまし・偽情報・名誉毀損などのリスクがあり、検知技術や規制が議論されている。","prompt":"実在しない映像や音声を本物のように生成・合成し、悪用が懸念される技術を何というか。","options":["ディープフェイク","データ拡張","アノテーション","ハルシネーション"],"answer":"ディープフェイク","explanation":"\u003cb>ディープフェイク\u003c/b>。GAN等で人物の顔や声を合成する技術。なりすまし・偽情報・名誉毀損などのリスクがあり、検知技術や規制が議論されている。"},{"id":"misuse-practice-1","qid":"q-a73c58eb","cat":"第8章 法律・倫理","q":"実在する人物の顔や声を合成し、本人が言っていない発言をさせるなど悪用が懸念される技術はどれか。","c":["ディープフェイク","データ拡張","蒸留","正則化"],"a":0,"e":"【正解の理由】\u003cb>ディープフェイク\u003c/b>は深層生成技術で本物と見分けにくい偽の映像・音声を作る技術で、なりすまし・偽情報・名誉毀損などのリスクがある。【各選択肢】②③④は学習・モデルの技法で悪用技術ではない。【関連】肖像権・著作権・名誉毀損等の法的問題、検知技術や来歴情報の付与（電子透かし等）が対策。","prompt":"実在する人物の顔や声を合成し、本人が言っていない発言をさせるなど悪用が懸念される技術はどれか。","options":["ディープフェイク","データ拡張","蒸留","正則化"],"answer":"ディープフェイク","explanation":"【正解の理由】\u003cb>ディープフェイク\u003c/b>は深層生成技術で本物と見分けにくい偽の映像・音声を作る技術で、なりすまし・偽情報・名誉毀損などのリスクがある。【各選択肢】②③④は学習・モデルの技法で悪用技術ではない。【関連】肖像権・著作権・名誉毀損等の法的問題、検知技術や来歴情報の付与（電子透かし等）が対策。"},{"id":"misuse-practice-2","qid":"q-d4e61f1d","cat":"第5章 要素技術","q":"スタイルを段階的に制御でき、非常に高品質な顔画像生成で知られるGANはどれか。","c":["StyleGAN","DCGAN","CycleGAN","U-Net"],"a":0,"e":"\u003cb>StyleGAN\u003c/b>。各解像度でスタイル情報を注入し、髪型・表情などを制御しつつフォトリアルな顔を生成する。ディープフェイクの基盤技術ともなり、倫理・悪用の観点でも語られる。","prompt":"スタイルを段階的に制御でき、非常に高品質な顔画像生成で知られるGANはどれか。","options":["StyleGAN","DCGAN","CycleGAN","U-Net"],"answer":"StyleGAN","explanation":"\u003cb>StyleGAN\u003c/b>。各解像度でスタイル情報を注入し、髪型・表情などを制御しつつフォトリアルな顔を生成する。ディープフェイクの基盤技術ともなり、倫理・悪用の観点でも語られる。"}]}</script>
   </main>
   <footer class="app-footer">
     <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>
   </footer>
   <script src="../../assets/js/visualizations.js" defer></script>
+  <script src="../../assets/js/store.js" defer></script>
+  <script src="../../assets/js/learning.js" defer></script>
   <script src="../../assets/js/lesson.js" defer></script>
 </body>
 </html>

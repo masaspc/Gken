@@ -22,9 +22,12 @@
   </header>
   <nav class="top-nav" aria-label="主要ナビゲーション">
     <a href="../../index.html">学習マップ</a>
+    <a href="../../dashboard/index.html">ダッシュボード</a>
+    <a href="../../mock/index.html">模試</a>
+    <a href="../../review/index.html">復習</a>
+    <a href="../../search/index.html">検索</a>
     <a href="../../practice/index.html">4択演習</a>
     <a href="../../glossary/index.html">用語集</a>
-    <a href="../../review/index.html">横断復習</a>
     <a href="../../sources/index.html">参照資料</a>
   </nav>
   <main id="main">
@@ -82,18 +85,22 @@
           <ol>
             <li>音声認識</li><li>音声合成</li><li>スペクトログラム</li><li>波形</li>
           </ol>
+          <h3>関連する練習問題</h3>
+          <p><a href="../../practice/index.html?cat=undefined">この章の4択演習を開く</a></p>
           <h3>前後の学習</h3>
           <p><a href="../../chapters/applications/natural-language-processing.html">前: 自然言語処理</a></p>
           <p><a href="../../chapters/applications/deep-rl.html">次: 深層強化学習</a></p>
         </aside>
       </div>
     </section>
-    <script type="application/json" id="lessonData">{"slug":"applications/speech-processing","title":"音声処理","terms":["音声認識","音声合成","スペクトログラム","波形"],"visual":{"type":"distribution","title":"音声処理","concept":"平均・分散・サンプル数"},"quiz":[{"id":"speech-processing-practice-0","prompt":"古くは隠れマルコフモデルが使われ、近年は深層学習が主流になった、音声を文字に変換するタスクはどれか。","options":["音声認識","音声合成","話者識別","感情分析"],"answer":"音声認識","explanation":"【正解の理由】\u003cb>音声認識\u003c/b>は音声波形を文字列に変換する処理で、特徴量にメル周波数ケプストラム係数（MFCC）等を用い、HMM→深層学習（RNN/Transformer）へ発展した。【各選択肢】②音声合成は逆方向（文字→音声）、③話者識別は誰が話したか、④感情分析はテキストの感情判定。"},{"id":"speech-processing-practice-1","prompt":"波形を直接モデル化し、自然な音声を生成するディープラーニング手法はどれか。","options":["WaveNet","word2vec","YOLO","ResNet"],"answer":"WaveNet","explanation":"\u003cb>WaveNet\u003c/b>。DeepMindが開発した音声波形の生成モデルで、高品質な音声合成（TTS）を実現した。"},{"id":"speech-processing-practice-2","prompt":"音声をテキストに変換するタスクはどれか。","options":["音声認識","音声合成","話者照合","感情分析"],"answer":"音声認識","explanation":"\u003cb>音声認識（ASR）\u003c/b>は音声→テキスト。逆にテキスト→音声は音声合成（TTS、WaveNet等）。声で本人確認するのは話者照合で、それぞれ入出力が異なる。スマートスピーカーや議事録自動化で広く使われる。"}]}</script>
+    <script type="application/json" id="lessonData">{"slug":"applications/speech-processing","title":"音声処理","terms":["音声認識","音声合成","スペクトログラム","波形"],"visual":{"type":"distribution","title":"音声処理","concept":"平均・分散・サンプル数"},"quiz":[{"id":"speech-processing-practice-0","qid":"q-b02c10a7","cat":"第6章 応用例","q":"古くは隠れマルコフモデルが使われ、近年は深層学習が主流になった、音声を文字に変換するタスクはどれか。","c":["音声認識","音声合成","話者識別","感情分析"],"a":0,"e":"【正解の理由】\u003cb>音声認識\u003c/b>は音声波形を文字列に変換する処理で、特徴量にメル周波数ケプストラム係数（MFCC）等を用い、HMM→深層学習（RNN/Transformer）へ発展した。【各選択肢】②音声合成は逆方向（文字→音声）、③話者識別は誰が話したか、④感情分析はテキストの感情判定。","prompt":"古くは隠れマルコフモデルが使われ、近年は深層学習が主流になった、音声を文字に変換するタスクはどれか。","options":["音声認識","音声合成","話者識別","感情分析"],"answer":"音声認識","explanation":"【正解の理由】\u003cb>音声認識\u003c/b>は音声波形を文字列に変換する処理で、特徴量にメル周波数ケプストラム係数（MFCC）等を用い、HMM→深層学習（RNN/Transformer）へ発展した。【各選択肢】②音声合成は逆方向（文字→音声）、③話者識別は誰が話したか、④感情分析はテキストの感情判定。"},{"id":"speech-processing-practice-1","qid":"q-a7a71baa","cat":"第6章 応用例","q":"波形を直接モデル化し、自然な音声を生成するディープラーニング手法はどれか。","c":["WaveNet","word2vec","YOLO","ResNet"],"a":0,"e":"\u003cb>WaveNet\u003c/b>。DeepMindが開発した音声波形の生成モデルで、高品質な音声合成（TTS）を実現した。","prompt":"波形を直接モデル化し、自然な音声を生成するディープラーニング手法はどれか。","options":["WaveNet","word2vec","YOLO","ResNet"],"answer":"WaveNet","explanation":"\u003cb>WaveNet\u003c/b>。DeepMindが開発した音声波形の生成モデルで、高品質な音声合成（TTS）を実現した。"},{"id":"speech-processing-practice-2","qid":"q-a3a72a74","cat":"第6章 応用例","q":"音声をテキストに変換するタスクはどれか。","c":["音声認識","音声合成","話者照合","感情分析"],"a":0,"e":"\u003cb>音声認識（ASR）\u003c/b>は音声→テキスト。逆にテキスト→音声は音声合成（TTS、WaveNet等）。声で本人確認するのは話者照合で、それぞれ入出力が異なる。スマートスピーカーや議事録自動化で広く使われる。","prompt":"音声をテキストに変換するタスクはどれか。","options":["音声認識","音声合成","話者照合","感情分析"],"answer":"音声認識","explanation":"\u003cb>音声認識（ASR）\u003c/b>は音声→テキスト。逆にテキスト→音声は音声合成（TTS、WaveNet等）。声で本人確認するのは話者照合で、それぞれ入出力が異なる。スマートスピーカーや議事録自動化で広く使われる。"}]}</script>
   </main>
   <footer class="app-footer">
     <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>
   </footer>
   <script src="../../assets/js/visualizations.js" defer></script>
+  <script src="../../assets/js/store.js" defer></script>
+  <script src="../../assets/js/learning.js" defer></script>
   <script src="../../assets/js/lesson.js" defer></script>
 </body>
 </html>

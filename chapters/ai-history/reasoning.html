@@ -22,9 +22,12 @@
   </header>
   <nav class="top-nav" aria-label="主要ナビゲーション">
     <a href="../../index.html">学習マップ</a>
+    <a href="../../dashboard/index.html">ダッシュボード</a>
+    <a href="../../mock/index.html">模試</a>
+    <a href="../../review/index.html">復習</a>
+    <a href="../../search/index.html">検索</a>
     <a href="../../practice/index.html">4択演習</a>
     <a href="../../glossary/index.html">用語集</a>
-    <a href="../../review/index.html">横断復習</a>
     <a href="../../sources/index.html">参照資料</a>
   </nav>
   <main id="main">
@@ -81,18 +84,22 @@
           <ol>
             <li>推論</li><li>演繹</li><li>帰納</li><li>アブダクション</li>
           </ol>
+          <h3>関連する練習問題</h3>
+          <p><a href="../../practice/index.html?cat=undefined">この章の4択演習を開く</a></p>
           <h3>前後の学習</h3>
           <p><a href="../../chapters/ai-history/search.html">前: 探索</a></p>
           <p><a href="../../chapters/ai-history/knowledge-representation.html">次: 知識表現</a></p>
         </aside>
       </div>
     </section>
-    <script type="application/json" id="lessonData">{"slug":"ai-history/reasoning","title":"推論","terms":["推論","演繹","帰納","アブダクション"],"visual":{"type":"comparison-table","title":"推論方法の比較","columns":["種類","進み方","例"],"rows":[["演繹","一般的な規則から個別の結論を導く","全ての哺乳類は動物、犬は哺乳類"],["帰納","複数の観察から一般的な傾向を考える","見た鳥が飛ぶので鳥は飛ぶと推測"],["アブダクション","結果を説明する最もありそうな仮説を選ぶ","地面が濡れているので雨を疑う"]]},"quiz":[{"id":"reasoning-practice-0","prompt":"第2次AIブームを牽引した、専門家の知識をルールとして蓄積し推論する仕組みはどれか。","options":["ニューラルネットワーク","エキスパートシステム","強化学習","深層学習"],"answer":"エキスパートシステム","explanation":"\u003cb>エキスパートシステム\u003c/b>。MYCIN（感染症診断）やDENDRAL（化合物推定）が代表例。知識をルール化する「知識の時代」が第2次ブーム。"},{"id":"reasoning-practice-1","prompt":"2016年に囲碁のトッププロを破ったAlphaGoが組み合わせた主要技術の組み合わせとして正しいものはどれか。","options":["ルールベース推論とSVM","モンテカルロ木探索・深層学習・強化学習","エキスパートシステムと遺伝的アルゴリズム","決定木とk-means"],"answer":"モンテカルロ木探索・深層学習・強化学習","explanation":"\u003cb>AlphaGo\u003c/b>は、モンテカルロ木探索に加え、深層学習（盤面評価・着手予測）と強化学習（自己対戦）を組み合わせた。"},{"id":"reasoning-practice-2","prompt":"第1次AIブームの中心となった、迷路やパズルを解くための技術はどれか。","options":["探索・推論","知識表現","ディープラーニング","強化学習"],"answer":"探索・推論","explanation":"第1次ブーム（1950〜60年代）は\u003cb>探索・推論\u003c/b>の時代。明確なルールの問題は解けたが、現実の複雑な問題（トイ・プロブレムの限界）には対応できなかった。"}]}</script>
+    <script type="application/json" id="lessonData">{"slug":"ai-history/reasoning","title":"推論","terms":["推論","演繹","帰納","アブダクション"],"visual":{"type":"comparison-table","title":"推論方法の比較","columns":["種類","進み方","例"],"rows":[["演繹","一般的な規則から個別の結論を導く","全ての哺乳類は動物、犬は哺乳類"],["帰納","複数の観察から一般的な傾向を考える","見た鳥が飛ぶので鳥は飛ぶと推測"],["アブダクション","結果を説明する最もありそうな仮説を選ぶ","地面が濡れているので雨を疑う"]]},"quiz":[{"id":"reasoning-practice-0","qid":"q-3e7f5e82","cat":"第2章 動向","q":"第2次AIブームを牽引した、専門家の知識をルールとして蓄積し推論する仕組みはどれか。","c":["ニューラルネットワーク","エキスパートシステム","強化学習","深層学習"],"a":1,"e":"\u003cb>エキスパートシステム\u003c/b>。MYCIN（感染症診断）やDENDRAL（化合物推定）が代表例。知識をルール化する「知識の時代」が第2次ブーム。","prompt":"第2次AIブームを牽引した、専門家の知識をルールとして蓄積し推論する仕組みはどれか。","options":["ニューラルネットワーク","エキスパートシステム","強化学習","深層学習"],"answer":"エキスパートシステム","explanation":"\u003cb>エキスパートシステム\u003c/b>。MYCIN（感染症診断）やDENDRAL（化合物推定）が代表例。知識をルール化する「知識の時代」が第2次ブーム。"},{"id":"reasoning-practice-1","qid":"q-ace0bf3f","cat":"第2章 動向","q":"2016年に囲碁のトッププロを破ったAlphaGoが組み合わせた主要技術の組み合わせとして正しいものはどれか。","c":["ルールベース推論とSVM","モンテカルロ木探索・深層学習・強化学習","エキスパートシステムと遺伝的アルゴリズム","決定木とk-means"],"a":1,"e":"\u003cb>AlphaGo\u003c/b>は、モンテカルロ木探索に加え、深層学習（盤面評価・着手予測）と強化学習（自己対戦）を組み合わせた。","prompt":"2016年に囲碁のトッププロを破ったAlphaGoが組み合わせた主要技術の組み合わせとして正しいものはどれか。","options":["ルールベース推論とSVM","モンテカルロ木探索・深層学習・強化学習","エキスパートシステムと遺伝的アルゴリズム","決定木とk-means"],"answer":"モンテカルロ木探索・深層学習・強化学習","explanation":"\u003cb>AlphaGo\u003c/b>は、モンテカルロ木探索に加え、深層学習（盤面評価・着手予測）と強化学習（自己対戦）を組み合わせた。"},{"id":"reasoning-practice-2","qid":"q-a9d59ed5","cat":"第2章 動向","q":"第1次AIブームの中心となった、迷路やパズルを解くための技術はどれか。","c":["探索・推論","知識表現","ディープラーニング","強化学習"],"a":0,"e":"第1次ブーム（1950〜60年代）は\u003cb>探索・推論\u003c/b>の時代。明確なルールの問題は解けたが、現実の複雑な問題（トイ・プロブレムの限界）には対応できなかった。","prompt":"第1次AIブームの中心となった、迷路やパズルを解くための技術はどれか。","options":["探索・推論","知識表現","ディープラーニング","強化学習"],"answer":"探索・推論","explanation":"第1次ブーム（1950〜60年代）は\u003cb>探索・推論\u003c/b>の時代。明確なルールの問題は解けたが、現実の複雑な問題（トイ・プロブレムの限界）には対応できなかった。"}]}</script>
   </main>
   <footer class="app-footer">
     <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>
   </footer>
   <script src="../../assets/js/visualizations.js" defer></script>
+  <script src="../../assets/js/store.js" defer></script>
+  <script src="../../assets/js/learning.js" defer></script>
   <script src="../../assets/js/lesson.js" defer></script>
 </body>
 </html>

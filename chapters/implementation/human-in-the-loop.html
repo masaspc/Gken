@@ -22,9 +22,12 @@
   </header>
   <nav class="top-nav" aria-label="主要ナビゲーション">
     <a href="../../index.html">学習マップ</a>
+    <a href="../../dashboard/index.html">ダッシュボード</a>
+    <a href="../../mock/index.html">模試</a>
+    <a href="../../review/index.html">復習</a>
+    <a href="../../search/index.html">検索</a>
     <a href="../../practice/index.html">4択演習</a>
     <a href="../../glossary/index.html">用語集</a>
-    <a href="../../review/index.html">横断復習</a>
     <a href="../../sources/index.html">参照資料</a>
   </nav>
   <main id="main">
@@ -79,18 +82,22 @@
           <ol>
             <li>人間参加型AI</li><li>レビュー</li><li>例外処理</li><li>責任分界</li>
           </ol>
+          <h3>関連する練習問題</h3>
+          <p><a href="../../practice/index.html?cat=undefined">この章の4択演習を開く</a></p>
           <h3>前後の学習</h3>
           <p><a href="../../chapters/implementation/model-monitoring.html">前: 運用監視</a></p>
           <p><a href="../../chapters/implementation/risk-management.html">次: リスク管理</a></p>
         </aside>
       </div>
     </section>
-    <script type="application/json" id="lessonData">{"slug":"implementation/human-in-the-loop","title":"Human-in-the-loop","terms":["人間参加型AI","レビュー","例外処理","責任分界"],"visual":{"type":"flow","title":"Human-in-the-loopの判断設計","steps":[{"label":"AI予測","note":"モデルが一次判断"},{"label":"信頼度判定","note":"不確実なケースを抽出"},{"label":"人の確認","note":"専門家がレビュー"},{"label":"最終判断","note":"責任ある決定を行う"},{"label":"学習反映","note":"修正結果を改善に使う"}]},"quiz":[{"id":"human-in-the-loop-practice-0","prompt":"第2次AIブーム（知識の時代）が衰退した主な要因として最も適切なものはどれか。","options":["GPUが普及したため","知識を人手で記述・維持するコストと例外処理の限界","インターネットの登場","強化学習の失敗"],"answer":"知識を人手で記述・維持するコストと例外処理の限界","explanation":"知識をルール化するには膨大な手間がかかり、例外も無数にあるため維持が困難だった（\u003cb>知識獲得のボトルネック\u003c/b>）。これが第2次ブーム衰退の主因。"},{"id":"human-in-the-loop-practice-1","prompt":"レビュー文が肯定的か否定的かを判定するタスクはどれか。","options":["感情分析（センチメント分析）","固有表現抽出","機械翻訳","音声認識"],"answer":"感情分析（センチメント分析）","explanation":"\u003cb>感情分析\u003c/b>。テキストの極性（ポジティブ/ネガティブ）や感情を推定する。マーケティングやVOC分析で広く使われる分類タスク。単語の分散表現や言語モデルを特徴として用いる。"},{"id":"human-in-the-loop-practice-2","prompt":"定型的なPC操作を自動化するRPAに、AI（OCRや自然言語処理）を組み合わせる利点として最も適切なものはどれか。","options":["非定型・あいまいな入力（手書き帳票や自由文）も扱えるようになる","ルールが一切不要になる","学習データが不要になる","必ず人手が不要になる"],"answer":"非定型・あいまいな入力（手書き帳票や自由文）も扱えるようになる","explanation":"RPAは定型作業の自動化が得意だが、\u003cb>AIと組み合わせると手書き・自由文など非定型データも処理\u003c/b>できる。業務効率化の実装で典型的な構成。ただし例外処理や監督（HITL）は引き続き必要。"}]}</script>
+    <script type="application/json" id="lessonData">{"slug":"implementation/human-in-the-loop","title":"Human-in-the-loop","terms":["人間参加型AI","レビュー","例外処理","責任分界"],"visual":{"type":"flow","title":"Human-in-the-loopの判断設計","steps":[{"label":"AI予測","note":"モデルが一次判断"},{"label":"信頼度判定","note":"不確実なケースを抽出"},{"label":"人の確認","note":"専門家がレビュー"},{"label":"最終判断","note":"責任ある決定を行う"},{"label":"学習反映","note":"修正結果を改善に使う"}]},"quiz":[{"id":"human-in-the-loop-practice-0","qid":"q-15f26991","cat":"第2章 動向","q":"第2次AIブーム（知識の時代）が衰退した主な要因として最も適切なものはどれか。","c":["GPUが普及したため","知識を人手で記述・維持するコストと例外処理の限界","インターネットの登場","強化学習の失敗"],"a":1,"e":"知識をルール化するには膨大な手間がかかり、例外も無数にあるため維持が困難だった（\u003cb>知識獲得のボトルネック\u003c/b>）。これが第2次ブーム衰退の主因。","prompt":"第2次AIブーム（知識の時代）が衰退した主な要因として最も適切なものはどれか。","options":["GPUが普及したため","知識を人手で記述・維持するコストと例外処理の限界","インターネットの登場","強化学習の失敗"],"answer":"知識を人手で記述・維持するコストと例外処理の限界","explanation":"知識をルール化するには膨大な手間がかかり、例外も無数にあるため維持が困難だった（\u003cb>知識獲得のボトルネック\u003c/b>）。これが第2次ブーム衰退の主因。"},{"id":"human-in-the-loop-practice-1","qid":"q-39ea80ed","cat":"第6章 応用例","q":"レビュー文が肯定的か否定的かを判定するタスクはどれか。","c":["感情分析（センチメント分析）","固有表現抽出","機械翻訳","音声認識"],"a":0,"e":"\u003cb>感情分析\u003c/b>。テキストの極性（ポジティブ/ネガティブ）や感情を推定する。マーケティングやVOC分析で広く使われる分類タスク。単語の分散表現や言語モデルを特徴として用いる。","prompt":"レビュー文が肯定的か否定的かを判定するタスクはどれか。","options":["感情分析（センチメント分析）","固有表現抽出","機械翻訳","音声認識"],"answer":"感情分析（センチメント分析）","explanation":"\u003cb>感情分析\u003c/b>。テキストの極性（ポジティブ/ネガティブ）や感情を推定する。マーケティングやVOC分析で広く使われる分類タスク。単語の分散表現や言語モデルを特徴として用いる。"},{"id":"human-in-the-loop-practice-2","qid":"q-8d6f99e2","cat":"第6章 応用例","q":"定型的なPC操作を自動化するRPAに、AI（OCRや自然言語処理）を組み合わせる利点として最も適切なものはどれか。","c":["非定型・あいまいな入力（手書き帳票や自由文）も扱えるようになる","ルールが一切不要になる","学習データが不要になる","必ず人手が不要になる"],"a":0,"e":"RPAは定型作業の自動化が得意だが、\u003cb>AIと組み合わせると手書き・自由文など非定型データも処理\u003c/b>できる。業務効率化の実装で典型的な構成。ただし例外処理や監督（HITL）は引き続き必要。","prompt":"定型的なPC操作を自動化するRPAに、AI（OCRや自然言語処理）を組み合わせる利点として最も適切なものはどれか。","options":["非定型・あいまいな入力（手書き帳票や自由文）も扱えるようになる","ルールが一切不要になる","学習データが不要になる","必ず人手が不要になる"],"answer":"非定型・あいまいな入力（手書き帳票や自由文）も扱えるようになる","explanation":"RPAは定型作業の自動化が得意だが、\u003cb>AIと組み合わせると手書き・自由文など非定型データも処理\u003c/b>できる。業務効率化の実装で典型的な構成。ただし例外処理や監督（HITL）は引き続き必要。"}]}</script>
   </main>
   <footer class="app-footer">
     <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>
   </footer>
   <script src="../../assets/js/visualizations.js" defer></script>
+  <script src="../../assets/js/store.js" defer></script>
+  <script src="../../assets/js/learning.js" defer></script>
   <script src="../../assets/js/lesson.js" defer></script>
 </body>
 </html>

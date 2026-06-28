@@ -22,9 +22,12 @@
   </header>
   <nav class="top-nav" aria-label="主要ナビゲーション">
     <a href="../../index.html">学習マップ</a>
+    <a href="../../dashboard/index.html">ダッシュボード</a>
+    <a href="../../mock/index.html">模試</a>
+    <a href="../../review/index.html">復習</a>
+    <a href="../../search/index.html">検索</a>
     <a href="../../practice/index.html">4択演習</a>
     <a href="../../glossary/index.html">用語集</a>
-    <a href="../../review/index.html">横断復習</a>
     <a href="../../sources/index.html">参照資料</a>
   </nav>
   <main id="main">
@@ -79,18 +82,22 @@
           <ol>
             <li>転移学習</li><li>ファインチューニング</li><li>特徴抽出</li><li>事前学習済みモデル</li>
           </ol>
+          <h3>関連する練習問題</h3>
+          <p><a href="../../practice/index.html?cat=undefined">この章の4択演習を開く</a></p>
           <h3>前後の学習</h3>
           <p><a href="../../chapters/applications/generative-models.html">前: 生成モデル</a></p>
           <p><a href="../../chapters/applications/multimodal.html">次: マルチモーダル</a></p>
         </aside>
       </div>
     </section>
-    <script type="application/json" id="lessonData">{"slug":"applications/transfer-learning","title":"転移学習","terms":["転移学習","ファインチューニング","特徴抽出","事前学習済みモデル"],"visual":{"type":"flow","title":"転移学習の進め方","steps":[{"label":"事前学習済みモデル","note":"汎用特徴を持つ"},{"label":"特徴抽出","note":"既存層を利用"},{"label":"追加層","note":"新タスク用に足す"},{"label":"微調整","note":"一部重みを再学習"},{"label":"評価","note":"新領域で確認"}]},"quiz":[{"id":"transfer-learning-practice-0","prompt":"学習済みモデルの知識を別の関連タスクに流用し、少ないデータでも効率よく学習する手法はどれか。","options":["転移学習","正則化","次元削減","アンサンブル"],"answer":"転移学習","explanation":"\u003cb>転移学習\u003c/b>。学習済みの重みを初期値や特徴抽出器として使う。出力付近を中心に再学習するのが\u003cb>ファインチューニング\u003c/b>。"},{"id":"transfer-learning-practice-1","prompt":"大規模データで学習済みのモデルを、別の関連タスクに少ないデータで適応させる手法はどれか。","options":["転移学習","強化学習","クラスタリング","次元削減"],"answer":"転移学習","explanation":"【正解の理由】\u003cb>転移学習\u003c/b>は、汎用的な特徴を学んだ学習済みモデルを土台に、出力層付近を新タスク向けに学習し直す（ファインチューニング）ことで少データでも高精度を得る。【各選択肢】②強化学習・③クラスタリング・④次元削減は別系統。【関連】事前学習＋ファインチューニングは大規模言語モデルの基本戦略。"},{"id":"transfer-learning-practice-2","prompt":"正解ラベルのないデータから構造やまとまりを見つける学習はどれか。","options":["教師あり学習","教師なし学習","強化学習","転移学習"],"answer":"教師なし学習","explanation":"\u003cb>教師なし学習\u003c/b>。クラスタリング（k-means）や次元削減（PCA）が代表。正解ラベルを使う教師あり学習、報酬で学ぶ強化学習と区別する。"}]}</script>
+    <script type="application/json" id="lessonData">{"slug":"applications/transfer-learning","title":"転移学習","terms":["転移学習","ファインチューニング","特徴抽出","事前学習済みモデル"],"visual":{"type":"flow","title":"転移学習の進め方","steps":[{"label":"事前学習済みモデル","note":"汎用特徴を持つ"},{"label":"特徴抽出","note":"既存層を利用"},{"label":"追加層","note":"新タスク用に足す"},{"label":"微調整","note":"一部重みを再学習"},{"label":"評価","note":"新領域で確認"}]},"quiz":[{"id":"transfer-learning-practice-0","qid":"q-11c4ac0a","cat":"第5章 要素技術","q":"学習済みモデルの知識を別の関連タスクに流用し、少ないデータでも効率よく学習する手法はどれか。","c":["転移学習","正則化","次元削減","アンサンブル"],"a":0,"e":"\u003cb>転移学習\u003c/b>。学習済みの重みを初期値や特徴抽出器として使う。出力付近を中心に再学習するのが\u003cb>ファインチューニング\u003c/b>。","prompt":"学習済みモデルの知識を別の関連タスクに流用し、少ないデータでも効率よく学習する手法はどれか。","options":["転移学習","正則化","次元削減","アンサンブル"],"answer":"転移学習","explanation":"\u003cb>転移学習\u003c/b>。学習済みの重みを初期値や特徴抽出器として使う。出力付近を中心に再学習するのが\u003cb>ファインチューニング\u003c/b>。"},{"id":"transfer-learning-practice-1","qid":"q-b14f0527","cat":"第4章 DL概要","q":"大規模データで学習済みのモデルを、別の関連タスクに少ないデータで適応させる手法はどれか。","c":["転移学習","強化学習","クラスタリング","次元削減"],"a":0,"e":"【正解の理由】\u003cb>転移学習\u003c/b>は、汎用的な特徴を学んだ学習済みモデルを土台に、出力層付近を新タスク向けに学習し直す（ファインチューニング）ことで少データでも高精度を得る。【各選択肢】②強化学習・③クラスタリング・④次元削減は別系統。【関連】事前学習＋ファインチューニングは大規模言語モデルの基本戦略。","prompt":"大規模データで学習済みのモデルを、別の関連タスクに少ないデータで適応させる手法はどれか。","options":["転移学習","強化学習","クラスタリング","次元削減"],"answer":"転移学習","explanation":"【正解の理由】\u003cb>転移学習\u003c/b>は、汎用的な特徴を学んだ学習済みモデルを土台に、出力層付近を新タスク向けに学習し直す（ファインチューニング）ことで少データでも高精度を得る。【各選択肢】②強化学習・③クラスタリング・④次元削減は別系統。【関連】事前学習＋ファインチューニングは大規模言語モデルの基本戦略。"},{"id":"transfer-learning-practice-2","qid":"q-97afd05b","cat":"第3章 機械学習","q":"正解ラベルのないデータから構造やまとまりを見つける学習はどれか。","c":["教師あり学習","教師なし学習","強化学習","転移学習"],"a":1,"e":"\u003cb>教師なし学習\u003c/b>。クラスタリング（k-means）や次元削減（PCA）が代表。正解ラベルを使う教師あり学習、報酬で学ぶ強化学習と区別する。","prompt":"正解ラベルのないデータから構造やまとまりを見つける学習はどれか。","options":["教師あり学習","教師なし学習","強化学習","転移学習"],"answer":"教師なし学習","explanation":"\u003cb>教師なし学習\u003c/b>。クラスタリング（k-means）や次元削減（PCA）が代表。正解ラベルを使う教師あり学習、報酬で学ぶ強化学習と区別する。"}]}</script>
   </main>
   <footer class="app-footer">
     <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>
   </footer>
   <script src="../../assets/js/visualizations.js" defer></script>
+  <script src="../../assets/js/store.js" defer></script>
+  <script src="../../assets/js/learning.js" defer></script>
   <script src="../../assets/js/lesson.js" defer></script>
 </body>
 </html>

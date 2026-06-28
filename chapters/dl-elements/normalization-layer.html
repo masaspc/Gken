@@ -22,9 +22,12 @@
   </header>
   <nav class="top-nav" aria-label="主要ナビゲーション">
     <a href="../../index.html">学習マップ</a>
+    <a href="../../dashboard/index.html">ダッシュボード</a>
+    <a href="../../mock/index.html">模試</a>
+    <a href="../../review/index.html">復習</a>
+    <a href="../../search/index.html">検索</a>
     <a href="../../practice/index.html">4択演習</a>
     <a href="../../glossary/index.html">用語集</a>
-    <a href="../../review/index.html">横断復習</a>
     <a href="../../sources/index.html">参照資料</a>
   </nav>
   <main id="main">
@@ -82,18 +85,22 @@
           <ol>
             <li>正規化</li><li>BatchNorm</li><li>LayerNorm</li><li>安定化</li>
           </ol>
+          <h3>関連する練習問題</h3>
+          <p><a href="../../practice/index.html?cat=undefined">この章の4択演習を開く</a></p>
           <h3>前後の学習</h3>
           <p><a href="../../chapters/dl-elements/pooling.html">前: プーリング層</a></p>
           <p><a href="../../chapters/dl-elements/skip-connection.html">次: スキップ結合</a></p>
         </aside>
       </div>
     </section>
-    <script type="application/json" id="lessonData">{"slug":"dl-elements/normalization-layer","title":"正規化層","terms":["正規化","BatchNorm","LayerNorm","安定化"],"visual":{"type":"distribution","title":"正規化層","concept":"平均・分散・サンプル数"},"quiz":[{"id":"normalization-layer-practice-0","prompt":"各層の入力分布をミニバッチごとに正規化し、学習を高速・安定化させる手法はどれか。","options":["ドロップアウト","バッチ正規化","データ拡張","早期終了"],"answer":"バッチ正規化","explanation":"\u003cb>バッチ正規化（Batch Normalization）\u003c/b>。内部共変量シフトを抑え、学習率を大きく取れるようにし収束を速める。"},{"id":"normalization-layer-practice-1","prompt":"GANに畳み込みを取り入れ、画像生成を安定化させた初期の代表的モデルはどれか。","options":["DCGAN","CycleGAN","StyleGAN","Pix2Pix"],"answer":"DCGAN","explanation":"\u003cb>DCGAN\u003c/b>（Deep Convolutional GAN）。全結合を畳み込みに置き換え、バッチ正規化などの工夫で学習を安定させた。以後のCycleGAN（対応なし画像変換）やStyleGAN（高品質生成）の土台となった基本形。"},{"id":"normalization-layer-practice-2","prompt":"学習中にニューロンをランダムに無効化し、過学習を抑える手法はどれか。","options":["バッチ正規化","ドロップアウト","データ拡張","早期終了"],"answer":"ドロップアウト","explanation":"\u003cb>ドロップアウト\u003c/b>は学習時に一部のユニットを確率的に無効化し、特定ニューロンへの依存を防いで汎化性能を高める（アンサンブル的効果）。"}]}</script>
+    <script type="application/json" id="lessonData">{"slug":"dl-elements/normalization-layer","title":"正規化層","terms":["正規化","BatchNorm","LayerNorm","安定化"],"visual":{"type":"distribution","title":"正規化層","concept":"平均・分散・サンプル数"},"quiz":[{"id":"normalization-layer-practice-0","qid":"q-abfb15a6","cat":"第5章 要素技術","q":"各層の入力分布をミニバッチごとに正規化し、学習を高速・安定化させる手法はどれか。","c":["ドロップアウト","バッチ正規化","データ拡張","早期終了"],"a":1,"e":"\u003cb>バッチ正規化（Batch Normalization）\u003c/b>。内部共変量シフトを抑え、学習率を大きく取れるようにし収束を速める。","prompt":"各層の入力分布をミニバッチごとに正規化し、学習を高速・安定化させる手法はどれか。","options":["ドロップアウト","バッチ正規化","データ拡張","早期終了"],"answer":"バッチ正規化","explanation":"\u003cb>バッチ正規化（Batch Normalization）\u003c/b>。内部共変量シフトを抑え、学習率を大きく取れるようにし収束を速める。"},{"id":"normalization-layer-practice-1","qid":"q-6a625d4e","cat":"第5章 要素技術","q":"GANに畳み込みを取り入れ、画像生成を安定化させた初期の代表的モデルはどれか。","c":["DCGAN","CycleGAN","StyleGAN","Pix2Pix"],"a":0,"e":"\u003cb>DCGAN\u003c/b>（Deep Convolutional GAN）。全結合を畳み込みに置き換え、バッチ正規化などの工夫で学習を安定させた。以後のCycleGAN（対応なし画像変換）やStyleGAN（高品質生成）の土台となった基本形。","prompt":"GANに畳み込みを取り入れ、画像生成を安定化させた初期の代表的モデルはどれか。","options":["DCGAN","CycleGAN","StyleGAN","Pix2Pix"],"answer":"DCGAN","explanation":"\u003cb>DCGAN\u003c/b>（Deep Convolutional GAN）。全結合を畳み込みに置き換え、バッチ正規化などの工夫で学習を安定させた。以後のCycleGAN（対応なし画像変換）やStyleGAN（高品質生成）の土台となった基本形。"},{"id":"normalization-layer-practice-2","qid":"q-473f88d5","cat":"第5章 要素技術","q":"学習中にニューロンをランダムに無効化し、過学習を抑える手法はどれか。","c":["バッチ正規化","ドロップアウト","データ拡張","早期終了"],"a":1,"e":"\u003cb>ドロップアウト\u003c/b>は学習時に一部のユニットを確率的に無効化し、特定ニューロンへの依存を防いで汎化性能を高める（アンサンブル的効果）。","prompt":"学習中にニューロンをランダムに無効化し、過学習を抑える手法はどれか。","options":["バッチ正規化","ドロップアウト","データ拡張","早期終了"],"answer":"ドロップアウト","explanation":"\u003cb>ドロップアウト\u003c/b>は学習時に一部のユニットを確率的に無効化し、特定ニューロンへの依存を防いで汎化性能を高める（アンサンブル的効果）。"}]}</script>
   </main>
   <footer class="app-footer">
     <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>
   </footer>
   <script src="../../assets/js/visualizations.js" defer></script>
+  <script src="../../assets/js/store.js" defer></script>
+  <script src="../../assets/js/learning.js" defer></script>
   <script src="../../assets/js/lesson.js" defer></script>
 </body>
 </html>

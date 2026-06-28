@@ -22,9 +22,12 @@
   </header>
   <nav class="top-nav" aria-label="主要ナビゲーション">
     <a href="../../index.html">学習マップ</a>
+    <a href="../../dashboard/index.html">ダッシュボード</a>
+    <a href="../../mock/index.html">模試</a>
+    <a href="../../review/index.html">復習</a>
+    <a href="../../search/index.html">検索</a>
     <a href="../../practice/index.html">4択演習</a>
     <a href="../../glossary/index.html">用語集</a>
-    <a href="../../review/index.html">横断復習</a>
     <a href="../../sources/index.html">参照資料</a>
   </nav>
   <main id="main">
@@ -81,18 +84,22 @@
           <ol>
             <li>知識表現</li><li>オントロジー</li><li>意味ネットワーク</li><li>ルール</li>
           </ol>
+          <h3>関連する練習問題</h3>
+          <p><a href="../../practice/index.html?cat=undefined">この章の4択演習を開く</a></p>
           <h3>前後の学習</h3>
           <p><a href="../../chapters/ai-history/reasoning.html">前: 推論</a></p>
           <p><a href="../../chapters/ai-history/expert-system.html">次: エキスパートシステム</a></p>
         </aside>
       </div>
     </section>
-    <script type="application/json" id="lessonData">{"slug":"ai-history/knowledge-representation","title":"知識表現","terms":["知識表現","オントロジー","意味ネットワーク","ルール"],"visual":{"type":"comparison-table","title":"知識表現の使い分け","columns":["表現","得意なこと","弱点"],"rows":[["ルール","if-thenで判断条件を明示できる","例外や更新が増えると保守が重い"],["意味ネットワーク","概念間の関係をノードとリンクで表せる","曖昧な意味や文脈は扱いにくい"],["オントロジー","領域の概念体系を共有しやすい","設計に専門知識と合意形成が必要"]]},"quiz":[{"id":"knowledge-representation-practice-0","prompt":"概念をノード、関係（is-a, part-of など）をリンクで表す知識表現はどれか。","options":["意味ネットワーク","決定木","ニューラルネットワーク","混同行列"],"answer":"意味ネットワーク","explanation":"\u003cb>意味ネットワーク\u003c/b>。第2次ブーム（知識の時代）の知識表現の一つで、概念間の関係をグラフで表す。オントロジーや知識ベースの基礎となる考え方。"},{"id":"knowledge-representation-practice-1","prompt":"第1次AIブームの中心となった、迷路やパズルを解くための技術はどれか。","options":["探索・推論","知識表現","ディープラーニング","強化学習"],"answer":"探索・推論","explanation":"第1次ブーム（1950〜60年代）は\u003cb>探索・推論\u003c/b>の時代。明確なルールの問題は解けたが、現実の複雑な問題（トイ・プロブレムの限界）には対応できなかった。"},{"id":"knowledge-representation-practice-2","prompt":"一般常識をすべて人手でコンピュータに記述しようとした、息の長い知識ベース構築プロジェクトはどれか。","options":["Cycプロジェクト","ImageNet","AlphaGo","seq2seq"],"answer":"Cycプロジェクト","explanation":"【正解の理由】\u003cb>Cyc（サイク）プロジェクト\u003c/b>は1984年から常識をルールとして網羅的に記述しようとした試みで、知識獲得のボトルネックの大きさを象徴する。【各選択肢】②ImageNetは大規模画像データセット、③AlphaGoは囲碁AI、④seq2seqは系列変換モデルでいずれも第3次ブーム以降。【関連】オントロジー・セマンティックウェブと関連。"}]}</script>
+    <script type="application/json" id="lessonData">{"slug":"ai-history/knowledge-representation","title":"知識表現","terms":["知識表現","オントロジー","意味ネットワーク","ルール"],"visual":{"type":"comparison-table","title":"知識表現の使い分け","columns":["表現","得意なこと","弱点"],"rows":[["ルール","if-thenで判断条件を明示できる","例外や更新が増えると保守が重い"],["意味ネットワーク","概念間の関係をノードとリンクで表せる","曖昧な意味や文脈は扱いにくい"],["オントロジー","領域の概念体系を共有しやすい","設計に専門知識と合意形成が必要"]]},"quiz":[{"id":"knowledge-representation-practice-0","qid":"q-55846145","cat":"第2章 動向","q":"概念をノード、関係（is-a, part-of など）をリンクで表す知識表現はどれか。","c":["意味ネットワーク","決定木","ニューラルネットワーク","混同行列"],"a":0,"e":"\u003cb>意味ネットワーク\u003c/b>。第2次ブーム（知識の時代）の知識表現の一つで、概念間の関係をグラフで表す。オントロジーや知識ベースの基礎となる考え方。","prompt":"概念をノード、関係（is-a, part-of など）をリンクで表す知識表現はどれか。","options":["意味ネットワーク","決定木","ニューラルネットワーク","混同行列"],"answer":"意味ネットワーク","explanation":"\u003cb>意味ネットワーク\u003c/b>。第2次ブーム（知識の時代）の知識表現の一つで、概念間の関係をグラフで表す。オントロジーや知識ベースの基礎となる考え方。"},{"id":"knowledge-representation-practice-1","qid":"q-a9d59ed5","cat":"第2章 動向","q":"第1次AIブームの中心となった、迷路やパズルを解くための技術はどれか。","c":["探索・推論","知識表現","ディープラーニング","強化学習"],"a":0,"e":"第1次ブーム（1950〜60年代）は\u003cb>探索・推論\u003c/b>の時代。明確なルールの問題は解けたが、現実の複雑な問題（トイ・プロブレムの限界）には対応できなかった。","prompt":"第1次AIブームの中心となった、迷路やパズルを解くための技術はどれか。","options":["探索・推論","知識表現","ディープラーニング","強化学習"],"answer":"探索・推論","explanation":"第1次ブーム（1950〜60年代）は\u003cb>探索・推論\u003c/b>の時代。明確なルールの問題は解けたが、現実の複雑な問題（トイ・プロブレムの限界）には対応できなかった。"},{"id":"knowledge-representation-practice-2","qid":"q-097726c3","cat":"第2章 動向","q":"一般常識をすべて人手でコンピュータに記述しようとした、息の長い知識ベース構築プロジェクトはどれか。","c":["Cycプロジェクト","ImageNet","AlphaGo","seq2seq"],"a":0,"e":"【正解の理由】\u003cb>Cyc（サイク）プロジェクト\u003c/b>は1984年から常識をルールとして網羅的に記述しようとした試みで、知識獲得のボトルネックの大きさを象徴する。【各選択肢】②ImageNetは大規模画像データセット、③AlphaGoは囲碁AI、④seq2seqは系列変換モデルでいずれも第3次ブーム以降。【関連】オントロジー・セマンティックウェブと関連。","prompt":"一般常識をすべて人手でコンピュータに記述しようとした、息の長い知識ベース構築プロジェクトはどれか。","options":["Cycプロジェクト","ImageNet","AlphaGo","seq2seq"],"answer":"Cycプロジェクト","explanation":"【正解の理由】\u003cb>Cyc（サイク）プロジェクト\u003c/b>は1984年から常識をルールとして網羅的に記述しようとした試みで、知識獲得のボトルネックの大きさを象徴する。【各選択肢】②ImageNetは大規模画像データセット、③AlphaGoは囲碁AI、④seq2seqは系列変換モデルでいずれも第3次ブーム以降。【関連】オントロジー・セマンティックウェブと関連。"}]}</script>
   </main>
   <footer class="app-footer">
     <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>
   </footer>
   <script src="../../assets/js/visualizations.js" defer></script>
+  <script src="../../assets/js/store.js" defer></script>
+  <script src="../../assets/js/learning.js" defer></script>
   <script src="../../assets/js/lesson.js" defer></script>
 </body>
 </html>

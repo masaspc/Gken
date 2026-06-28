@@ -12,6 +12,7 @@
   const metrics = document.getElementById("lessonMetrics");
   const quizResult = document.getElementById("lessonQuizResult");
   const core = window.GKEN_VISUAL_CORE;
+  const store = window.GKEN_STORE;
 
   const state = {
     mean: 50,
@@ -101,13 +102,21 @@
   }
 
   function setupQuiz() {
+    let quizGraded = false;
     document.getElementById("gradeLessonQuiz")?.addEventListener("click", () => {
+      if (quizGraded) return;
+      quizGraded = true;
       let score = 0;
       lesson.quiz.forEach((item) => {
         const card = document.querySelector(`[data-quiz-id="${item.id}"]`);
         const selected = document.querySelector(`input[name="${item.id}"]:checked`);
         const ok = selected && selected.value === item.answer;
         if (ok) score += 1;
+        if (store && item.qid) {
+          const question = { id: item.qid, cat: item.cat, q: item.q || item.prompt, c: item.c || item.options, a: item.a, e: item.e || item.explanation };
+          store.recordAnswer(question, Boolean(ok));
+          store.updateSrs(question, Boolean(ok));
+        }
 
         card?.querySelectorAll(".quiz-option").forEach((option) => {
           const input = option.querySelector("input");

@@ -22,9 +22,12 @@
   </header>
   <nav class="top-nav" aria-label="主要ナビゲーション">
     <a href="../../index.html">学習マップ</a>
+    <a href="../../dashboard/index.html">ダッシュボード</a>
+    <a href="../../mock/index.html">模試</a>
+    <a href="../../review/index.html">復習</a>
+    <a href="../../search/index.html">検索</a>
     <a href="../../practice/index.html">4択演習</a>
     <a href="../../glossary/index.html">用語集</a>
-    <a href="../../review/index.html">横断復習</a>
     <a href="../../sources/index.html">参照資料</a>
   </nav>
   <main id="main">
@@ -79,18 +82,22 @@
           <ol>
             <li>エキスパートシステム</li><li>知識ベース</li><li>推論エンジン</li><li>MYCIN</li>
           </ol>
+          <h3>関連する練習問題</h3>
+          <p><a href="../../practice/index.html?cat=undefined">この章の4択演習を開く</a></p>
           <h3>前後の学習</h3>
           <p><a href="../../chapters/ai-history/knowledge-representation.html">前: 知識表現</a></p>
           <p><a href="../../chapters/ai-history/machine-learning-rise.html">次: 機械学習の台頭</a></p>
         </aside>
       </div>
     </section>
-    <script type="application/json" id="lessonData">{"slug":"ai-history/expert-system","title":"エキスパートシステム","terms":["エキスパートシステム","知識ベース","推論エンジン","MYCIN"],"visual":{"type":"flow","title":"エキスパートシステムの構成","steps":[{"label":"知識獲得","note":"専門家の判断を集める"},{"label":"知識ベース","note":"ルールとして保存する"},{"label":"推論エンジン","note":"条件に合う規則を適用"},{"label":"説明","note":"結論の根拠を示す"},{"label":"更新","note":"新知識の保守が課題"}]},"quiz":[{"id":"expert-system-practice-0","prompt":"エキスパートシステムを構成する主要素の組み合わせとして適切なものはどれか。","options":["知識ベースと推論エンジン","畳み込み層とプーリング層","生成器と識別器","エンコーダとデコーダ"],"answer":"知識ベースと推論エンジン","explanation":"エキスパートシステムは、専門知識を蓄えた\u003cb>知識ベース\u003c/b>と、それを用いて結論を導く\u003cb>推論エンジン\u003c/b>から成る。畳み込み/プーリングはCNN、生成器/識別器はGAN、エンコーダ/デコーダはseq2seqの構成要素で、いずれも別技術。"},{"id":"expert-system-practice-1","prompt":"1970年代に開発された、感染症の診断と抗生物質の処方を支援した代表的なエキスパートシステムはどれか。","options":["MYCIN","DENDRAL","Cyc","Watson"],"answer":"MYCIN","explanation":"【正解の理由】\u003cb>MYCIN\u003c/b>はスタンフォード大学で開発された感染症診断の代表的エキスパートシステムで、ルールベースで処方を提案した。【各選択肢】②DENDRALは化合物の構造推定を行った「最初の」エキスパートシステム、③Cycは常識をすべて記述しようとした知識ベース、④WatsonはIBMの質問応答システム（2011）で時代が違う。【関連】第2次ブームの象徴。"},{"id":"expert-system-practice-2","prompt":"第2次AIブームを牽引した、専門家の知識をルールとして蓄積し推論する仕組みはどれか。","options":["ニューラルネットワーク","エキスパートシステム","強化学習","深層学習"],"answer":"エキスパートシステム","explanation":"\u003cb>エキスパートシステム\u003c/b>。MYCIN（感染症診断）やDENDRAL（化合物推定）が代表例。知識をルール化する「知識の時代」が第2次ブーム。"}]}</script>
+    <script type="application/json" id="lessonData">{"slug":"ai-history/expert-system","title":"エキスパートシステム","terms":["エキスパートシステム","知識ベース","推論エンジン","MYCIN"],"visual":{"type":"flow","title":"エキスパートシステムの構成","steps":[{"label":"知識獲得","note":"専門家の判断を集める"},{"label":"知識ベース","note":"ルールとして保存する"},{"label":"推論エンジン","note":"条件に合う規則を適用"},{"label":"説明","note":"結論の根拠を示す"},{"label":"更新","note":"新知識の保守が課題"}]},"quiz":[{"id":"expert-system-practice-0","qid":"q-fad32c79","cat":"第2章 動向","q":"エキスパートシステムを構成する主要素の組み合わせとして適切なものはどれか。","c":["知識ベースと推論エンジン","畳み込み層とプーリング層","生成器と識別器","エンコーダとデコーダ"],"a":0,"e":"エキスパートシステムは、専門知識を蓄えた\u003cb>知識ベース\u003c/b>と、それを用いて結論を導く\u003cb>推論エンジン\u003c/b>から成る。畳み込み/プーリングはCNN、生成器/識別器はGAN、エンコーダ/デコーダはseq2seqの構成要素で、いずれも別技術。","prompt":"エキスパートシステムを構成する主要素の組み合わせとして適切なものはどれか。","options":["知識ベースと推論エンジン","畳み込み層とプーリング層","生成器と識別器","エンコーダとデコーダ"],"answer":"知識ベースと推論エンジン","explanation":"エキスパートシステムは、専門知識を蓄えた\u003cb>知識ベース\u003c/b>と、それを用いて結論を導く\u003cb>推論エンジン\u003c/b>から成る。畳み込み/プーリングはCNN、生成器/識別器はGAN、エンコーダ/デコーダはseq2seqの構成要素で、いずれも別技術。"},{"id":"expert-system-practice-1","qid":"q-10db46ab","cat":"第2章 動向","q":"1970年代に開発された、感染症の診断と抗生物質の処方を支援した代表的なエキスパートシステムはどれか。","c":["MYCIN","DENDRAL","Cyc","Watson"],"a":0,"e":"【正解の理由】\u003cb>MYCIN\u003c/b>はスタンフォード大学で開発された感染症診断の代表的エキスパートシステムで、ルールベースで処方を提案した。【各選択肢】②DENDRALは化合物の構造推定を行った「最初の」エキスパートシステム、③Cycは常識をすべて記述しようとした知識ベース、④WatsonはIBMの質問応答システム（2011）で時代が違う。【関連】第2次ブームの象徴。","prompt":"1970年代に開発された、感染症の診断と抗生物質の処方を支援した代表的なエキスパートシステムはどれか。","options":["MYCIN","DENDRAL","Cyc","Watson"],"answer":"MYCIN","explanation":"【正解の理由】\u003cb>MYCIN\u003c/b>はスタンフォード大学で開発された感染症診断の代表的エキスパートシステムで、ルールベースで処方を提案した。【各選択肢】②DENDRALは化合物の構造推定を行った「最初の」エキスパートシステム、③Cycは常識をすべて記述しようとした知識ベース、④WatsonはIBMの質問応答システム（2011）で時代が違う。【関連】第2次ブームの象徴。"},{"id":"expert-system-practice-2","qid":"q-3e7f5e82","cat":"第2章 動向","q":"第2次AIブームを牽引した、専門家の知識をルールとして蓄積し推論する仕組みはどれか。","c":["ニューラルネットワーク","エキスパートシステム","強化学習","深層学習"],"a":1,"e":"\u003cb>エキスパートシステム\u003c/b>。MYCIN（感染症診断）やDENDRAL（化合物推定）が代表例。知識をルール化する「知識の時代」が第2次ブーム。","prompt":"第2次AIブームを牽引した、専門家の知識をルールとして蓄積し推論する仕組みはどれか。","options":["ニューラルネットワーク","エキスパートシステム","強化学習","深層学習"],"answer":"エキスパートシステム","explanation":"\u003cb>エキスパートシステム\u003c/b>。MYCIN（感染症診断）やDENDRAL（化合物推定）が代表例。知識をルール化する「知識の時代」が第2次ブーム。"}]}</script>
   </main>
   <footer class="app-footer">
     <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>
   </footer>
   <script src="../../assets/js/visualizations.js" defer></script>
+  <script src="../../assets/js/store.js" defer></script>
+  <script src="../../assets/js/learning.js" defer></script>
   <script src="../../assets/js/lesson.js" defer></script>
 </body>
 </html>

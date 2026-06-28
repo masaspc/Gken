@@ -22,9 +22,12 @@
   </header>
   <nav class="top-nav" aria-label="主要ナビゲーション">
     <a href="../../index.html">学習マップ</a>
+    <a href="../../dashboard/index.html">ダッシュボード</a>
+    <a href="../../mock/index.html">模試</a>
+    <a href="../../review/index.html">復習</a>
+    <a href="../../search/index.html">検索</a>
     <a href="../../practice/index.html">4択演習</a>
     <a href="../../glossary/index.html">用語集</a>
-    <a href="../../review/index.html">横断復習</a>
     <a href="../../sources/index.html">参照資料</a>
   </nav>
   <main id="main">
@@ -79,18 +82,22 @@
           <ol>
             <li>課題設定</li><li>PoC</li><li>評価</li><li>運用</li>
           </ol>
+          <h3>関連する練習問題</h3>
+          <p><a href="../../practice/index.html?cat=undefined">この章の4択演習を開く</a></p>
           <h3>前後の学習</h3>
           <p><a href="../../chapters/applications/model-compression.html">前: モデルの軽量化</a></p>
           <p><a href="../../chapters/implementation/business-goal.html">次: 目的設定とKPI</a></p>
         </aside>
       </div>
     </section>
-    <script type="application/json" id="lessonData">{"slug":"implementation/project-flow","title":"AIプロジェクトの進め方","terms":["課題設定","PoC","評価","運用"],"visual":{"type":"flow","title":"AIプロジェクトの進め方","steps":[{"label":"課題設定","note":"解く問題と価値を決める"},{"label":"データ確認","note":"量・質・権利を点検"},{"label":"PoC","note":"小さく実現性を検証"},{"label":"本番化","note":"運用条件へ組み込む"},{"label":"改善","note":"監視結果で更新"}]},"quiz":[{"id":"project-flow-practice-0","prompt":"要件が固まりにくいAI開発で、短い反復を回しながら検証と改善を重ねる進め方はどれか。","options":["アジャイル（反復型）開発","ウォーターフォール一括開発","設計のみで完結","運用後に一度だけ評価"],"answer":"アジャイル（反復型）開発","explanation":"AI開発は不確実性が高く、\u003cb>アジャイル（反復型）\u003c/b>で小さく作って検証・改善を繰り返すのが適することが多い。段階的契約（アセスメント→PoC→開発→追加学習）の考え方とも整合する。"},{"id":"project-flow-practice-1","prompt":"成果が不確実なAI開発で、いきなり完成を約束せず探索的・段階的に進める契約の考え方として最も適切なものはどれか。","options":["一括請負で完成を保証する","アセスメント・PoC・開発・追加学習などの段階に分けて進める","契約せず口頭で進める","成果物のみで評価し過程は問わない"],"answer":"アセスメント・PoC・開発・追加学習などの段階に分けて進める","explanation":"AI開発は不確実性が高いため、経産省のモデル契約では\u003cb>段階的（探索的）アプローチ\u003c/b>が示される。各段階で成果を確認しながら次へ進む。"},{"id":"project-flow-practice-2","prompt":"PoC（概念実証）を繰り返すだけで本番運用に至らず投資が回収できない状態を指す俗称はどれか。","options":["PoC貧乏","コールドスタート","データドリフト","モード崩壊"],"answer":"PoC貧乏","explanation":"\u003cb>PoC貧乏\u003c/b>。検証を繰り返すばかりで実運用・事業価値に結びつかない状態。PoCの段階から本番化の判断基準（KPIや撤退条件）を定め、スコープを絞ることが対策になる。社会実装の典型的な落とし穴。"}]}</script>
+    <script type="application/json" id="lessonData">{"slug":"implementation/project-flow","title":"AIプロジェクトの進め方","terms":["課題設定","PoC","評価","運用"],"visual":{"type":"flow","title":"AIプロジェクトの進め方","steps":[{"label":"課題設定","note":"解く問題と価値を決める"},{"label":"データ確認","note":"量・質・権利を点検"},{"label":"PoC","note":"小さく実現性を検証"},{"label":"本番化","note":"運用条件へ組み込む"},{"label":"改善","note":"監視結果で更新"}]},"quiz":[{"id":"project-flow-practice-0","qid":"q-2fe96860","cat":"第7章 社会実装","q":"要件が固まりにくいAI開発で、短い反復を回しながら検証と改善を重ねる進め方はどれか。","c":["アジャイル（反復型）開発","ウォーターフォール一括開発","設計のみで完結","運用後に一度だけ評価"],"a":0,"e":"AI開発は不確実性が高く、\u003cb>アジャイル（反復型）\u003c/b>で小さく作って検証・改善を繰り返すのが適することが多い。段階的契約（アセスメント→PoC→開発→追加学習）の考え方とも整合する。","prompt":"要件が固まりにくいAI開発で、短い反復を回しながら検証と改善を重ねる進め方はどれか。","options":["アジャイル（反復型）開発","ウォーターフォール一括開発","設計のみで完結","運用後に一度だけ評価"],"answer":"アジャイル（反復型）開発","explanation":"AI開発は不確実性が高く、\u003cb>アジャイル（反復型）\u003c/b>で小さく作って検証・改善を繰り返すのが適することが多い。段階的契約（アセスメント→PoC→開発→追加学習）の考え方とも整合する。"},{"id":"project-flow-practice-1","qid":"q-079f4fab","cat":"第7章 社会実装","q":"成果が不確実なAI開発で、いきなり完成を約束せず探索的・段階的に進める契約の考え方として最も適切なものはどれか。","c":["一括請負で完成を保証する","アセスメント・PoC・開発・追加学習などの段階に分けて進める","契約せず口頭で進める","成果物のみで評価し過程は問わない"],"a":1,"e":"AI開発は不確実性が高いため、経産省のモデル契約では\u003cb>段階的（探索的）アプローチ\u003c/b>が示される。各段階で成果を確認しながら次へ進む。","prompt":"成果が不確実なAI開発で、いきなり完成を約束せず探索的・段階的に進める契約の考え方として最も適切なものはどれか。","options":["一括請負で完成を保証する","アセスメント・PoC・開発・追加学習などの段階に分けて進める","契約せず口頭で進める","成果物のみで評価し過程は問わない"],"answer":"アセスメント・PoC・開発・追加学習などの段階に分けて進める","explanation":"AI開発は不確実性が高いため、経産省のモデル契約では\u003cb>段階的（探索的）アプローチ\u003c/b>が示される。各段階で成果を確認しながら次へ進む。"},{"id":"project-flow-practice-2","qid":"q-2dac166c","cat":"第7章 社会実装","q":"PoC（概念実証）を繰り返すだけで本番運用に至らず投資が回収できない状態を指す俗称はどれか。","c":["PoC貧乏","コールドスタート","データドリフト","モード崩壊"],"a":0,"e":"\u003cb>PoC貧乏\u003c/b>。検証を繰り返すばかりで実運用・事業価値に結びつかない状態。PoCの段階から本番化の判断基準（KPIや撤退条件）を定め、スコープを絞ることが対策になる。社会実装の典型的な落とし穴。","prompt":"PoC（概念実証）を繰り返すだけで本番運用に至らず投資が回収できない状態を指す俗称はどれか。","options":["PoC貧乏","コールドスタート","データドリフト","モード崩壊"],"answer":"PoC貧乏","explanation":"\u003cb>PoC貧乏\u003c/b>。検証を繰り返すばかりで実運用・事業価値に結びつかない状態。PoCの段階から本番化の判断基準（KPIや撤退条件）を定め、スコープを絞ることが対策になる。社会実装の典型的な落とし穴。"}]}</script>
   </main>
   <footer class="app-footer">
     <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>
   </footer>
   <script src="../../assets/js/visualizations.js" defer></script>
+  <script src="../../assets/js/store.js" defer></script>
+  <script src="../../assets/js/learning.js" defer></script>
   <script src="../../assets/js/lesson.js" defer></script>
 </body>
 </html>

@@ -22,9 +22,12 @@
   </header>
   <nav class="top-nav" aria-label="主要ナビゲーション">
     <a href="../../index.html">学習マップ</a>
+    <a href="../../dashboard/index.html">ダッシュボード</a>
+    <a href="../../mock/index.html">模試</a>
+    <a href="../../review/index.html">復習</a>
+    <a href="../../search/index.html">検索</a>
     <a href="../../practice/index.html">4択演習</a>
     <a href="../../glossary/index.html">用語集</a>
-    <a href="../../review/index.html">横断復習</a>
     <a href="../../sources/index.html">参照資料</a>
   </nav>
   <main id="main">
@@ -82,18 +85,22 @@
           <ol>
             <li>Transformer</li><li>Self-Attention</li><li>Multi-Head Attention</li><li>位置エンコーディング</li>
           </ol>
+          <h3>関連する練習問題</h3>
+          <p><a href="../../practice/index.html?cat=undefined">この章の4択演習を開く</a></p>
           <h3>前後の学習</h3>
           <p><a href="../../chapters/dl-elements/attention.html">前: Attention</a></p>
           <p><a href="../../chapters/dl-elements/autoencoder.html">次: オートエンコーダ</a></p>
         </aside>
       </div>
     </section>
-    <script type="application/json" id="lessonData">{"slug":"dl-elements/transformer","title":"Transformer","terms":["Transformer","Self-Attention","Multi-Head Attention","位置エンコーディング"],"visual":{"type":"attention","title":"Transformer: Self-Attentionの入力例","tokens":["私は","昨日","読んだ","本を","要約する"],"focus":4,"features":[[0.8,0.2,0.1],[0.1,0.8,0.2],[0.4,0.7,0.2],[0.7,0.6,0.1],[0.6,0.7,0.5]]},"quiz":[{"id":"transformer-practice-0","prompt":"2017年の論文「Attention Is All You Need」で提案され、Attention機構を中核とするモデルはどれか。","options":["LSTM","Transformer","AlexNet","word2vec"],"answer":"Transformer","explanation":"\u003cb>Transformer\u003c/b>は再帰や畳み込みを使わず自己注意（Self-Attention）で系列を並列処理する。BERTやGPTなど大規模言語モデルの基盤となった。"},{"id":"transformer-practice-1","prompt":"入力系列の中で「どこに注目するか」を動的に重み付けし、長距離の依存関係を捉える仕組みはどれか。","options":["プーリング","Attention（注意機構）","ドロップアウト","畳み込み"],"answer":"Attention（注意機構）","explanation":"\u003cb>Attention（注意機構）\u003c/b>。系列内の関連性に応じて重みを割り当てる。自己注意（Self-Attention）はTransformerの中核。"},{"id":"transformer-practice-2","prompt":"Transformerが単語の並び順（位置）の情報を取り込むために加える仕組みはどれか。","options":["位置エンコーディング","畳み込み","再帰結合","プーリング"],"answer":"位置エンコーディング","explanation":"\u003cb>位置エンコーディング（Positional Encoding）\u003c/b>。自己注意は順序を区別しないため、位置情報を埋め込みに加算して系列の順序を扱えるようにする。"}]}</script>
+    <script type="application/json" id="lessonData">{"slug":"dl-elements/transformer","title":"Transformer","terms":["Transformer","Self-Attention","Multi-Head Attention","位置エンコーディング"],"visual":{"type":"attention","title":"Transformer: Self-Attentionの入力例","tokens":["私は","昨日","読んだ","本を","要約する"],"focus":4,"features":[[0.8,0.2,0.1],[0.1,0.8,0.2],[0.4,0.7,0.2],[0.7,0.6,0.1],[0.6,0.7,0.5]]},"quiz":[{"id":"transformer-practice-0","qid":"q-2a29ad18","cat":"第5章 要素技術","q":"2017年の論文「Attention Is All You Need」で提案され、Attention機構を中核とするモデルはどれか。","c":["LSTM","Transformer","AlexNet","word2vec"],"a":1,"e":"\u003cb>Transformer\u003c/b>は再帰や畳み込みを使わず自己注意（Self-Attention）で系列を並列処理する。BERTやGPTなど大規模言語モデルの基盤となった。","prompt":"2017年の論文「Attention Is All You Need」で提案され、Attention機構を中核とするモデルはどれか。","options":["LSTM","Transformer","AlexNet","word2vec"],"answer":"Transformer","explanation":"\u003cb>Transformer\u003c/b>は再帰や畳み込みを使わず自己注意（Self-Attention）で系列を並列処理する。BERTやGPTなど大規模言語モデルの基盤となった。"},{"id":"transformer-practice-1","qid":"q-943aa12c","cat":"第5章 要素技術","q":"入力系列の中で「どこに注目するか」を動的に重み付けし、長距離の依存関係を捉える仕組みはどれか。","c":["プーリング","Attention（注意機構）","ドロップアウト","畳み込み"],"a":1,"e":"\u003cb>Attention（注意機構）\u003c/b>。系列内の関連性に応じて重みを割り当てる。自己注意（Self-Attention）はTransformerの中核。","prompt":"入力系列の中で「どこに注目するか」を動的に重み付けし、長距離の依存関係を捉える仕組みはどれか。","options":["プーリング","Attention（注意機構）","ドロップアウト","畳み込み"],"answer":"Attention（注意機構）","explanation":"\u003cb>Attention（注意機構）\u003c/b>。系列内の関連性に応じて重みを割り当てる。自己注意（Self-Attention）はTransformerの中核。"},{"id":"transformer-practice-2","qid":"q-5314bd66","cat":"第5章 要素技術","q":"Transformerが単語の並び順（位置）の情報を取り込むために加える仕組みはどれか。","c":["位置エンコーディング","畳み込み","再帰結合","プーリング"],"a":0,"e":"\u003cb>位置エンコーディング（Positional Encoding）\u003c/b>。自己注意は順序を区別しないため、位置情報を埋め込みに加算して系列の順序を扱えるようにする。","prompt":"Transformerが単語の並び順（位置）の情報を取り込むために加える仕組みはどれか。","options":["位置エンコーディング","畳み込み","再帰結合","プーリング"],"answer":"位置エンコーディング","explanation":"\u003cb>位置エンコーディング（Positional Encoding）\u003c/b>。自己注意は順序を区別しないため、位置情報を埋め込みに加算して系列の順序を扱えるようにする。"}]}</script>
   </main>
   <footer class="app-footer">
     <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>
   </footer>
   <script src="../../assets/js/visualizations.js" defer></script>
+  <script src="../../assets/js/store.js" defer></script>
+  <script src="../../assets/js/learning.js" defer></script>
   <script src="../../assets/js/lesson.js" defer></script>
 </body>
 </html>

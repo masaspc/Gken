@@ -22,9 +22,12 @@
   </header>
   <nav class="top-nav" aria-label="主要ナビゲーション">
     <a href="../../index.html">学習マップ</a>
+    <a href="../../dashboard/index.html">ダッシュボード</a>
+    <a href="../../mock/index.html">模試</a>
+    <a href="../../review/index.html">復習</a>
+    <a href="../../search/index.html">検索</a>
     <a href="../../practice/index.html">4択演習</a>
     <a href="../../glossary/index.html">用語集</a>
-    <a href="../../review/index.html">横断復習</a>
     <a href="../../sources/index.html">参照資料</a>
   </nav>
   <main id="main">
@@ -82,18 +85,22 @@
           <ol>
             <li>バッチ正規化</li><li>内部共変量シフト</li><li>平均</li><li>分散</li>
           </ol>
+          <h3>関連する練習問題</h3>
+          <p><a href="../../practice/index.html?cat=undefined">この章の4択演習を開く</a></p>
           <h3>前後の学習</h3>
           <p><a href="../../chapters/dl-overview/regularization.html">前: 正則化</a></p>
           <p><a href="../../chapters/dl-elements/fully-connected.html">次: 全結合層</a></p>
         </aside>
       </div>
     </section>
-    <script type="application/json" id="lessonData">{"slug":"dl-overview/batch-normalization","title":"バッチ正規化","terms":["バッチ正規化","内部共変量シフト","平均","分散"],"visual":{"type":"distribution","title":"バッチ正規化","concept":"平均・分散・サンプル数"},"quiz":[{"id":"batch-normalization-practice-0","prompt":"各層の入力（ミニバッチ）の分布を平均0・分散1付近に整え、学習を安定・高速化する手法はどれか。","options":["バッチ正規化","ドロップアウト","L2正則化","勾配クリッピング"],"answer":"バッチ正規化","explanation":"【正解の理由】\u003cb>バッチ正規化（Batch Normalization）\u003c/b>は各層の入力をミニバッチ単位で正規化し、内部の分布変動を抑えて学習率を上げやすく収束を速める。【各選択肢】②ドロップアウトは過学習抑制、③L2は重み罰則、④勾配クリッピングは勾配爆発対策。【関連】副次的に過学習を抑える効果もある。"},{"id":"batch-normalization-practice-1","prompt":"ランダムフォレストが多様な決定木を作るために用いる2つの無作為化はどれか。","options":["データのブートストラップ標本と、分岐ごとの特徴量のランダム選択","学習率と重み減衰","ドロップアウトとバッチ正規化","オプトインとオプトアウト"],"answer":"データのブートストラップ標本と、分岐ごとの特徴量のランダム選択","explanation":"ランダムフォレストは\u003cb>ブートストラップ（バギング）＋特徴量のランダム選択\u003c/b>で木に多様性を持たせ、平均/多数決で分散を下げる。木同士の相関を減らすことが汎化性能の鍵。"},{"id":"batch-normalization-practice-2","prompt":"一定領域内の最大値を代表値として取り出し、位置ずれに頑健にしつつ特徴マップを縮小する処理はどれか。","options":["最大プーリング","畳み込み","全結合","バッチ正規化"],"answer":"最大プーリング","explanation":"\u003cb>最大プーリング（max pooling）\u003c/b>。領域の最大値を採用。平均値を取る平均プーリングもある。"}]}</script>
+    <script type="application/json" id="lessonData">{"slug":"dl-overview/batch-normalization","title":"バッチ正規化","terms":["バッチ正規化","内部共変量シフト","平均","分散"],"visual":{"type":"distribution","title":"バッチ正規化","concept":"平均・分散・サンプル数"},"quiz":[{"id":"batch-normalization-practice-0","qid":"q-4c01f1ed","cat":"第4章 DL概要","q":"各層の入力（ミニバッチ）の分布を平均0・分散1付近に整え、学習を安定・高速化する手法はどれか。","c":["バッチ正規化","ドロップアウト","L2正則化","勾配クリッピング"],"a":0,"e":"【正解の理由】\u003cb>バッチ正規化（Batch Normalization）\u003c/b>は各層の入力をミニバッチ単位で正規化し、内部の分布変動を抑えて学習率を上げやすく収束を速める。【各選択肢】②ドロップアウトは過学習抑制、③L2は重み罰則、④勾配クリッピングは勾配爆発対策。【関連】副次的に過学習を抑える効果もある。","prompt":"各層の入力（ミニバッチ）の分布を平均0・分散1付近に整え、学習を安定・高速化する手法はどれか。","options":["バッチ正規化","ドロップアウト","L2正則化","勾配クリッピング"],"answer":"バッチ正規化","explanation":"【正解の理由】\u003cb>バッチ正規化（Batch Normalization）\u003c/b>は各層の入力をミニバッチ単位で正規化し、内部の分布変動を抑えて学習率を上げやすく収束を速める。【各選択肢】②ドロップアウトは過学習抑制、③L2は重み罰則、④勾配クリッピングは勾配爆発対策。【関連】副次的に過学習を抑える効果もある。"},{"id":"batch-normalization-practice-1","qid":"q-d916c356","cat":"第3章 機械学習","q":"ランダムフォレストが多様な決定木を作るために用いる2つの無作為化はどれか。","c":["データのブートストラップ標本と、分岐ごとの特徴量のランダム選択","学習率と重み減衰","ドロップアウトとバッチ正規化","オプトインとオプトアウト"],"a":0,"e":"ランダムフォレストは\u003cb>ブートストラップ（バギング）＋特徴量のランダム選択\u003c/b>で木に多様性を持たせ、平均/多数決で分散を下げる。木同士の相関を減らすことが汎化性能の鍵。","prompt":"ランダムフォレストが多様な決定木を作るために用いる2つの無作為化はどれか。","options":["データのブートストラップ標本と、分岐ごとの特徴量のランダム選択","学習率と重み減衰","ドロップアウトとバッチ正規化","オプトインとオプトアウト"],"answer":"データのブートストラップ標本と、分岐ごとの特徴量のランダム選択","explanation":"ランダムフォレストは\u003cb>ブートストラップ（バギング）＋特徴量のランダム選択\u003c/b>で木に多様性を持たせ、平均/多数決で分散を下げる。木同士の相関を減らすことが汎化性能の鍵。"},{"id":"batch-normalization-practice-2","qid":"q-a4c3166e","cat":"第5章 要素技術","q":"一定領域内の最大値を代表値として取り出し、位置ずれに頑健にしつつ特徴マップを縮小する処理はどれか。","c":["最大プーリング","畳み込み","全結合","バッチ正規化"],"a":0,"e":"\u003cb>最大プーリング（max pooling）\u003c/b>。領域の最大値を採用。平均値を取る平均プーリングもある。","prompt":"一定領域内の最大値を代表値として取り出し、位置ずれに頑健にしつつ特徴マップを縮小する処理はどれか。","options":["最大プーリング","畳み込み","全結合","バッチ正規化"],"answer":"最大プーリング","explanation":"\u003cb>最大プーリング（max pooling）\u003c/b>。領域の最大値を採用。平均値を取る平均プーリングもある。"}]}</script>
   </main>
   <footer class="app-footer">
     <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>
   </footer>
   <script src="../../assets/js/visualizations.js" defer></script>
+  <script src="../../assets/js/store.js" defer></script>
+  <script src="../../assets/js/learning.js" defer></script>
   <script src="../../assets/js/lesson.js" defer></script>
 </body>
 </html>

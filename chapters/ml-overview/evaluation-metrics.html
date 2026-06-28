@@ -22,9 +22,12 @@
   </header>
   <nav class="top-nav" aria-label="主要ナビゲーション">
     <a href="../../index.html">学習マップ</a>
+    <a href="../../dashboard/index.html">ダッシュボード</a>
+    <a href="../../mock/index.html">模試</a>
+    <a href="../../review/index.html">復習</a>
+    <a href="../../search/index.html">検索</a>
     <a href="../../practice/index.html">4択演習</a>
     <a href="../../glossary/index.html">用語集</a>
-    <a href="../../review/index.html">横断復習</a>
     <a href="../../sources/index.html">参照資料</a>
   </nav>
   <main id="main">
@@ -82,18 +85,22 @@
           <ol>
             <li>正解率</li><li>適合率</li><li>再現率</li><li>F値</li>
           </ol>
+          <h3>関連する練習問題</h3>
+          <p><a href="../../practice/index.html?cat=undefined">この章の4択演習を開く</a></p>
           <h3>前後の学習</h3>
           <p><a href="../../chapters/ml-overview/overfitting.html">前: 過学習と汎化</a></p>
           <p><a href="../../chapters/ml-overview/confusion-matrix.html">次: 混同行列</a></p>
         </aside>
       </div>
     </section>
-    <script type="application/json" id="lessonData">{"slug":"ml-overview/evaluation-metrics","title":"評価指標","terms":["正解率","適合率","再現率","F値"],"visual":{"type":"classification","title":"評価指標","concept":"しきい値・決定境界・混同行列"},"quiz":[{"id":"evaluation-metrics-practice-0","prompt":"正例が極端に少ない不均衡データで、正解率（Accuracy）が評価指標として不適切になりやすい理由はどれか。","options":["計算が重いから","多数派クラスを常に予測するだけで高い値になり得るから","学習率に依存するから","次元が増えるから"],"answer":"多数派クラスを常に予測するだけで高い値になり得るから","explanation":"不均衡データでは、\u003cb>多数派ばかり予測しても正解率が高く\u003c/b>見えるため実力を反映しない。適合率・再現率・F値・AUCなどを併用する。"},{"id":"evaluation-metrics-practice-1","prompt":"陽性のうち正しく陽性と当てた割合（取りこぼしの少なさ）を表す指標はどれか。","options":["適合率（Precision）","再現率（Recall）","正解率（Accuracy）","特異度"],"answer":"再現率（Recall）","explanation":"\u003cb>再現率（Recall）\u003c/b>＝TP/(TP+FN)。実際の陽性をどれだけ拾えたか。\u003cb>適合率\u003c/b>は予測陽性のうち本当に陽性だった割合。両者の調和平均がF値。"},{"id":"evaluation-metrics-practice-2","prompt":"適合率と再現率の調和平均として、両者のバランスを評価する指標はどれか。","options":["F値（F1スコア）","AUC","正解率","対数尤度"],"answer":"F値（F1スコア）","explanation":"\u003cb>F値（F1スコア）\u003c/b>。適合率と再現率はトレードオフの関係にあり、その調和平均で総合評価する。"}]}</script>
+    <script type="application/json" id="lessonData">{"slug":"ml-overview/evaluation-metrics","title":"評価指標","terms":["正解率","適合率","再現率","F値"],"visual":{"type":"classification","title":"評価指標","concept":"しきい値・決定境界・混同行列"},"quiz":[{"id":"evaluation-metrics-practice-0","qid":"q-4b11930e","cat":"第3章 機械学習","q":"正例が極端に少ない不均衡データで、正解率（Accuracy）が評価指標として不適切になりやすい理由はどれか。","c":["計算が重いから","多数派クラスを常に予測するだけで高い値になり得るから","学習率に依存するから","次元が増えるから"],"a":1,"e":"不均衡データでは、\u003cb>多数派ばかり予測しても正解率が高く\u003c/b>見えるため実力を反映しない。適合率・再現率・F値・AUCなどを併用する。","prompt":"正例が極端に少ない不均衡データで、正解率（Accuracy）が評価指標として不適切になりやすい理由はどれか。","options":["計算が重いから","多数派クラスを常に予測するだけで高い値になり得るから","学習率に依存するから","次元が増えるから"],"answer":"多数派クラスを常に予測するだけで高い値になり得るから","explanation":"不均衡データでは、\u003cb>多数派ばかり予測しても正解率が高く\u003c/b>見えるため実力を反映しない。適合率・再現率・F値・AUCなどを併用する。"},{"id":"evaluation-metrics-practice-1","qid":"q-f924bd66","cat":"第3章 機械学習","q":"陽性のうち正しく陽性と当てた割合（取りこぼしの少なさ）を表す指標はどれか。","c":["適合率（Precision）","再現率（Recall）","正解率（Accuracy）","特異度"],"a":1,"e":"\u003cb>再現率（Recall）\u003c/b>＝TP/(TP+FN)。実際の陽性をどれだけ拾えたか。\u003cb>適合率\u003c/b>は予測陽性のうち本当に陽性だった割合。両者の調和平均がF値。","prompt":"陽性のうち正しく陽性と当てた割合（取りこぼしの少なさ）を表す指標はどれか。","options":["適合率（Precision）","再現率（Recall）","正解率（Accuracy）","特異度"],"answer":"再現率（Recall）","explanation":"\u003cb>再現率（Recall）\u003c/b>＝TP/(TP+FN)。実際の陽性をどれだけ拾えたか。\u003cb>適合率\u003c/b>は予測陽性のうち本当に陽性だった割合。両者の調和平均がF値。"},{"id":"evaluation-metrics-practice-2","qid":"q-a2316d70","cat":"第3章 機械学習","q":"適合率と再現率の調和平均として、両者のバランスを評価する指標はどれか。","c":["F値（F1スコア）","AUC","正解率","対数尤度"],"a":0,"e":"\u003cb>F値（F1スコア）\u003c/b>。適合率と再現率はトレードオフの関係にあり、その調和平均で総合評価する。","prompt":"適合率と再現率の調和平均として、両者のバランスを評価する指標はどれか。","options":["F値（F1スコア）","AUC","正解率","対数尤度"],"answer":"F値（F1スコア）","explanation":"\u003cb>F値（F1スコア）\u003c/b>。適合率と再現率はトレードオフの関係にあり、その調和平均で総合評価する。"}]}</script>
   </main>
   <footer class="app-footer">
     <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>
   </footer>
   <script src="../../assets/js/visualizations.js" defer></script>
+  <script src="../../assets/js/store.js" defer></script>
+  <script src="../../assets/js/learning.js" defer></script>
   <script src="../../assets/js/lesson.js" defer></script>
 </body>
 </html>

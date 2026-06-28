@@ -22,9 +22,12 @@
   </header>
   <nav class="top-nav" aria-label="主要ナビゲーション">
     <a href="../../index.html">学習マップ</a>
+    <a href="../../dashboard/index.html">ダッシュボード</a>
+    <a href="../../mock/index.html">模試</a>
+    <a href="../../review/index.html">復習</a>
+    <a href="../../search/index.html">検索</a>
     <a href="../../practice/index.html">4択演習</a>
     <a href="../../glossary/index.html">用語集</a>
-    <a href="../../review/index.html">横断復習</a>
     <a href="../../sources/index.html">参照資料</a>
   </nav>
   <main id="main">
@@ -82,18 +85,22 @@
           <ol>
             <li>分類</li><li>決定境界</li><li>クラス</li><li>しきい値</li>
           </ol>
+          <h3>関連する練習問題</h3>
+          <p><a href="../../practice/index.html?cat=undefined">この章の4択演習を開く</a></p>
           <h3>前後の学習</h3>
           <p><a href="../../chapters/ml-overview/regression.html">前: 回帰</a></p>
           <p><a href="../../chapters/ml-overview/unsupervised-learning.html">次: 教師なし学習</a></p>
         </aside>
       </div>
     </section>
-    <script type="application/json" id="lessonData">{"slug":"ml-overview/classification","title":"分類","terms":["分類","決定境界","クラス","しきい値"],"visual":{"type":"classification","title":"分類","concept":"しきい値・決定境界・混同行列"},"quiz":[{"id":"classification-practice-0","prompt":"出力をシグモイド関数で0〜1の確率に変換し、2値分類に用いる手法はどれか。","options":["ロジスティック回帰","線形回帰","主成分分析","k-means"],"answer":"ロジスティック回帰","explanation":"【正解の理由】\u003cb>ロジスティック回帰\u003c/b>は線形結合をシグモイドに通して確率を出し、しきい値で2クラスに分類する。名前は回帰だが用途は分類。【各選択肢】②線形回帰は連続値の予測、③PCAは次元削減、④k-meansはクラスタリング。【覚え方】「ロジスティック回帰＝分類」「線形回帰＝数値予測」を混同しない。"},{"id":"classification-practice-1","prompt":"出力が「連続値」になるのが回帰、「離散的なクラス」になるのが分類である。次のうち分類タスクはどれか。","options":["明日の気温の予測","住宅価格の予測","メールが迷惑メールか判定","株価の予測"],"answer":"メールが迷惑メールか判定","explanation":"迷惑メール判定は\u003cb>分類\u003c/b>（スパム/非スパムの離散クラス）。気温・価格・株価のように連続値を予測するのは\u003cb>回帰\u003c/b>。"},{"id":"classification-practice-2","prompt":"出力をシグモイド関数で0〜1の確率に変換し、2クラス分類に用いる手法はどれか。","options":["線形回帰","ロジスティック回帰","主成分分析","k近傍法"],"answer":"ロジスティック回帰","explanation":"\u003cb>ロジスティック回帰\u003c/b>。名前は回帰だが分類手法。確率として解釈できる出力を返す。"}]}</script>
+    <script type="application/json" id="lessonData">{"slug":"ml-overview/classification","title":"分類","terms":["分類","決定境界","クラス","しきい値"],"visual":{"type":"classification","title":"分類","concept":"しきい値・決定境界・混同行列"},"quiz":[{"id":"classification-practice-0","qid":"q-6bd2ba3f","cat":"第3章 機械学習","q":"出力をシグモイド関数で0〜1の確率に変換し、2値分類に用いる手法はどれか。","c":["ロジスティック回帰","線形回帰","主成分分析","k-means"],"a":0,"e":"【正解の理由】\u003cb>ロジスティック回帰\u003c/b>は線形結合をシグモイドに通して確率を出し、しきい値で2クラスに分類する。名前は回帰だが用途は分類。【各選択肢】②線形回帰は連続値の予測、③PCAは次元削減、④k-meansはクラスタリング。【覚え方】「ロジスティック回帰＝分類」「線形回帰＝数値予測」を混同しない。","prompt":"出力をシグモイド関数で0〜1の確率に変換し、2値分類に用いる手法はどれか。","options":["ロジスティック回帰","線形回帰","主成分分析","k-means"],"answer":"ロジスティック回帰","explanation":"【正解の理由】\u003cb>ロジスティック回帰\u003c/b>は線形結合をシグモイドに通して確率を出し、しきい値で2クラスに分類する。名前は回帰だが用途は分類。【各選択肢】②線形回帰は連続値の予測、③PCAは次元削減、④k-meansはクラスタリング。【覚え方】「ロジスティック回帰＝分類」「線形回帰＝数値予測」を混同しない。"},{"id":"classification-practice-1","qid":"q-4fc969ed","cat":"第3章 機械学習","q":"出力が「連続値」になるのが回帰、「離散的なクラス」になるのが分類である。次のうち分類タスクはどれか。","c":["明日の気温の予測","住宅価格の予測","メールが迷惑メールか判定","株価の予測"],"a":2,"e":"迷惑メール判定は\u003cb>分類\u003c/b>（スパム/非スパムの離散クラス）。気温・価格・株価のように連続値を予測するのは\u003cb>回帰\u003c/b>。","prompt":"出力が「連続値」になるのが回帰、「離散的なクラス」になるのが分類である。次のうち分類タスクはどれか。","options":["明日の気温の予測","住宅価格の予測","メールが迷惑メールか判定","株価の予測"],"answer":"メールが迷惑メールか判定","explanation":"迷惑メール判定は\u003cb>分類\u003c/b>（スパム/非スパムの離散クラス）。気温・価格・株価のように連続値を予測するのは\u003cb>回帰\u003c/b>。"},{"id":"classification-practice-2","qid":"q-686a4a4a","cat":"第3章 機械学習","q":"出力をシグモイド関数で0〜1の確率に変換し、2クラス分類に用いる手法はどれか。","c":["線形回帰","ロジスティック回帰","主成分分析","k近傍法"],"a":1,"e":"\u003cb>ロジスティック回帰\u003c/b>。名前は回帰だが分類手法。確率として解釈できる出力を返す。","prompt":"出力をシグモイド関数で0〜1の確率に変換し、2クラス分類に用いる手法はどれか。","options":["線形回帰","ロジスティック回帰","主成分分析","k近傍法"],"answer":"ロジスティック回帰","explanation":"\u003cb>ロジスティック回帰\u003c/b>。名前は回帰だが分類手法。確率として解釈できる出力を返す。"}]}</script>
   </main>
   <footer class="app-footer">
     <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>
   </footer>
   <script src="../../assets/js/visualizations.js" defer></script>
+  <script src="../../assets/js/store.js" defer></script>
+  <script src="../../assets/js/learning.js" defer></script>
   <script src="../../assets/js/lesson.js" defer></script>
 </body>
 </html>

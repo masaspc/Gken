@@ -22,9 +22,12 @@
   </header>
   <nav class="top-nav" aria-label="主要ナビゲーション">
     <a href="../../index.html">学習マップ</a>
+    <a href="../../dashboard/index.html">ダッシュボード</a>
+    <a href="../../mock/index.html">模試</a>
+    <a href="../../review/index.html">復習</a>
+    <a href="../../search/index.html">検索</a>
     <a href="../../practice/index.html">4択演習</a>
     <a href="../../glossary/index.html">用語集</a>
-    <a href="../../review/index.html">横断復習</a>
     <a href="../../sources/index.html">参照資料</a>
   </nav>
   <main id="main">
@@ -81,18 +84,22 @@
           <ol>
             <li>訓練データ</li><li>テストデータ</li><li>検証データ</li><li>汎化</li>
           </ol>
+          <h3>関連する練習問題</h3>
+          <p><a href="../../practice/index.html?cat=undefined">この章の4択演習を開く</a></p>
           <h3>前後の学習</h3>
           <p><a href="../../chapters/ml-overview/reinforcement-learning.html">前: 強化学習</a></p>
           <p><a href="../../chapters/ml-overview/overfitting.html">次: 過学習と汎化</a></p>
         </aside>
       </div>
     </section>
-    <script type="application/json" id="lessonData">{"slug":"ml-overview/train-test-split","title":"訓練データとテストデータ","terms":["訓練データ","テストデータ","検証データ","汎化"],"visual":{"type":"comparison-table","title":"データ分割の役割","columns":["データ","使う場面","混同すると起きる問題"],"rows":[["訓練データ","モデルの重みや規則を学習する","ここだけで評価すると過大評価しやすい"],["検証データ","ハイパーパラメータやモデル選択に使う","何度も見すぎると評価に漏れが出る"],["テストデータ","最後に未知データ性能を確認する","学習に使うと汎化性能を測れない"]]},"quiz":[{"id":"train-test-split-practice-0","prompt":"学習データには高精度だが未知データで性能が落ちる状態を何というか。","options":["未学習（過少適合）","過学習（過剰適合）","正則化","汎化"],"answer":"過学習（過剰適合）","explanation":"\u003cb>過学習（オーバーフィッティング）\u003c/b>。モデルが訓練データのノイズまで覚え込んだ状態。正則化・ドロップアウト・データ拡張・早期終了などで抑制する。"},{"id":"train-test-split-practice-1","prompt":"モデルが単純すぎて、訓練データに対してすら十分に当てはまらない状態を何というか。","options":["過学習","未学習（過少適合）","正則化","汎化"],"answer":"未学習（過少適合）","explanation":"\u003cb>未学習（アンダーフィッティング）\u003c/b>。表現力不足で訓練データのパターンを捉えきれていない。モデルの複雑化や特徴量追加で改善する。"},{"id":"train-test-split-practice-2","prompt":"育ちすぎた決定木の枝を削り、過学習を抑えて汎化性能を高める処理はどれか。","options":["剪定（プルーニング）","ブースティング","正規化","アノテーション"],"answer":"剪定（プルーニング）","explanation":"\u003cb>剪定（pruning）\u003c/b>。検証データで効果の薄い枝を切り、木を単純化して過学習を抑える。ニューラルネットの“枝刈り”も同じ言葉が使われるが、こちらはモデル軽量化が目的で文脈が異なる点に注意。"}]}</script>
+    <script type="application/json" id="lessonData">{"slug":"ml-overview/train-test-split","title":"訓練データとテストデータ","terms":["訓練データ","テストデータ","検証データ","汎化"],"visual":{"type":"comparison-table","title":"データ分割の役割","columns":["データ","使う場面","混同すると起きる問題"],"rows":[["訓練データ","モデルの重みや規則を学習する","ここだけで評価すると過大評価しやすい"],["検証データ","ハイパーパラメータやモデル選択に使う","何度も見すぎると評価に漏れが出る"],["テストデータ","最後に未知データ性能を確認する","学習に使うと汎化性能を測れない"]]},"quiz":[{"id":"train-test-split-practice-0","qid":"q-d951898a","cat":"第3章 機械学習","q":"学習データには高精度だが未知データで性能が落ちる状態を何というか。","c":["未学習（過少適合）","過学習（過剰適合）","正則化","汎化"],"a":1,"e":"\u003cb>過学習（オーバーフィッティング）\u003c/b>。モデルが訓練データのノイズまで覚え込んだ状態。正則化・ドロップアウト・データ拡張・早期終了などで抑制する。","prompt":"学習データには高精度だが未知データで性能が落ちる状態を何というか。","options":["未学習（過少適合）","過学習（過剰適合）","正則化","汎化"],"answer":"過学習（過剰適合）","explanation":"\u003cb>過学習（オーバーフィッティング）\u003c/b>。モデルが訓練データのノイズまで覚え込んだ状態。正則化・ドロップアウト・データ拡張・早期終了などで抑制する。"},{"id":"train-test-split-practice-1","qid":"q-566316fb","cat":"第3章 機械学習","q":"モデルが単純すぎて、訓練データに対してすら十分に当てはまらない状態を何というか。","c":["過学習","未学習（過少適合）","正則化","汎化"],"a":1,"e":"\u003cb>未学習（アンダーフィッティング）\u003c/b>。表現力不足で訓練データのパターンを捉えきれていない。モデルの複雑化や特徴量追加で改善する。","prompt":"モデルが単純すぎて、訓練データに対してすら十分に当てはまらない状態を何というか。","options":["過学習","未学習（過少適合）","正則化","汎化"],"answer":"未学習（過少適合）","explanation":"\u003cb>未学習（アンダーフィッティング）\u003c/b>。表現力不足で訓練データのパターンを捉えきれていない。モデルの複雑化や特徴量追加で改善する。"},{"id":"train-test-split-practice-2","qid":"q-d1406f49","cat":"第3章 機械学習","q":"育ちすぎた決定木の枝を削り、過学習を抑えて汎化性能を高める処理はどれか。","c":["剪定（プルーニング）","ブースティング","正規化","アノテーション"],"a":0,"e":"\u003cb>剪定（pruning）\u003c/b>。検証データで効果の薄い枝を切り、木を単純化して過学習を抑える。ニューラルネットの“枝刈り”も同じ言葉が使われるが、こちらはモデル軽量化が目的で文脈が異なる点に注意。","prompt":"育ちすぎた決定木の枝を削り、過学習を抑えて汎化性能を高める処理はどれか。","options":["剪定（プルーニング）","ブースティング","正規化","アノテーション"],"answer":"剪定（プルーニング）","explanation":"\u003cb>剪定（pruning）\u003c/b>。検証データで効果の薄い枝を切り、木を単純化して過学習を抑える。ニューラルネットの“枝刈り”も同じ言葉が使われるが、こちらはモデル軽量化が目的で文脈が異なる点に注意。"}]}</script>
   </main>
   <footer class="app-footer">
     <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>
   </footer>
   <script src="../../assets/js/visualizations.js" defer></script>
+  <script src="../../assets/js/store.js" defer></script>
+  <script src="../../assets/js/learning.js" defer></script>
   <script src="../../assets/js/lesson.js" defer></script>
 </body>
 </html>

@@ -22,9 +22,12 @@
   </header>
   <nav class="top-nav" aria-label="主要ナビゲーション">
     <a href="../../index.html">学習マップ</a>
+    <a href="../../dashboard/index.html">ダッシュボード</a>
+    <a href="../../mock/index.html">模試</a>
+    <a href="../../review/index.html">復習</a>
+    <a href="../../search/index.html">検索</a>
     <a href="../../practice/index.html">4択演習</a>
     <a href="../../glossary/index.html">用語集</a>
-    <a href="../../review/index.html">横断復習</a>
     <a href="../../sources/index.html">参照資料</a>
   </nav>
   <main id="main">
@@ -82,18 +85,22 @@
           <ol>
             <li>相関</li><li>正の相関</li><li>負の相関</li><li>因果</li>
           </ol>
+          <h3>関連する練習問題</h3>
+          <p><a href="../../practice/index.html?cat=undefined">この章の4択演習を開く</a></p>
           <h3>前後の学習</h3>
           <p><a href="../../chapters/math-stats/mean-variance.html">前: 平均と分散</a></p>
           <p><a href="../../chapters/math-stats/probability.html">次: 確率</a></p>
         </aside>
       </div>
     </section>
-    <script type="application/json" id="lessonData">{"slug":"math-stats/correlation","title":"相関","terms":["相関","正の相関","負の相関","因果"],"visual":{"type":"regression","title":"相関","concept":"説明変数と目的変数の関係"},"quiz":[{"id":"correlation-practice-0","prompt":"二つの変数に強い相関があるとき、必ずしも言えないことはどれか。","options":["一方が他方の原因である（因果関係）","同時に動く傾向がある","散布図で直線的傾向が見える","相関係数が0から離れている"],"answer":"一方が他方の原因である（因果関係）","explanation":"\u003cb>相関は因果を意味しない\u003c/b>。共通の原因（交絡因子）や偶然で相関が生じることもある。因果を主張するには無作為化実験などの追加検証が必要。データ分析の解釈で頻出の注意点で、施策評価でも問われる。"},{"id":"correlation-practice-1","prompt":"予測結果を「真陽性・偽陽性・偽陰性・真陰性」の4区分で整理した表はどれか。","options":["混同行列","相関行列","重み行列","共分散行列"],"answer":"混同行列","explanation":"\u003cb>混同行列（Confusion Matrix）\u003c/b>。適合率・再現率・正解率などの評価指標はここから計算される。"},{"id":"correlation-practice-2","prompt":"ピアソンの相関係数が取りうる範囲はどれか。","options":["-1から+1","0から1","0から無限大","-∞から+∞"],"answer":"-1から+1","explanation":"相関係数は\u003cb>-1〜+1\u003c/b>。+1は完全な正の直線関係、-1は完全な負の直線関係、0は線形な関係がないことを示す（非線形な関係は捉えられない点に注意）。あくまで“直線的”な関連の強さの指標。"}]}</script>
+    <script type="application/json" id="lessonData">{"slug":"math-stats/correlation","title":"相関","terms":["相関","正の相関","負の相関","因果"],"visual":{"type":"regression","title":"相関","concept":"説明変数と目的変数の関係"},"quiz":[{"id":"correlation-practice-0","qid":"q-b9595cd7","cat":"第3章 機械学習","q":"二つの変数に強い相関があるとき、必ずしも言えないことはどれか。","c":["一方が他方の原因である（因果関係）","同時に動く傾向がある","散布図で直線的傾向が見える","相関係数が0から離れている"],"a":0,"e":"\u003cb>相関は因果を意味しない\u003c/b>。共通の原因（交絡因子）や偶然で相関が生じることもある。因果を主張するには無作為化実験などの追加検証が必要。データ分析の解釈で頻出の注意点で、施策評価でも問われる。","prompt":"二つの変数に強い相関があるとき、必ずしも言えないことはどれか。","options":["一方が他方の原因である（因果関係）","同時に動く傾向がある","散布図で直線的傾向が見える","相関係数が0から離れている"],"answer":"一方が他方の原因である（因果関係）","explanation":"\u003cb>相関は因果を意味しない\u003c/b>。共通の原因（交絡因子）や偶然で相関が生じることもある。因果を主張するには無作為化実験などの追加検証が必要。データ分析の解釈で頻出の注意点で、施策評価でも問われる。"},{"id":"correlation-practice-1","qid":"q-bc1e9ab5","cat":"第3章 機械学習","q":"予測結果を「真陽性・偽陽性・偽陰性・真陰性」の4区分で整理した表はどれか。","c":["混同行列","相関行列","重み行列","共分散行列"],"a":0,"e":"\u003cb>混同行列（Confusion Matrix）\u003c/b>。適合率・再現率・正解率などの評価指標はここから計算される。","prompt":"予測結果を「真陽性・偽陽性・偽陰性・真陰性」の4区分で整理した表はどれか。","options":["混同行列","相関行列","重み行列","共分散行列"],"answer":"混同行列","explanation":"\u003cb>混同行列（Confusion Matrix）\u003c/b>。適合率・再現率・正解率などの評価指標はここから計算される。"},{"id":"correlation-practice-2","qid":"q-bf6fae9c","cat":"第3章 機械学習","q":"ピアソンの相関係数が取りうる範囲はどれか。","c":["-1から+1","0から1","0から無限大","-∞から+∞"],"a":0,"e":"相関係数は\u003cb>-1〜+1\u003c/b>。+1は完全な正の直線関係、-1は完全な負の直線関係、0は線形な関係がないことを示す（非線形な関係は捉えられない点に注意）。あくまで“直線的”な関連の強さの指標。","prompt":"ピアソンの相関係数が取りうる範囲はどれか。","options":["-1から+1","0から1","0から無限大","-∞から+∞"],"answer":"-1から+1","explanation":"相関係数は\u003cb>-1〜+1\u003c/b>。+1は完全な正の直線関係、-1は完全な負の直線関係、0は線形な関係がないことを示す（非線形な関係は捉えられない点に注意）。あくまで“直線的”な関連の強さの指標。"}]}</script>
   </main>
   <footer class="app-footer">
     <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>
   </footer>
   <script src="../../assets/js/visualizations.js" defer></script>
+  <script src="../../assets/js/store.js" defer></script>
+  <script src="../../assets/js/learning.js" defer></script>
   <script src="../../assets/js/lesson.js" defer></script>
 </body>
 </html>

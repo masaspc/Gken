@@ -22,9 +22,12 @@
   </header>
   <nav class="top-nav" aria-label="主要ナビゲーション">
     <a href="../../index.html">学習マップ</a>
+    <a href="../../dashboard/index.html">ダッシュボード</a>
+    <a href="../../mock/index.html">模試</a>
+    <a href="../../review/index.html">復習</a>
+    <a href="../../search/index.html">検索</a>
     <a href="../../practice/index.html">4択演習</a>
     <a href="../../glossary/index.html">用語集</a>
-    <a href="../../review/index.html">横断復習</a>
     <a href="../../sources/index.html">参照資料</a>
   </nav>
   <main id="main">
@@ -82,18 +85,22 @@
           <ol>
             <li>データ収集</li><li>サンプリング</li><li>偏り</li><li>同意</li>
           </ol>
+          <h3>関連する練習問題</h3>
+          <p><a href="../../practice/index.html?cat=undefined">この章の4択演習を開く</a></p>
           <h3>前後の学習</h3>
           <p><a href="../../chapters/implementation/business-goal.html">前: 目的設定とKPI</a></p>
           <p><a href="../../chapters/implementation/data-preprocessing.html">次: データ加工</a></p>
         </aside>
       </div>
     </section>
-    <script type="application/json" id="lessonData">{"slug":"implementation/data-collection","title":"データ収集","terms":["データ収集","サンプリング","偏り","同意"],"visual":{"type":"distribution","title":"データ収集","concept":"平均・分散・サンプル数"},"quiz":[{"id":"data-collection-practice-0","prompt":"学習データの収集方法に起因し、特定の属性が過小・過大に含まれることで生じる偏りを何というか。","options":["サンプリングバイアス","勾配消失","正則化","オーバーサンプリング"],"answer":"サンプリングバイアス","explanation":"\u003cb>サンプリングバイアス\u003c/b>。データ収集段階の偏りが、AIの差別的・不公平な判断につながる。公平性確保のためデータの代表性を点検する必要がある。"},{"id":"data-collection-practice-1","prompt":"AI活用プロジェクトで最初に行うべきこととして最も適切なものはどれか。","options":["モデルの選定","解決すべきビジネス課題・目的の明確化","GPUの調達","ハイパーパラメータ調整"],"answer":"解決すべきビジネス課題・目的の明確化","explanation":"まず\u003cb>課題・目的の明確化\u003c/b>。何をどれだけ改善したいか（KPI）を定めないと、データ収集も評価も方向を誤る。"},{"id":"data-collection-practice-2","prompt":"データを複数に分割し、検証用を入れ替えながら学習・評価を繰り返す手法はどれか。","options":["ホールドアウト法","k分割交差検証","アンダーサンプリング","グリッドサーチ"],"answer":"k分割交差検証","explanation":"\u003cb>k分割交差検証（k-fold cross validation）\u003c/b>。データをk個に分け、各回1つを検証、残りを学習に使う。少ないデータでも評価の偏りを抑えられる。"}]}</script>
+    <script type="application/json" id="lessonData">{"slug":"implementation/data-collection","title":"データ収集","terms":["データ収集","サンプリング","偏り","同意"],"visual":{"type":"distribution","title":"データ収集","concept":"平均・分散・サンプル数"},"quiz":[{"id":"data-collection-practice-0","qid":"q-56374c26","cat":"第8章 法律・倫理","q":"学習データの収集方法に起因し、特定の属性が過小・過大に含まれることで生じる偏りを何というか。","c":["サンプリングバイアス","勾配消失","正則化","オーバーサンプリング"],"a":0,"e":"\u003cb>サンプリングバイアス\u003c/b>。データ収集段階の偏りが、AIの差別的・不公平な判断につながる。公平性確保のためデータの代表性を点検する必要がある。","prompt":"学習データの収集方法に起因し、特定の属性が過小・過大に含まれることで生じる偏りを何というか。","options":["サンプリングバイアス","勾配消失","正則化","オーバーサンプリング"],"answer":"サンプリングバイアス","explanation":"\u003cb>サンプリングバイアス\u003c/b>。データ収集段階の偏りが、AIの差別的・不公平な判断につながる。公平性確保のためデータの代表性を点検する必要がある。"},{"id":"data-collection-practice-1","qid":"q-1aad077a","cat":"第7章 社会実装","q":"AI活用プロジェクトで最初に行うべきこととして最も適切なものはどれか。","c":["モデルの選定","解決すべきビジネス課題・目的の明確化","GPUの調達","ハイパーパラメータ調整"],"a":1,"e":"まず\u003cb>課題・目的の明確化\u003c/b>。何をどれだけ改善したいか（KPI）を定めないと、データ収集も評価も方向を誤る。","prompt":"AI活用プロジェクトで最初に行うべきこととして最も適切なものはどれか。","options":["モデルの選定","解決すべきビジネス課題・目的の明確化","GPUの調達","ハイパーパラメータ調整"],"answer":"解決すべきビジネス課題・目的の明確化","explanation":"まず\u003cb>課題・目的の明確化\u003c/b>。何をどれだけ改善したいか（KPI）を定めないと、データ収集も評価も方向を誤る。"},{"id":"data-collection-practice-2","qid":"q-28b72af0","cat":"第3章 機械学習","q":"データを複数に分割し、検証用を入れ替えながら学習・評価を繰り返す手法はどれか。","c":["ホールドアウト法","k分割交差検証","アンダーサンプリング","グリッドサーチ"],"a":1,"e":"\u003cb>k分割交差検証（k-fold cross validation）\u003c/b>。データをk個に分け、各回1つを検証、残りを学習に使う。少ないデータでも評価の偏りを抑えられる。","prompt":"データを複数に分割し、検証用を入れ替えながら学習・評価を繰り返す手法はどれか。","options":["ホールドアウト法","k分割交差検証","アンダーサンプリング","グリッドサーチ"],"answer":"k分割交差検証","explanation":"\u003cb>k分割交差検証（k-fold cross validation）\u003c/b>。データをk個に分け、各回1つを検証、残りを学習に使う。少ないデータでも評価の偏りを抑えられる。"}]}</script>
   </main>
   <footer class="app-footer">
     <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>
   </footer>
   <script src="../../assets/js/visualizations.js" defer></script>
+  <script src="../../assets/js/store.js" defer></script>
+  <script src="../../assets/js/learning.js" defer></script>
   <script src="../../assets/js/lesson.js" defer></script>
 </body>
 </html>

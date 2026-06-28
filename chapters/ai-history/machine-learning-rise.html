@@ -22,9 +22,12 @@
   </header>
   <nav class="top-nav" aria-label="主要ナビゲーション">
     <a href="../../index.html">学習マップ</a>
+    <a href="../../dashboard/index.html">ダッシュボード</a>
+    <a href="../../mock/index.html">模試</a>
+    <a href="../../review/index.html">復習</a>
+    <a href="../../search/index.html">検索</a>
     <a href="../../practice/index.html">4択演習</a>
     <a href="../../glossary/index.html">用語集</a>
-    <a href="../../review/index.html">横断復習</a>
     <a href="../../sources/index.html">参照資料</a>
   </nav>
   <main id="main">
@@ -82,18 +85,22 @@
           <ol>
             <li>機械学習</li><li>データ駆動</li><li>特徴量</li><li>統計的学習</li>
           </ol>
+          <h3>関連する練習問題</h3>
+          <p><a href="../../practice/index.html?cat=undefined">この章の4択演習を開く</a></p>
           <h3>前後の学習</h3>
           <p><a href="../../chapters/ai-history/expert-system.html">前: エキスパートシステム</a></p>
           <p><a href="../../chapters/ai-history/deep-learning-rise.html">次: ディープラーニングの発展</a></p>
         </aside>
       </div>
     </section>
-    <script type="application/json" id="lessonData">{"slug":"ai-history/machine-learning-rise","title":"機械学習の台頭","terms":["機械学習","データ駆動","特徴量","統計的学習"],"visual":{"type":"regression","title":"機械学習の台頭","concept":"説明変数と目的変数の関係"},"quiz":[{"id":"machine-learning-rise-practice-0","prompt":"第3次AIブームを支えた中心的な要素として最も適切なものはどれか。","options":["ルールの手作業による整備","ビッグデータと機械学習・ディープラーニング","アナログ計算機の高速化","エキスパートシステムの普及"],"answer":"ビッグデータと機械学習・ディープラーニング","explanation":"\u003cb>第3次AIブーム\u003c/b>は、大量データ（ビッグデータ）・計算資源（GPU）・機械学習／ディープラーニングの進展が原動力。特徴量を自動獲得できる点が画期的だった。"},{"id":"machine-learning-rise-practice-1","prompt":"機械学習において、対象を分類・認識するために注目すべき「変数（説明変数）」を一般に何と呼ぶか。","options":["ハイパーパラメータ","特徴量","損失関数","活性化"],"answer":"特徴量","explanation":"\u003cb>特徴量（feature）\u003c/b>。従来は人手で設計（特徴量エンジニアリング）したが、ディープラーニングはデータから特徴量自体を自動的に学習できる点が革新だった。"},{"id":"machine-learning-rise-practice-2","prompt":"複数の決定木を作り多数決などで予測する、バギング系のアンサンブル手法はどれか。","options":["勾配ブースティング","ランダムフォレスト","AdaBoost","パーセプトロン"],"answer":"ランダムフォレスト","explanation":"\u003cb>ランダムフォレスト\u003c/b>は、データと特徴量をランダムに選んだ多数の決定木を並列に学習（バギング）し統合する。過学習に強い。"}]}</script>
+    <script type="application/json" id="lessonData">{"slug":"ai-history/machine-learning-rise","title":"機械学習の台頭","terms":["機械学習","データ駆動","特徴量","統計的学習"],"visual":{"type":"regression","title":"機械学習の台頭","concept":"説明変数と目的変数の関係"},"quiz":[{"id":"machine-learning-rise-practice-0","qid":"q-478fd19a","cat":"第2章 動向","q":"第3次AIブームを支えた中心的な要素として最も適切なものはどれか。","c":["ルールの手作業による整備","ビッグデータと機械学習・ディープラーニング","アナログ計算機の高速化","エキスパートシステムの普及"],"a":1,"e":"\u003cb>第3次AIブーム\u003c/b>は、大量データ（ビッグデータ）・計算資源（GPU）・機械学習／ディープラーニングの進展が原動力。特徴量を自動獲得できる点が画期的だった。","prompt":"第3次AIブームを支えた中心的な要素として最も適切なものはどれか。","options":["ルールの手作業による整備","ビッグデータと機械学習・ディープラーニング","アナログ計算機の高速化","エキスパートシステムの普及"],"answer":"ビッグデータと機械学習・ディープラーニング","explanation":"\u003cb>第3次AIブーム\u003c/b>は、大量データ（ビッグデータ）・計算資源（GPU）・機械学習／ディープラーニングの進展が原動力。特徴量を自動獲得できる点が画期的だった。"},{"id":"machine-learning-rise-practice-1","qid":"q-fd25789c","cat":"第2章 動向","q":"機械学習において、対象を分類・認識するために注目すべき「変数（説明変数）」を一般に何と呼ぶか。","c":["ハイパーパラメータ","特徴量","損失関数","活性化"],"a":1,"e":"\u003cb>特徴量（feature）\u003c/b>。従来は人手で設計（特徴量エンジニアリング）したが、ディープラーニングはデータから特徴量自体を自動的に学習できる点が革新だった。","prompt":"機械学習において、対象を分類・認識するために注目すべき「変数（説明変数）」を一般に何と呼ぶか。","options":["ハイパーパラメータ","特徴量","損失関数","活性化"],"answer":"特徴量","explanation":"\u003cb>特徴量（feature）\u003c/b>。従来は人手で設計（特徴量エンジニアリング）したが、ディープラーニングはデータから特徴量自体を自動的に学習できる点が革新だった。"},{"id":"machine-learning-rise-practice-2","qid":"q-d2e5efff","cat":"第3章 機械学習","q":"複数の決定木を作り多数決などで予測する、バギング系のアンサンブル手法はどれか。","c":["勾配ブースティング","ランダムフォレスト","AdaBoost","パーセプトロン"],"a":1,"e":"\u003cb>ランダムフォレスト\u003c/b>は、データと特徴量をランダムに選んだ多数の決定木を並列に学習（バギング）し統合する。過学習に強い。","prompt":"複数の決定木を作り多数決などで予測する、バギング系のアンサンブル手法はどれか。","options":["勾配ブースティング","ランダムフォレスト","AdaBoost","パーセプトロン"],"answer":"ランダムフォレスト","explanation":"\u003cb>ランダムフォレスト\u003c/b>は、データと特徴量をランダムに選んだ多数の決定木を並列に学習（バギング）し統合する。過学習に強い。"}]}</script>
   </main>
   <footer class="app-footer">
     <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>
   </footer>
   <script src="../../assets/js/visualizations.js" defer></script>
+  <script src="../../assets/js/store.js" defer></script>
+  <script src="../../assets/js/learning.js" defer></script>
   <script src="../../assets/js/lesson.js" defer></script>
 </body>
 </html>

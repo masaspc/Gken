@@ -22,9 +22,12 @@
   </header>
   <nav class="top-nav" aria-label="主要ナビゲーション">
     <a href="../../index.html">学習マップ</a>
+    <a href="../../dashboard/index.html">ダッシュボード</a>
+    <a href="../../mock/index.html">模試</a>
+    <a href="../../review/index.html">復習</a>
+    <a href="../../search/index.html">検索</a>
     <a href="../../practice/index.html">4択演習</a>
     <a href="../../glossary/index.html">用語集</a>
-    <a href="../../review/index.html">横断復習</a>
     <a href="../../sources/index.html">参照資料</a>
   </nav>
   <main id="main">
@@ -82,18 +85,22 @@
           <ol>
             <li>パーセプトロン</li><li>線形分離</li><li>重み</li><li>バイアス</li>
           </ol>
+          <h3>関連する練習問題</h3>
+          <p><a href="../../practice/index.html?cat=undefined">この章の4択演習を開く</a></p>
           <h3>前後の学習</h3>
           <p><a href="../../chapters/dl-overview/neural-network.html">前: ニューラルネットワーク</a></p>
           <p><a href="../../chapters/dl-overview/activation-functions.html">次: 活性化関数</a></p>
         </aside>
       </div>
     </section>
-    <script type="application/json" id="lessonData">{"slug":"dl-overview/perceptron","title":"パーセプトロン","terms":["パーセプトロン","線形分離","重み","バイアス"],"visual":{"type":"classification","title":"パーセプトロン","concept":"しきい値・決定境界・混同行列"},"quiz":[{"id":"perceptron-practice-0","prompt":"1958年に提案され、ニューラルネットワークの原型となった学習可能なモデルはどれか。","options":["パーセプトロン","サポートベクターマシン","決定木","ロジスティック回帰"],"answer":"パーセプトロン","explanation":"\u003cb>パーセプトロン\u003c/b>（ローゼンブラット、1958年）。入力の重み付き和を閾値処理する単層モデル。後にミンスキーらが線形分離不可能問題（XOR）を解けないと指摘し、第1次ブーム後の停滞につながった。多層化＋誤差逆伝播で復権する。"},{"id":"perceptron-practice-1","prompt":"単純パーセプトロンでは解けないが、中間層を加えた多層パーセプトロンで解けるようになる代表例はどれか。","options":["AND演算","OR演算","XOR（排他的論理和）","NOT演算"],"answer":"XOR（排他的論理和）","explanation":"\u003cb>XOR\u003c/b>は線形分離不可能で単純パーセプトロンでは解けない。中間（隠れ）層を持つ多層パーセプトロンなら非線形分離が可能になる。"},{"id":"perceptron-practice-2","prompt":"単純パーセプトロン（中間層なし）が表現できる識別境界はどれか。","options":["任意の曲線","直線（線形分離可能な境界）のみ","円のみ","XOR"],"answer":"直線（線形分離可能な境界）のみ","explanation":"単純パーセプトロンは\u003cb>線形分離可能\u003c/b>な問題しか解けない。非線形分離には中間層を持つ多層パーセプトロンが必要。"}]}</script>
+    <script type="application/json" id="lessonData">{"slug":"dl-overview/perceptron","title":"パーセプトロン","terms":["パーセプトロン","線形分離","重み","バイアス"],"visual":{"type":"classification","title":"パーセプトロン","concept":"しきい値・決定境界・混同行列"},"quiz":[{"id":"perceptron-practice-0","qid":"q-53f44422","cat":"第2章 動向","q":"1958年に提案され、ニューラルネットワークの原型となった学習可能なモデルはどれか。","c":["パーセプトロン","サポートベクターマシン","決定木","ロジスティック回帰"],"a":0,"e":"\u003cb>パーセプトロン\u003c/b>（ローゼンブラット、1958年）。入力の重み付き和を閾値処理する単層モデル。後にミンスキーらが線形分離不可能問題（XOR）を解けないと指摘し、第1次ブーム後の停滞につながった。多層化＋誤差逆伝播で復権する。","prompt":"1958年に提案され、ニューラルネットワークの原型となった学習可能なモデルはどれか。","options":["パーセプトロン","サポートベクターマシン","決定木","ロジスティック回帰"],"answer":"パーセプトロン","explanation":"\u003cb>パーセプトロン\u003c/b>（ローゼンブラット、1958年）。入力の重み付き和を閾値処理する単層モデル。後にミンスキーらが線形分離不可能問題（XOR）を解けないと指摘し、第1次ブーム後の停滞につながった。多層化＋誤差逆伝播で復権する。"},{"id":"perceptron-practice-1","qid":"q-3b4249dd","cat":"第4章 DL概要","q":"単純パーセプトロンでは解けないが、中間層を加えた多層パーセプトロンで解けるようになる代表例はどれか。","c":["AND演算","OR演算","XOR（排他的論理和）","NOT演算"],"a":2,"e":"\u003cb>XOR\u003c/b>は線形分離不可能で単純パーセプトロンでは解けない。中間（隠れ）層を持つ多層パーセプトロンなら非線形分離が可能になる。","prompt":"単純パーセプトロンでは解けないが、中間層を加えた多層パーセプトロンで解けるようになる代表例はどれか。","options":["AND演算","OR演算","XOR（排他的論理和）","NOT演算"],"answer":"XOR（排他的論理和）","explanation":"\u003cb>XOR\u003c/b>は線形分離不可能で単純パーセプトロンでは解けない。中間（隠れ）層を持つ多層パーセプトロンなら非線形分離が可能になる。"},{"id":"perceptron-practice-2","qid":"q-04e0779f","cat":"第4章 DL概要","q":"単純パーセプトロン（中間層なし）が表現できる識別境界はどれか。","c":["任意の曲線","直線（線形分離可能な境界）のみ","円のみ","XOR"],"a":1,"e":"単純パーセプトロンは\u003cb>線形分離可能\u003c/b>な問題しか解けない。非線形分離には中間層を持つ多層パーセプトロンが必要。","prompt":"単純パーセプトロン（中間層なし）が表現できる識別境界はどれか。","options":["任意の曲線","直線（線形分離可能な境界）のみ","円のみ","XOR"],"answer":"直線（線形分離可能な境界）のみ","explanation":"単純パーセプトロンは\u003cb>線形分離可能\u003c/b>な問題しか解けない。非線形分離には中間層を持つ多層パーセプトロンが必要。"}]}</script>
   </main>
   <footer class="app-footer">
     <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>
   </footer>
   <script src="../../assets/js/visualizations.js" defer></script>
+  <script src="../../assets/js/store.js" defer></script>
+  <script src="../../assets/js/learning.js" defer></script>
   <script src="../../assets/js/lesson.js" defer></script>
 </body>
 </html>

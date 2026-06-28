@@ -22,9 +22,12 @@
   </header>
   <nav class="top-nav" aria-label="主要ナビゲーション">
     <a href="../../index.html">学習マップ</a>
+    <a href="../../dashboard/index.html">ダッシュボード</a>
+    <a href="../../mock/index.html">模試</a>
+    <a href="../../review/index.html">復習</a>
+    <a href="../../search/index.html">検索</a>
     <a href="../../practice/index.html">4択演習</a>
     <a href="../../glossary/index.html">用語集</a>
-    <a href="../../review/index.html">横断復習</a>
     <a href="../../sources/index.html">参照資料</a>
   </nav>
   <main id="main">
@@ -81,18 +84,22 @@
           <ol>
             <li>物体検出</li><li>バウンディングボックス</li><li>IoU</li><li>検出精度</li>
           </ol>
+          <h3>関連する練習問題</h3>
+          <p><a href="../../practice/index.html?cat=undefined">この章の4択演習を開く</a></p>
           <h3>前後の学習</h3>
           <p><a href="../../chapters/applications/image-classification.html">前: 画像認識</a></p>
           <p><a href="../../chapters/applications/natural-language-processing.html">次: 自然言語処理</a></p>
         </aside>
       </div>
     </section>
-    <script type="application/json" id="lessonData">{"slug":"applications/object-detection","title":"物体検出","terms":["物体検出","バウンディングボックス","IoU","検出精度"],"visual":{"type":"relation-table","title":"物体検出の評価要素","columns":["要素","意味","見方"],"rows":[["バウンディングボックス","物体の位置を矩形で示す","位置ずれが大きいと検出失敗になる"],["IoU","予測枠と正解枠の重なり具合","しきい値以上を正検出とする"],["検出精度","分類と位置推定を合わせて評価する","見逃しと誤検出を分けて読む"]]},"quiz":[{"id":"object-detection-practice-0","prompt":"画像中の物体の位置（バウンディングボックス）とクラスを同時に求めるタスクはどれか。","options":["画像分類","物体検出","セマンティックセグメンテーション","異常検知"],"answer":"物体検出","explanation":"\u003cb>物体検出\u003c/b>。代表手法にR-CNN系、YOLO、SSD。1枚に複数物体の位置とラベルを推定する。YOLOは高速な一段検出で知られる。"},{"id":"object-detection-practice-1","prompt":"物体検出の精度評価で、予測した矩形と正解矩形の重なり度合いを表す指標はどれか。","options":["IoU（Intersection over Union）","BLEU","perplexity","R²"],"answer":"IoU（Intersection over Union）","explanation":"\u003cb>IoU\u003c/b>＝重なり面積／和集合面積。これがしきい値（例0.5）以上を正解とみなし、複数クラスで平均した\u003cb>mAP\u003c/b>が検出全体の代表指標。検出タスクの評価セットとして頻出。"},{"id":"object-detection-practice-2","prompt":"物体検出で、予測領域と正解領域の重なり（積集合）の面積が20、予測領域30、正解領域40のとき、IoUはいくらか。","options":["0.4","0.5","約0.67","0.2"],"answer":"0.4","explanation":"和集合＝30＋40−20＝50。\u003cb>IoU＝積集合/和集合＝20/50＝0.4\u003c/b>。IoUが一定の閾値（例0.5）以上を正検出とみなす。重なりが大きいほど1に近づく。"}]}</script>
+    <script type="application/json" id="lessonData">{"slug":"applications/object-detection","title":"物体検出","terms":["物体検出","バウンディングボックス","IoU","検出精度"],"visual":{"type":"relation-table","title":"物体検出の評価要素","columns":["要素","意味","見方"],"rows":[["バウンディングボックス","物体の位置を矩形で示す","位置ずれが大きいと検出失敗になる"],["IoU","予測枠と正解枠の重なり具合","しきい値以上を正検出とする"],["検出精度","分類と位置推定を合わせて評価する","見逃しと誤検出を分けて読む"]]},"quiz":[{"id":"object-detection-practice-0","qid":"q-4d30fee8","cat":"第6章 応用例","q":"画像中の物体の位置（バウンディングボックス）とクラスを同時に求めるタスクはどれか。","c":["画像分類","物体検出","セマンティックセグメンテーション","異常検知"],"a":1,"e":"\u003cb>物体検出\u003c/b>。代表手法にR-CNN系、YOLO、SSD。1枚に複数物体の位置とラベルを推定する。YOLOは高速な一段検出で知られる。","prompt":"画像中の物体の位置（バウンディングボックス）とクラスを同時に求めるタスクはどれか。","options":["画像分類","物体検出","セマンティックセグメンテーション","異常検知"],"answer":"物体検出","explanation":"\u003cb>物体検出\u003c/b>。代表手法にR-CNN系、YOLO、SSD。1枚に複数物体の位置とラベルを推定する。YOLOは高速な一段検出で知られる。"},{"id":"object-detection-practice-1","qid":"q-8dfd062e","cat":"第6章 応用例","q":"物体検出の精度評価で、予測した矩形と正解矩形の重なり度合いを表す指標はどれか。","c":["IoU（Intersection over Union）","BLEU","perplexity","R²"],"a":0,"e":"\u003cb>IoU\u003c/b>＝重なり面積／和集合面積。これがしきい値（例0.5）以上を正解とみなし、複数クラスで平均した\u003cb>mAP\u003c/b>が検出全体の代表指標。検出タスクの評価セットとして頻出。","prompt":"物体検出の精度評価で、予測した矩形と正解矩形の重なり度合いを表す指標はどれか。","options":["IoU（Intersection over Union）","BLEU","perplexity","R²"],"answer":"IoU（Intersection over Union）","explanation":"\u003cb>IoU\u003c/b>＝重なり面積／和集合面積。これがしきい値（例0.5）以上を正解とみなし、複数クラスで平均した\u003cb>mAP\u003c/b>が検出全体の代表指標。検出タスクの評価セットとして頻出。"},{"id":"object-detection-practice-2","qid":"q-565fab8d","cat":"第9章 計算・数理","q":"物体検出で、予測領域と正解領域の重なり（積集合）の面積が20、予測領域30、正解領域40のとき、IoUはいくらか。","c":["0.4","0.5","約0.67","0.2"],"a":0,"e":"和集合＝30＋40−20＝50。\u003cb>IoU＝積集合/和集合＝20/50＝0.4\u003c/b>。IoUが一定の閾値（例0.5）以上を正検出とみなす。重なりが大きいほど1に近づく。","prompt":"物体検出で、予測領域と正解領域の重なり（積集合）の面積が20、予測領域30、正解領域40のとき、IoUはいくらか。","options":["0.4","0.5","約0.67","0.2"],"answer":"0.4","explanation":"和集合＝30＋40−20＝50。\u003cb>IoU＝積集合/和集合＝20/50＝0.4\u003c/b>。IoUが一定の閾値（例0.5）以上を正検出とみなす。重なりが大きいほど1に近づく。"}]}</script>
   </main>
   <footer class="app-footer">
     <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>
   </footer>
   <script src="../../assets/js/visualizations.js" defer></script>
+  <script src="../../assets/js/store.js" defer></script>
+  <script src="../../assets/js/learning.js" defer></script>
   <script src="../../assets/js/lesson.js" defer></script>
 </body>
 </html>

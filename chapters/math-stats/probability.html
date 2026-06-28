@@ -22,9 +22,12 @@
   </header>
   <nav class="top-nav" aria-label="主要ナビゲーション">
     <a href="../../index.html">学習マップ</a>
+    <a href="../../dashboard/index.html">ダッシュボード</a>
+    <a href="../../mock/index.html">模試</a>
+    <a href="../../review/index.html">復習</a>
+    <a href="../../search/index.html">検索</a>
     <a href="../../practice/index.html">4択演習</a>
     <a href="../../glossary/index.html">用語集</a>
-    <a href="../../review/index.html">横断復習</a>
     <a href="../../sources/index.html">参照資料</a>
   </nav>
   <main id="main">
@@ -81,18 +84,22 @@
           <ol>
             <li>確率</li><li>条件付き確率</li><li>事象</li><li>独立</li>
           </ol>
+          <h3>関連する練習問題</h3>
+          <p><a href="../../practice/index.html?cat=undefined">この章の4択演習を開く</a></p>
           <h3>前後の学習</h3>
           <p><a href="../../chapters/math-stats/correlation.html">前: 相関</a></p>
           <p><a href="../../chapters/math-stats/bayes.html">次: ベイズの考え方</a></p>
         </aside>
       </div>
     </section>
-    <script type="application/json" id="lessonData">{"slug":"math-stats/probability","title":"確率","terms":["確率","条件付き確率","事象","独立"],"visual":{"type":"comparison-table","title":"確率の基本概念","columns":["概念","意味","間違えやすい点"],"rows":[["事象","起こりうる結果の集合","単一結果だけとは限らない"],["条件付き確率","条件が起きた下での確率","分母が条件側に変わる"],["独立","一方の発生が他方の確率を変えない","無関係そうに見えてもデータで確認する"]]},"quiz":[{"id":"probability-practice-0","prompt":"『事象Aが起きたという条件のもとで事象Bが起きる確率』を表すものはどれか。","options":["条件付き確率 P(B|A)","同時確率 P(A,B)","周辺確率 P(A)","尤度のみ"],"answer":"条件付き確率 P(B|A)","explanation":"\u003cb>条件付き確率 P(B|A)\u003c/b>。ベイズの定理やナイーブベイズの基礎。AとBが独立なら P(B|A)=P(B) となる。確率の基本概念で、機械学習の確率モデルを理解する土台。"},{"id":"probability-practice-1","prompt":"公正なコインを2回投げて、2回とも表が出る確率はいくらか。","options":["0.25","0.5","0.75","0.125"],"answer":"0.25","explanation":"各回は独立なので確率を掛ける：\u003cb>0.5×0.5＝0.25\u003c/b>。独立事象は同時確率＝各確率の積。なお『少なくとも1回表』なら1−(0.5×0.5)＝0.75となる。"},{"id":"probability-practice-2","prompt":"発生確率が 1/8 の事象が起きたときに得られる情報量（自己情報量）はいくらか。","options":["3ビット","8ビット","1/8ビット","0ビット"],"answer":"3ビット","explanation":"【計算】自己情報量＝\u003cb>−log₂(確率)\u003c/b>＝−log₂(1/8)＝log₂8＝\u003cb>3ビット\u003c/b>。【ポイント】珍しい（確率の低い）事象ほど情報量は大きい。確率1（必ず起きる）の情報量は0。エントロピーは情報量の期待値。"}]}</script>
+    <script type="application/json" id="lessonData">{"slug":"math-stats/probability","title":"確率","terms":["確率","条件付き確率","事象","独立"],"visual":{"type":"comparison-table","title":"確率の基本概念","columns":["概念","意味","間違えやすい点"],"rows":[["事象","起こりうる結果の集合","単一結果だけとは限らない"],["条件付き確率","条件が起きた下での確率","分母が条件側に変わる"],["独立","一方の発生が他方の確率を変えない","無関係そうに見えてもデータで確認する"]]},"quiz":[{"id":"probability-practice-0","qid":"q-f482403c","cat":"第3章 機械学習","q":"『事象Aが起きたという条件のもとで事象Bが起きる確率』を表すものはどれか。","c":["条件付き確率 P(B|A)","同時確率 P(A,B)","周辺確率 P(A)","尤度のみ"],"a":0,"e":"\u003cb>条件付き確率 P(B|A)\u003c/b>。ベイズの定理やナイーブベイズの基礎。AとBが独立なら P(B|A)=P(B) となる。確率の基本概念で、機械学習の確率モデルを理解する土台。","prompt":"『事象Aが起きたという条件のもとで事象Bが起きる確率』を表すものはどれか。","options":["条件付き確率 P(B|A)","同時確率 P(A,B)","周辺確率 P(A)","尤度のみ"],"answer":"条件付き確率 P(B|A)","explanation":"\u003cb>条件付き確率 P(B|A)\u003c/b>。ベイズの定理やナイーブベイズの基礎。AとBが独立なら P(B|A)=P(B) となる。確率の基本概念で、機械学習の確率モデルを理解する土台。"},{"id":"probability-practice-1","qid":"q-c866fd99","cat":"第9章 計算・数理","q":"公正なコインを2回投げて、2回とも表が出る確率はいくらか。","c":["0.25","0.5","0.75","0.125"],"a":0,"e":"各回は独立なので確率を掛ける：\u003cb>0.5×0.5＝0.25\u003c/b>。独立事象は同時確率＝各確率の積。なお『少なくとも1回表』なら1−(0.5×0.5)＝0.75となる。","prompt":"公正なコインを2回投げて、2回とも表が出る確率はいくらか。","options":["0.25","0.5","0.75","0.125"],"answer":"0.25","explanation":"各回は独立なので確率を掛ける：\u003cb>0.5×0.5＝0.25\u003c/b>。独立事象は同時確率＝各確率の積。なお『少なくとも1回表』なら1−(0.5×0.5)＝0.75となる。"},{"id":"probability-practice-2","qid":"q-ecd654fc","cat":"第9章 計算・数理","q":"発生確率が 1/8 の事象が起きたときに得られる情報量（自己情報量）はいくらか。","c":["3ビット","8ビット","1/8ビット","0ビット"],"a":0,"e":"【計算】自己情報量＝\u003cb>−log₂(確率)\u003c/b>＝−log₂(1/8)＝log₂8＝\u003cb>3ビット\u003c/b>。【ポイント】珍しい（確率の低い）事象ほど情報量は大きい。確率1（必ず起きる）の情報量は0。エントロピーは情報量の期待値。","prompt":"発生確率が 1/8 の事象が起きたときに得られる情報量（自己情報量）はいくらか。","options":["3ビット","8ビット","1/8ビット","0ビット"],"answer":"3ビット","explanation":"【計算】自己情報量＝\u003cb>−log₂(確率)\u003c/b>＝−log₂(1/8)＝log₂8＝\u003cb>3ビット\u003c/b>。【ポイント】珍しい（確率の低い）事象ほど情報量は大きい。確率1（必ず起きる）の情報量は0。エントロピーは情報量の期待値。"}]}</script>
   </main>
   <footer class="app-footer">
     <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>
   </footer>
   <script src="../../assets/js/visualizations.js" defer></script>
+  <script src="../../assets/js/store.js" defer></script>
+  <script src="../../assets/js/learning.js" defer></script>
   <script src="../../assets/js/lesson.js" defer></script>
 </body>
 </html>

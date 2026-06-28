@@ -22,9 +22,12 @@
   </header>
   <nav class="top-nav" aria-label="主要ナビゲーション">
     <a href="../../index.html">学習マップ</a>
+    <a href="../../dashboard/index.html">ダッシュボード</a>
+    <a href="../../mock/index.html">模試</a>
+    <a href="../../review/index.html">復習</a>
+    <a href="../../search/index.html">検索</a>
     <a href="../../practice/index.html">4択演習</a>
     <a href="../../glossary/index.html">用語集</a>
-    <a href="../../review/index.html">横断復習</a>
     <a href="../../sources/index.html">参照資料</a>
   </nav>
   <main id="main">
@@ -81,18 +84,22 @@
           <ol>
             <li>データ拡張</li><li>反転</li><li>回転</li><li>ノイズ</li>
           </ol>
+          <h3>関連する練習問題</h3>
+          <p><a href="../../practice/index.html?cat=undefined">この章の4択演習を開く</a></p>
           <h3>前後の学習</h3>
           <p><a href="../../chapters/dl-elements/autoencoder.html">前: オートエンコーダ</a></p>
           <p><a href="../../chapters/dl-elements/foundation-models.html">次: 基盤モデルと言語モデル</a></p>
         </aside>
       </div>
     </section>
-    <script type="application/json" id="lessonData">{"slug":"dl-elements/data-augmentation","title":"データ拡張","terms":["データ拡張","反転","回転","ノイズ"],"visual":{"type":"comparison-table","title":"データ拡張の例","columns":["変換","狙い","注意点"],"rows":[["反転","左右の違いに強くする","文字や標識では意味が変わる場合がある"],["回転","撮影角度の変化へ対応する","過度な回転は実データから離れる"],["ノイズ付加","入力の小さな乱れに頑健にする","重要な特徴を壊さない範囲で使う"]]},"quiz":[{"id":"data-augmentation-practice-0","prompt":"画像を回転・反転・切り抜き・色変換などで水増しし、過学習を抑え汎化を高める手法はどれか。","options":["データ拡張（Data Augmentation）","ドロップアウト","蒸留","量子化"],"answer":"データ拡張（Data Augmentation）","explanation":"\u003cb>データ拡張\u003c/b>。学習データの多様性を人工的に増やす。画像だけでなくテキスト・音声でも用いられる。"},{"id":"data-augmentation-practice-1","prompt":"画像を左右反転・回転・切り抜きなどで変形して学習データを水増しし、過学習を抑える手法はどれか。","options":["データ拡張（データオーグメンテーション）","転移学習","ドロップアウト","正則化"],"answer":"データ拡張（データオーグメンテーション）","explanation":"【正解の理由】\u003cb>データ拡張\u003c/b>は元データに反転・回転・拡大縮小・色変換などを施して多様なサンプルを生成し、汎化性能を高める。【各選択肢】②転移学習は学習済みモデルの再利用、③ドロップアウトはニューロン無効化、④正則化は罰則項。【関連】画像で特に有効。意味を壊す変形（数字の上下反転等）は避ける。"},{"id":"data-augmentation-practice-2","prompt":"学習データには高精度だが未知データで性能が落ちる状態を何というか。","options":["未学習（過少適合）","過学習（過剰適合）","正則化","汎化"],"answer":"過学習（過剰適合）","explanation":"\u003cb>過学習（オーバーフィッティング）\u003c/b>。モデルが訓練データのノイズまで覚え込んだ状態。正則化・ドロップアウト・データ拡張・早期終了などで抑制する。"}]}</script>
+    <script type="application/json" id="lessonData">{"slug":"dl-elements/data-augmentation","title":"データ拡張","terms":["データ拡張","反転","回転","ノイズ"],"visual":{"type":"comparison-table","title":"データ拡張の例","columns":["変換","狙い","注意点"],"rows":[["反転","左右の違いに強くする","文字や標識では意味が変わる場合がある"],["回転","撮影角度の変化へ対応する","過度な回転は実データから離れる"],["ノイズ付加","入力の小さな乱れに頑健にする","重要な特徴を壊さない範囲で使う"]]},"quiz":[{"id":"data-augmentation-practice-0","qid":"q-5fb38269","cat":"第5章 要素技術","q":"画像を回転・反転・切り抜き・色変換などで水増しし、過学習を抑え汎化を高める手法はどれか。","c":["データ拡張（Data Augmentation）","ドロップアウト","蒸留","量子化"],"a":0,"e":"\u003cb>データ拡張\u003c/b>。学習データの多様性を人工的に増やす。画像だけでなくテキスト・音声でも用いられる。","prompt":"画像を回転・反転・切り抜き・色変換などで水増しし、過学習を抑え汎化を高める手法はどれか。","options":["データ拡張（Data Augmentation）","ドロップアウト","蒸留","量子化"],"answer":"データ拡張（Data Augmentation）","explanation":"\u003cb>データ拡張\u003c/b>。学習データの多様性を人工的に増やす。画像だけでなくテキスト・音声でも用いられる。"},{"id":"data-augmentation-practice-1","qid":"q-3c498936","cat":"第4章 DL概要","q":"画像を左右反転・回転・切り抜きなどで変形して学習データを水増しし、過学習を抑える手法はどれか。","c":["データ拡張（データオーグメンテーション）","転移学習","ドロップアウト","正則化"],"a":0,"e":"【正解の理由】\u003cb>データ拡張\u003c/b>は元データに反転・回転・拡大縮小・色変換などを施して多様なサンプルを生成し、汎化性能を高める。【各選択肢】②転移学習は学習済みモデルの再利用、③ドロップアウトはニューロン無効化、④正則化は罰則項。【関連】画像で特に有効。意味を壊す変形（数字の上下反転等）は避ける。","prompt":"画像を左右反転・回転・切り抜きなどで変形して学習データを水増しし、過学習を抑える手法はどれか。","options":["データ拡張（データオーグメンテーション）","転移学習","ドロップアウト","正則化"],"answer":"データ拡張（データオーグメンテーション）","explanation":"【正解の理由】\u003cb>データ拡張\u003c/b>は元データに反転・回転・拡大縮小・色変換などを施して多様なサンプルを生成し、汎化性能を高める。【各選択肢】②転移学習は学習済みモデルの再利用、③ドロップアウトはニューロン無効化、④正則化は罰則項。【関連】画像で特に有効。意味を壊す変形（数字の上下反転等）は避ける。"},{"id":"data-augmentation-practice-2","qid":"q-d951898a","cat":"第3章 機械学習","q":"学習データには高精度だが未知データで性能が落ちる状態を何というか。","c":["未学習（過少適合）","過学習（過剰適合）","正則化","汎化"],"a":1,"e":"\u003cb>過学習（オーバーフィッティング）\u003c/b>。モデルが訓練データのノイズまで覚え込んだ状態。正則化・ドロップアウト・データ拡張・早期終了などで抑制する。","prompt":"学習データには高精度だが未知データで性能が落ちる状態を何というか。","options":["未学習（過少適合）","過学習（過剰適合）","正則化","汎化"],"answer":"過学習（過剰適合）","explanation":"\u003cb>過学習（オーバーフィッティング）\u003c/b>。モデルが訓練データのノイズまで覚え込んだ状態。正則化・ドロップアウト・データ拡張・早期終了などで抑制する。"}]}</script>
   </main>
   <footer class="app-footer">
     <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>
   </footer>
   <script src="../../assets/js/visualizations.js" defer></script>
+  <script src="../../assets/js/store.js" defer></script>
+  <script src="../../assets/js/learning.js" defer></script>
   <script src="../../assets/js/lesson.js" defer></script>
 </body>
 </html>

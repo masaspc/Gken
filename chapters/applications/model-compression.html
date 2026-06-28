@@ -22,9 +22,12 @@
   </header>
   <nav class="top-nav" aria-label="主要ナビゲーション">
     <a href="../../index.html">学習マップ</a>
+    <a href="../../dashboard/index.html">ダッシュボード</a>
+    <a href="../../mock/index.html">模試</a>
+    <a href="../../review/index.html">復習</a>
+    <a href="../../search/index.html">検索</a>
     <a href="../../practice/index.html">4択演習</a>
     <a href="../../glossary/index.html">用語集</a>
-    <a href="../../review/index.html">横断復習</a>
     <a href="../../sources/index.html">参照資料</a>
   </nav>
   <main id="main">
@@ -81,18 +84,22 @@
           <ol>
             <li>蒸留</li><li>量子化</li><li>枝刈り</li><li>エッジAI</li>
           </ol>
+          <h3>関連する練習問題</h3>
+          <p><a href="../../practice/index.html?cat=undefined">この章の4択演習を開く</a></p>
           <h3>前後の学習</h3>
           <p><a href="../../chapters/applications/explainability.html">前: モデルの解釈性</a></p>
           <p><a href="../../chapters/implementation/project-flow.html">次: AIプロジェクトの進め方</a></p>
         </aside>
       </div>
     </section>
-    <script type="application/json" id="lessonData">{"slug":"applications/model-compression","title":"モデルの軽量化","terms":["蒸留","量子化","枝刈り","エッジAI"],"visual":{"type":"comparison-table","title":"モデル軽量化手法","columns":["手法","削減するもの","トレードオフ"],"rows":[["蒸留","大モデルの知識を小モデルへ移す","性能を保ちつつ軽くできるが教師が必要"],["量子化","重みや計算のビット数を下げる","高速化できるが精度劣化に注意"],["枝刈り","重要度の低い接続やユニットを減らす","構造を疎にして推論を軽くする"]]},"quiz":[{"id":"model-compression-practice-0","prompt":"スマートフォンなど計算資源の限られた端末向けに、深さ方向分離畳み込みで軽量化したCNNはどれか。","options":["MobileNet","ResNet","DenseNet","GoogLeNet"],"answer":"MobileNet","explanation":"\u003cb>MobileNet\u003c/b>。畳み込みを空間方向とチャネル方向に分解する深さ方向分離畳み込みで、計算量とパラメータを大幅に削減した。エッジAI（端末上での推論）に向く。モデル軽量化（蒸留・量子化・枝刈り）とも関連する。"},{"id":"model-compression-practice-1","prompt":"重要度の低い重みやニューロンを削除してモデルを小さくする軽量化手法はどれか。","options":["枝刈り（プルーニング）","量子化","正則化","バッチ正規化"],"answer":"枝刈り（プルーニング）","explanation":"\u003cb>枝刈り（pruning）\u003c/b>。寄与の小さい結合を削り、計算量とサイズを減らす。量子化・蒸留とともにエッジAIやモデル圧縮で用いられる。決定木の剪定と同じ語だが対象が異なる点に注意。"},{"id":"model-compression-practice-2","prompt":"大きく高性能なモデルの出力を教師にして、小さなモデルへ性能を引き継ぐ軽量化手法はどれか。","options":["知識蒸留","量子化","枝刈り","正則化"],"answer":"知識蒸留","explanation":"\u003cb>知識蒸留（Knowledge Distillation）\u003c/b>。大モデル（教師）の出力分布を小モデル（生徒）に学習させる。量子化（数値精度を下げる）・枝刈り（不要な重みを削る）も軽量化手法。"}]}</script>
+    <script type="application/json" id="lessonData">{"slug":"applications/model-compression","title":"モデルの軽量化","terms":["蒸留","量子化","枝刈り","エッジAI"],"visual":{"type":"comparison-table","title":"モデル軽量化手法","columns":["手法","削減するもの","トレードオフ"],"rows":[["蒸留","大モデルの知識を小モデルへ移す","性能を保ちつつ軽くできるが教師が必要"],["量子化","重みや計算のビット数を下げる","高速化できるが精度劣化に注意"],["枝刈り","重要度の低い接続やユニットを減らす","構造を疎にして推論を軽くする"]]},"quiz":[{"id":"model-compression-practice-0","qid":"q-5f614c25","cat":"第5章 要素技術","q":"スマートフォンなど計算資源の限られた端末向けに、深さ方向分離畳み込みで軽量化したCNNはどれか。","c":["MobileNet","ResNet","DenseNet","GoogLeNet"],"a":0,"e":"\u003cb>MobileNet\u003c/b>。畳み込みを空間方向とチャネル方向に分解する深さ方向分離畳み込みで、計算量とパラメータを大幅に削減した。エッジAI（端末上での推論）に向く。モデル軽量化（蒸留・量子化・枝刈り）とも関連する。","prompt":"スマートフォンなど計算資源の限られた端末向けに、深さ方向分離畳み込みで軽量化したCNNはどれか。","options":["MobileNet","ResNet","DenseNet","GoogLeNet"],"answer":"MobileNet","explanation":"\u003cb>MobileNet\u003c/b>。畳み込みを空間方向とチャネル方向に分解する深さ方向分離畳み込みで、計算量とパラメータを大幅に削減した。エッジAI（端末上での推論）に向く。モデル軽量化（蒸留・量子化・枝刈り）とも関連する。"},{"id":"model-compression-practice-1","qid":"q-0f09d27d","cat":"第5章 要素技術","q":"重要度の低い重みやニューロンを削除してモデルを小さくする軽量化手法はどれか。","c":["枝刈り（プルーニング）","量子化","正則化","バッチ正規化"],"a":0,"e":"\u003cb>枝刈り（pruning）\u003c/b>。寄与の小さい結合を削り、計算量とサイズを減らす。量子化・蒸留とともにエッジAIやモデル圧縮で用いられる。決定木の剪定と同じ語だが対象が異なる点に注意。","prompt":"重要度の低い重みやニューロンを削除してモデルを小さくする軽量化手法はどれか。","options":["枝刈り（プルーニング）","量子化","正則化","バッチ正規化"],"answer":"枝刈り（プルーニング）","explanation":"\u003cb>枝刈り（pruning）\u003c/b>。寄与の小さい結合を削り、計算量とサイズを減らす。量子化・蒸留とともにエッジAIやモデル圧縮で用いられる。決定木の剪定と同じ語だが対象が異なる点に注意。"},{"id":"model-compression-practice-2","qid":"q-839f033a","cat":"第5章 要素技術","q":"大きく高性能なモデルの出力を教師にして、小さなモデルへ性能を引き継ぐ軽量化手法はどれか。","c":["知識蒸留","量子化","枝刈り","正則化"],"a":0,"e":"\u003cb>知識蒸留（Knowledge Distillation）\u003c/b>。大モデル（教師）の出力分布を小モデル（生徒）に学習させる。量子化（数値精度を下げる）・枝刈り（不要な重みを削る）も軽量化手法。","prompt":"大きく高性能なモデルの出力を教師にして、小さなモデルへ性能を引き継ぐ軽量化手法はどれか。","options":["知識蒸留","量子化","枝刈り","正則化"],"answer":"知識蒸留","explanation":"\u003cb>知識蒸留（Knowledge Distillation）\u003c/b>。大モデル（教師）の出力分布を小モデル（生徒）に学習させる。量子化（数値精度を下げる）・枝刈り（不要な重みを削る）も軽量化手法。"}]}</script>
   </main>
   <footer class="app-footer">
     <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>
   </footer>
   <script src="../../assets/js/visualizations.js" defer></script>
+  <script src="../../assets/js/store.js" defer></script>
+  <script src="../../assets/js/learning.js" defer></script>
   <script src="../../assets/js/lesson.js" defer></script>
 </body>
 </html>

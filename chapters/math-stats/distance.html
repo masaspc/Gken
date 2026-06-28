@@ -22,9 +22,12 @@
   </header>
   <nav class="top-nav" aria-label="主要ナビゲーション">
     <a href="../../index.html">学習マップ</a>
+    <a href="../../dashboard/index.html">ダッシュボード</a>
+    <a href="../../mock/index.html">模試</a>
+    <a href="../../review/index.html">復習</a>
+    <a href="../../search/index.html">検索</a>
     <a href="../../practice/index.html">4択演習</a>
     <a href="../../glossary/index.html">用語集</a>
-    <a href="../../review/index.html">横断復習</a>
     <a href="../../sources/index.html">参照資料</a>
   </nav>
   <main id="main">
@@ -81,18 +84,22 @@
           <ol>
             <li>ユークリッド距離</li><li>コサイン類似度</li><li>近傍</li><li>埋め込み</li>
           </ol>
+          <h3>関連する練習問題</h3>
+          <p><a href="../../practice/index.html?cat=undefined">この章の4択演習を開く</a></p>
           <h3>前後の学習</h3>
           <p><a href="../../chapters/math-stats/linear-algebra.html">前: 線形代数の直感</a></p>
           <p><a href="../../chapters/math-stats/metrics-math.html">次: 評価指標の数理</a></p>
         </aside>
       </div>
     </section>
-    <script type="application/json" id="lessonData">{"slug":"math-stats/distance","title":"距離と類似度","terms":["ユークリッド距離","コサイン類似度","近傍","埋め込み"],"visual":{"type":"comparison-table","title":"距離と類似度","columns":["尺度","見るもの","使いどころ"],"rows":[["ユークリッド距離","座標上の直線距離","数値特徴の近さを測る"],["コサイン類似度","ベクトルの向きの近さ","文書や埋め込みの類似度"],["近傍","近いデータ点の集合","k近傍法や推薦で使う"]]},"quiz":[{"id":"distance-practice-0","prompt":"ベクトル a=(1, 2, 3) と b=(4, 5, 6) の内積はいくらか。","options":["32","21","90","6"],"answer":"32","explanation":"【計算】内積＝1×4＋2×5＋3×6＝4＋10＋18＝\u003cb>32\u003c/b>。【ポイント】内積は対応成分の積の和。ニューロンの重み付き和や、ベクトルの類似度（コサイン類似度の分子）の計算に使う基本演算。"},{"id":"distance-practice-1","prompt":"マージン（境界と最近傍データの距離）を最大化し、カーネルトリックで非線形分離も扱える手法はどれか。","options":["決定木","サポートベクターマシン（SVM）","ロジスティック回帰","ナイーブベイズ"],"answer":"サポートベクターマシン（SVM）","explanation":"\u003cb>SVM\u003c/b>はマージン最大化で汎化性能を高める。カーネル法により高次元へ写像し、非線形な境界も表現できる。"},{"id":"distance-practice-2","prompt":"出力をシグモイド関数で0〜1の確率に変換し、2クラス分類に用いる手法はどれか。","options":["線形回帰","ロジスティック回帰","主成分分析","k近傍法"],"answer":"ロジスティック回帰","explanation":"\u003cb>ロジスティック回帰\u003c/b>。名前は回帰だが分類手法。確率として解釈できる出力を返す。"}]}</script>
+    <script type="application/json" id="lessonData">{"slug":"math-stats/distance","title":"距離と類似度","terms":["ユークリッド距離","コサイン類似度","近傍","埋め込み"],"visual":{"type":"comparison-table","title":"距離と類似度","columns":["尺度","見るもの","使いどころ"],"rows":[["ユークリッド距離","座標上の直線距離","数値特徴の近さを測る"],["コサイン類似度","ベクトルの向きの近さ","文書や埋め込みの類似度"],["近傍","近いデータ点の集合","k近傍法や推薦で使う"]]},"quiz":[{"id":"distance-practice-0","qid":"q-8cc8d849","cat":"第9章 計算・数理","q":"ベクトル a=(1, 2, 3) と b=(4, 5, 6) の内積はいくらか。","c":["32","21","90","6"],"a":0,"e":"【計算】内積＝1×4＋2×5＋3×6＝4＋10＋18＝\u003cb>32\u003c/b>。【ポイント】内積は対応成分の積の和。ニューロンの重み付き和や、ベクトルの類似度（コサイン類似度の分子）の計算に使う基本演算。","prompt":"ベクトル a=(1, 2, 3) と b=(4, 5, 6) の内積はいくらか。","options":["32","21","90","6"],"answer":"32","explanation":"【計算】内積＝1×4＋2×5＋3×6＝4＋10＋18＝\u003cb>32\u003c/b>。【ポイント】内積は対応成分の積の和。ニューロンの重み付き和や、ベクトルの類似度（コサイン類似度の分子）の計算に使う基本演算。"},{"id":"distance-practice-1","qid":"q-334716df","cat":"第3章 機械学習","q":"マージン（境界と最近傍データの距離）を最大化し、カーネルトリックで非線形分離も扱える手法はどれか。","c":["決定木","サポートベクターマシン（SVM）","ロジスティック回帰","ナイーブベイズ"],"a":1,"e":"\u003cb>SVM\u003c/b>はマージン最大化で汎化性能を高める。カーネル法により高次元へ写像し、非線形な境界も表現できる。","prompt":"マージン（境界と最近傍データの距離）を最大化し、カーネルトリックで非線形分離も扱える手法はどれか。","options":["決定木","サポートベクターマシン（SVM）","ロジスティック回帰","ナイーブベイズ"],"answer":"サポートベクターマシン（SVM）","explanation":"\u003cb>SVM\u003c/b>はマージン最大化で汎化性能を高める。カーネル法により高次元へ写像し、非線形な境界も表現できる。"},{"id":"distance-practice-2","qid":"q-686a4a4a","cat":"第3章 機械学習","q":"出力をシグモイド関数で0〜1の確率に変換し、2クラス分類に用いる手法はどれか。","c":["線形回帰","ロジスティック回帰","主成分分析","k近傍法"],"a":1,"e":"\u003cb>ロジスティック回帰\u003c/b>。名前は回帰だが分類手法。確率として解釈できる出力を返す。","prompt":"出力をシグモイド関数で0〜1の確率に変換し、2クラス分類に用いる手法はどれか。","options":["線形回帰","ロジスティック回帰","主成分分析","k近傍法"],"answer":"ロジスティック回帰","explanation":"\u003cb>ロジスティック回帰\u003c/b>。名前は回帰だが分類手法。確率として解釈できる出力を返す。"}]}</script>
   </main>
   <footer class="app-footer">
     <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>
   </footer>
   <script src="../../assets/js/visualizations.js" defer></script>
+  <script src="../../assets/js/store.js" defer></script>
+  <script src="../../assets/js/learning.js" defer></script>
   <script src="../../assets/js/lesson.js" defer></script>
 </body>
 </html>

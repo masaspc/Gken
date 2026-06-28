@@ -22,9 +22,12 @@
   </header>
   <nav class="top-nav" aria-label="主要ナビゲーション">
     <a href="../../index.html">学習マップ</a>
+    <a href="../../dashboard/index.html">ダッシュボード</a>
+    <a href="../../mock/index.html">模試</a>
+    <a href="../../review/index.html">復習</a>
+    <a href="../../search/index.html">検索</a>
     <a href="../../practice/index.html">4択演習</a>
     <a href="../../glossary/index.html">用語集</a>
-    <a href="../../review/index.html">横断復習</a>
     <a href="../../sources/index.html">参照資料</a>
   </nav>
   <main id="main">
@@ -81,18 +84,22 @@
           <ol>
             <li>アノテーション</li><li>ラベル品質</li><li>一致率</li><li>教師データ</li>
           </ol>
+          <h3>関連する練習問題</h3>
+          <p><a href="../../practice/index.html?cat=undefined">この章の4択演習を開く</a></p>
           <h3>前後の学習</h3>
           <p><a href="../../chapters/implementation/data-preprocessing.html">前: データ加工</a></p>
           <p><a href="../../chapters/implementation/model-monitoring.html">次: 運用監視</a></p>
         </aside>
       </div>
     </section>
-    <script type="application/json" id="lessonData">{"slug":"implementation/annotation","title":"アノテーション","terms":["アノテーション","ラベル品質","一致率","教師データ"],"visual":{"type":"relation-table","title":"アノテーション品質の管理","columns":["要素","役割","確認ポイント"],"rows":[["ラベル定義","何を正解とするかを決める","作業者間で解釈が揺れないか"],["一致率","複数人のラベルが合う程度を見る","主観タスクでは特に重要"],["レビュー","誤ラベルや曖昧例を見直す","教師データの品質が性能を左右する"]]},"quiz":[{"id":"annotation-practice-0","prompt":"大量のアノテーション作業を、不特定多数の作業者にインターネット経由で委託する仕組みはどれか。","options":["クラウドソーシング","クラウドコンピューティング","エッジコンピューティング","フェデレーテッドラーニング"],"answer":"クラウドソーシング","explanation":"\u003cb>クラウドソーシング\u003c/b>。教師データのラベル付けなどを多人数に分散委託する。品質管理（チェック体制）が重要になる。"},{"id":"annotation-practice-1","prompt":"学習効果の高いデータを選んで人にラベル付けを依頼し、効率よく性能を上げる手法はどれか。","options":["能動学習（アクティブラーニング）","データ拡張","転移学習","蒸留"],"answer":"能動学習（アクティブラーニング）","explanation":"\u003cb>能動学習\u003c/b>。モデルが“自信のない”サンプルなどを優先的に選び、限られたアノテーション予算を有効活用する。教師データ作成コストの削減という社会実装上の課題とも結びつく。"},{"id":"annotation-practice-2","prompt":"教師あり学習のために、データに正解ラベルを付与する作業を何というか。","options":["アノテーション","正規化","エンコード","クレンジング"],"answer":"アノテーション","explanation":"\u003cb>アノテーション\u003c/b>。画像へのラベル付けや領域指定など。品質と量が性能を左右し、コストと偏り（バイアス）の管理が課題となる。"}]}</script>
+    <script type="application/json" id="lessonData">{"slug":"implementation/annotation","title":"アノテーション","terms":["アノテーション","ラベル品質","一致率","教師データ"],"visual":{"type":"relation-table","title":"アノテーション品質の管理","columns":["要素","役割","確認ポイント"],"rows":[["ラベル定義","何を正解とするかを決める","作業者間で解釈が揺れないか"],["一致率","複数人のラベルが合う程度を見る","主観タスクでは特に重要"],["レビュー","誤ラベルや曖昧例を見直す","教師データの品質が性能を左右する"]]},"quiz":[{"id":"annotation-practice-0","qid":"q-2e9bca68","cat":"第7章 社会実装","q":"大量のアノテーション作業を、不特定多数の作業者にインターネット経由で委託する仕組みはどれか。","c":["クラウドソーシング","クラウドコンピューティング","エッジコンピューティング","フェデレーテッドラーニング"],"a":0,"e":"\u003cb>クラウドソーシング\u003c/b>。教師データのラベル付けなどを多人数に分散委託する。品質管理（チェック体制）が重要になる。","prompt":"大量のアノテーション作業を、不特定多数の作業者にインターネット経由で委託する仕組みはどれか。","options":["クラウドソーシング","クラウドコンピューティング","エッジコンピューティング","フェデレーテッドラーニング"],"answer":"クラウドソーシング","explanation":"\u003cb>クラウドソーシング\u003c/b>。教師データのラベル付けなどを多人数に分散委託する。品質管理（チェック体制）が重要になる。"},{"id":"annotation-practice-1","qid":"q-a4bc9b03","cat":"第3章 機械学習","q":"学習効果の高いデータを選んで人にラベル付けを依頼し、効率よく性能を上げる手法はどれか。","c":["能動学習（アクティブラーニング）","データ拡張","転移学習","蒸留"],"a":0,"e":"\u003cb>能動学習\u003c/b>。モデルが“自信のない”サンプルなどを優先的に選び、限られたアノテーション予算を有効活用する。教師データ作成コストの削減という社会実装上の課題とも結びつく。","prompt":"学習効果の高いデータを選んで人にラベル付けを依頼し、効率よく性能を上げる手法はどれか。","options":["能動学習（アクティブラーニング）","データ拡張","転移学習","蒸留"],"answer":"能動学習（アクティブラーニング）","explanation":"\u003cb>能動学習\u003c/b>。モデルが“自信のない”サンプルなどを優先的に選び、限られたアノテーション予算を有効活用する。教師データ作成コストの削減という社会実装上の課題とも結びつく。"},{"id":"annotation-practice-2","qid":"q-3d243edb","cat":"第7章 社会実装","q":"教師あり学習のために、データに正解ラベルを付与する作業を何というか。","c":["アノテーション","正規化","エンコード","クレンジング"],"a":0,"e":"\u003cb>アノテーション\u003c/b>。画像へのラベル付けや領域指定など。品質と量が性能を左右し、コストと偏り（バイアス）の管理が課題となる。","prompt":"教師あり学習のために、データに正解ラベルを付与する作業を何というか。","options":["アノテーション","正規化","エンコード","クレンジング"],"answer":"アノテーション","explanation":"\u003cb>アノテーション\u003c/b>。画像へのラベル付けや領域指定など。品質と量が性能を左右し、コストと偏り（バイアス）の管理が課題となる。"}]}</script>
   </main>
   <footer class="app-footer">
     <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>
   </footer>
   <script src="../../assets/js/visualizations.js" defer></script>
+  <script src="../../assets/js/store.js" defer></script>
+  <script src="../../assets/js/learning.js" defer></script>
   <script src="../../assets/js/lesson.js" defer></script>
 </body>
 </html>

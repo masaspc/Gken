@@ -22,9 +22,12 @@
   </header>
   <nav class="top-nav" aria-label="主要ナビゲーション">
     <a href="../../index.html">学習マップ</a>
+    <a href="../../dashboard/index.html">ダッシュボード</a>
+    <a href="../../mock/index.html">模試</a>
+    <a href="../../review/index.html">復習</a>
+    <a href="../../search/index.html">検索</a>
     <a href="../../practice/index.html">4択演習</a>
     <a href="../../glossary/index.html">用語集</a>
-    <a href="../../review/index.html">横断復習</a>
     <a href="../../sources/index.html">参照資料</a>
   </nav>
   <main id="main">
@@ -79,18 +82,22 @@
           <ol>
             <li>RNN</li><li>LSTM</li><li>GRU</li><li>系列データ</li>
           </ol>
+          <h3>関連する練習問題</h3>
+          <p><a href="../../practice/index.html?cat=undefined">この章の4択演習を開く</a></p>
           <h3>前後の学習</h3>
           <p><a href="../../chapters/dl-elements/skip-connection.html">前: スキップ結合</a></p>
           <p><a href="../../chapters/dl-elements/attention.html">次: Attention</a></p>
         </aside>
       </div>
     </section>
-    <script type="application/json" id="lessonData">{"slug":"dl-elements/rnn","title":"回帰結合層とRNN","terms":["RNN","LSTM","GRU","系列データ"],"visual":{"type":"flow","title":"RNNの時系列処理","steps":[{"label":"時刻1入力","note":"系列の最初を読む"},{"label":"隠れ状態","note":"過去情報を保持"},{"label":"時刻2入力","note":"次の要素を加える"},{"label":"状態更新","note":"新旧情報を混ぜる"},{"label":"出力","note":"系列に応じた予測"}]},"quiz":[{"id":"rnn-practice-0","prompt":"系列データを扱い、前の時刻の出力（隠れ状態）を次の時刻に渡して時間方向の依存を捉えるネットワークはどれか。","options":["RNN（再帰型ニューラルネットワーク）","CNN","オートエンコーダ","SVM"],"answer":"RNN（再帰型ニューラルネットワーク）","explanation":"【正解の理由】\u003cb>RNN\u003c/b>は隠れ状態を次時刻へ循環させ、文章や音声など順序のあるデータの依存関係を学習する。【各選択肢】②CNNは画像、③オートエンコーダは圧縮、④SVMは分類。【関連】長い系列では勾配消失で長期依存が苦手→LSTM・GRUで改善。並列化に弱い点はTransformerが克服。"},{"id":"rnn-practice-1","prompt":"時系列や文章など順序のあるデータを扱い、過去の情報を内部状態として保持するネットワークはどれか。","options":["CNN","RNN（再帰型ニューラルネットワーク）","オートエンコーダ","VAE"],"answer":"RNN（再帰型ニューラルネットワーク）","explanation":"\u003cb>RNN\u003c/b>は前の時刻の出力を次に渡す再帰構造を持つ。ただし長期依存で勾配消失しやすく、それを改善したのがLSTMやGRU。"},{"id":"rnn-practice-2","prompt":"RNNを時間方向に展開し、各時刻に勾配を逆伝播させる学習手法はどれか。","options":["BPTT（通時的誤差逆伝播）","BP（通常の誤差逆伝播のみ）","モンテカルロ法","主成分分析"],"answer":"BPTT（通時的誤差逆伝播）","explanation":"\u003cb>BPTT（Backpropagation Through Time）\u003c/b>。RNNを時系列に沿って展開し勾配を計算する。系列が長いと勾配消失・爆発が起きやすく、LSTM/GRUや勾配クリッピングで対処する。"}]}</script>
+    <script type="application/json" id="lessonData">{"slug":"dl-elements/rnn","title":"回帰結合層とRNN","terms":["RNN","LSTM","GRU","系列データ"],"visual":{"type":"flow","title":"RNNの時系列処理","steps":[{"label":"時刻1入力","note":"系列の最初を読む"},{"label":"隠れ状態","note":"過去情報を保持"},{"label":"時刻2入力","note":"次の要素を加える"},{"label":"状態更新","note":"新旧情報を混ぜる"},{"label":"出力","note":"系列に応じた予測"}]},"quiz":[{"id":"rnn-practice-0","qid":"q-cc445459","cat":"第5章 要素技術","q":"系列データを扱い、前の時刻の出力（隠れ状態）を次の時刻に渡して時間方向の依存を捉えるネットワークはどれか。","c":["RNN（再帰型ニューラルネットワーク）","CNN","オートエンコーダ","SVM"],"a":0,"e":"【正解の理由】\u003cb>RNN\u003c/b>は隠れ状態を次時刻へ循環させ、文章や音声など順序のあるデータの依存関係を学習する。【各選択肢】②CNNは画像、③オートエンコーダは圧縮、④SVMは分類。【関連】長い系列では勾配消失で長期依存が苦手→LSTM・GRUで改善。並列化に弱い点はTransformerが克服。","prompt":"系列データを扱い、前の時刻の出力（隠れ状態）を次の時刻に渡して時間方向の依存を捉えるネットワークはどれか。","options":["RNN（再帰型ニューラルネットワーク）","CNN","オートエンコーダ","SVM"],"answer":"RNN（再帰型ニューラルネットワーク）","explanation":"【正解の理由】\u003cb>RNN\u003c/b>は隠れ状態を次時刻へ循環させ、文章や音声など順序のあるデータの依存関係を学習する。【各選択肢】②CNNは画像、③オートエンコーダは圧縮、④SVMは分類。【関連】長い系列では勾配消失で長期依存が苦手→LSTM・GRUで改善。並列化に弱い点はTransformerが克服。"},{"id":"rnn-practice-1","qid":"q-0b99f5ba","cat":"第5章 要素技術","q":"時系列や文章など順序のあるデータを扱い、過去の情報を内部状態として保持するネットワークはどれか。","c":["CNN","RNN（再帰型ニューラルネットワーク）","オートエンコーダ","VAE"],"a":1,"e":"\u003cb>RNN\u003c/b>は前の時刻の出力を次に渡す再帰構造を持つ。ただし長期依存で勾配消失しやすく、それを改善したのがLSTMやGRU。","prompt":"時系列や文章など順序のあるデータを扱い、過去の情報を内部状態として保持するネットワークはどれか。","options":["CNN","RNN（再帰型ニューラルネットワーク）","オートエンコーダ","VAE"],"answer":"RNN（再帰型ニューラルネットワーク）","explanation":"\u003cb>RNN\u003c/b>は前の時刻の出力を次に渡す再帰構造を持つ。ただし長期依存で勾配消失しやすく、それを改善したのがLSTMやGRU。"},{"id":"rnn-practice-2","qid":"q-0be17bee","cat":"第5章 要素技術","q":"RNNを時間方向に展開し、各時刻に勾配を逆伝播させる学習手法はどれか。","c":["BPTT（通時的誤差逆伝播）","BP（通常の誤差逆伝播のみ）","モンテカルロ法","主成分分析"],"a":0,"e":"\u003cb>BPTT（Backpropagation Through Time）\u003c/b>。RNNを時系列に沿って展開し勾配を計算する。系列が長いと勾配消失・爆発が起きやすく、LSTM/GRUや勾配クリッピングで対処する。","prompt":"RNNを時間方向に展開し、各時刻に勾配を逆伝播させる学習手法はどれか。","options":["BPTT（通時的誤差逆伝播）","BP（通常の誤差逆伝播のみ）","モンテカルロ法","主成分分析"],"answer":"BPTT（通時的誤差逆伝播）","explanation":"\u003cb>BPTT（Backpropagation Through Time）\u003c/b>。RNNを時系列に沿って展開し勾配を計算する。系列が長いと勾配消失・爆発が起きやすく、LSTM/GRUや勾配クリッピングで対処する。"}]}</script>
   </main>
   <footer class="app-footer">
     <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>
   </footer>
   <script src="../../assets/js/visualizations.js" defer></script>
+  <script src="../../assets/js/store.js" defer></script>
+  <script src="../../assets/js/learning.js" defer></script>
   <script src="../../assets/js/lesson.js" defer></script>
 </body>
 </html>

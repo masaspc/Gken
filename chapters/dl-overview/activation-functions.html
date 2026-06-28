@@ -22,9 +22,12 @@
   </header>
   <nav class="top-nav" aria-label="主要ナビゲーション">
     <a href="../../index.html">学習マップ</a>
+    <a href="../../dashboard/index.html">ダッシュボード</a>
+    <a href="../../mock/index.html">模試</a>
+    <a href="../../review/index.html">復習</a>
+    <a href="../../search/index.html">検索</a>
     <a href="../../practice/index.html">4択演習</a>
     <a href="../../glossary/index.html">用語集</a>
-    <a href="../../review/index.html">横断復習</a>
     <a href="../../sources/index.html">参照資料</a>
   </nav>
   <main id="main">
@@ -81,18 +84,22 @@
           <ol>
             <li>ReLU</li><li>Sigmoid</li><li>Tanh</li><li>非線形性</li>
           </ol>
+          <h3>関連する練習問題</h3>
+          <p><a href="../../practice/index.html?cat=undefined">この章の4択演習を開く</a></p>
           <h3>前後の学習</h3>
           <p><a href="../../chapters/dl-overview/perceptron.html">前: パーセプトロン</a></p>
           <p><a href="../../chapters/dl-overview/loss-functions.html">次: 損失関数</a></p>
         </aside>
       </div>
     </section>
-    <script type="application/json" id="lessonData">{"slug":"dl-overview/activation-functions","title":"活性化関数","terms":["ReLU","Sigmoid","Tanh","非線形性"],"visual":{"type":"comparison-table","title":"活性化関数の比較","columns":["関数","特徴","試験での見方"],"rows":[["ReLU","負の値を0にし正の値はそのまま通す","勾配消失を緩和し深層学習でよく使う"],["Sigmoid","出力を0から1に押し込む","2値確率の表現に使うが飽和に注意"],["Tanh","出力を-1から1に押し込む","中心が0なのでSigmoidより扱いやすい場合がある"]]},"quiz":[{"id":"activation-functions-practice-0","prompt":"ニューラルネットで活性化関数に非線形なものを使う必要がある理由として最も適切なものはどれか。","options":["線形関数だけでは層を重ねても1層の線形変換と等価になり、複雑な表現ができないから","計算を速くするため","勾配を消すため","パラメータを減らすため"],"answer":"線形関数だけでは層を重ねても1層の線形変換と等価になり、複雑な表現ができないから","explanation":"活性化が線形だと\u003cb>多層を重ねても結局1つの線形変換に潰れる\u003c/b>ため、非線形性が不可欠。ReLU等で非線形性を入れることで複雑な関数を近似できる。深層化の意味を支える基本原理。"},{"id":"activation-functions-practice-1","prompt":"入力が正なら値をそのまま、負なら0を返す、勾配消失を緩和し深層学習で広く使われる活性化関数はどれか。","options":["ReLU","シグモイド","ステップ関数","恒等関数"],"answer":"ReLU","explanation":"【正解の理由】\u003cb>ReLU\u003c/b>は正領域で勾配が1のため勾配消失が起きにくく計算も軽い。【各選択肢】②シグモイドは飽和して勾配消失を招きやすい、③ステップ関数は微分が0で逆伝播不可、④恒等関数は非線形性を持たない。【関連】負側が常に0で学習が止まる「死んだReLU」対策にLeaky ReLU等。重み初期化はHeが相性良い。"},{"id":"activation-functions-practice-2","prompt":"勾配消失を緩和し、現在の中間層で広く使われる活性化関数はどれか。","options":["シグモイド関数","ステップ関数","ReLU","恒等関数"],"answer":"ReLU","explanation":"\u003cb>ReLU\u003c/b>（正の領域で勾配1）は勾配消失を起こしにくく計算も軽い。出力層の多クラス分類には\u003cb>ソフトマックス\u003c/b>を使う。"}]}</script>
+    <script type="application/json" id="lessonData">{"slug":"dl-overview/activation-functions","title":"活性化関数","terms":["ReLU","Sigmoid","Tanh","非線形性"],"visual":{"type":"comparison-table","title":"活性化関数の比較","columns":["関数","特徴","試験での見方"],"rows":[["ReLU","負の値を0にし正の値はそのまま通す","勾配消失を緩和し深層学習でよく使う"],["Sigmoid","出力を0から1に押し込む","2値確率の表現に使うが飽和に注意"],["Tanh","出力を-1から1に押し込む","中心が0なのでSigmoidより扱いやすい場合がある"]]},"quiz":[{"id":"activation-functions-practice-0","qid":"q-ec3d4989","cat":"第4章 DL概要","q":"ニューラルネットで活性化関数に非線形なものを使う必要がある理由として最も適切なものはどれか。","c":["線形関数だけでは層を重ねても1層の線形変換と等価になり、複雑な表現ができないから","計算を速くするため","勾配を消すため","パラメータを減らすため"],"a":0,"e":"活性化が線形だと\u003cb>多層を重ねても結局1つの線形変換に潰れる\u003c/b>ため、非線形性が不可欠。ReLU等で非線形性を入れることで複雑な関数を近似できる。深層化の意味を支える基本原理。","prompt":"ニューラルネットで活性化関数に非線形なものを使う必要がある理由として最も適切なものはどれか。","options":["線形関数だけでは層を重ねても1層の線形変換と等価になり、複雑な表現ができないから","計算を速くするため","勾配を消すため","パラメータを減らすため"],"answer":"線形関数だけでは層を重ねても1層の線形変換と等価になり、複雑な表現ができないから","explanation":"活性化が線形だと\u003cb>多層を重ねても結局1つの線形変換に潰れる\u003c/b>ため、非線形性が不可欠。ReLU等で非線形性を入れることで複雑な関数を近似できる。深層化の意味を支える基本原理。"},{"id":"activation-functions-practice-1","qid":"q-dacaa363","cat":"第4章 DL概要","q":"入力が正なら値をそのまま、負なら0を返す、勾配消失を緩和し深層学習で広く使われる活性化関数はどれか。","c":["ReLU","シグモイド","ステップ関数","恒等関数"],"a":0,"e":"【正解の理由】\u003cb>ReLU\u003c/b>は正領域で勾配が1のため勾配消失が起きにくく計算も軽い。【各選択肢】②シグモイドは飽和して勾配消失を招きやすい、③ステップ関数は微分が0で逆伝播不可、④恒等関数は非線形性を持たない。【関連】負側が常に0で学習が止まる「死んだReLU」対策にLeaky ReLU等。重み初期化はHeが相性良い。","prompt":"入力が正なら値をそのまま、負なら0を返す、勾配消失を緩和し深層学習で広く使われる活性化関数はどれか。","options":["ReLU","シグモイド","ステップ関数","恒等関数"],"answer":"ReLU","explanation":"【正解の理由】\u003cb>ReLU\u003c/b>は正領域で勾配が1のため勾配消失が起きにくく計算も軽い。【各選択肢】②シグモイドは飽和して勾配消失を招きやすい、③ステップ関数は微分が0で逆伝播不可、④恒等関数は非線形性を持たない。【関連】負側が常に0で学習が止まる「死んだReLU」対策にLeaky ReLU等。重み初期化はHeが相性良い。"},{"id":"activation-functions-practice-2","qid":"q-5603970d","cat":"第4章 DL概要","q":"勾配消失を緩和し、現在の中間層で広く使われる活性化関数はどれか。","c":["シグモイド関数","ステップ関数","ReLU","恒等関数"],"a":2,"e":"\u003cb>ReLU\u003c/b>（正の領域で勾配1）は勾配消失を起こしにくく計算も軽い。出力層の多クラス分類には\u003cb>ソフトマックス\u003c/b>を使う。","prompt":"勾配消失を緩和し、現在の中間層で広く使われる活性化関数はどれか。","options":["シグモイド関数","ステップ関数","ReLU","恒等関数"],"answer":"ReLU","explanation":"\u003cb>ReLU\u003c/b>（正の領域で勾配1）は勾配消失を起こしにくく計算も軽い。出力層の多クラス分類には\u003cb>ソフトマックス\u003c/b>を使う。"}]}</script>
   </main>
   <footer class="app-footer">
     <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>
   </footer>
   <script src="../../assets/js/visualizations.js" defer></script>
+  <script src="../../assets/js/store.js" defer></script>
+  <script src="../../assets/js/learning.js" defer></script>
   <script src="../../assets/js/lesson.js" defer></script>
 </body>
 </html>

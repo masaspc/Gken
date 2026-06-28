@@ -22,9 +22,12 @@
   </header>
   <nav class="top-nav" aria-label="主要ナビゲーション">
     <a href="../../index.html">学習マップ</a>
+    <a href="../../dashboard/index.html">ダッシュボード</a>
+    <a href="../../mock/index.html">模試</a>
+    <a href="../../review/index.html">復習</a>
+    <a href="../../search/index.html">検索</a>
     <a href="../../practice/index.html">4択演習</a>
     <a href="../../glossary/index.html">用語集</a>
-    <a href="../../review/index.html">横断復習</a>
     <a href="../../sources/index.html">参照資料</a>
   </nav>
   <main id="main">
@@ -81,18 +84,22 @@
           <ol>
             <li>画像分類</li><li>物体検出</li><li>セグメンテーション</li><li>CNN</li>
           </ol>
+          <h3>関連する練習問題</h3>
+          <p><a href="../../practice/index.html?cat=undefined">この章の4択演習を開く</a></p>
           <h3>前後の学習</h3>
           <p><a href="../../chapters/dl-elements/foundation-models.html">前: 基盤モデルと言語モデル</a></p>
           <p><a href="../../chapters/applications/object-detection.html">次: 物体検出</a></p>
         </aside>
       </div>
     </section>
-    <script type="application/json" id="lessonData">{"slug":"applications/image-classification","title":"画像認識","terms":["画像分類","物体検出","セグメンテーション","CNN"],"visual":{"type":"comparison-table","title":"画像タスクの違い","columns":["タスク","出力","例"],"rows":[["画像分類","画像全体に1つ以上のラベルを付ける","猫の画像か犬の画像かを判定"],["物体検出","物体の種類と位置枠を出す","画像内の車と歩行者を囲む"],["セグメンテーション","画素単位で領域を分ける","道路・空・建物を塗り分ける"]]},"quiz":[{"id":"image-classification-practice-0","prompt":"画像中の物体の位置（バウンディングボックス）とクラスを同時に求めるタスクはどれか。","options":["画像分類","物体検出","セマンティックセグメンテーション","異常検知"],"answer":"物体検出","explanation":"\u003cb>物体検出\u003c/b>。代表手法にR-CNN系、YOLO、SSD。1枚に複数物体の位置とラベルを推定する。YOLOは高速な一段検出で知られる。"},{"id":"image-classification-practice-1","prompt":"同じクラスの物体でも個体ごとに区別して領域を切り分けるタスクはどれか。","options":["セマンティックセグメンテーション","インスタンスセグメンテーション","画像分類","物体検出（枠のみ）"],"answer":"インスタンスセグメンテーション","explanation":"\u003cb>インスタンスセグメンテーション\u003c/b>。「人A」「人B」を別個体として画素単位で分ける。代表手法はMask R-CNN。"},{"id":"image-classification-practice-2","prompt":"画像を画素単位でクラス分けする（領域ごとに塗り分ける）タスクはどれか。","options":["物体検出","セマンティックセグメンテーション","画像分類","顔認証"],"answer":"セマンティックセグメンテーション","explanation":"\u003cb>セマンティックセグメンテーション\u003c/b>は画素単位のクラス分類。FCNやU-Netが代表。自動運転の路面・歩行者領域把握などに使われる。"}]}</script>
+    <script type="application/json" id="lessonData">{"slug":"applications/image-classification","title":"画像認識","terms":["画像分類","物体検出","セグメンテーション","CNN"],"visual":{"type":"comparison-table","title":"画像タスクの違い","columns":["タスク","出力","例"],"rows":[["画像分類","画像全体に1つ以上のラベルを付ける","猫の画像か犬の画像かを判定"],["物体検出","物体の種類と位置枠を出す","画像内の車と歩行者を囲む"],["セグメンテーション","画素単位で領域を分ける","道路・空・建物を塗り分ける"]]},"quiz":[{"id":"image-classification-practice-0","qid":"q-4d30fee8","cat":"第6章 応用例","q":"画像中の物体の位置（バウンディングボックス）とクラスを同時に求めるタスクはどれか。","c":["画像分類","物体検出","セマンティックセグメンテーション","異常検知"],"a":1,"e":"\u003cb>物体検出\u003c/b>。代表手法にR-CNN系、YOLO、SSD。1枚に複数物体の位置とラベルを推定する。YOLOは高速な一段検出で知られる。","prompt":"画像中の物体の位置（バウンディングボックス）とクラスを同時に求めるタスクはどれか。","options":["画像分類","物体検出","セマンティックセグメンテーション","異常検知"],"answer":"物体検出","explanation":"\u003cb>物体検出\u003c/b>。代表手法にR-CNN系、YOLO、SSD。1枚に複数物体の位置とラベルを推定する。YOLOは高速な一段検出で知られる。"},{"id":"image-classification-practice-1","qid":"q-7b958673","cat":"第6章 応用例","q":"同じクラスの物体でも個体ごとに区別して領域を切り分けるタスクはどれか。","c":["セマンティックセグメンテーション","インスタンスセグメンテーション","画像分類","物体検出（枠のみ）"],"a":1,"e":"\u003cb>インスタンスセグメンテーション\u003c/b>。「人A」「人B」を別個体として画素単位で分ける。代表手法はMask R-CNN。","prompt":"同じクラスの物体でも個体ごとに区別して領域を切り分けるタスクはどれか。","options":["セマンティックセグメンテーション","インスタンスセグメンテーション","画像分類","物体検出（枠のみ）"],"answer":"インスタンスセグメンテーション","explanation":"\u003cb>インスタンスセグメンテーション\u003c/b>。「人A」「人B」を別個体として画素単位で分ける。代表手法はMask R-CNN。"},{"id":"image-classification-practice-2","qid":"q-f5bbe58f","cat":"第6章 応用例","q":"画像を画素単位でクラス分けする（領域ごとに塗り分ける）タスクはどれか。","c":["物体検出","セマンティックセグメンテーション","画像分類","顔認証"],"a":1,"e":"\u003cb>セマンティックセグメンテーション\u003c/b>は画素単位のクラス分類。FCNやU-Netが代表。自動運転の路面・歩行者領域把握などに使われる。","prompt":"画像を画素単位でクラス分けする（領域ごとに塗り分ける）タスクはどれか。","options":["物体検出","セマンティックセグメンテーション","画像分類","顔認証"],"answer":"セマンティックセグメンテーション","explanation":"\u003cb>セマンティックセグメンテーション\u003c/b>は画素単位のクラス分類。FCNやU-Netが代表。自動運転の路面・歩行者領域把握などに使われる。"}]}</script>
   </main>
   <footer class="app-footer">
     <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>
   </footer>
   <script src="../../assets/js/visualizations.js" defer></script>
+  <script src="../../assets/js/store.js" defer></script>
+  <script src="../../assets/js/learning.js" defer></script>
   <script src="../../assets/js/lesson.js" defer></script>
 </body>
 </html>

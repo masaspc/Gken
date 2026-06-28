@@ -22,9 +22,12 @@
   </header>
   <nav class="top-nav" aria-label="主要ナビゲーション">
     <a href="../../index.html">学習マップ</a>
+    <a href="../../dashboard/index.html">ダッシュボード</a>
+    <a href="../../mock/index.html">模試</a>
+    <a href="../../review/index.html">復習</a>
+    <a href="../../search/index.html">検索</a>
     <a href="../../practice/index.html">4択演習</a>
     <a href="../../glossary/index.html">用語集</a>
-    <a href="../../review/index.html">横断復習</a>
     <a href="../../sources/index.html">参照資料</a>
   </nav>
   <main id="main">
@@ -79,18 +82,22 @@
           <ol>
             <li>オートエンコーダ</li><li>エンコーダ</li><li>デコーダ</li><li>潜在表現</li>
           </ol>
+          <h3>関連する練習問題</h3>
+          <p><a href="../../practice/index.html?cat=undefined">この章の4択演習を開く</a></p>
           <h3>前後の学習</h3>
           <p><a href="../../chapters/dl-elements/transformer.html">前: Transformer</a></p>
           <p><a href="../../chapters/dl-elements/data-augmentation.html">次: データ拡張</a></p>
         </aside>
       </div>
     </section>
-    <script type="application/json" id="lessonData">{"slug":"dl-elements/autoencoder","title":"オートエンコーダ","terms":["オートエンコーダ","エンコーダ","デコーダ","潜在表現"],"visual":{"type":"flow","title":"オートエンコーダの学習","steps":[{"label":"入力","note":"元データを入れる"},{"label":"エンコード","note":"低次元に圧縮"},{"label":"潜在表現","note":"重要情報を保持"},{"label":"デコード","note":"入力を復元する"},{"label":"復元誤差","note":"差を小さく学習"}]},"quiz":[{"id":"autoencoder-practice-0","prompt":"入力をいったん低次元に圧縮し、それを元に復元するよう学習する、次元圧縮や異常検知に使われるネットワークはどれか。","options":["オートエンコーダ","Transformer","ResNet","SVM"],"answer":"オートエンコーダ","explanation":"【正解の理由】\u003cb>オートエンコーダ\u003c/b>はエンコーダで圧縮（潜在表現）し、デコーダで復元する自己教師あり的な構造。復元誤差が大きい入力を異常とみなせる。【各選択肢】②③④は別目的。【関連】確率分布を学ぶ発展形が\u003cb>VAE\u003c/b>で、潜在空間からの生成が可能。"},{"id":"autoencoder-practice-1","prompt":"自己注意のみで構成され、RNNを使わず系列を並列処理できるため大規模言語モデルの基盤となったアーキテクチャはどれか。","options":["Transformer","LSTM","GRU","オートエンコーダ"],"answer":"Transformer","explanation":"【正解の理由】\u003cb>Transformer\u003c/b>は自己注意で系列内の依存を一括計算でき、逐次処理のRNNより並列化に強く、長距離依存も捉えやすい。【各選択肢】②LSTM・③GRUは逐次のRNN系、④オートエンコーダは圧縮。【関連】エンコーダ型がBERT、デコーダ型がGPTの系譜。位置情報は位置エンコーディングで補う。"},{"id":"autoencoder-practice-2","prompt":"時系列や文章など順序のあるデータを扱い、過去の情報を内部状態として保持するネットワークはどれか。","options":["CNN","RNN（再帰型ニューラルネットワーク）","オートエンコーダ","VAE"],"answer":"RNN（再帰型ニューラルネットワーク）","explanation":"\u003cb>RNN\u003c/b>は前の時刻の出力を次に渡す再帰構造を持つ。ただし長期依存で勾配消失しやすく、それを改善したのがLSTMやGRU。"}]}</script>
+    <script type="application/json" id="lessonData">{"slug":"dl-elements/autoencoder","title":"オートエンコーダ","terms":["オートエンコーダ","エンコーダ","デコーダ","潜在表現"],"visual":{"type":"flow","title":"オートエンコーダの学習","steps":[{"label":"入力","note":"元データを入れる"},{"label":"エンコード","note":"低次元に圧縮"},{"label":"潜在表現","note":"重要情報を保持"},{"label":"デコード","note":"入力を復元する"},{"label":"復元誤差","note":"差を小さく学習"}]},"quiz":[{"id":"autoencoder-practice-0","qid":"q-042eea6a","cat":"第5章 要素技術","q":"入力をいったん低次元に圧縮し、それを元に復元するよう学習する、次元圧縮や異常検知に使われるネットワークはどれか。","c":["オートエンコーダ","Transformer","ResNet","SVM"],"a":0,"e":"【正解の理由】\u003cb>オートエンコーダ\u003c/b>はエンコーダで圧縮（潜在表現）し、デコーダで復元する自己教師あり的な構造。復元誤差が大きい入力を異常とみなせる。【各選択肢】②③④は別目的。【関連】確率分布を学ぶ発展形が\u003cb>VAE\u003c/b>で、潜在空間からの生成が可能。","prompt":"入力をいったん低次元に圧縮し、それを元に復元するよう学習する、次元圧縮や異常検知に使われるネットワークはどれか。","options":["オートエンコーダ","Transformer","ResNet","SVM"],"answer":"オートエンコーダ","explanation":"【正解の理由】\u003cb>オートエンコーダ\u003c/b>はエンコーダで圧縮（潜在表現）し、デコーダで復元する自己教師あり的な構造。復元誤差が大きい入力を異常とみなせる。【各選択肢】②③④は別目的。【関連】確率分布を学ぶ発展形が\u003cb>VAE\u003c/b>で、潜在空間からの生成が可能。"},{"id":"autoencoder-practice-1","qid":"q-798812d3","cat":"第5章 要素技術","q":"自己注意のみで構成され、RNNを使わず系列を並列処理できるため大規模言語モデルの基盤となったアーキテクチャはどれか。","c":["Transformer","LSTM","GRU","オートエンコーダ"],"a":0,"e":"【正解の理由】\u003cb>Transformer\u003c/b>は自己注意で系列内の依存を一括計算でき、逐次処理のRNNより並列化に強く、長距離依存も捉えやすい。【各選択肢】②LSTM・③GRUは逐次のRNN系、④オートエンコーダは圧縮。【関連】エンコーダ型がBERT、デコーダ型がGPTの系譜。位置情報は位置エンコーディングで補う。","prompt":"自己注意のみで構成され、RNNを使わず系列を並列処理できるため大規模言語モデルの基盤となったアーキテクチャはどれか。","options":["Transformer","LSTM","GRU","オートエンコーダ"],"answer":"Transformer","explanation":"【正解の理由】\u003cb>Transformer\u003c/b>は自己注意で系列内の依存を一括計算でき、逐次処理のRNNより並列化に強く、長距離依存も捉えやすい。【各選択肢】②LSTM・③GRUは逐次のRNN系、④オートエンコーダは圧縮。【関連】エンコーダ型がBERT、デコーダ型がGPTの系譜。位置情報は位置エンコーディングで補う。"},{"id":"autoencoder-practice-2","qid":"q-0b99f5ba","cat":"第5章 要素技術","q":"時系列や文章など順序のあるデータを扱い、過去の情報を内部状態として保持するネットワークはどれか。","c":["CNN","RNN（再帰型ニューラルネットワーク）","オートエンコーダ","VAE"],"a":1,"e":"\u003cb>RNN\u003c/b>は前の時刻の出力を次に渡す再帰構造を持つ。ただし長期依存で勾配消失しやすく、それを改善したのがLSTMやGRU。","prompt":"時系列や文章など順序のあるデータを扱い、過去の情報を内部状態として保持するネットワークはどれか。","options":["CNN","RNN（再帰型ニューラルネットワーク）","オートエンコーダ","VAE"],"answer":"RNN（再帰型ニューラルネットワーク）","explanation":"\u003cb>RNN\u003c/b>は前の時刻の出力を次に渡す再帰構造を持つ。ただし長期依存で勾配消失しやすく、それを改善したのがLSTMやGRU。"}]}</script>
   </main>
   <footer class="app-footer">
     <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>
   </footer>
   <script src="../../assets/js/visualizations.js" defer></script>
+  <script src="../../assets/js/store.js" defer></script>
+  <script src="../../assets/js/learning.js" defer></script>
   <script src="../../assets/js/lesson.js" defer></script>
 </body>
 </html>

@@ -22,9 +22,12 @@
   </header>
   <nav class="top-nav" aria-label="主要ナビゲーション">
     <a href="../../index.html">学習マップ</a>
+    <a href="../../dashboard/index.html">ダッシュボード</a>
+    <a href="../../mock/index.html">模試</a>
+    <a href="../../review/index.html">復習</a>
+    <a href="../../search/index.html">検索</a>
     <a href="../../practice/index.html">4択演習</a>
     <a href="../../glossary/index.html">用語集</a>
-    <a href="../../review/index.html">横断復習</a>
     <a href="../../sources/index.html">参照資料</a>
   </nav>
   <main id="main">
@@ -81,18 +84,22 @@
           <ol>
             <li>ベクトル</li><li>行列</li><li>内積</li><li>変換</li>
           </ol>
+          <h3>関連する練習問題</h3>
+          <p><a href="../../practice/index.html?cat=undefined">この章の4択演習を開く</a></p>
           <h3>前後の学習</h3>
           <p><a href="../../chapters/math-stats/bayes.html">前: ベイズの考え方</a></p>
           <p><a href="../../chapters/math-stats/distance.html">次: 距離と類似度</a></p>
         </aside>
       </div>
     </section>
-    <script type="application/json" id="lessonData">{"slug":"math-stats/linear-algebra","title":"線形代数の直感","terms":["ベクトル","行列","内積","変換"],"visual":{"type":"relation-table","title":"線形代数の直感","columns":["概念","AIでの意味","例"],"rows":[["ベクトル","特徴量を並べた数値表現","単語埋め込みや画像特徴"],["行列","複数ベクトルや線形変換を表す","重み行列で入力を変換"],["内積","向きの近さや重み付き和を計算する","類似度やニューラル計算"]]},"quiz":[{"id":"linear-algebra-practice-0","prompt":"ベクトル a=(1, 2, 3) と b=(4, 5, 6) の内積はいくらか。","options":["32","21","90","6"],"answer":"32","explanation":"【計算】内積＝1×4＋2×5＋3×6＝4＋10＋18＝\u003cb>32\u003c/b>。【ポイント】内積は対応成分の積の和。ニューロンの重み付き和や、ベクトルの類似度（コサイン類似度の分子）の計算に使う基本演算。"},{"id":"linear-algebra-practice-1","prompt":"単語を意味的な近さが反映されたベクトルに変換する代表的手法はどれか。","options":["word2vec","TF-IDF","BoW（Bag of Words）","形態素解析"],"answer":"word2vec","explanation":"\u003cb>word2vec\u003c/b>はCBOWやskip-gramで単語を分散表現（ベクトル）にする。意味の近い語が近いベクトルになり、ベクトル演算で類推もできる。"},{"id":"linear-algebra-practice-2","prompt":"『赤・青・緑』のようなカテゴリ変数を、各カテゴリに対応する0/1のベクトルへ変換する手法はどれか。","options":["ワンホットエンコーディング","標準化","主成分分析","ドロップアウト"],"answer":"ワンホットエンコーディング","explanation":"\u003cb>ワンホットエンコーディング\u003c/b>。カテゴリ間に大小関係がない名義変数を数値化する標準的方法。単純に1,2,3と振ると順序があると誤解されるため避ける。カテゴリ数が多いと次元が膨らむ（次元の呪い）点に注意。"}]}</script>
+    <script type="application/json" id="lessonData">{"slug":"math-stats/linear-algebra","title":"線形代数の直感","terms":["ベクトル","行列","内積","変換"],"visual":{"type":"relation-table","title":"線形代数の直感","columns":["概念","AIでの意味","例"],"rows":[["ベクトル","特徴量を並べた数値表現","単語埋め込みや画像特徴"],["行列","複数ベクトルや線形変換を表す","重み行列で入力を変換"],["内積","向きの近さや重み付き和を計算する","類似度やニューラル計算"]]},"quiz":[{"id":"linear-algebra-practice-0","qid":"q-8cc8d849","cat":"第9章 計算・数理","q":"ベクトル a=(1, 2, 3) と b=(4, 5, 6) の内積はいくらか。","c":["32","21","90","6"],"a":0,"e":"【計算】内積＝1×4＋2×5＋3×6＝4＋10＋18＝\u003cb>32\u003c/b>。【ポイント】内積は対応成分の積の和。ニューロンの重み付き和や、ベクトルの類似度（コサイン類似度の分子）の計算に使う基本演算。","prompt":"ベクトル a=(1, 2, 3) と b=(4, 5, 6) の内積はいくらか。","options":["32","21","90","6"],"answer":"32","explanation":"【計算】内積＝1×4＋2×5＋3×6＝4＋10＋18＝\u003cb>32\u003c/b>。【ポイント】内積は対応成分の積の和。ニューロンの重み付き和や、ベクトルの類似度（コサイン類似度の分子）の計算に使う基本演算。"},{"id":"linear-algebra-practice-1","qid":"q-bcca0613","cat":"第6章 応用例","q":"単語を意味的な近さが反映されたベクトルに変換する代表的手法はどれか。","c":["word2vec","TF-IDF","BoW（Bag of Words）","形態素解析"],"a":0,"e":"\u003cb>word2vec\u003c/b>はCBOWやskip-gramで単語を分散表現（ベクトル）にする。意味の近い語が近いベクトルになり、ベクトル演算で類推もできる。","prompt":"単語を意味的な近さが反映されたベクトルに変換する代表的手法はどれか。","options":["word2vec","TF-IDF","BoW（Bag of Words）","形態素解析"],"answer":"word2vec","explanation":"\u003cb>word2vec\u003c/b>はCBOWやskip-gramで単語を分散表現（ベクトル）にする。意味の近い語が近いベクトルになり、ベクトル演算で類推もできる。"},{"id":"linear-algebra-practice-2","qid":"q-41a41c69","cat":"第3章 機械学習","q":"『赤・青・緑』のようなカテゴリ変数を、各カテゴリに対応する0/1のベクトルへ変換する手法はどれか。","c":["ワンホットエンコーディング","標準化","主成分分析","ドロップアウト"],"a":0,"e":"\u003cb>ワンホットエンコーディング\u003c/b>。カテゴリ間に大小関係がない名義変数を数値化する標準的方法。単純に1,2,3と振ると順序があると誤解されるため避ける。カテゴリ数が多いと次元が膨らむ（次元の呪い）点に注意。","prompt":"『赤・青・緑』のようなカテゴリ変数を、各カテゴリに対応する0/1のベクトルへ変換する手法はどれか。","options":["ワンホットエンコーディング","標準化","主成分分析","ドロップアウト"],"answer":"ワンホットエンコーディング","explanation":"\u003cb>ワンホットエンコーディング\u003c/b>。カテゴリ間に大小関係がない名義変数を数値化する標準的方法。単純に1,2,3と振ると順序があると誤解されるため避ける。カテゴリ数が多いと次元が膨らむ（次元の呪い）点に注意。"}]}</script>
   </main>
   <footer class="app-footer">
     <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>
   </footer>
   <script src="../../assets/js/visualizations.js" defer></script>
+  <script src="../../assets/js/store.js" defer></script>
+  <script src="../../assets/js/learning.js" defer></script>
   <script src="../../assets/js/lesson.js" defer></script>
 </body>
 </html>

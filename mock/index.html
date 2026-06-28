@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="本番形式に近い横断模試ページです。">
+  <title>100分 模試モード | G検定インタラクティブ学習サイト</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">本文へ移動</a>
+  <header class="app-header compact-header">
+    <div class="brand-block">
+      <p class="eyebrow">G検定 Interactive Syllabus</p>
+      <h1>100分 模試モード</h1>
+      <p class="lead">本番形式に近い横断模試ページです。</p>
+    </div>
+    <div class="header-actions">
+      <button class="icon-button" type="button" id="themeToggle" aria-label="ライトテーマとダークテーマを切り替え">◐</button>
+      <a class="text-button" href="../index.html">トップ</a>
+    </div>
+  </header>
+  <nav class="top-nav" aria-label="主要ナビゲーション">
+    <a href="../index.html">学習マップ</a>
+    <a href="../dashboard/index.html">ダッシュボード</a>
+    <a href="../mock/index.html">模試</a>
+    <a href="../review/index.html">復習</a>
+    <a href="../search/index.html">検索</a>
+    <a href="../practice/index.html">4択演習</a>
+    <a href="../glossary/index.html">用語集</a>
+    <a href="../sources/index.html">参照資料</a>
+  </nav>
+  <main id="main">
+    <section class="layout">
+      <div class="section-heading">
+        <p class="section-kicker">Mock exam</p>
+        <h2>100分 模試モード</h2>
+        <p>全カテゴリから横断出題します。解答中は正誤を表示せず、提出後にカテゴリ別の弱点を分析します。</p>
+      </div>
+      <section class="practice-setup" id="mockSetup">
+        <h3>出題設定</h3>
+        <p id="mockConfig">読み込み中</p>
+        <button class="primary-button" type="button" id="mockStart">模試を開始</button>
+      </section>
+      <section class="mock-stage" id="mockStage" hidden>
+        <div class="mock-toolbar">
+          <strong id="mockTimer">100:00</strong>
+          <button class="ghost-button" type="button" id="mockFlag">後で見直す</button>
+          <button class="primary-button" type="button" id="mockSubmit">提出</button>
+        </div>
+        <div class="mock-layout">
+          <article class="practice-stage">
+            <p class="practice-meta" id="mockMeta"></p>
+            <h3 class="practice-question" id="mockQuestion"></h3>
+            <div class="mock-options" id="mockOptions"></div>
+            <div class="practice-toolbar">
+              <button class="ghost-button" type="button" id="mockPrev">前へ</button>
+              <button class="primary-button" type="button" id="mockNext">次へ</button>
+            </div>
+          </article>
+          <aside class="mock-palette" id="mockPalette" aria-label="問題パレット"></aside>
+        </div>
+      </section>
+      <section class="practice-result" id="mockResult" hidden></section>
+    </section>
+  </main>
+  <footer class="app-footer">
+    <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>
+  </footer>
+  <script src="../assets/js/store.js" defer></script>
+  <script src="../assets/js/learning.js" defer></script>
+  <script src="../assets/js/mock.js" defer></script>
+</body>
+</html>

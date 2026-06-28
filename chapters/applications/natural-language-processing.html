@@ -22,9 +22,12 @@
   </header>
   <nav class="top-nav" aria-label="主要ナビゲーション">
     <a href="../../index.html">学習マップ</a>
+    <a href="../../dashboard/index.html">ダッシュボード</a>
+    <a href="../../mock/index.html">模試</a>
+    <a href="../../review/index.html">復習</a>
+    <a href="../../search/index.html">検索</a>
     <a href="../../practice/index.html">4択演習</a>
     <a href="../../glossary/index.html">用語集</a>
-    <a href="../../review/index.html">横断復習</a>
     <a href="../../sources/index.html">参照資料</a>
   </nav>
   <main id="main">
@@ -79,18 +82,22 @@
           <ol>
             <li>形態素解析</li><li>埋め込み</li><li>言語モデル</li><li>翻訳</li>
           </ol>
+          <h3>関連する練習問題</h3>
+          <p><a href="../../practice/index.html?cat=undefined">この章の4択演習を開く</a></p>
           <h3>前後の学習</h3>
           <p><a href="../../chapters/applications/object-detection.html">前: 物体検出</a></p>
           <p><a href="../../chapters/applications/speech-processing.html">次: 音声処理</a></p>
         </aside>
       </div>
     </section>
-    <script type="application/json" id="lessonData">{"slug":"applications/natural-language-processing","title":"自然言語処理","terms":["形態素解析","埋め込み","言語モデル","翻訳"],"visual":{"type":"flow","title":"自然言語処理の基本パイプライン","steps":[{"label":"テキスト","note":"文章を入力する"},{"label":"トークン化","note":"語やサブワードに分ける"},{"label":"埋め込み","note":"ベクトルへ変換"},{"label":"文脈化","note":"前後関係を反映"},{"label":"出力","note":"分類・翻訳などへ使う"}]},"quiz":[{"id":"natural-language-processing-practice-0","prompt":"日本語テキストを単語に分割し品詞などを判定する、自然言語処理の前処理はどれか。","options":["形態素解析","正規化","アノテーション","トークン化（部分語）のみ"],"answer":"形態素解析","explanation":"\u003cb>形態素解析\u003c/b>。分かち書きのない日本語を意味の最小単位（形態素）に分割し品詞を付与する。MeCabなどが代表ツール。"},{"id":"natural-language-processing-practice-1","prompt":"機械翻訳の自動評価で、生成文と参照文のn-gramの一致度を測る指標はどれか。","options":["BLEU","perplexity","AUC","F値"],"answer":"BLEU","explanation":"\u003cb>BLEU\u003c/b>。機械翻訳の出力と人手の参照訳のn-gram一致率を基に採点する代表的指標。簡便だが意味の正しさを完全には測れない限界もある。言語モデル内在評価のperplexityとは目的が異なる。"},{"id":"natural-language-processing-practice-2","prompt":"レビュー文が肯定的か否定的かを判定するタスクはどれか。","options":["感情分析（センチメント分析）","固有表現抽出","機械翻訳","音声認識"],"answer":"感情分析（センチメント分析）","explanation":"\u003cb>感情分析\u003c/b>。テキストの極性（ポジティブ/ネガティブ）や感情を推定する。マーケティングやVOC分析で広く使われる分類タスク。単語の分散表現や言語モデルを特徴として用いる。"}]}</script>
+    <script type="application/json" id="lessonData">{"slug":"applications/natural-language-processing","title":"自然言語処理","terms":["形態素解析","埋め込み","言語モデル","翻訳"],"visual":{"type":"flow","title":"自然言語処理の基本パイプライン","steps":[{"label":"テキスト","note":"文章を入力する"},{"label":"トークン化","note":"語やサブワードに分ける"},{"label":"埋め込み","note":"ベクトルへ変換"},{"label":"文脈化","note":"前後関係を反映"},{"label":"出力","note":"分類・翻訳などへ使う"}]},"quiz":[{"id":"natural-language-processing-practice-0","qid":"q-f600039f","cat":"第6章 応用例","q":"日本語テキストを単語に分割し品詞などを判定する、自然言語処理の前処理はどれか。","c":["形態素解析","正規化","アノテーション","トークン化（部分語）のみ"],"a":0,"e":"\u003cb>形態素解析\u003c/b>。分かち書きのない日本語を意味の最小単位（形態素）に分割し品詞を付与する。MeCabなどが代表ツール。","prompt":"日本語テキストを単語に分割し品詞などを判定する、自然言語処理の前処理はどれか。","options":["形態素解析","正規化","アノテーション","トークン化（部分語）のみ"],"answer":"形態素解析","explanation":"\u003cb>形態素解析\u003c/b>。分かち書きのない日本語を意味の最小単位（形態素）に分割し品詞を付与する。MeCabなどが代表ツール。"},{"id":"natural-language-processing-practice-1","qid":"q-18387c26","cat":"第6章 応用例","q":"機械翻訳の自動評価で、生成文と参照文のn-gramの一致度を測る指標はどれか。","c":["BLEU","perplexity","AUC","F値"],"a":0,"e":"\u003cb>BLEU\u003c/b>。機械翻訳の出力と人手の参照訳のn-gram一致率を基に採点する代表的指標。簡便だが意味の正しさを完全には測れない限界もある。言語モデル内在評価のperplexityとは目的が異なる。","prompt":"機械翻訳の自動評価で、生成文と参照文のn-gramの一致度を測る指標はどれか。","options":["BLEU","perplexity","AUC","F値"],"answer":"BLEU","explanation":"\u003cb>BLEU\u003c/b>。機械翻訳の出力と人手の参照訳のn-gram一致率を基に採点する代表的指標。簡便だが意味の正しさを完全には測れない限界もある。言語モデル内在評価のperplexityとは目的が異なる。"},{"id":"natural-language-processing-practice-2","qid":"q-39ea80ed","cat":"第6章 応用例","q":"レビュー文が肯定的か否定的かを判定するタスクはどれか。","c":["感情分析（センチメント分析）","固有表現抽出","機械翻訳","音声認識"],"a":0,"e":"\u003cb>感情分析\u003c/b>。テキストの極性（ポジティブ/ネガティブ）や感情を推定する。マーケティングやVOC分析で広く使われる分類タスク。単語の分散表現や言語モデルを特徴として用いる。","prompt":"レビュー文が肯定的か否定的かを判定するタスクはどれか。","options":["感情分析（センチメント分析）","固有表現抽出","機械翻訳","音声認識"],"answer":"感情分析（センチメント分析）","explanation":"\u003cb>感情分析\u003c/b>。テキストの極性（ポジティブ/ネガティブ）や感情を推定する。マーケティングやVOC分析で広く使われる分類タスク。単語の分散表現や言語モデルを特徴として用いる。"}]}</script>
   </main>
   <footer class="app-footer">
     <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>
   </footer>
   <script src="../../assets/js/visualizations.js" defer></script>
+  <script src="../../assets/js/store.js" defer></script>
+  <script src="../../assets/js/learning.js" defer></script>
   <script src="../../assets/js/lesson.js" defer></script>
 </body>
 </html>

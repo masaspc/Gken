@@ -22,9 +22,12 @@
   </header>
   <nav class="top-nav" aria-label="主要ナビゲーション">
     <a href="../../index.html">学習マップ</a>
+    <a href="../../dashboard/index.html">ダッシュボード</a>
+    <a href="../../mock/index.html">模試</a>
+    <a href="../../review/index.html">復習</a>
+    <a href="../../search/index.html">検索</a>
     <a href="../../practice/index.html">4択演習</a>
     <a href="../../glossary/index.html">用語集</a>
-    <a href="../../review/index.html">横断復習</a>
     <a href="../../sources/index.html">参照資料</a>
   </nav>
   <main id="main">
@@ -79,18 +82,22 @@
           <ol>
             <li>ELIZA</li><li>対話システム</li><li>ルールベース</li><li>自然言語</li>
           </ol>
+          <h3>関連する練習問題</h3>
+          <p><a href="../../practice/index.html?cat=undefined">この章の4択演習を開く</a></p>
           <h3>前後の学習</h3>
           <p><a href="../../chapters/ai-basics/turing-test.html">前: チューリングテスト</a></p>
           <p><a href="../../chapters/ai-history/ai-booms.html">次: AIブームの変遷</a></p>
         </aside>
       </div>
     </section>
-    <script type="application/json" id="lessonData">{"slug":"ai-basics/eliza-and-dialogue","title":"ELIZAと対話システム","terms":["ELIZA","対話システム","ルールベース","自然言語"],"visual":{"type":"flow","title":"ELIZA型対話の処理","steps":[{"label":"入力文","note":"利用者の発話を受ける"},{"label":"パターン照合","note":"キーワードや構文を探す"},{"label":"変換規則","note":"決められた型へ置き換える"},{"label":"応答生成","note":"理解ではなく規則で返す"},{"label":"対話継続","note":"自然に見える効果が出る"}]},"quiz":[{"id":"eliza-and-dialogue-practice-0","prompt":"1966年に開発され、対話システムでありながら人間が感情移入してしまう「イライザ効果」の語源となったプログラムはどれか。","options":["MYCIN","ELIZA","SHRDLU","Watson"],"answer":"ELIZA","explanation":"\u003cb>ELIZA（イライザ）\u003c/b>はワイゼンバウムが作った対話プログラム。単純なパターン応答にもかかわらず、人が知性や感情を感じてしまう現象を「イライザ効果」と呼ぶ。"},{"id":"eliza-and-dialogue-practice-1","prompt":"自然言語の指示でブロックを操作する初期の対話システムで、限定世界（ブロックワールド）での言語理解を示したものはどれか。","options":["SHRDLU","MYCIN","AlphaGo","word2vec"],"answer":"SHRDLU","explanation":"\u003cb>SHRDLU\u003c/b>（ウィノグラード）。積み木の世界という限定環境で自然言語の指示を解釈し操作した。限定世界では成功したが現実の広い世界には拡張できず、フレーム問題やトイ・プロブレムの限界を象徴する例ともされる。"},{"id":"eliza-and-dialogue-practice-2","prompt":"次のうち、人工知能の研究分野として一般に含まれないものはどれか。","options":["自然言語処理","画像認識","知識表現","表計算ソフトの操作"],"answer":"表計算ソフトの操作","explanation":"自然言語処理・画像認識・知識表現・探索・機械学習・音声認識・ロボティクスなどがAIの主要分野。表計算ソフトの操作は単なるアプリ利用で研究分野ではない。AIは複数の下位分野の総称であり、特定の一手法を指す言葉ではない点が問われる。"}]}</script>
+    <script type="application/json" id="lessonData">{"slug":"ai-basics/eliza-and-dialogue","title":"ELIZAと対話システム","terms":["ELIZA","対話システム","ルールベース","自然言語"],"visual":{"type":"flow","title":"ELIZA型対話の処理","steps":[{"label":"入力文","note":"利用者の発話を受ける"},{"label":"パターン照合","note":"キーワードや構文を探す"},{"label":"変換規則","note":"決められた型へ置き換える"},{"label":"応答生成","note":"理解ではなく規則で返す"},{"label":"対話継続","note":"自然に見える効果が出る"}]},"quiz":[{"id":"eliza-and-dialogue-practice-0","qid":"q-70b7d9c3","cat":"第1章 AIとは","q":"1966年に開発され、対話システムでありながら人間が感情移入してしまう「イライザ効果」の語源となったプログラムはどれか。","c":["MYCIN","ELIZA","SHRDLU","Watson"],"a":1,"e":"\u003cb>ELIZA（イライザ）\u003c/b>はワイゼンバウムが作った対話プログラム。単純なパターン応答にもかかわらず、人が知性や感情を感じてしまう現象を「イライザ効果」と呼ぶ。","prompt":"1966年に開発され、対話システムでありながら人間が感情移入してしまう「イライザ効果」の語源となったプログラムはどれか。","options":["MYCIN","ELIZA","SHRDLU","Watson"],"answer":"ELIZA","explanation":"\u003cb>ELIZA（イライザ）\u003c/b>はワイゼンバウムが作った対話プログラム。単純なパターン応答にもかかわらず、人が知性や感情を感じてしまう現象を「イライザ効果」と呼ぶ。"},{"id":"eliza-and-dialogue-practice-1","qid":"q-1839c9ad","cat":"第2章 動向","q":"自然言語の指示でブロックを操作する初期の対話システムで、限定世界（ブロックワールド）での言語理解を示したものはどれか。","c":["SHRDLU","MYCIN","AlphaGo","word2vec"],"a":0,"e":"\u003cb>SHRDLU\u003c/b>（ウィノグラード）。積み木の世界という限定環境で自然言語の指示を解釈し操作した。限定世界では成功したが現実の広い世界には拡張できず、フレーム問題やトイ・プロブレムの限界を象徴する例ともされる。","prompt":"自然言語の指示でブロックを操作する初期の対話システムで、限定世界（ブロックワールド）での言語理解を示したものはどれか。","options":["SHRDLU","MYCIN","AlphaGo","word2vec"],"answer":"SHRDLU","explanation":"\u003cb>SHRDLU\u003c/b>（ウィノグラード）。積み木の世界という限定環境で自然言語の指示を解釈し操作した。限定世界では成功したが現実の広い世界には拡張できず、フレーム問題やトイ・プロブレムの限界を象徴する例ともされる。"},{"id":"eliza-and-dialogue-practice-2","qid":"q-f3464d49","cat":"第1章 AIとは","q":"次のうち、人工知能の研究分野として一般に含まれないものはどれか。","c":["自然言語処理","画像認識","知識表現","表計算ソフトの操作"],"a":3,"e":"自然言語処理・画像認識・知識表現・探索・機械学習・音声認識・ロボティクスなどがAIの主要分野。表計算ソフトの操作は単なるアプリ利用で研究分野ではない。AIは複数の下位分野の総称であり、特定の一手法を指す言葉ではない点が問われる。","prompt":"次のうち、人工知能の研究分野として一般に含まれないものはどれか。","options":["自然言語処理","画像認識","知識表現","表計算ソフトの操作"],"answer":"表計算ソフトの操作","explanation":"自然言語処理・画像認識・知識表現・探索・機械学習・音声認識・ロボティクスなどがAIの主要分野。表計算ソフトの操作は単なるアプリ利用で研究分野ではない。AIは複数の下位分野の総称であり、特定の一手法を指す言葉ではない点が問われる。"}]}</script>
   </main>
   <footer class="app-footer">
     <p>公式資料の代替ではなく、G検定学習を補助する独自教材です。</p>
   </footer>
   <script src="../../assets/js/visualizations.js" defer></script>
+  <script src="../../assets/js/store.js" defer></script>
+  <script src="../../assets/js/learning.js" defer></script>
   <script src="../../assets/js/lesson.js" defer></script>
 </body>
 </html>
